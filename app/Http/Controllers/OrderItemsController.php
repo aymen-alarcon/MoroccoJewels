@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\order_items;
+use App\Models\OrderItems;
 use Illuminate\Http\Request;
 
 class OrderItemsController extends Controller
@@ -12,7 +12,8 @@ class OrderItemsController extends Controller
      */
     public function index()
     {
-        //
+        $OrderItems = OrderItems::all();
+        return view("Admin.OrderItems", compact("OrderItems"));
     }
 
     /**
@@ -20,21 +21,30 @@ class OrderItemsController extends Controller
      */
     public function create()
     {
-        //
+        return view("Admin.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, OrderItems $OrderItems)
     {
-        //
+        $validate = $request->validate([
+            "product_name" => "required",
+            "price" => "required",
+            "quantity" => "required",
+            "order_id" => "required"
+        ]);
+
+        $OrderItems->create($validate);
+
+        return redirect()->route("Admin.OrderItems");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(order_items $order_items)
+    public function show(OrderItems $OrderItems)
     {
         //
     }
@@ -42,24 +52,36 @@ class OrderItemsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(order_items $order_items)
+    public function edit(OrderItems $OrderItems)
     {
-        //
+        $OrderItems = OrderItems::all();
+        return view("Admin.edit", compact("OrderItems"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, order_items $order_items)
+    public function update(Request $request, OrderItems $OrderItems)
     {
-        //
+        $validate = $request->validate([
+            "product_name" => "required",
+            "price" => "required",
+            "quantity" => "required",
+            "order_id" => "required"
+        ]);
+
+        $OrderItems->update($validate);
+
+        return redirect()->route("Admin.OrderItems");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(order_items $order_items)
+    public function destroy(OrderItems $OrderItems)
     {
-        //
+        $OrderItems->delete();
+
+        return view("Admin.OrderItems");
     }
 }

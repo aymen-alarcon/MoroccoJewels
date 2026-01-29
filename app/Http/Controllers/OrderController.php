@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\order;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -12,7 +12,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $Orders = Order::all();
+        return view("Admin.Orders", compact("Orders"));
     }
 
     /**
@@ -20,21 +21,30 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view("Admin.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Order $Order)
     {
-        //
+        $validate = $request->validate([
+            "total_price" => "required",
+            "status" => "required",
+            "is_deleted" => "required",
+            "category_id" => "required"
+        ]);
+
+        $Order->create($validate);
+
+        return redirect()->route("Admin.Orders");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(order $order)
+    public function show(Order $Order)
     {
         //
     }
@@ -42,24 +52,36 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(order $order)
+    public function edit(Order $Order)
     {
-        //
+        $Order = Order::all();
+        return view("Admin.edit", compact("Order"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, order $order)
+    public function update(Request $request, Order $Order)
     {
-        //
+        $validate = $request->validate([
+            "total_price" => "required",
+            "status" => "required",
+            "is_deleted" => "required",
+            "category_id" => "required"
+        ]);
+
+        $Order->update($validate);
+
+        return redirect()->route("Admin.Orders");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(order $order)
+    public function destroy(Order $Order)
     {
-        //
+        $Order->delete();
+
+        return view("Admin.Orders");
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\role;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -12,7 +12,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $Role = Role::all();
+        return view("Admin.Role", compact("Role"));
     }
 
     /**
@@ -20,21 +21,28 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view("Admin.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Role $Role)
     {
-        //
+        $validate = $request->validate([
+            "role_name" => "required",
+            "permission" => "required",
+        ]);
+
+        $Role->create($validate);
+
+        return redirect()->route("Admin.Role");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(role $role)
+    public function show(Role $Role)
     {
         //
     }
@@ -42,24 +50,34 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(role $role)
+    public function edit(Role $Role)
     {
-        //
+        $Role = Role::all();
+        return view("Admin.edit", compact("Role"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, role $role)
+    public function update(Request $request, Role $Role)
     {
-        //
+        $validate = $request->validate([
+            "role_name" => "required",
+            "permission" => "required",
+        ]);
+
+        $Role->update($validate);
+
+        return redirect()->route("Admin.Role");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(role $role)
+    public function destroy(Role $Role)
     {
-        //
+        $Role->delete();
+
+        return view("Admin.Role");
     }
 }

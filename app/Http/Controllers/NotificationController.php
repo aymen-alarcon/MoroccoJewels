@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\notification;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
 class NotificationController extends Controller
@@ -12,7 +12,8 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        //
+        $notifications = Notification::all();
+        return view("Admin.Notifications", compact("notifications"));
     }
 
     /**
@@ -20,15 +21,23 @@ class NotificationController extends Controller
      */
     public function create()
     {
-        //
+        return view("Admin.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Notification $notification)
     {
-        //
+        $validate = $request->validate([
+            "content" => "required",
+            "status" => "required",
+            "is_deleted" => "required"
+        ]);
+
+        $notification->create($validate);
+
+        return redirect()->route("Admin.Notifications");
     }
 
     /**
@@ -44,7 +53,8 @@ class NotificationController extends Controller
      */
     public function edit(notification $notification)
     {
-        //
+        $notification = Notification::all();
+        return view("Admin.edit", compact("notification"));
     }
 
     /**
@@ -52,7 +62,15 @@ class NotificationController extends Controller
      */
     public function update(Request $request, notification $notification)
     {
-        //
+        $validate = $request->validate([
+            "content" => "required",
+            "status" => "required",
+            "is_deleted" => "required"
+        ]);
+
+        $notification->update($validate);
+
+        return redirect()->route("Admin.Notifications");
     }
 
     /**
@@ -60,6 +78,8 @@ class NotificationController extends Controller
      */
     public function destroy(notification $notification)
     {
-        //
+        $notification->delete();
+
+        return view("Admin.Notifications");
     }
 }

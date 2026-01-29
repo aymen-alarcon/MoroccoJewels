@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view("Admin.dashboard", compact("categories"));
     }
 
     /**
@@ -20,15 +21,23 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view("Admin.create", compact("categories"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Category $category)
     {
-        //
+        $validate = $request->validate([
+            "name" => "required",
+            "description" => "required"
+        ]);
+
+        $category->create($validate);
+
+        return redirect()->route("Admin.dashboard");
     }
 
     /**
@@ -44,7 +53,8 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        //
+        $categories = Category::all();
+        return view("Admin.dashboard");
     }
 
     /**
@@ -52,7 +62,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, category $category)
     {
-        //
+        $validate = $request->validate([
+            "name" => "required",
+            "description" => "required"
+        ]);
+
+        $category->update($validate);
+
+        return redirect()->route("Admin.dashboard");
     }
 
     /**
@@ -60,6 +77,8 @@ class CategoryController extends Controller
      */
     public function destroy(category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route("Admin.dashboard");
     }
 }
