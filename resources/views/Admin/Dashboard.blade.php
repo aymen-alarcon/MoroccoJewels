@@ -1,3 +1,4 @@
+ <?php require_once "../includes/Admin_header.php";?>   
     <div class="container-fluid p-4 p-lg-5 d-flex flex-column gap-4 gap-lg-5">
       <div class="row g-3 g-lg-4">
         <div class="col-12 col-md-6 col-lg-3">
@@ -264,3 +265,4 @@
         </div>
       </div>
     </div>
+<?php require_once "../includes/footer.php";?>

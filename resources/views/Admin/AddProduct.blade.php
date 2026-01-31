@@ -1,3 +1,4 @@
+<?php require_once "../includes/Admin_header.php";?>
     <main class="container-fluid w-100" style="max-width:1200px;">
       <div class="d-flex flex-wrap gap-2 py-3 small">
         #Tableau de bord</a>
@@ -144,3 +145,4 @@
         </div>
       </div>
     </main>
+<?php require_once "../includes/footer.php";?>

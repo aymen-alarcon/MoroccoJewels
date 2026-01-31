@@ -4,11 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Créer un Compte — Bijoux Berbères</title>
-
-  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
-
-  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
@@ -22,16 +18,13 @@
     .material-symbols-outlined{ font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
     .rounded-xl{ border-radius:.75rem!important; }
 
-    /* Pattern backdrop */
     .moroccan-pattern{ position:absolute; inset:0; pointer-events:none;
       background-image: radial-gradient(var(--bb-primary) .5px, transparent .5px);
       background-size:24px 24px; opacity:.05;
     }
 
-    /* Surface (glass) */
     .glass{ background:rgba(0,0,0,.30); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.08); }
 
-    /* Inputs */
     .form-control{
       background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); color:#fff; height:48px;
     }
@@ -55,7 +48,6 @@
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-  <!-- Top Nav -->
   <header class="topbar border-bottom">
     <div class="container-xxl py-3 d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center gap-2" style="color:var(--bb-primary);">
@@ -75,7 +67,6 @@
     </div>
   </header>
 
-  <!-- Main -->
   <main class="position-relative flex-grow-1 d-flex align-items-center justify-content-center py-5">
     <div class="moroccan-pattern"></div>
     <div class="container position-relative z-1" style="max-width:640px;">
@@ -133,7 +124,6 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="footerbar border-top">
     <div class="container-xxl py-5">
       <div class="row g-4">
@@ -184,7 +174,6 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

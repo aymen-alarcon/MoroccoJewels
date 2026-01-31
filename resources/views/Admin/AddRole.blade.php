@@ -1,4 +1,5 @@
-    <main class="flex-grow-1 d-flex flex-column overflow-auto">
+<?php require_once "../includes/Admin_header.php";?>
+    <main class="d-flex flex-column overflow-auto">
       <div class="px-4 px-lg-5 py-4 mx-auto w-100" style="max-width:980px;">
         <nav class="d-flex align-items-center gap-2 small text-white-50 mb-3">
           #Accueil</a><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
@@ -133,3 +134,4 @@
       </div>
     </main>
   </div>
+  <?php require_once "../includes/footer.php";?>

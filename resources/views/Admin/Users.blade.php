@@ -1,4 +1,5 @@
-    <main class="flex-grow-1 d-flex flex-column">
+    <?php require_once "../includes/Admin_header.php";?>
+    <main class=" d-flex flex-column">
       <div class="p-4 p-lg-5 pb-2">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
           <div>
@@ -11,7 +12,7 @@
         </div>
       </div>
       <div class="px-4 px-lg-5 py-3 d-flex flex-wrap gap-3">
-        <div class="card-surface rounded-xl p-4 flex-grow-1" style="min-width:240px;">
+        <div class="card-surface rounded-xl p-4 " style="min-width:240px;">
           <div class="d-flex align-items-start justify-content-between">
             <p class="mb-2 small text-uppercase fw-semibold text-white-50">Total Utilisateurs</p>
             <span class="material-symbols-outlined text-primary">groups</span>
@@ -22,7 +23,7 @@
           </p>
         </div>
 
-        <div class="card-surface rounded-xl p-4 flex-grow-1" style="min-width:240px;">
+        <div class="card-surface rounded-xl p-4 " style="min-width:240px;">
           <div class="d-flex align-items-start justify-content-between">
             <p class="mb-2 small text-uppercase fw-semibold text-white-50">Administrateurs</p>
             <span class="material-symbols-outlined text-primary">admin_panel_settings</span>
@@ -31,7 +32,7 @@
           <p class="small text-white-50 mb-0">Stable</p>
         </div>
 
-        <div class="card-surface rounded-xl p-4 flex-grow-1" style="min-width:240px;">
+        <div class="card-surface rounded-xl p-4 " style="min-width:240px;">
           <div class="d-flex align-items-start justify-content-between">
             <p class="mb-2 small text-uppercase fw-semibold text-white-50">Nouveaux ce mois</p>
             <span class="material-symbols-outlined text-primary">person_add</span>
@@ -46,7 +47,7 @@
         <div class="card-surface rounded-xl overflow-hidden">
           <div class="p-4 border-bottom border-opacity-25">
             <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
-              <div class="flex-grow-1 w-100">
+              <div class=" w-100">
                 <div class="input-group" style="height:48px;">
                   <span class="input-group-text border-0" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);"><span class="material-symbols-outlined">search</span></span>
                   <input class="form-control border-0" style="background:rgba(255,255,255,.08);color:#fff;" placeholder="Rechercher un utilisateur par nom ou email..."/>
@@ -156,9 +157,7 @@
       </div>
     </main>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     @keyframes pulse { 0%{opacity:.6} 50%{opacity:1} 100%{opacity:.6} }
   </style>
-</body>
-</html>
+<?php require_once "../includes/Admin_header.php";?>

@@ -1,6 +1,7 @@
-    <main class="flex-grow-1 d-flex flex-column overflow-hidden position-relative">
+<?php require_once "../includes/Admin_header.php";?>    
+    <main class="d-flex flex-column overflow-hidden position-relative">
       <div class="position-absolute top-0 start-0 end-0 bottom-0"></div>
-      <header class="flex-shrink-0 p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative">
+      <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative">
         <div>
           <h2 class="display-6 fw-black mb-1">Gestion des Produits</h2>
           <p class="text-primary opacity-75 mb-0">Gérez votre inventaire de bijoux berbères artisanaux.</p>
@@ -13,7 +14,7 @@
       </header>
       <section class="px-4 px-lg-5 pb-3 d-flex flex-column gap-3 position-relative">
         <div class="d-flex flex-wrap align-items-center gap-3 rounded-xl p-3 border" style="background: color-mix(in srgb, var(--bb-accent-dark) 30%, transparent); border-color: rgba(255,255,255,.05)!important;">
-          <div class="flex-grow-1">
+          <div class="">
             <div class="position-relative">
               <span class="material-symbols-outlined position-absolute" style="left:14px;top:50%;transform:translateY(-50%);color: color-mix(in srgb, var(--bb-primary) 50%, white);">search</span>
               <input class="form-control ps-5 py-2 rounded-lg" placeholder="Rechercher par nom, SKU ou artisan..." />
@@ -34,7 +35,7 @@
         </div>
       </section>
 
-      <section class="flex-grow-1 overflow-auto px-4 px-lg-5 pb-4 position-relative">
+      <section class="overflow-auto px-4 px-lg-5 pb-4 position-relative">
         <div class="rounded-xl border overflow-hidden">
           <div class="table-responsive">
             <table class="table table-products align-middle mb-0">
@@ -180,3 +181,4 @@
       </section>
     </main>
   </div>
+<?php require_once "../includes/footer.php";?>

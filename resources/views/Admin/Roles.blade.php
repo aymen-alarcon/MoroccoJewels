@@ -1,4 +1,5 @@
-    <main class="flex-grow-1 d-flex flex-column">
+<?php require_once "../includes/Admin_header.php";?>    
+    <main class="d-flex flex-column">
       <div class="p-4 p-lg-5 container-fluid" style="max-width:1180px;">
         <div class="row g-4">
           <div class="col-12 col-md-4">
@@ -155,3 +156,4 @@
           </div>
         </div>
     </main>
+<?php require_once "../includes/footer.php";?>

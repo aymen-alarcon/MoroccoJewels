@@ -1,4 +1,5 @@
-    <main class="flex-grow-1 d-flex flex-column overflow-hidden">
+<?php require_once "../includes/Admin_header.php";?>    
+    <main class="d-flex flex-column overflow-hidden">
       <header class="topbar d-flex align-items-center justify-content-between px-4 px-lg-5 py-3">
         <div class="d-flex align-items-center gap-4">
           <h2 class="mb-0 fs-5 fw-bold">Gestion des Commandes</h2>
@@ -12,7 +13,7 @@
         <div class="d-flex align-items-center gap-3">
           <button class="btn btn-sm rounded-lg position-relative" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.7);">
             <span class="material-symbols-outlined">notifications</span>
-            <span class="position-absolute top-0 end-0 translate-middle p-1 bg-danger border border-2 border-dark rounded-circle"></span>
+            <span class="position-absolute top-0 end-0 translate-middle p-1 bg-danger border border-dark rounded-circle"></span>
           </button>
           <div class="vr" style="background:rgba(255,255,255,.1);height:32px;"></div>
           <div class="d-flex align-items-center gap-2">
@@ -25,7 +26,7 @@
         </div>
       </header>
 
-      <div class="flex-grow-1 overflow-auto p-4 p-lg-5">
+      <div class="overflow-auto p-4 p-lg-5">
         <div class="container-fluid" style="max-width:1080px;">
           <div class="d-flex align-items-end justify-content-between mb-3">
             <div>
@@ -168,3 +169,4 @@
       </div>
     </main>
   </div>
+<?php require_once "../includes/footer.php";?>

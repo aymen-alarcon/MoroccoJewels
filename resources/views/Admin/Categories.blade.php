@@ -1,4 +1,5 @@
-    <main class="flex-grow-1 d-flex flex-column overflow-hidden">
+ <?php require_once "../includes/Admin_header.php";?>   
+    <main class="d-flex flex-column overflow-hidden">
             <span class="material-symbols-outlined position-absolute" style="left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;">search</span>
             <input class="form-control ps-5 py-2 rounded-lg"
                    style="background:rgba(255,255,255,.06);border:0;color:#fff;"
@@ -24,7 +25,7 @@
         </div>
       </header>
 
-      <div class="flex-grow-1 overflow-auto p-4 p-lg-5">
+      <div class="overflow-auto p-4 p-lg-5">
         <nav class="d-flex align-items-center gap-2 small mb-3">
           #Accueil</a>
           <span class="material-symbols-outlined" style="color:#94a3b8;font-size:18px;">chevron_right</span>
@@ -220,3 +221,4 @@
       </div>
     </div>
   </div>
+<?php require_once "../includes/footer.php";?>

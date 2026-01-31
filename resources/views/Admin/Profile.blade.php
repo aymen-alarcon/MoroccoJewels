@@ -4,14 +4,9 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Profil Administrateur — Bijoux Berbères</title>
-
-  <!-- Bootstrap -->
-  https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
-
-  <!-- Fonts & Icons -->
-  https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap
-  https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <style>
     :root{
       --bb-primary:#fac638;
@@ -25,14 +20,11 @@
     .rounded-xl{ border-radius:.75rem!important; }
     .pattern{ background-image: radial-gradient(#5a1412 1px, transparent 1px); background-size:24px 24px; }
 
-    /* Sidebar */
     .sidebar{ width:18rem; background:var(--bb-surface); border-right:1px solid var(--bb-border); }
 
-    /* Surfaces */
     .card-surface{ background: rgba(51,11,10,.8); border:1px solid var(--bb-border); }
     .muted{ color:rgba(255,255,255,.6)!important; }
 
-    /* Topbar + Tabs */
     .topbar{ background: rgba(51,11,10,.5); backdrop-filter:blur(6px); border-bottom:1px solid var(--bb-border); }
     .nav-pills .nav-link{ color:#cbd5e1; }
     .nav-pills .nav-link:hover{ color:#fff; background:rgba(255,255,255,.06); }
@@ -40,14 +32,12 @@
       color:#420f0e; background:var(--bb-primary); font-weight:800;
     }
 
-    /* Badges / pills */
     .badge-pill{
       background: rgba(250,198,56,.15); color: var(--bb-primary);
       border:1px solid rgba(250,198,56,.3);
       padding:.25rem .6rem; border-radius:999px; font-size:.7rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
     }
 
-    /* Tables */
     .table-logs thead th{
       background: rgba(255,255,255,.06);
       color:#cdb574; text-transform:uppercase; letter-spacing:.1em; font-weight:800; font-size:.75rem;
@@ -57,7 +47,6 @@
     .table-logs td,.table-logs th{ border:none; }
     .table-logs tbody tr+tr{ border-top:1px solid rgba(255,255,255,.06); }
 
-    /* Inputs */
     .form-control, .form-select, .input-group-text{
       background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); color:#fff;
     }
@@ -69,17 +58,15 @@
       color:#fff;
     }
 
-    /* Simple “hidden” helper for panels if needed */
     .is-hidden{ display:none!important; }
   </style>
 </head>
 <body>
   <div class="d-flex vh-100 overflow-hidden">
-    <!-- Sidebar -->
     <aside class="sidebar d-flex flex-column justify-content-between p-4">
       <div class="d-flex flex-column gap-4">
         <div class="d-flex align-items-center gap-2">
-          <div class="rounded-circle border border-2" style="width:48px;height:48px;border-color:var(--bb-primary);
+          <div class="rounded-circle border" style="width:48px;height:48px;border-color:var(--bb-primary);
                background:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDr_U2q9kMMFm_38qsMdae-cSPDS7JxtWo0a0_hxHyRHOt9vp1rtw63hBkF_aRQmOX7u653hLI1IUmmlSS7Qb1777q4AjRjQEuVuGYQde-lMW5SJhzq7iHIIDB_sQ_aIWVdvkr0bBAy1Jg8_Y3JEiH3rI9eqxLP_oyY4-Ole2LFvr8SJMpSXiKjCfu-SVq0ddVUROcsuuKjWSMKsdhQCH_R_r9UA4lX05wqGKQ-NfCJ53DZERKj8jJ097Ti5IL98XpgAMVuoBVudvM') center/cover no-repeat;">
           </div>
           <div>
@@ -112,9 +99,7 @@
       </button>
     </aside>
 
-    <!-- Main -->
-    <main class="flex-grow-1 d-flex flex-column overflow-auto pattern">
-      <!-- Topbar -->
+    <main class=" d-flex flex-column overflow-auto pattern">
       <header class="topbar sticky-top">
         <div class="d-flex align-items-center justify-content-between px-4 py-3">
           <h2 class="mb-0 fs-4 fw-bold">Profil Administrateur</h2>
@@ -134,7 +119,6 @@
         </div>
       </header>
 
-      <!-- Tabs -->
       <div class="px-3 px-md-4 pt-3">
         <ul class="nav nav-pills gap-2" role="tablist" id="profileTabs">
           <li class="nav-item" role="presentation">
@@ -160,20 +144,16 @@
         </ul>
       </div>
 
-      <!-- Panels -->
       <div class="container-xxl py-4 d-flex flex-column gap-4" style="max-width:1200px;">
-
-        <!-- PROFIL -->
         <section id="section-profil" class="section-panel" role="tabpanel" aria-labelledby="tab-profil">
-          <!-- Header Card -->
           <div class="card-surface rounded-xl p-4 p-md-5 shadow-2xl">
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
               <div class="d-flex flex-column flex-sm-row align-items-center gap-3 text-center text-sm-start">
                 <div class="position-relative">
-                  <div class="rounded-circle border border-4" style="width:128px;height:128px;border-color:var(--bb-primary);
+                  <div class="rounded-circle border" style="width:128px;height:128px;border-color:var(--bb-primary);
                        background:url('https://lh3.googleusercontent.com/aida-public/AB6AXuC76YFcxfv4Fi_nlNCr4msUGryy23oYT99kUgi4S-zknlpmxuVvdeW6ZZIYrj0boCQ7kidMiixE_yp2pPz-XLEk-hMMQelAB-dArVG1vZDM6EAa7g8CeGBVjCJEDebedvJ4Tp_C5PkJai4D5EwHC9o0JlFf8dR1cXHZ-q5qQ_4fkrJAKm7sRIZqtG6Jy7hH_zSuvdFpFnJQPdIRqy-kUXhZq5q2tbzokeezV-KUY4MFADJmxMcjxVxb0C1pta6daLylrdBA3EKrMFY') center/cover no-repeat;">
                   </div>
-                  <div class="position-absolute bottom-0 end-0 rounded-circle border border-4" title="En ligne"
+                  <div class="position-absolute bottom-0 end-0 rounded-circle border" title="En ligne"
                        style="width:24px;height:24px;background:#22c55e;border-color:var(--bb-surface);"></div>
                 </div>
                 <div>
@@ -195,11 +175,9 @@
               </div>
             </div>
           </div>
-
-          <!-- Raccourcis -->
           <div class="d-flex align-items-center">
             <h2 class="fs-5 fw-bold mb-0">Raccourcis de gestion</h2>
-            <div class="flex-grow-1 ms-3" style="height:1px;background:linear-gradient(90deg, rgba(250,198,56,.4), transparent)"></div>
+            <div class=" ms-3" style="height:1px;background:linear-gradient(90deg, rgba(250,198,56,.4), transparent)"></div>
           </div>
 
           <div class="row g-3">
@@ -240,8 +218,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Détails du compte + Activité récente -->
           <div class="row g-4 mt-1">
             <div class="col-12 col-lg-8">
               <div class="card-surface rounded-xl p-4">
@@ -270,8 +246,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- Snapshot activité -->
             <div class="col-12 col-lg-4">
               <div class="card-surface rounded-xl p-4">
                 <h3 class="h6 fw-bold mb-3">Activité Récente</h3>
@@ -304,8 +278,6 @@
             </div>
           </div>
         </section>
-
-        <!-- SECURITE -->
         <section id="section-securite" class="section-panel is-hidden" role="tabpanel" aria-labelledby="tab-securite">
           <div class="row g-4">
             <div class="col-12 col-lg-6">
@@ -369,8 +341,6 @@
             </div>
           </div>
         </section>
-
-        <!-- ACTIVITE -->
         <section id="section-activite" class="section-panel is-hidden" role="tabpanel" aria-labelledby="tab-activite">
           <div class="card-surface rounded-xl p-4">
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
@@ -419,8 +389,6 @@
 
           </div>
         </section>
-
-        <!-- PREFERENCES -->
         <section id="section-preferences" class="section-panel is-hidden" role="tabpanel" aria-labelledby="tab-preferences">
           <div class="row g-4">
             <div class="col-12 col-lg-6">
@@ -481,17 +449,11 @@
       </div>
     </main>
   </div>
-
-  <!-- Bootstrap bundle -->
-  https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js</script>
-
-  <!-- Tabs Controller -->
   <script>
     (function(){
       const tabs = document.querySelectorAll('#profileTabs .nav-link');
       const panels = document.querySelectorAll('.section-panel');
 
-      // Helpers
       const hideAll = () => panels.forEach(p => p.classList.add('is-hidden'));
       const deactivateAll = () => tabs.forEach(t => {
         t.classList.remove('active');
@@ -512,7 +474,6 @@
       const saveLast = (id) => localStorage.setItem('bb_last_profile_section', id);
       const loadLast = () => localStorage.getItem('bb_last_profile_section');
 
-      // Click binding
       tabs.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
@@ -525,7 +486,6 @@
         });
       });
 
-      // Allow CTA buttons (from cards) to jump to a section
       document.querySelectorAll('[data-target^="#section-"]').forEach(el => {
         el.addEventListener('click', (e) => {
           const id = el.getAttribute('data-target');
@@ -534,7 +494,6 @@
         });
       });
 
-      // Initial state: hash > localStorage > default(#profil)
       const initial = location.hash && document.querySelector(location.hash)
         ? location.hash
         : (loadLast() && document.querySelector(loadLast()) ? loadLast() : '#section-profil');

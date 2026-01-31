@@ -1,4 +1,5 @@
-    <main class="flex-grow-1 d-flex justify-content-center">
+ <?php require_once "../includes/Admin_header.php";?>   
+    <main class="d-flex justify-content-center">
       <div class="w-100" style="max-width:1200px;">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 px-3 px-lg-4 py-4">
           <div>
@@ -144,3 +145,4 @@
             </div>
           </div>
         </div>
+<?php require_once "../includes/footer.php";?>
