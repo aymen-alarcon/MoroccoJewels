@@ -165,7 +165,7 @@
         </div>
 
         <div class="table-responsive">
-          <table class="table table-custom align-middle">
+          <table class="table table-custom align-middle" style="background-color: #5A1A19">
             <thead>
               <tr>
                 <th class="pb-3 ps-2">Commande</th>

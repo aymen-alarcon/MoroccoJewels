@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="table-responsive">
-            <table class="table table-users align-middle mb-0">
+            <table class="table table-users align-middle mb-0" style="background-color: #5A1A19">
               <thead>
                 <tr>
                   <th class="px-4 py-3">Utilisateur</th>

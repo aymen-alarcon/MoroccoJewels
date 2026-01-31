@@ -26,9 +26,9 @@
             </div>
           </div>
 
-          <div class="rounded-xl overflow-hidden" style="background: color-mix(in srgb, var(--bb-card) 30%, transparent); border:1px solid rgba(255,255,255,.1);">
+          <div class="rounded-xl overflow-hidden">
             <div class="table-responsive">
-              <table class="table table-orders table-divider align-middle mb-0">
+              <table class="table table-orders table-divider align-middle mb-0" style="background-color: #5A1A19">
                 <thead>
                   <tr>
                     <th class="px-4 py-3">ID Commande</th>
@@ -40,77 +40,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="px-4 py-3 small fw-semibold text-white">#CMD-1024</td>
-                    <td class="px-4 py-3 small text-white-75">12 Oct 2023</td>
-                    <td class="px-4 py-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:32px;height:32px;background:rgba(19,127,236,.2);color:var(--bb-primary);font-size:12px;">YM</div>
-                        <span class="small fw-semibold">Yasmine Mansouri</span>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3 small fw-bold">1,250 MAD</td>
-                    <td class="px-4 py-3"><span class="pill pill-wait">En attente</span></td>
-                    <td class="px-4 py-3 text-end">
-                      <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">visibility</span></button>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="px-4 py-3 small fw-semibold text-white">#CMD-1023</td>
-                    <td class="px-4 py-3 small text-white-75">11 Oct 2023</td>
-                    <td class="px-4 py-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:32px;height:32px;background:rgba(16,185,129,.2);color:#10b981;font-size:12px;">KB</div>
-                        <span class="small fw-semibold">Karim Bennani</span>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3 small fw-bold">3,800 MAD</td>
-                    <td class="px-4 py-3"><span class="pill pill-ship">Expédiée</span></td>
-                    <td class="px-4 py-3 text-end"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">visibility</span></button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="px-4 py-3 small fw-semibold text-white">#CMD-1022</td>
-                    <td class="px-4 py-3 small text-white-75">10 Oct 2023</td>
-                    <td class="px-4 py-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:32px;height:32px;background:rgba(168,85,247,.2);color:#a855f7;font-size:12px;">ST</div>
-                        <span class="small fw-semibold">Sara Tazi</span>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3 small fw-bold">950 MAD</td>
-                    <td class="px-4 py-3"><span class="pill pill-done">Livrée</span></td>
-                    <td class="px-4 py-3 text-end"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">visibility</span></button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="px-4 py-3 small fw-semibold text-white">#CMD-1021</td>
-                    <td class="px-4 py-3 small text-white-75">10 Oct 2023</td>
-                    <td class="px-4 py-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:32px;height:32px;background:rgba(253,186,116,.2);color:#f59e0b;font-size:12px;">OI</div>
-                        <span class="small fw-semibold">Omar Idrissi</span>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3 small fw-bold">2,100 MAD</td>
-                    <td class="px-4 py-3"><span class="pill pill-progress">En cours</span></td>
-                    <td class="px-4 py-3 text-end"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">visibility</span></button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="px-4 py-3 small fw-semibold text-white">#CMD-1020</td>
-                    <td class="px-4 py-3 small text-white-75">09 Oct 2023</td>
-                    <td class="px-4 py-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:32px;height:32px;background:rgba(244,63,94,.2);color:#f43f5e;font-size:12px;">LA</div>
-                        <span class="small fw-semibold">Leila Amrani</span>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3 small fw-bold">5,400 MAD</td>
-                    <td class="px-4 py-3"><span class="pill pill-cancel">Annulée</span></td>
-                    <td class="px-4 py-3 text-end"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">visibility</span></button></td>
-                  </tr>
+                  @foreach ($orders as $order)
+                    <tr>
+                      <td class="px-4 py-3 small fw-semibold text-white">#CMD-{{ $order->id }}</td>
+                      <td class="px-4 py-3 small text-white-75">{{ $order->created_at }}</td>
+                      <td class="px-4 py-3">
+                        <div class="d-flex align-items-center gap-2">
+                          <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:32px;height:32px;background:rgba(19,127,236,.2);color:var(--bb-primary);font-size:12px;">YM</div>
+                          <span class="small fw-semibold">Yasmine Mansouri</span>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 small fw-bold">{{ $order->total_price }} MAD</td>
+                      <td class="px-4 py-3"><span class="pill pill-wait">{{ $order->status }}</span></td>
+                      <td class="px-4 py-3 text-end">
+                        <a href="/Admin/OrderItems" class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">visibility</span></a>
+                        <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">edit</span></button>
+                        <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">delete</span></button>
+                      </td>
+                    </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>

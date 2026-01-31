@@ -41,7 +41,7 @@
           </div>
 
           <div class="table-responsive">
-            <table class="table table-perms align-middle mb-0">
+            <table class="table table-perms align-middle mb-0" style="background-color: #5A1A19">
               <thead>
                 <tr>
                   <th class="px-4 py-3" style="width:33%">Module du Système</th>

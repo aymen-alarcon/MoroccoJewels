@@ -69,7 +69,7 @@
           </div>
 
           <div class="table-responsive">
-            <table class="table table-roles align-middle mb-0">
+            <table class="table table-roles align-middle mb-0" style="background-color: #5A1A19">
               <thead>
                 <tr>
                   <th class="px-4 py-3">Nom du Rôle</th>
@@ -80,80 +80,27 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:32px;height:32px;background:color-mix(in srgb, var(--bb-primary) 10%, transparent);color:var(--bb-primary);">
-                        <span class="material-symbols-outlined">verified_user</span>
+                @foreach ($roles as $role)
+                  <tr>
+                    <td class="px-4 py-3">
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:32px;height:32px;background:color-mix(in srgb, var(--bb-primary) 10%, transparent);color:var(--bb-primary);">
+                          <span class="material-symbols-outlined">verified_user</span>
+                        </div>
+                        <span class="fw-semibold">{{ $role->role_name }}</span>
                       </div>
-                      <span class="fw-semibold">Administrateur</span>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3 small text-white-75">Accès total au système, gestion des utilisateurs et finances</td>
-                  <td class="px-4 py-3 text-center"><span class="badge-count">5</span></td>
-                  <td class="px-4 py-3 small text-white-50">12/01/2023</td>
-                  <td class="px-4 py-3 text-end">
-                    <div class="d-inline-flex align-items-center gap-1">
-                      <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">edit</span></button>
-                      <button class="btn btn-sm text-danger"><span class="material-symbols-outlined">delete</span></button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:32px;height:32px;background:color-mix(in srgb, var(--bb-primary) 10%, transparent);color:var(--bb-primary);">
-                        <span class="material-symbols-outlined">sell</span>
+                    </td>
+                    <td class="px-4 py-3 small text-white-75">Accès total au système, gestion des utilisateurs et finances</td>
+                    <td class="px-4 py-3 text-center"><span class="badge-count">5</span></td>
+                    <td class="px-4 py-3 small text-white-50">12/01/2023</td>
+                    <td class="px-4 py-3 text-end">
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">edit</span></button>
+                        <button class="btn btn-sm text-danger"><span class="material-symbols-outlined">delete</span></button>
                       </div>
-                      <span class="fw-semibold">Vendeur</span>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3 small text-white-75">Gestion des ventes, accès aux clients et catalogue produits</td>
-                  <td class="px-4 py-3 text-center"><span class="badge-count">12</span></td>
-                  <td class="px-4 py-3 small text-white-50">15/02/2023</td>
-                  <td class="px-4 py-3 text-end">
-                    <div class="d-inline-flex align-items-center gap-1">
-                      <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">edit</span></button>
-                      <button class="btn btn-sm text-danger"><span class="material-symbols-outlined">delete</span></button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:32px;height:32px;background:color-mix(in srgb, var(--bb-primary) 10%, transparent);color:var(--bb-primary);">
-                        <span class="material-symbols-outlined">inventory</span>
-                      </div>
-                      <span class="fw-semibold">Gestionnaire Stock</span>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3 small text-white-75">Gestion des stocks, inventaires et réapprovisionnements</td>
-                  <td class="px-4 py-3 text-center"><span class="badge-count">4</span></td>
-                  <td class="px-4 py-3 small text-white-50">03/03/2023</td>
-                  <td class="px-4 py-3 text-end">
-                    <div class="d-inline-flex align-items-center gap-1">
-                      <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">edit</span></button>
-                      <button class="btn btn-sm text-danger"><span class="material-symbols-outlined">delete</span></button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:32px;height:32px;background:color-mix(in srgb, var(--bb-primary) 10%, transparent);color:var(--bb-primary);">
-                        <span class="material-symbols-outlined">account_balance_wallet</span>
-                      </div>
-                      <span class="fw-semibold">Comptable</span>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3 small text-white-75">Accès aux rapports financiers et facturation uniquement</td>
-                  <td class="px-4 py-3 text-center"><span class="t-danger"><span class="material-symbols-outlined">delete</span></button>
-                    </div>
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
           </div>

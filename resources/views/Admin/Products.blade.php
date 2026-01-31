@@ -38,7 +38,7 @@
       <section class="overflow-auto px-4 px-lg-5 pb-4 position-relative">
         <div class="rounded-xl border overflow-hidden">
           <div class="table-responsive">
-            <table class="table table-products align-middle mb-0">
+            <table class="table table-products align-middle mb-0" style="background-color: #5A1A19">
               <thead>
                 <tr>
                   <th class="px-4 py-3">Produit</th>
@@ -49,114 +49,33 @@
                 </tr>
               </thead>
               <tbody class="table-group-divider">
-                <tr>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="rounded shadow-soft border"></div>
-                      <div>
-                        <p class="fw-bold mb-0">Collier Fibule Étoilée</p>
-                        <p class="mb-0 text-white-50">SKU: BRB-2024-001</p>
+                @foreach ($products as $product)
+                  <tr>
+                    <td class="px-4 py-3">
+                      <div class="d-flex align-items-center gap-3">
+                        <div class="rounded shadow-soft border"></div>
+                        <div>
+                          <p class="fw-bold mb-0">{{ $product->name }}</p>
+                          <p class="mb-0 text-white-50">SKU: BRB-2024-001</p>
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3"><span class="badge-soft">Collier</span></td>
-                  <td class="px-4 py-3 text-end"><span class="fw-bold">1 450 DH</span></td>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-2">
-                      <span class="stock-dot"></span>
-                      <span class="text-success small fw-semibold">12 en stock</span>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center justify-content-center gap-2">
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">visibility</span></button>
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">edit</span></button>
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">delete</span></button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="rounded shadow-soft border"></div>
-                      <div>
-                        <p class="fw-bold mb-0">Manchette Touareg Onyx</p>
-                        <p class="mb-0 text-white-50" style="font-size:12px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,'Liberation Mono','Courier New',monospace; text-transform:uppercase;">SKU: BRB-2024-002</p>
+                    </td>
+                    <td class="px-4 py-3"><span class="badge-soft">{{ $product->description }}</span></td>
+                    <td class="px-4 py-3 text-end"><span class="fw-bold">{{ $product->price }} DH</span></td>
+                    <td class="px-4 py-3">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="stock-dot"></span>
+                        <span class="text-success small fw-semibold">{{ $product->stock }} en stock</span>
                       </div>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3"><span class="badge-soft">Bracelet</span></td>
-                  <td class="px-4 py-3 text-end"><span class="fw-bold">890 DH</span></td>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-2">
-                      <span class="stock-dot" style="background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,.6);"></span>
-                      <span class="text-success small fw-semibold">8 en stock</span>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center justify-content-center gap-2">
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined">visibility</span></button>
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined">edit</span></button>
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined">delete</span></button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="rounded shadow-soft border"></div>
-                      <div>
-                        <p class="fw-bold mb-0">Boucles Émail Kabyle</p>
-                        <p class="mb-0 text-white-50">SKU: BRB-2024-003</p>
+                    </td>
+                    <td class="px-4 py-3">
+                      <div class="d-flex align-items-center justify-content-center gap-2">
+                        <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">edit</span></button>
+                        <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">delete</span></button>
                       </div>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3"><span class="badge-soft">Boucles</span></td>
-                  <td class="px-4 py-3 text-end"><span class="fw-bold">520 DH</span></td>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-2">
-                      <span class="stock-dot"></span>
-                      <span class="text-danger small fw-semibold">Rupture</span>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center justify-content-center gap-2">
-                      <button class="btn btn-sm rounded-lg" ><span class="material-symbols-outlined">visibility</span></button>
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined">edit</span></button>
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined">delete</span></button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-3">
-                      <div class="rounded shadow-soft border"></div>
-                      <div>
-                        <p class="fw-bold mb-0">Pendentif Khamsa Or</p>
-                        <p class="mb-0 text-white-50">SKU: BRB-2024-004</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3"><span class="badge-soft">Collier</span></td>
-                  <td class="px-4 py-3 text-end"><span class="fw-bold">3 200 DH</span></td>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center gap-2">
-                      <span class="stock-dot"></span>
-                      <span class="text-warning small fw-semibold">3 restant</span>
-                    </div>
-                  </td>
-                  <td class="px-4 py-3">
-                    <div class="d-flex align-items-center justify-content-center gap-2">
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined">visibility</span></button>
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined">edit</span></button>
-                      <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined">delete</span></button>
-                    </div>
-                  </td>
-                </tr>
-
+                    </td>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
