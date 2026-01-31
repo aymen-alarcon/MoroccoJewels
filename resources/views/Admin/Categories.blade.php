@@ -1,4 +1,4 @@
- <?php require_once "../includes/Admin_header.php";?>   
+ <?php require_once "../resources/views/includes/Admin_header.php";?>   
     <main class="d-flex flex-column overflow-hidden">
             <span class="material-symbols-outlined position-absolute" style="left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;">search</span>
             <input class="form-control ps-5 py-2 rounded-lg"
@@ -221,4 +221,4 @@
       </div>
     </div>
   </div>
-<?php require_once "../includes/footer.php";?>
+<?php require_once "../resources/views/includes/footer.php";?>

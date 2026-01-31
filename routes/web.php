@@ -1,9 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/Home/Collection', function () {
+    return view('Home.Collection');
+});
+
+Route::get('/Home/History', function () {
+    return view('Home.History');
+});
+
+Route::get('/Home/Gallery', function () {
+    return view('Home.Gallery');
+});
+
+Route::get('/Home/Contact', function () {
+    return view('Home.Contact');
 });
 
 Route::get("/Admin/Dashboard", function(){
@@ -73,3 +90,7 @@ Route::get("/Client/Cart", function(){
 Route::get("/Client/Profile", function(){
     return view("Client.Profile");
 });
+
+Route::post("/Admin/Categories/AddCategory/store", [CategoryController::class, "store"]);
+Route::put("/Admin/Categories/AddCategory/update", [CategoryController::class, "update"]);
+Route::delete("/Admin/Categories/AddCategory/destroy", [CategoryController::class, "destroy"]);

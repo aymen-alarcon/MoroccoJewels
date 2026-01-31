@@ -1,4 +1,4 @@
-<?php require_once "../includes/Admin_header.php";?>    
+<?php require_once "../resources/views/includes/Admin_header.php";?>    
     <main class="d-flex flex-column overflow-hidden">
       <header class="topbar d-flex align-items-center justify-content-between px-4 px-lg-5 py-3">
         <div class="d-flex align-items-center gap-4">
@@ -169,4 +169,4 @@
       </div>
     </main>
   </div>
-<?php require_once "../includes/footer.php";?>
+<?php require_once "../resources/views/includes/footer.php";?>

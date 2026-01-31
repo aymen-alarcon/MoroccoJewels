@@ -1,4 +1,4 @@
-    <?php require_once "../includes/Admin_header.php";?>
+    <?php require_once "../resources/views/includes/Admin_header.php";?>
     <main class=" d-flex flex-column">
       <div class="p-4 p-lg-5 pb-2">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
@@ -160,4 +160,4 @@
   <style>
     @keyframes pulse { 0%{opacity:.6} 50%{opacity:1} 100%{opacity:.6} }
   </style>
-<?php require_once "../includes/Admin_header.php";?>
+<?php require_once "../resources/views/includes/Admin_header.php";?>

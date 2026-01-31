@@ -1,4 +1,4 @@
-<?php include "../includes/header.php"?>
+<?php include "../resources/views/includes/header.php"?>
             <section class="position-relative d-flex flex-column align-items-center justify-content-center min-vh-85 overflow-hidden">
                 <div class="position-absolute top-0 start-0 w-100 h-100 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
                      style="background-image: linear-gradient(rgba(66, 15, 14, 0.5), rgba(66, 15, 14, 0.9)),
@@ -181,4 +181,4 @@
                 </div>
             </section>
         </main>
-<?php include "../includes/footer.php"?>
+<?php include "../resources/views/includes/footer.php"?>

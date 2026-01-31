@@ -1,4 +1,4 @@
-<?php require_once "../includes/Admin_header.php";?>
+<?php require_once "../resources/views/includes/Admin_header.php";?>
     <main class="flex-grow-1 d-flex justify-content-center py-4 px-3 px-lg-4">
       <div class="w-100" style="max-width:1000px;">
         <div class="d-flex flex-wrap align-items-center gap-2 small mb-3">
@@ -22,7 +22,9 @@
           </button>
         </div>
 
-        <form class="row g-3 g-lg-4">
+        <form class="row g-3 g-lg-4" method="POST" action="/Admin/Categories/AddCategory/store">
+          @csrf
+          @method('POST')
           <div class="col-12 col-lg-8 d-flex flex-column gap-3">
             <section class="form-card rounded-xl p-4">
               <div class="d-flex align-items-center gap-2 pb-3 mb-3 border-bottom border-opacity-25">
@@ -147,13 +149,13 @@
               </div>
             </section>
           </div>
+          <div class="d-flex align-items-center justify-content-end gap-2 pt-3 mt-3 border-top border-opacity-25 pb-4">
+            <button class="btn btn-outline-light rounded-lg fw-bold">Annuler</button>
+            <button type="submit" class="btn btn-primary rounded-lg fw-bold shadow d-inline-flex align-items-center gap-1">
+              Enregistrer la catégorie
+            </button>
+          </div>
         </form>
-        <div class="d-flex align-items-center justify-content-end gap-2 pt-3 mt-3 border-top border-opacity-25 pb-4">
-          <button class="btn btn-outline-light rounded-lg fw-bold">Annuler</button>
-          <button class="btn btn-primary rounded-lg fw-bold shadow d-inline-flex align-items-center gap-1">
-            <span class="material-symbols-outlined">save</span> Enregistrer la catégorie
-          </button>
-        </div>
       </div>
     </main>
-<?php require_once "../includes/footer.php";?>
+<?php require_once "../resources/views/includes/footer.php";?>

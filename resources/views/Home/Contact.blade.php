@@ -1,4 +1,4 @@
-<?php include "../includes/header.php"?>
+<?php include "../resources/views/includes/header.php"?>
             <main class="d-flex justify-content-center py-5 py-sm-6 px-4">
                 <div class="container-custom max-w-6xl flex-grow-1">
                     <div class="row justify-content-between mb-4 p-3 text-center">
@@ -112,4 +112,4 @@
                 </div>
             </main>
         </main>
-<?php include "../includes/footer.php"?>
+<?php include "../resources/views/includes/footer.php"?>

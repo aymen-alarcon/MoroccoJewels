@@ -1,4 +1,4 @@
-<?php require_once "../includes/Admin_header.php";?>
+<?php require_once "../resources/views/includes/Admin_header.php";?>
   <main class="container-fluid" style="max-width:1280px;">
     <div class="d-flex flex-wrap align-items-center gap-2 text-nowrap mt-4 mb-3 px-3">
       <a class="text-decoration-none fw-semibold" style="color:#c39998;" href="#">Accueil</a>
@@ -190,4 +190,4 @@
         </div>
       </div>
     </div>
-<?php require_once "../includes/footer.php";?>
+<?php require_once "../resources/views/includes/footer.php";?>
