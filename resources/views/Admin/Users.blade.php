@@ -1,14 +1,14 @@
     <?php require_once "../resources/views/includes/Admin_header.php";?>
-    <main class=" d-flex flex-column">
+    <main class=" d-flex flex-column w-100">
       <div class="p-4 p-lg-5 pb-2">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
           <div>
             <h2 class="display-6 fw-black mb-1">Gestion des Utilisateurs</h2>
             <p class="mb-0 text-white-50">Administrez les accès et les rôles de votre boutique de bijoux berbères.</p>
           </div>
-          <button class="btn btn-primary rounded-lg fw-bold shadow d-inline-flex align-items-center gap-1">
-            <span class="material-symbols-outlined">person_add</span> Ajouter un utilisateur
-          </button>
+            <a href="/Admin/Users/Create" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
+              <span class="material-symbols-outlined">add</span> Ajouter un utilisateur
+            </a>
         </div>
       </div>
       <div class="px-4 px-lg-5 py-3 d-flex flex-wrap gap-3">
@@ -160,4 +160,3 @@
   <style>
     @keyframes pulse { 0%{opacity:.6} 50%{opacity:1} 100%{opacity:.6} }
   </style>
-<?php require_once "../resources/views/includes/Admin_header.php";?>

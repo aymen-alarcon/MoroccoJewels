@@ -15,7 +15,7 @@
           <div class="vr" style="height:32px;background:#5a1a19;"></div>
           <button class="btn btn-sm rounded-circle position-relative" style="width:40px;height:40px;color:#cbd5e1;background:transparent;">
             <span class="material-symbols-outlined">notifications</span>
-            <span class="position-absolute top-0 end-0 translate-middle p-1 bg-danger border border-2 border-white rounded-circle"></span>
+            <span class="position-absolute top-0 end-0 translate-middle p-1 bg-danger border border-white rounded-circle"></span>
           </button>
           <button class="btn btn-sm rounded-pill d-flex align-items-center gap-1" style="background:transparent;">
             <div class="rounded-circle d-inline-flex align-items-center justify-content-center border" style="width:32px;height:32px;background:rgba(244,157,37,.2);color:var(--bb-primary);border-color:rgba(244,157,37,.3);">
@@ -198,7 +198,7 @@
           </div>
           <div>
             <label class="form-label small fw-semibold">Image de couverture</label>
-            <div class="border border-2 rounded-xl p-4 text-center" style="border-color:#5a1a19; cursor:pointer;">
+            <div class="border rounded-xl p-4 text-center" style="border-color:#5a1a19; cursor:pointer;">
               <span class="material-symbols-outlined" style="font-size:34px;color:#b6b6b6;">add_photo_alternate</span>
               <p class="mb-0 small text-white-50">Cliquez pour télécharger ou glissez-déposez</p>
               <p class="mb-0" style="font-size:12px; color:#9ca3af;">PNG, JPG jusqu'à 10MB</p>
@@ -221,4 +221,3 @@
       </div>
     </div>
   </div>
-<?php require_once "../resources/views/includes/footer.php";?>

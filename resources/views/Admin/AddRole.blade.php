@@ -1,12 +1,6 @@
 <?php require_once "../resources/views/includes/Admin_header.php";?>
-    <main class="d-flex flex-column overflow-auto">
-      <div class="px-4 px-lg-5 py-4 mx-auto w-100" style="max-width:980px;">
-        <nav class="d-flex align-items-center gap-2 small text-white-50 mb-3">
-          #Accueil</a><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
-          #Paramètres</a><span class="material-symbols-outlined" style="font-size:16px;">chevron_right</span>
-          <span class="text-white fw-semibold">Rôles et Permissions</span>
-        </nav>
-
+    <main class="d-flex flex-column overflow-auto w-100">
+      <div class="px-4 px-lg-5 py-4 mx-auto w-100">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
           <div>
             <h2 class="display-6 fw-black mb-1">Ajouter un Rôle</h2>
@@ -126,7 +120,6 @@
                   <td class="text-center"><input class="form-check-input" type="checkbox"></td>
                   <td class="text-center"><input class="form-check-input" type="checkbox"></td>
                 </tr>
-
               </tbody>
             </table>
           </div>
@@ -134,4 +127,3 @@
       </div>
     </main>
   </div>
-  <?php require_once "../resources/views/includes/footer.php";?>

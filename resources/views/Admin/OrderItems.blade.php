@@ -190,4 +190,3 @@
         </div>
       </div>
     </div>
-<?php require_once "../resources/views/includes/footer.php";?>

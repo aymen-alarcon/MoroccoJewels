@@ -1,31 +1,5 @@
 <?php require_once "../resources/views/includes/Admin_header.php";?>    
-    <main class="d-flex flex-column overflow-hidden">
-      <header class="topbar d-flex align-items-center justify-content-between px-4 px-lg-5 py-3">
-        <div class="d-flex align-items-center gap-4">
-          <h2 class="mb-0 fs-5 fw-bold">Gestion des Commandes</h2>
-
-          <div class="position-relative" style="width:18rem;">
-            <span class="material-symbols-outlined position-absolute" style="left:10px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4)">search</span>
-            <input class="form-control ps-5 py-2 rounded-lg" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;" placeholder="Rechercher une commande..." />
-          </div>
-        </div>
-
-        <div class="d-flex align-items-center gap-3">
-          <button class="btn btn-sm rounded-lg position-relative" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.7);">
-            <span class="material-symbols-outlined">notifications</span>
-            <span class="position-absolute top-0 end-0 translate-middle p-1 bg-danger border border-dark rounded-circle"></span>
-          </button>
-          <div class="vr" style="background:rgba(255,255,255,.1);height:32px;"></div>
-          <div class="d-flex align-items-center gap-2">
-            <div class="text-end d-none d-sm-block">
-              <p class="mb-0 small fw-semibold">Ahmed Alami</p>
-              <p class="mb-0 small text-white-50">Administrateur</p>
-            </div>
-            <div class="rounded-circle border" style="width:40px;height:40px;background:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUCBb3tcqgTRbIRFfGpUlK8-aAaqgrTDMjoPzgAn3Dlhhi_4l9z2jzrn4NPIxVqJHkbT9oRi7jSnFZAXGDivzyeRZmjKZqk_FJNv0s-CCb5yHQcJwikwXhp4ris12ZWFwVqaEU9LYvYxHP4rFKtIIeyAwXmYlhLHR5UC84hpVp8iKEQ3Acscjue8bOAT_1I8F15x78ngdXeM19U3jS1mrLTQx6eY2DBAYRGMHBiSOWBEbJ7KTXieuhZ6fqlwn79_BMWkEtYByk48w') center/cover no-repeat;border-color:rgba(255,255,255,.2);"></div>
-          </div>
-        </div>
-      </header>
-
+    <main class="d-flex flex-column overflow-hidden w-100">
       <div class="overflow-auto p-4 p-lg-5">
         <div class="container-fluid" style="max-width:1080px;">
           <div class="d-flex align-items-end justify-content-between mb-3">
@@ -33,10 +7,6 @@
               <h3 class="fs-4 fw-bold mb-1">Liste des Commandes</h3>
               <p class="text-white-50 small mb-0">Visualisez et gérez toutes les transactions de la boutique.</p>
             </div>
-            <button class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1"
-                    style="background:var(--bb-primary);color:#fff;">
-              <span class="material-symbols-outlined">add</span> Nouvelle Commande
-            </button>
           </div>
 
           <div class="surface rounded-xl p-3 d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
@@ -169,4 +139,3 @@
       </div>
     </main>
   </div>
-<?php require_once "../resources/views/includes/footer.php";?>

@@ -38,48 +38,11 @@
 
           <div class="text-center pt-2">
             <p class="small text-white-50 mb-0">Pas encore de compte ?
-              <a href="#" class="text-warning fw-bold text-decoration-none ms-1">Créer un compte</a>
+              <a href="/Auth/Register" class="text-warning fw-bold text-decoration-none ms-1">Créer un compte</a>
             </p>
           </div>
         </form>
       </div>
     </div>
   </main>
-
-  <footer class="footerbar mt-auto">
-    <div class="container-xxl py-4">
-      <div class="row g-4">
-        <div class="col-md-5">
-          <div class="d-flex align-items-center gap-2 text-white mb-2">
-            <span class="material-symbols-outlined text-warning">diamond</span>
-            <span class="fw-bold">Bijoux Berbères</span>
-          </div>
-          <p class="text-white-50 small mb-0">
-            L’artisanat ancestral marocain revisité. Des pièces uniques forgées par l'histoire et la tradition.
-          </p>
-        </div>
-        <div class="col-6 col-md-3">
-          <h6 class="fw-bold small mb-2">Boutique</h6>
-          <ul class="list-unstyled small mb-0">
-            <li><a href="#" class="text-white-50 text-decoration-none">Colliers</a></li>
-            <li><a href="#" class="text-white-50 text-decoration-none">Bracelets</a></li>
-            <li><a href="#" class="text-white-50 text-decoration-none">Bagues</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md-4">
-          <h6 class="fw-bold small mb-2">Assistance</h6>
-          <ul class="list-unstyled small mb-0 d-grid gap-1">
-            <li><a href="#" class="text-white-50 text-decoration-none">Livraison</a></li>
-            <li><a href="#" class="text-white-50 text-decoration-none">Retours</a></li>
-            <li><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="pt-3 mt-3 border-top border-light-subtle text-center small text-white-50">
-        © 2024 Bijoux Berbères. Tous droits réservés.
-      </div>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php require_once "../resources/views/includes/footer.php"?>

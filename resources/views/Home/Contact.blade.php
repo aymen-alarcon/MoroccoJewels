@@ -1,6 +1,6 @@
 <?php include "../resources/views/includes/header.php"?>
             <main class="d-flex justify-content-center py-5 py-sm-6 px-4">
-                <div class="container-custom max-w-6xl flex-grow-1">
+                <div class="container-custom max-w-6xl">
                     <div class="row justify-content-between mb-4 p-3 text-center">
                         <div class="col-12 d-flex flex-column gap-3">
                             <h1 class="text-white fs-2 fs-sm-1 font-display leading-tight">

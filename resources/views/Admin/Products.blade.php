@@ -1,5 +1,5 @@
 <?php require_once "../resources/views/includes/Admin_header.php";?>    
-    <main class="d-flex flex-column overflow-hidden position-relative">
+    <main class="d-flex flex-column overflow-hidden position-relative w-100">
       <div class="position-absolute top-0 start-0 end-0 bottom-0"></div>
       <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative">
         <div>
@@ -7,9 +7,9 @@
           <p class="text-primary opacity-75 mb-0">Gérez votre inventaire de bijoux berbères artisanaux.</p>
         </div>
         <div class="d-flex align-items-center gap-2">
-          <button class="btn btn-primary d-inline-flex align-items-center gap-2 rounded-lg px-4 shadow" type="button">
-            <span class="material-symbols-outlined">add</span> Ajouter un bijou
-          </button>
+            <a href="/Admin/Products/Create" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
+              <span class="material-symbols-outlined">add</span> Nouvelle Produits
+            </a>
         </div>
       </header>
       <section class="px-4 px-lg-5 pb-3 d-flex flex-column gap-3 position-relative">
@@ -181,4 +181,3 @@
       </section>
     </main>
   </div>
-<?php require_once "../resources/views/includes/footer.php";?>

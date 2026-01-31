@@ -1,6 +1,17 @@
 <?php require_once "../resources/views/includes/Admin_header.php";?>    
-    <main class="d-flex flex-column">
-      <div class="p-4 p-lg-5 container-fluid" style="max-width:1180px;">
+    <main class="d-flex flex-column w-100">
+      <div class="p-4 p-lg-5 pb-2">
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+          <div>
+            <h2 class="display-6 fw-black mb-1">Gestion des Roles</h2>
+            <p class="mb-0 text-white-50">Administrez les accès et les rôles de votre boutique de bijoux berbères.</p>
+          </div>
+            <a href="/Admin/Roles/Create" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
+              <span class="material-symbols-outlined">add</span> Ajouter un role
+            </a>
+        </div>
+      </div>
+      <div class="p-4 p-lg-5 container-fluid">
         <div class="row g-4">
           <div class="col-12 col-md-4">
             <div class="card-dark rounded-xl p-4">
@@ -156,4 +167,3 @@
           </div>
         </div>
     </main>
-<?php require_once "../resources/views/includes/footer.php";?>

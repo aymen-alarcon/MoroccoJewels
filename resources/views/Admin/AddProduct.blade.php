@@ -1,14 +1,6 @@
 <?php require_once "../resources/views/includes/Admin_header.php";?>
     <main class="container-fluid w-100" style="max-width:1200px;">
-      <div class="d-flex flex-wrap gap-2 py-3 small">
-        #Tableau de bord</a>
-        <span class="text-white-50">/</span>
-        #Produits</a>
-        <span class="text-white-50">/</span>
-        <span class="text-warning" style="color:var(--bb-primary)!important;">Ajouter un produit</span>
-      </div>
-
-      <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 pb-3">
+      <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 py-3">
         <div>
           <h1 class="display-6 fw-black mb-1">Ajouter un Produit</h1>
           <p class="mb-0 text-white-50">Créez une nouvelle fiche pour vos bijoux artisanaux d'exception.</p>
@@ -145,4 +137,3 @@
         </div>
       </div>
     </main>
-<?php require_once "../resources/views/includes/footer.php";?>

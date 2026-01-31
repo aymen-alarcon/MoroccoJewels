@@ -59,15 +59,19 @@ Route::get("/Admin/Logs", function(){
     return view("Admin.AdminLogs");
 });
 
-Route::get("/Admin/Categories/AddCategory", function(){
+Route::get("/Admin/Categories/Create", function(){
     return view("Admin.AddCategory");
 });
 
-Route::get("/Admin/Products/AddProduct", function(){
+Route::get("/Admin/Products/Create", function(){
     return view("Admin.AddProduct");
 });
 
-Route::get("/Admin/Role/AddRole", function(){
+Route::get("/Admin/Users/Create", function(){
+    return view("Admin.AddUser");
+});
+
+Route::get("/Admin/Roles/Create", function(){
     return view("Admin.AddRole");
 });
 

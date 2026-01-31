@@ -93,7 +93,7 @@
     </div>
   </header>
 
-  <main class="flex-grow-1 position-relative">
+  <main class="position-relative">
     <div class="moroccan-pattern"></div>
 
     <div class="container-xxl px-3 px-lg-5 py-5" style="max-width:1200px; position:relative; z-index:1;">
@@ -103,7 +103,7 @@
             <div class="position-relative">
               <div class="avatar-96"
                    style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGzy1EiC6j0Wu3hcjrCC2MHMHbFgETsiW-oKeQKD0zAXxrBAuPoGqcc4Usf2cZHnyIdyD9sn_CXsTAoLd96CcoyowfCYHQE7mYF9-QshTWY9SxEWW0zwe4ty_4jIFL14M_2WhNtRMiq_OYZEqKcN7pN2FIpi_SPD2LwvTI7yIVmKIiKci-7U5domyK4I5Fc5_RCNt_c7L1lAIVOvTR0sUd5skkwJRhiE3zYcxWHYQ7xIlwKx301-zjYQQFqBEyA2UZA026YXNiKNs');"></div>
-              <div class="position-absolute bottom-0 end-0 translate-middle-y rounded-circle border border-2"
+              <div class="position-absolute bottom-0 end-0 translate-middle-y rounded-circle border"
                    style="background:var(--bb-primary); color:#2b1600; width:22px; height:22px; display:grid; place-items:center; border-color:var(--bb-bg-dark);">
                 <span class="material-symbols-outlined" style="font-size:12px;">verified</span>
               </div>
@@ -191,7 +191,7 @@
               <div class="col-12 col-sm-6">
                 <div class="favorite-card surface rounded-3 d-flex overflow-hidden">
                   <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjpGT-AidvowMnbF4UJdAXjxBKQPpSTXzLpO6ae3pk5PQA91B3grUaHPMtKr96jw9govAK9OT4xKYC9xm1ApNDLwv80d1Z7YBTcEM5jPSZhExK9r5I91OUTLI1K5R2t3dlFMQKNg1Qn6fvD4BNNuDNSKZZ16iPCWGN8KopHWSURlnouusPYs2HrNSIm04GFoKf8OaVXddIYEFzZJHgYgVCyBKxy3M0dH5gmg-X68BBKYsA_OHc1qe3nA6rc44-JzqjS4xkqSZsZV0');"></div>
-                  <div class="p-3 d-flex flex-column justify-content-between flex-grow-1">
+                  <div class="p-3 d-flex flex-column justify-content-between">
                     <div>
                       <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">Argent & Émail</p>
                       <h4 class="small fw-bold mb-0">Collier Fibule Tiznit Classique</h4>
@@ -206,7 +206,7 @@
               <div class="col-12 col-sm-6">
                 <div class="favorite-card surface rounded-3 d-flex overflow-hidden">
                   <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMFXISyBn3JP6CY3833sW-KWhVSNp2NsOBClTRNrbSGBFdzSQDo3f6-OPIpE6Ue5SycdVN8VFFzX5RI76wlYNYHYVdgtX-T9wpJNWXOOjDhtAQiY_6_Y-NrnlNMyI9WaqRnGl7GyoofoheWxHs9OCmzDMtwxhO0yC48_TKwSdjIb-mahwCOb9K7CKCTMpO5Rl3w1CjsCgMKfgAJ7SoQNQnyxyOJj3ZWnIRd-iCFFnUOs-0-u9iN4zngyvBITiaLpqO3Hpi1K3yJUY');"></div>
-                  <div class="p-3 d-flex flex-column justify-content-between flex-grow-1">
+                  <div class="p-3 d-flex flex-column justify-content-between">
                     <div>
                       <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">Ambre Naturelle</p>
                       <h4 class="small fw-bold mb-0">Bracelet ‘Ziri’ en Argent Ciselé</h4>

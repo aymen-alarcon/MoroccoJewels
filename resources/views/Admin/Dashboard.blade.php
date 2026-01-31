@@ -149,7 +149,7 @@
               </div>
             </div>
 
-            <button class="w-100 py-2 rounded-xl border text-primary fw-bold border-1" style="border-color: color-mix(in srgb, var(--bb-primary) 30%, transparent);" type="button">
+            <button class="w-100 py-2 rounded-xl border text-primary fw-bold" style="border-color: color-mix(in srgb, var(--bb-primary) 30%, transparent);" type="button">
               Voir le détail du stock
             </button>
           </div>
@@ -265,4 +265,3 @@
         </div>
       </div>
     </div>
-<?php require_once "../resources/views/includes/footer.php";?>
