@@ -52,8 +52,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        $categories = Category::all();
-        return view("Admin.dashboard");
+        return view("Admin.EditCategory", compact("category"));
     }
 
     /**
@@ -68,7 +67,7 @@ class CategoryController extends Controller
 
         $category->update($validate);
 
-        return redirect()->route("Admin.dashboard");
+        return redirect()->route("Admin.Categories.Index");
     }
 
     /**

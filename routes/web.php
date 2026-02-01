@@ -104,5 +104,6 @@ Route::delete("/Admin/Roles/destroy/{role}", [RoleController::class, "destroy"])
 Route::get("/Admin/Categories", [CategoryController::class, "index"])->name("Admin.Categories.Index");
 Route::get("/Admin/Categories/AddCategory", [CategoryController::class, "create"]);
 Route::post("/Admin/Categories/AddCategory/store", [CategoryController::class, "store"]);
-Route::put("/Admin/Categories/AddCategory/update", [CategoryController::class, "update"]);
+Route::get("/Admin/Categories/EditCategory/{category}", [CategoryController::class, "edit"]);
+Route::put("/Admin/Categories/EditCategory/update/{category}", [CategoryController::class, "update"]);
 Route::delete("/Admin/Categories/destroy/{category}", [CategoryController::class, "destroy"]);

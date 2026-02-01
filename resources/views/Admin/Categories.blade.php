@@ -10,7 +10,6 @@
               </a>
             </div>
           </div>
-
           <div class="table-responsive">
             <table class="table table-cats align-middle mb-0" style="background-color: #5A1A19">
               <thead>
@@ -33,7 +32,7 @@
                   <td class="px-4 py-3 ">{{ $category->description }}</td>
                   <td class="px-4 py-3 text-end">
                     <div class="d-inline-flex align-items-center gap-1">
-                      <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
+                      <a href="/Admin/Categories/EditCategory/{{ $category->id }}" class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></a>
                       <form action="/Admin/Categories/destroy/{{ $category->id }}" method="post">
                         @csrf
                         @method("DELETE")
