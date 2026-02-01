@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view("Admin.Users", compact("users"));
+        return view("Admin.Users.Index", compact("users"));
     }
 
     /**
@@ -23,7 +23,7 @@ class UserController extends Controller
     public function create(Role $role)
     {
         $roles = Role::all();
-        return view("Admin.AddUser", compact("roles"));
+        return view("Admin.Users.Add", compact("roles"));
     }
 
     /**
@@ -57,7 +57,7 @@ class UserController extends Controller
     public function edit(User $user, Role $role)
     {
         $roles = Role::all();
-        return view("Admin.EditUser", compact("user", "roles"));
+        return view("Admin.Users.Edit", compact("user", "roles"));
     }
 
     /**

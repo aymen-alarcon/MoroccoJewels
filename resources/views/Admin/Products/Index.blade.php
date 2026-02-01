@@ -74,7 +74,7 @@
                     </td>
                     <td class="px-4 py-3">
                       <div class="d-inline-flex align-items-center gap-1">
-                        <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
+                        <a href="/Admin/Products/EditProduct/{{ $product->id }}" class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></a>
                         <form action="/Admin/Products/destroy/{{ $product->id }}" method="post">
                           @csrf
                           @method("DELETE")

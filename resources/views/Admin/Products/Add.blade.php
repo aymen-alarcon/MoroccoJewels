@@ -1,5 +1,5 @@
 @include('includes.Admin_header')
-<main class="container-fluid w-100" style="max-width:1200px;">
+<main class="container-fluid w-100 p-5" style="margin-left: 15em;">
   <form method="POST" action="/Admin/Products/AddProduct/store" enctype="multipart/form-data">
     @csrf
     @method("POST")

@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view("Admin.Categories", compact("categories"));
+        return view("Admin.Categories.Index", compact("categories"));
     }
 
     /**
@@ -22,7 +22,7 @@ class CategoryController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view("Admin.AddCategory", compact("categories"));
+        return view("Admin.Categories.Add", compact("categories"));
     }
 
     /**
@@ -52,7 +52,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        return view("Admin.EditCategory", compact("category"));
+        return view("Admin.Categories.Edit", compact("category"));
     }
 
     /**

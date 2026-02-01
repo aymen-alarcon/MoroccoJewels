@@ -13,7 +13,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::all();
-        return view("Admin.Roles", compact("roles"));
+        return view("Admin.Roles.Index", compact("roles"));
     }
 
     /**
@@ -21,7 +21,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view("Admin.AddRole");
+        return view("Admin.Roles.Add");
     }
 
     /**
@@ -53,7 +53,7 @@ class RoleController extends Controller
     public function edit(Role $Role)
     {
         $Role = Role::all();
-        return view("Admin.edit", compact("Role"));
+        return view("Admin.Roles.Edit", compact("Role"));
     }
 
     /**
@@ -68,7 +68,7 @@ class RoleController extends Controller
 
         $Role->update($validate);
 
-        return redirect()->route("Admin.Role");
+        return redirect()->route("Admin.Roles.Index");
     }
 
     /**
