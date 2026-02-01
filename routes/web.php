@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,32 +31,8 @@ Route::get("/Admin/Dashboard", function(){
     return view("Admin.Dashboard");
 });
 
-Route::get("/Admin/Categories", function(){
-    return view("Admin.Categories");
-});
-
-Route::get("/Admin/Orders", function(){
-    return view("Admin.Orders");
-});
-
-Route::get("/Admin/OrderItems", function(){
-    return view("Admin.OrderItems");
-});
-
-Route::get("/Admin/Products", function(){
-    return view("Admin.Products");
-});
-
 Route::get("/Admin/Profile", function(){
     return view("Admin.Profile");
-});
-
-Route::get("/Admin/Roles", function(){
-    return view("Admin.Roles");
-});
-
-Route::get("/Admin/Users", function(){
-    return view("Admin.Users");
 });
 
 Route::get("/Admin/Logs", function(){
@@ -95,6 +75,14 @@ Route::get("/Client/Profile", function(){
     return view("Client.Profile");
 });
 
+Route::get("/Admin/Dashboard", function(){
+    return view("Admin.Dashboard");
+});
+
+Route::get("/Admin/Orders", [OrderController::class, "index"]);
+Route::get("/Admin/Products", [ProductController::class, "index"]);
+Route::get("/Admin/Users", [UserController::class, "index"]);
+Route::get("/Admin/Roles", [RoleController::class, "index"]);
 Route::post("/Admin/Categories/AddCategory/store", [CategoryController::class, "store"]);
 Route::put("/Admin/Categories/AddCategory/update", [CategoryController::class, "update"]);
 Route::delete("/Admin/Categories/AddCategory/destroy", [CategoryController::class, "destroy"]);

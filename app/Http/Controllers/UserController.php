@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class RoleController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $roles = Role::all();
-        return view("Admin.Roles", compact("roles"));
+        $users = User::all();
+        return view("Admin.Users", compact("users"));
     }
 
     /**
@@ -27,22 +27,22 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, Role $Role)
+    public function store(Request $request, User $User)
     {
         $validate = $request->validate([
-            "role_name" => "required",
+            "User_name" => "required",
             "permission" => "required",
         ]);
 
-        $Role->create($validate);
+        $User->create($validate);
 
-        return redirect()->route("Admin.Role");
+        return redirect()->route("Admin.User");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Role $Role)
+    public function show(User $User)
     {
         //
     }
@@ -50,34 +50,34 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Role $Role)
+    public function edit(User $User)
     {
-        $Role = Role::all();
-        return view("Admin.edit", compact("Role"));
+        $User = User::all();
+        return view("Admin.edit", compact("User"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Role $Role)
+    public function update(Request $request, User $User)
     {
         $validate = $request->validate([
-            "role_name" => "required",
+            "User_name" => "required",
             "permission" => "required",
         ]);
 
-        $Role->update($validate);
+        $User->update($validate);
 
-        return redirect()->route("Admin.Role");
+        return redirect()->route("Admin.User");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Role $Role)
+    public function destroy(User $User)
     {
-        $Role->delete();
+        $User->delete();
 
-        return view("Admin.Role");
+        return view("Admin.User");
     }
 }

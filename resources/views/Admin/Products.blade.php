@@ -1,5 +1,5 @@
 @include("includes.Admin_header")
-    <main class="d-flex flex-column overflow-hidden position-relative w-100">
+    <main class="d-flex flex-column position-relative w-100">
       <div class="position-absolute top-0 start-0 end-0 bottom-0"></div>
       <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative">
         <div>
@@ -21,7 +21,7 @@
             </div>
           </div>
 
-          <div class="d-flex align-items-center gap-2 overflow-auto custom-scrollbar pb-1">
+          <div class="d-flex align-items-center gap-2 custom-scrollbar pb-1">
             <button class="chip active">Tous</button>
             <button class="chip">Colliers</button>
             <button class="chip">Bracelets</button>
@@ -35,10 +35,13 @@
         </div>
       </section>
 
-      <section class="overflow-auto px-4 px-lg-5 pb-4 position-relative">
-        <div class="rounded-xl border overflow-hidden">
+      <section class="px-4 px-lg-5 pb-4 position-relative">
+        <div class="card-dark rounded-xl mt-4">
+          <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">
+            <h4 class="fw-bold mb-0">Liste des Produits</h4>
+          </div>
           <div class="table-responsive">
-            <table class="table table-products align-middle mb-0" style="background-color: #5A1A19">
+            <table class="table table-roles align-middle mb-0" style="background-color: #5A1A19">
               <thead>
                 <tr>
                   <th class="px-4 py-3">Produit</th>
@@ -56,7 +59,6 @@
                         <div class="rounded shadow-soft border"></div>
                         <div>
                           <p class="fw-bold mb-0">{{ $product->name }}</p>
-                          <p class="mb-0 text-white-50">SKU: BRB-2024-001</p>
                         </div>
                       </div>
                     </td>

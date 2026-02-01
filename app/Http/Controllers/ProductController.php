@@ -12,8 +12,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $Product = Product::all();
-        return view("Admin.Product", compact("Product"));
+        $products = Product::all();
+        return view("Admin.Products", compact("products"));
     }
 
     /**
@@ -39,7 +39,7 @@ class ProductController extends Controller
 
         $Product->create($validate);
 
-        return redirect()->route("Admin.Product");
+        return redirect()->route("Admin.Products");
     }
 
     /**
@@ -74,7 +74,7 @@ class ProductController extends Controller
 
         $Product->update($validate);
 
-        return redirect()->route("Admin.Product");
+        return redirect()->route("Admin.Products");
     }
 
     /**
@@ -84,6 +84,6 @@ class ProductController extends Controller
     {
         $Product->delete();
 
-        return view("Admin.Product");
+        return view("Admin.Products");
     }
 }

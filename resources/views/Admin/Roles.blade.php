@@ -62,12 +62,7 @@
         <div class="card-dark rounded-xl mt-4 overflow-hidden">
           <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">
             <h4 class="fw-bold mb-0">Liste des Rôles Système</h4>
-            <div class="d-flex align-items-center gap-2">
-              <button class="btn btn-sm rounded-lg text-white-50" style="background:transparent;"><span class="material-symbols-outlined fs-5">filter_list</span></button>
-              <button class="btn btn-sm rounded-lg text-white-50" style="background:transparent;"><span class="material-symbols-outlined fs-5">download</span></button>
-            </div>
           </div>
-
           <div class="table-responsive">
             <table class="table table-roles align-middle mb-0" style="background-color: #5A1A19">
               <thead>

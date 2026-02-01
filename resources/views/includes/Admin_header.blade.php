@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gestion des Rôles - Bijoux Berbères</title>
+  <link rel="stylesheet" href="{{ asset("css/app.css") }}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -77,9 +78,8 @@
 </head>
 <body>
   <div class="position-absolute top-0 start-0 end-0 bottom-0 zellij-pattern"></div>
-
   <div class="d-flex position-relative" style="z-index:1;">
-    <aside class="sidebar d-flex flex-column">
+    <aside class="sidebar d-flex flex-column vh-100">
       <div class="p-4 d-flex align-items-center gap-2">
         <div class="bg-warning d-inline-flex align-items-center justify-content-center rounded p-2" style="--bs-warning:var(--bb-primary); background:var(--bb-primary)!important;">
           <span class="material-symbols-outlined" style="color:var(--bb-bg-dark);">diamond</span>
