@@ -86,7 +86,7 @@
                     <td class="px-4 py-3 text-end">
                       <div class="d-inline-flex align-items-center gap-1">
                         <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
-                        <form action="/Admin/Roles/AddRole/destroy/{{ $role->id }}" method="post">
+                        <form action="/Admin/Roles/destroy/{{ $role->id }}" method="post">
                           @csrf
                           @method("DELETE")
                           <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>

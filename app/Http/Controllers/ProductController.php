@@ -34,16 +34,20 @@ class ProductController extends Controller
         $validate = $request->validate([
             'name'        => 'required|string|max:255',
             'category_id' => 'required',
-            'price'       => 'required|numeric|min:0',
+            'price'       => 'required|integer|min:0',
             'description' => 'required|string',
             'stock'       => 'required|integer|min:0',
             'main_image'  => 'required|image|max:2048',
-            'gallery.*'   => 'image|max:2048',
         ]);
+
+        if ($request->hasFile('main_image')) {
+            $path = $request->file('main_image')->store('products', 'public');
+            $validate['main_image'] = $path;
+        }
 
         $Product->create($validate);
 
-        return $this->index();
+        return redirect()->route("Admin.Products.Index");
     }
 
     /**
@@ -88,6 +92,6 @@ class ProductController extends Controller
     {
         $Product->delete();
 
-        return view("Admin.Products");
+        return redirect()->route("Admin.Products.Index");
     }
 }

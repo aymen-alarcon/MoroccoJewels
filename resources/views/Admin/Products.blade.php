@@ -44,6 +44,7 @@
             <table class="table table-roles align-middle mb-0" style="background-color: #5A1A19">
               <thead>
                 <tr>
+                  <th class="px-4 py-3">Picture</th>
                   <th class="px-4 py-3">Produit</th>
                   <th class="px-4 py-3">Catégorie</th>
                   <th class="px-4 py-3 text-end">Prix</th>
@@ -54,6 +55,7 @@
               <tbody class="table-group-divider">
                 @foreach ($products as $product)
                   <tr>
+                    <td class="px-4 py-3"><img src="{{ $product->main_image }}" alt=""></td>
                     <td class="px-4 py-3">
                       <div class="d-flex align-items-center gap-3">
                         <div class="rounded shadow-soft border"></div>
@@ -73,7 +75,7 @@
                     <td class="px-4 py-3">
                       <div class="d-inline-flex align-items-center gap-1">
                         <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
-                        <form action="/Admin/Roles/AddRole/destroy/{{ $role->id }}" method="post">
+                        <form action="/Admin/Products/destroy/{{ $product->id }}" method="post">
                           @csrf
                           @method("DELETE")
                           <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>

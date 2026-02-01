@@ -78,6 +78,6 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route("Admin.dashboard");
+        return redirect()->route("Admin.Categories.Index");
     }
 }

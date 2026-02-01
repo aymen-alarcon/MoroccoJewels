@@ -53,30 +53,34 @@
             <table class="table table-cats align-middle mb-0" style="background-color: #5A1A19">
               <thead>
                 <tr>
-                  <th class="px-4 py-3">Aperçu</th>
+                  <th class="px-4 py-3">Id</th>
                   <th class="px-4 py-3">Nom</th>
                   <th class="px-4 py-3">Description</th>
-                  <th class="px-4 py-3">Produits</th>
                   <th class="px-4 py-3 text-end">Actions</th>
                 </tr>
               </thead>
               <tbody>
+                @foreach ($categories as $category)                  
                 <tr>
                   <td class="px-4 py-3">
-                    <div class="rounded" style="width:48px;height:48px;background:#5a1a19;overflow:hidden;">
-                    </div>
+                    <div class="fw-bold">ID: CAT-{{ $category->id }}</div>
                   </td>
                   <td class="px-4 py-3">
-                    <div class="fw-bold">Colliers en Argent</div>
-                    <div class="small" style="color:color-mix(in srgb, var(--bb-primary) 60%, white);">ID: CAT-001</div>
+                    <div class="fw-bold">{{ $category->name }}</div>
                   </td>
-                  <td class="px-4 py-3 small text-white-50" style="max-width:280px;">Bijoux traditionnels du Sud du Maroc, artisanat de Tiznit.</td>
-                  <td class="px-4 py-3"><span class="count-pill">156 produits</span></td>
+                  <td class="px-4 py-3 ">{{ $category->description }}</td>
                   <td class="px-4 py-3 text-end">
-                    <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">edit</span></button>
-                    <button class="btn btn-sm text-danger"><span class="material-symbols-outlined">delete</span></button>
+                    <div class="d-inline-flex align-items-center gap-1">
+                      <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
+                      <form action="/Admin/Categories/destroy/{{ $category->id }}" method="post">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
+                      </form>
+                    </div>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
           </div>

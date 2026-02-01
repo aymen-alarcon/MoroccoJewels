@@ -69,10 +69,6 @@
               <label class="form-label small fw-bold">Image principale</label>
               <input type="file" name="main_image" class="form-control" accept="image/*" required />
             </div>
-            <div>
-              <label class="form-label small fw-bold">Images secondaires</label>
-              <input type="file" name="gallery[]" class="form-control" accept="image/*" multiple />
-            </div>
           </section>
         </div>
       </div>
