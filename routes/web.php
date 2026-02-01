@@ -6,6 +6,11 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Models\Category;
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\Role;
+use App\Models\User;
 
 Route::get('/', function () {
     return view('welcome');
@@ -76,7 +81,13 @@ Route::get("/Client/Profile", function(){
 });
 
 Route::get("/Admin/Dashboard", function(){
-    return view("Admin.Dashboard");
+    $categoriesCount = count(Category::all());
+    $productsCount = count(Product::all());
+    $rolesCount = count(Role::all());
+    $usersCount = count(User::all());
+    $orders = Order::all();
+    $ordersCount = count(Order::all());
+    return view("Admin.Dashboard", compact("categoriesCount", "productsCount", "rolesCount", "usersCount", "orders", "ordersCount"));
 });
 
 

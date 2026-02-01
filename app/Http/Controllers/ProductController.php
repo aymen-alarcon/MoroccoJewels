@@ -82,7 +82,7 @@ class ProductController extends Controller
 
         $Product->update($validate);
 
-        return redirect()->route("Admin.Products");
+        return redirect()->route("Admin.Products.Index");
     }
 
     /**

@@ -92,12 +92,12 @@
       </div>
 
       <nav class="px-3 mt-2 d-flex flex-column gap-2">
-        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Dashboard"){ echo "nav-link-active";} ?>" href="/Admin/Dashboard"><span class="material-symbols-outlined">dashboard</span><span class="small fw-semibold">Tableau de bord</span></a>
-        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Orders"){ echo "nav-link-active";} ?>" href="/Admin/Orders"><span class="material-symbols-outlined">shopping_bag</span><span class="small fw-semibold">Orders</span></a>
-        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Products"){ echo "nav-link-active";} ?>" href="/Admin/Products"><span class="material-symbols-outlined">inventory_2</span><span class="small fw-semibold">Products</span></a>
-        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Categories"){ echo "nav-link-active";} ?>" href="/Admin/Categories"><span class="material-symbols-outlined">inventory_2</span><span class="small fw-semibold">Categories</span></a>
-        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Users"){ echo "nav-link-active";} ?>" href="/Admin/Users"><span class="material-symbols-outlined">group</span><span class="small fw-semibold">Clients</span></a>
-        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Roles"){ echo "nav-link-active";} ?>" href="/Admin/Roles"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">admin_panel_settings</span><span class="small fw-semibold">Roles</span></a>
+        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Dashboard"){ echo "nav-link-active";} ?>" href="/Admin/Dashboard"><i class="bi bi-clipboard-data"></i><span class="small fw-semibold">Tableau de bord</span></a>
+        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Orders"){ echo "nav-link-active";} ?>" href="/Admin/Orders"><i class="bi bi-bag-check"></i><span class="small fw-semibold">Orders</span></a>
+        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Products"){ echo "nav-link-active";} ?>" href="/Admin/Products"><i class="bi bi-box2"></i><span class="small fw-semibold">Products</span></a>
+        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Categories"){ echo "nav-link-active";} ?>" href="/Admin/Categories"><i class="bi bi-tag"></i><span class="small fw-semibold">Categories</span></a>
+        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Users"){ echo "nav-link-active";} ?>" href="/Admin/Users"><i class="bi bi-people"></i><span class="small fw-semibold">Clients</span></a>
+        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Roles"){ echo "nav-link-active";} ?>" href="/Admin/Roles"><i class="bi bi-shield-lock"></i><span class="small fw-semibold">Roles</span></a>
       </nav>
 
       <div class="mt-auto p-3 border-top" style="border-color:var(--bb-border-dark)!important;">

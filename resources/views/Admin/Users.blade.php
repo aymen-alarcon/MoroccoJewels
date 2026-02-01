@@ -11,38 +11,6 @@
             </a>
         </div>
       </div>
-      <div class="px-4 px-lg-5 py-3 d-flex flex-wrap gap-3">
-        <div class="card-surface rounded-xl p-4 " style="min-width:240px;">
-          <div class="d-flex align-items-start justify-content-between">
-            <p class="mb-2 small text-uppercase fw-semibold text-white-50">Total Utilisateurs</p>
-            <span class="material-symbols-outlined text-primary">groups</span>
-          </div>
-          <p class="fs-2 fw-bold mb-1">124</p>
-          <p class="small fw-bold text-success d-inline-flex align-items-center gap-1 mb-0">
-            <span class="material-symbols-outlined" style="font-size:16px;">trending_up</span> +2% ce mois
-          </p>
-        </div>
-
-        <div class="card-surface rounded-xl p-4 " style="min-width:240px;">
-          <div class="d-flex align-items-start justify-content-between">
-            <p class="mb-2 small text-uppercase fw-semibold text-white-50">Administrateurs</p>
-            <span class="material-symbols-outlined text-primary">admin_panel_settings</span>
-          </div>
-          <p class="fs-2 fw-bold mb-1">5</p>
-          <p class="small text-white-50 mb-0">Stable</p>
-        </div>
-
-        <div class="card-surface rounded-xl p-4 " style="min-width:240px;">
-          <div class="d-flex align-items-start justify-content-between">
-            <p class="mb-2 small text-uppercase fw-semibold text-white-50">Nouveaux ce mois</p>
-            <span class="material-symbols-outlined text-primary">person_add</span>
-          </div>
-          <p class="fs-2 fw-bold mb-1">12</p>
-          <p class="small fw-bold text-success d-inline-flex align-items-center gap-1 mb-0">
-            <span class="material-symbols-outlined" style="font-size:16px;">trending_up</span> +5% vs mois dernier
-          </p>
-        </div>
-      </div>
       <div class="px-4 px-lg-5">
         <div class="card-surface rounded-xl overflow-hidden">
             <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">

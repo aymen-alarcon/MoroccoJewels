@@ -12,50 +12,6 @@
         </div>
       </div>
       <div class="p-4 p-lg-5 container-fluid">
-        <div class="row g-4">
-          <div class="col-12 col-md-4">
-            <div class="card-dark rounded-xl p-4">
-              <div class="d-flex align-items-center justify-content-between">
-                <div>
-                  <p class="small text-white-50 fw-semibold mb-1">Total Rôles</p>
-                  <h3 class="display-6 fs-2 fw-bold mb-0">8</h3>
-                </div>
-                <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:48px;height:48px;background:color-mix(in srgb, var(--bb-primary) 20%, transparent);color:var(--bb-primary);">
-                  <span class="material-symbols-outlined fs-3">shield_person</span>
-                </div>
-              </div>
-              <div class="mt-3 d-flex align-items-center gap-1 text-success small"><span class="material-symbols-outlined" style="font-size:18px;">trending_up</span> +1 ce mois-ci</div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="card-dark rounded-xl p-4">
-              <div class="d-flex align-items-center justify-content-between">
-                <div>
-                  <p class="small text-white-50 fw-semibold mb-1">Utilisateurs Actifs</p>
-                  <h3 class="display-6 fs-2 fw-bold mb-0">24</h3>
-                </div>
-                <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:48px;height:48px;background:color-mix(in srgb, var(--bb-primary) 20%, transparent);color:var(--bb-primary);">
-                  <span class="material-symbols-outlined fs-3">person_check</span>
-                </div>
-              </div>
-              <div class="mt-3 d-flex align-items-center gap-1 text-success small"><span class="material-symbols-outlined" style="font-size:18px;">trending_up</span> 92% du personnel</div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4">
-            <div class="card-dark rounded-xl p-4">
-              <div class="d-flex align-items-center justify-content-between">
-                <div>
-                  <p class="small text-white-50 fw-semibold mb-1">Permissions Globales</p>
-                  <h3 class="display-6 fs-2 fw-bold mb-0">156</h3>
-                </div>
-                <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:48px;height:48px;background:color-mix(in srgb, var(--bb-primary) 20%, transparent);color:var(--bb-primary);">
-                  <span class="material-symbols-outlined fs-3">key</span>
-                </div>
-              </div>
-              <div class="mt-3 d-flex align-items-center gap-1 text-white-50 small"><span class="material-symbols-outlined" style="font-size:18px;">info</span> Réparties sur 12 modules</div>
-            </div>
-          </div>
-        </div>
         <div class="card-dark rounded-xl mt-4 overflow-hidden">
           <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">
             <h4 class="fw-bold mb-0">Liste des Rôles Système</h4>
