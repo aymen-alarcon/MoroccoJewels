@@ -32,32 +32,12 @@ Route::get('/Home/Contact', function () {
     return view('Home.Contact');
 });
 
-Route::get("/Admin/Dashboard", function(){
-    return view("Admin.Dashboard");
-});
-
 Route::get("/Admin/Profile", function(){
     return view("Admin.Profile");
 });
 
 Route::get("/Admin/Logs", function(){
     return view("Admin.AdminLogs");
-});
-
-Route::get("/Admin/Categories/Create", function(){
-    return view("Admin.AddCategory");
-});
-
-Route::get("/Admin/Products/Create", function(){
-    return view("Admin.AddProduct");
-});
-
-Route::get("/Admin/Users/Create", function(){
-    return view("Admin.AddUser");
-});
-
-Route::get("/Admin/Roles/Create", function(){
-    return view("Admin.AddRole");
 });
 
 Route::get("/Auth/Login", function(){
@@ -96,7 +76,12 @@ Route::get("/Admin/Products", [ProductController::class, "index"])->name("Admin.
 Route::get("/Admin/Products/AddProduct", [ProductController::class, "create"]);
 Route::post("/Admin/Products/AddProduct/store", [ProductController::class, "store"]);
 Route::delete("/Admin/Products/destroy/{product}", [ProductController::class, "destroy"]);
-Route::get("/Admin/Users", [UserController::class, "index"]);
+Route::get("/Admin/Users", [UserController::class, "index"])->name("Admin.Users.Index");
+Route::get("/Admin/Users/AddUser", [UserController::class, "create"]);
+Route::post("Admin/Users/AddUser/store", [UserController::class, "store"]);
+Route::get("/Admin/Users/EditUser/{user}", [UserController::class, "edit"]);
+Route::put("/Admin/Users/EditUser/update/{user}", [UserController::class, "update"]);
+Route::delete("/Admin/Users/destroy/{user}", [UserController::class, "destroy"]);
 Route::get("/Admin/Roles", [RoleController::class, "index"])->name("Admin.Roles.Index");
 Route::get("/Admin/Roles/AddRole", [RoleController::class, "create"]);
 Route::post("/Admin/Roles/AddRole/store", [RoleController::class, "store"]);

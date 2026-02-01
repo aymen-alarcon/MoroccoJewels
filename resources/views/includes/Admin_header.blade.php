@@ -82,9 +82,6 @@
   <div class="d-flex position-relative" style="z-index:1;">
     <aside class="sidebar d-flex flex-column vh-100 position-fixed">
       <div class="p-4 d-flex align-items-center gap-2">
-        <div class="bg-warning d-inline-flex align-items-center justify-content-center rounded p-2" style="--bs-warning:var(--bb-primary); background:var(--bb-primary)!important;">
-          <span class="material-symbols-outlined" style="color:var(--bb-bg-dark);">diamond</span>
-        </div>
         <div>
           <h1 class="fs-6 fw-bold mb-0">Bijoux Berbères</h1>
           <p class="mb-0" style="font-size:12px;color:color-mix(in srgb, var(--bb-primary) 70%, white);">Administration</p>

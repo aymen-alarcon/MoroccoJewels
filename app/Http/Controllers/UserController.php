@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -19,9 +20,10 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Role $role)
     {
-        return view("Admin.create");
+        $roles = Role::all();
+        return view("Admin.AddUser", compact("roles"));
     }
 
     /**
@@ -30,13 +32,15 @@ class UserController extends Controller
     public function store(Request $request, User $User)
     {
         $validate = $request->validate([
-            "User_name" => "required",
-            "permission" => "required",
+            "name" => "required",
+            "email" => "required",
+            "password" => "required",
+            "role_id" => "required",
         ]);
 
         $User->create($validate);
 
-        return redirect()->route("Admin.User");
+        return redirect()->route("Admin.Users.Index");
     }
 
     /**
@@ -50,10 +54,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $User)
+    public function edit(User $user, Role $role)
     {
-        $User = User::all();
-        return view("Admin.edit", compact("User"));
+        $roles = Role::all();
+        return view("Admin.EditUser", compact("user", "roles"));
     }
 
     /**
@@ -62,13 +66,14 @@ class UserController extends Controller
     public function update(Request $request, User $User)
     {
         $validate = $request->validate([
-            "User_name" => "required",
-            "permission" => "required",
+            "name" => "required",
+            "email" => "required",
+            "role_id" => "required",
         ]);
 
         $User->update($validate);
 
-        return redirect()->route("Admin.User");
+        return redirect()->route("Admin.Users.Index");
     }
 
     /**
@@ -78,6 +83,6 @@ class UserController extends Controller
     {
         $User->delete();
 
-        return view("Admin.User");
+        return redirect()->route("Admin.Users.Index");
     }
 }

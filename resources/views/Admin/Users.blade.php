@@ -6,7 +6,7 @@
             <h2 class="display-6 fw-black mb-1">Gestion des Utilisateurs</h2>
             <p class="mb-0 text-white-50">Administrez les accès et les rôles de votre boutique de bijoux berbères.</p>
           </div>
-            <a href="/Admin/Users/Create" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
+            <a href="/Admin/Users/AddUser" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
               <span class="material-symbols-outlined">add</span> Ajouter un utilisateur
             </a>
         </div>
@@ -42,8 +42,8 @@
                     <td class="px-4 py-3"><span class="small text-white-75">{{ $user->created_at }}</span></td>
                     <td class="px-4 py-3 text-end">
                       <div class="d-inline-flex align-items-center gap-1">
-                        <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
-                        <form action="/Admin/Roles/AddUser/destroy/{{ $user->id }}" method="post">
+                        <a href="/Admin/Users/EditUser/{{ $user->id }}" class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></a>
+                        <form action="/Admin/Users/destroy/{{ $user->id }}" method="post">
                           @csrf
                           @method("DELETE")
                           <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
