@@ -1,5 +1,5 @@
 @include("includes.Admin_header")
-    <main class="d-flex flex-column overflow-hidden w-100">
+    <main class="d-flex flex-column overflow-hidden w-100" style="margin-left: 15em;">
       <div class="overflow-auto p-4 p-lg-5">
         <div class="container-fluid" style="max-width:1080px;">
           <div class="d-flex align-items-end justify-content-between mb-3">
@@ -54,8 +54,14 @@
                       <td class="px-4 py-3"><span class="pill pill-wait">{{ $order->status }}</span></td>
                       <td class="px-4 py-3 text-end">
                         <a href="/Admin/OrderItems" class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">visibility</span></a>
-                        <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">edit</span></button>
-                        <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">delete</span></button>
+                        <div class="d-inline-flex align-items-center gap-1">
+                          <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
+                          <form action="/Admin/Roles/AddRole/destroy/{{ $role->id }}" method="post">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
+                          </form>
+                        </div>
                       </td>
                     </tr>
                   @endforeach

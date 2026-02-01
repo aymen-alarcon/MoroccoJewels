@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gestion des Rôles - Bijoux Berbères</title>
   <link rel="stylesheet" href="{{ asset("css/app.css") }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -79,7 +80,7 @@
 <body>
   <div class="position-absolute top-0 start-0 end-0 bottom-0 zellij-pattern"></div>
   <div class="d-flex position-relative" style="z-index:1;">
-    <aside class="sidebar d-flex flex-column vh-100">
+    <aside class="sidebar d-flex flex-column vh-100 position-fixed">
       <div class="p-4 d-flex align-items-center gap-2">
         <div class="bg-warning d-inline-flex align-items-center justify-content-center rounded p-2" style="--bs-warning:var(--bb-primary); background:var(--bb-primary)!important;">
           <span class="material-symbols-outlined" style="color:var(--bb-bg-dark);">diamond</span>
@@ -94,6 +95,7 @@
         <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Dashboard"){ echo "nav-link-active";} ?>" href="/Admin/Dashboard"><span class="material-symbols-outlined">dashboard</span><span class="small fw-semibold">Tableau de bord</span></a>
         <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Orders"){ echo "nav-link-active";} ?>" href="/Admin/Orders"><span class="material-symbols-outlined">shopping_bag</span><span class="small fw-semibold">Orders</span></a>
         <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Products"){ echo "nav-link-active";} ?>" href="/Admin/Products"><span class="material-symbols-outlined">inventory_2</span><span class="small fw-semibold">Products</span></a>
+        <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Categories"){ echo "nav-link-active";} ?>" href="/Admin/Categories"><span class="material-symbols-outlined">inventory_2</span><span class="small fw-semibold">Categories</span></a>
         <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Users"){ echo "nav-link-active";} ?>" href="/Admin/Users"><span class="material-symbols-outlined">group</span><span class="small fw-semibold">Clients</span></a>
         <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Roles"){ echo "nav-link-active";} ?>" href="/Admin/Roles"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">admin_panel_settings</span><span class="small fw-semibold">Roles</span></a>
       </nav>

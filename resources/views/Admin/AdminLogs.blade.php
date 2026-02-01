@@ -1,5 +1,5 @@
 @include("includes.Admin_header")
-    <main class="d-flex justify-content-center">
+    <main class="d-flex justify-content-center" style="margin-left: 15em;">
       <div class="w-100" style="max-width:1200px;">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 px-3 px-lg-4 py-4">
           <div>

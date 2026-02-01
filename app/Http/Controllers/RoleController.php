@@ -21,7 +21,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view("Admin.create");
+        return view("Admin.AddRole");
     }
 
     /**
@@ -36,7 +36,7 @@ class RoleController extends Controller
 
         $Role->create($validate);
 
-        return redirect()->route("Admin.Role");
+        return redirect()->route("Admin.Roles.Index");
     }
 
     /**
@@ -77,7 +77,7 @@ class RoleController extends Controller
     public function destroy(Role $Role)
     {
         $Role->delete();
-
-        return view("Admin.Role");
+        
+        return redirect()->route("Admin.Roles.Index");
     }
 }

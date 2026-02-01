@@ -1,5 +1,5 @@
 @include("includes.Admin_header")
-    <main class=" d-flex flex-column w-100">
+    <main class=" d-flex flex-column w-100" style="margin-left: 15em;">
       <div class="p-4 p-lg-5 pb-2">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
           <div>
@@ -73,8 +73,14 @@
                     <td class="px-4 py-3"><span class="badge-admin">{{ $user->role_id }}</span></td>
                     <td class="px-4 py-3"><span class="small text-white-75">{{ $user->created_at }}</span></td>
                     <td class="px-4 py-3 text-end">
-                      <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">edit</span></button>
-                      <button class="btn btn-sm text-danger"><span class="material-symbols-outlined">delete</span></button>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
+                        <form action="/Admin/Roles/AddRole/destroy/{{ $role->id }}" method="post">
+                          @csrf
+                          @method("DELETE")
+                          <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
+                        </form>
+                      </div>
                     </td>
                   </tr>
                   @endforeach

@@ -1,12 +1,12 @@
 @include("includes.Admin_header")
-    <main class="d-flex flex-column w-100">
+    <main class="d-flex flex-column w-100" style="margin-left: 15em;">
       <div class="p-4 p-lg-5 pb-2">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
           <div>
             <h2 class="display-6 fw-black mb-1">Gestion des Roles</h2>
             <p class="mb-0 text-white-50">Administrez les accès et les rôles de votre boutique de bijoux berbères.</p>
           </div>
-            <a href="/Admin/Roles/Create" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
+            <a href="/Admin/Roles/AddRole" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
               <span class="material-symbols-outlined">add</span> Ajouter un role
             </a>
         </div>
@@ -27,7 +27,6 @@
               <div class="mt-3 d-flex align-items-center gap-1 text-success small"><span class="material-symbols-outlined" style="font-size:18px;">trending_up</span> +1 ce mois-ci</div>
             </div>
           </div>
-
           <div class="col-12 col-md-4">
             <div class="card-dark rounded-xl p-4">
               <div class="d-flex align-items-center justify-content-between">
@@ -42,7 +41,6 @@
               <div class="mt-3 d-flex align-items-center gap-1 text-success small"><span class="material-symbols-outlined" style="font-size:18px;">trending_up</span> 92% du personnel</div>
             </div>
           </div>
-
           <div class="col-12 col-md-4">
             <div class="card-dark rounded-xl p-4">
               <div class="d-flex align-items-center justify-content-between">
@@ -58,7 +56,6 @@
             </div>
           </div>
         </div>
-
         <div class="card-dark rounded-xl mt-4 overflow-hidden">
           <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">
             <h4 class="fw-bold mb-0">Liste des Rôles Système</h4>
@@ -68,8 +65,7 @@
               <thead>
                 <tr>
                   <th class="px-4 py-3">Nom du Rôle</th>
-                  <th class="px-4 py-3">Description</th>
-                  <th class="px-4 py-3 text-center">Membres</th>
+                  <th class="px-4 py-3">Permission</th>
                   <th class="px-4 py-3">Date de Création</th>
                   <th class="px-4 py-3 text-end">Actions</th>
                 </tr>
@@ -85,13 +81,16 @@
                         <span class="fw-semibold">{{ $role->role_name }}</span>
                       </div>
                     </td>
-                    <td class="px-4 py-3 small text-white-75">Accès total au système, gestion des utilisateurs et finances</td>
-                    <td class="px-4 py-3 text-center"><span class="badge-count">5</span></td>
-                    <td class="px-4 py-3 small text-white-50">12/01/2023</td>
+                    <td class="px-4 py-3 small">{{ $role->permission }}</td>
+                    <td class="px-4 py-3 small">{{ $role->created_at }}</td>
                     <td class="px-4 py-3 text-end">
                       <div class="d-inline-flex align-items-center gap-1">
-                        <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">edit</span></button>
-                        <button class="btn btn-sm text-danger"><span class="material-symbols-outlined">delete</span></button>
+                        <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
+                        <form action="/Admin/Roles/AddRole/destroy/{{ $role->id }}" method="post">
+                          @csrf
+                          @method("DELETE")
+                          <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
+                        </form>
                       </div>
                     </td>
                   </tr>
@@ -99,7 +98,6 @@
               </tbody>
             </table>
           </div>
-
           <div class="d-flex align-items-center justify-content-between px-4 py-3 border-top" style="background: rgba(0,0,0,.10); border-color:var(--bb-border-dark)!important;">
             <span class="small text-white-50">Affichage de 1-4 sur 8 rôles</span>
             <div class="d-flex align-items-center gap-2">

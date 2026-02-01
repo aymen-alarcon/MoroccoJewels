@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -19,9 +20,10 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Category $category)
     {
-        return view("Admin.create");
+        $categories = Category::all();
+        return view("Admin.AddProduct", compact("categories"));
     }
 
     /**
@@ -30,16 +32,18 @@ class ProductController extends Controller
     public function store(Request $request, Product $Product)
     {
         $validate = $request->validate([
-            "name" => "required",
-            "description" => "required",
-            "price" => "required",
-            "stock" => "required",
-            "is_deleted" => "required"
+            'name'        => 'required|string|max:255',
+            'category_id' => 'required',
+            'price'       => 'required|numeric|min:0',
+            'description' => 'required|string',
+            'stock'       => 'required|integer|min:0',
+            'main_image'  => 'required|image|max:2048',
+            'gallery.*'   => 'image|max:2048',
         ]);
 
         $Product->create($validate);
 
-        return redirect()->route("Admin.Products");
+        return $this->index();
     }
 
     /**

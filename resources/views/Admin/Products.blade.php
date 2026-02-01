@@ -1,5 +1,5 @@
 @include("includes.Admin_header")
-    <main class="d-flex flex-column position-relative w-100">
+    <main class="d-flex flex-column position-relative w-100" style="margin-left: 15em;">
       <div class="position-absolute top-0 start-0 end-0 bottom-0"></div>
       <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative">
         <div>
@@ -7,7 +7,7 @@
           <p class="text-primary opacity-75 mb-0">Gérez votre inventaire de bijoux berbères artisanaux.</p>
         </div>
         <div class="d-flex align-items-center gap-2">
-            <a href="/Admin/Products/Create" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
+            <a href="/Admin/Products/AddProduct" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
               <span class="material-symbols-outlined">add</span> Nouvelle Produits
             </a>
         </div>
@@ -71,9 +71,13 @@
                       </div>
                     </td>
                     <td class="px-4 py-3">
-                      <div class="d-flex align-items-center justify-content-center gap-2">
-                        <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">edit</span></button>
-                        <button class="btn btn-sm rounded-lg"><span class="material-symbols-outlined" style="font-size:18px;">delete</span></button>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
+                        <form action="/Admin/Roles/AddRole/destroy/{{ $role->id }}" method="post">
+                          @csrf
+                          @method("DELETE")
+                          <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
+                        </form>
                       </div>
                     </td>
                   </tr>

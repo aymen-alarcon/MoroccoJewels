@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view("Admin.dashboard", compact("categories"));
+        return view("Admin.Categories", compact("categories"));
     }
 
     /**
@@ -22,7 +22,7 @@ class CategoryController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view("Admin.create", compact("categories"));
+        return view("Admin.AddCategory", compact("categories"));
     }
 
     /**
@@ -34,10 +34,9 @@ class CategoryController extends Controller
             "name" => "required",
             "description" => "required"
         ]);
-
         $category->create($validate);
 
-        return redirect()->route("Admin.dashboard");
+        return redirect()->route("Admin.Categories.Index");
     }
 
     /**

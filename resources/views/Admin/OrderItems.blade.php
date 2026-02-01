@@ -1,5 +1,5 @@
 @include("includes.Admin_header")
-  <main class="container-fluid" style="max-width:1280px;">
+  <main class="container-fluid" style="margin-left: 15em;">
     <div class="d-flex flex-wrap align-items-center gap-2 text-nowrap mt-4 mb-3 px-3">
       <a class="text-decoration-none fw-semibold" style="color:#c39998;" href="#">Accueil</a>
       <span class="text-white-50">/</span>

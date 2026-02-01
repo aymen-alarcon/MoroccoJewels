@@ -79,10 +79,18 @@ Route::get("/Admin/Dashboard", function(){
     return view("Admin.Dashboard");
 });
 
+
 Route::get("/Admin/Orders", [OrderController::class, "index"]);
-Route::get("/Admin/Products", [ProductController::class, "index"]);
+Route::get("/Admin/Products", [ProductController::class, "index"])->name("Admin.Products.Index");
+Route::get("/Admin/Products/AddProduct", [ProductController::class, "create"]);
+Route::post("/Admin/Products/AddProduct/store", [ProductController::class, "store"]);
 Route::get("/Admin/Users", [UserController::class, "index"]);
-Route::get("/Admin/Roles", [RoleController::class, "index"]);
+Route::get("/Admin/Roles", [RoleController::class, "index"])->name("Admin.Roles.Index");
+Route::get("/Admin/Roles/AddRole", [RoleController::class, "create"]);
+Route::post("/Admin/Roles/AddRole/store", [RoleController::class, "store"]);
+Route::delete("/Admin/Roles/AddRole/destroy/{role}", [RoleController::class, "destroy"]);
+Route::get("/Admin/Categories", [CategoryController::class, "index"])->name("Admin.Categories.Index");
+Route::get("/Admin/Categories/AddCategory", [CategoryController::class, "create"]);
 Route::post("/Admin/Categories/AddCategory/store", [CategoryController::class, "store"]);
 Route::put("/Admin/Categories/AddCategory/update", [CategoryController::class, "update"]);
-Route::delete("/Admin/Categories/AddCategory/destroy", [CategoryController::class, "destroy"]);
+Route::delete("/Admin/Categories/AddCategory/destroy/{category}", [CategoryController::class, "destroy"]);

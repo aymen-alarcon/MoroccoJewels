@@ -1,13 +1,16 @@
-@include("includes.Admin_header")
-    <main class="container-fluid w-100" style="max-width:1200px;">
+@include('includes.Admin_header')
+<main class="container-fluid w-100" style="max-width:1200px;">
+  <form method="POST" action="/Admin/Products/AddProduct/store" enctype="multipart/form-data">
+    @csrf
+    @method("POST")
       <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 py-3">
         <div>
           <h1 class="display-6 fw-black mb-1">Ajouter un Produit</h1>
           <p class="mb-0 text-white-50">Créez une nouvelle fiche pour vos bijoux artisanaux d'exception.</p>
         </div>
         <div class="d-flex gap-2">
-          <button class="btn btn-sm fw-bold rounded-lg" style="background:rgba(255,255,255,.12);color:#fff;">Annuler</button>
-          <button class="btn btn-sm fw-bold rounded-lg shadow" style="background:var(--bb-primary);color:#2b1600;">Enregistrer le produit</button>
+          <a href="{{ url()->previous() }}" class="btn btn-sm fw-bold rounded-lg" style="background:rgba(255,255,255,.12);color:#fff;">Annuler</a>
+          <button type="submit" class="btn btn-sm fw-bold rounded-lg shadow" style="background:var(--bb-primary);color:#2b1600;">Enregistrer le produit</button>
         </div>
       </div>
 
@@ -15,62 +18,43 @@
         <div class="col-12 col-lg-8 d-flex flex-column gap-3">
           <section class="surface rounded-xl p-4">
             <h2 class="h5 fw-bold mb-3 d-flex align-items-center gap-2">
-              <span class="material-symbols-outlined" style="color:var(--bb-primary);">info</span> Informations Générales
+              <span class="material-symbols-outlined" style="color:var(--bb-primary);">info</span>
+              Informations Générales
             </h2>
             <div class="d-flex flex-column gap-3">
               <div>
                 <label class="form-label small fw-bold">Nom du produit</label>
-                <input class="form-control form-control-lg" placeholder="ex: Collier Fibule en Argent Massif"/>
+                <input name="name" class="form-control form-control-lg" placeholder="ex: Collier Fibule en Argent Massif" required />
               </div>
               <div class="row g-3">
                 <div class="col-12 col-md-6">
                   <label class="form-label small fw-bold">Catégorie</label>
-                  <select class="form-select form-select-lg">
-                    <option>Sélectionner une catégorie</option>
-                    <option>Colliers</option>
-                    <option>Bracelets</option>
-                    <option>Boucles d'oreilles</option>
-                    <option>Bagues</option>
+                  <select name="category_id" class="form-select form-select-lg" required>
+                    <option value="" class="text-dark">
+                      Sélectionner une catégorie
+                    </option>
+                    @foreach ($categories as $category)
+                      <option value="{{ $category->id }}"class="text-dark">{{ $category->name }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="col-12 col-md-6">
                   <label class="form-label small fw-bold">Prix (MAD)</label>
                   <div class="input-group input-group-lg">
-                    <input type="number" class="form-control" placeholder="2500"/>
+                    <input type="number" name="price" class="form-control" placeholder="2500" min="0" step="0.01" required />
                     <span class="input-group-text fw-bold">DH</span>
                   </div>
                 </div>
               </div>
               <div>
                 <label class="form-label small fw-bold">Description détaillée</label>
-                <textarea class="form-control" rows="6" placeholder="Décrivez l'histoire, la provenance et les détails techniques de ce bijou berbère..."></textarea>
+                <textarea name="description" class="form-control" rows="6" placeholder="Décrivez l'histoire, la provenance et les détails techniques de ce bijou berbère..." required></textarea>
               </div>
             </div>
-          </section>
-          <section class="surface rounded-xl p-4">
-            <h2 class="h5 fw-bold mb-3 d-flex align-items-center gap-2">
-              <span class="material-symbols-outlined" style="color:var(--bb-primary);">inventory_2</span> Stock et Attributs
-            </h2>
-            <div class="row g-3">
-              <div class="col-12 col-md-6">
+            <div class="row g-3 mt-2">
+              <div class="col-12">
                 <label class="form-label small fw-bold">Quantité en stock</label>
-                <input type="number" class="form-control form-control-lg" placeholder="0"/>
-              </div>
-              <div class="col-12 col-md-6">
-                <label class="form-label small fw-bold">SKU (Référence)</label>
-                <input class="form-control form-control-lg" placeholder="BB-COL-001"/>
-              </div>
-            </div>
-
-            <div class="mt-3">
-              <span class="form-label small fw-bold d-block mb-2">Matériaux utilisés</span>
-              <div class="d-flex flex-wrap gap-2">
-                <span class="chip">Argent <button class="btn btn-sm p-0 text-white-50"><span class="material-symbols-outlined" style="font-size:18px;">close</span></button></span>
-                <span class="chip">Corail <button class="btn btn-sm p-0 text-white-50"><span class="material-symbols-outlined" style="font-size:18px;">close</span></button></span>
-                <button class="btn btn-sm rounded-pill"
-                        style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px dashed rgba(255,255,255,.2);">
-                  <span class="material-symbols-outlined" style="font-size:18px;">add</span> Ajouter un matériau
-                </button>
+                <input type="number" name="stock" class="form-control form-control-lg" placeholder="0" min="0" required />
               </div>
             </div>
           </section>
@@ -78,62 +62,25 @@
         <div class="col-12 col-lg-4 d-flex flex-column gap-3">
           <section class="surface rounded-xl p-4 h-100">
             <h2 class="h5 fw-bold mb-3 d-flex align-items-center gap-2">
-              <span class="material-symbols-outlined" style="color:var(--bb-primary);">image</span> Galerie Médias
+              <span class="material-symbols-outlined" style="color:var(--bb-primary);">image</span>
+              Galerie Médias
             </h2>
-            <div class="drop-main rounded-xl p-4 text-center mb-3">
-              <div class="py-3">
-                <span class="material-symbols-outlined" style="font-size:40px;color:rgba(255,255,255,.25);">add_a_photo</span>
-                <p class="mb-0 mt-1 small text-white-50">Ajouter l'image principale</p>
-              </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Image principale</label>
+              <input type="file" name="main_image" class="form-control" accept="image/*" required />
             </div>
-            <div class="row g-2">
-              <div class="col-4">
-                <div class="rounded-3 d-flex align-items-center justify-content-center"
-                     style="aspect-ratio:1/1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);">
-                  <span class="material-symbols-outlined" style="color:rgba(255,255,255,.4);">add</span>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="rounded-3 d-flex align-items-center justify-content-center"
-                     style="aspect-ratio:1/1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);">
-                  <span class="material-symbols-outlined" style="color:rgba(255,255,255,.4);">add</span>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="rounded-3 d-flex align-items-center justify-content-center"
-                     style="aspect-ratio:1/1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);">
-                  <span class="material-symbols-outlined" style="color:rgba(255,255,255,.4);">add</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded mt-3 p-3" style="background:rgba(242,185,13,.08);border:1px solid rgba(242,185,13,.2);">
-              <p class="mb-0 small" style="color:var(--bb-primary);">
-                <strong>Conseil :</strong> Utilisez des images sur fond neutre (blanc ou gris clair) pour mettre en valeur les reflets de l'argent et des pierres.
-              </p>
-            </div>
-
-            <div class="pt-3 mt-3 border-top border-opacity-25">
-              <h3 class="h6 fw-bold mb-2">Visibilité du produit</h3>
-              <div class="d-flex align-items-center justify-content-between rounded p-2" style="background:rgba(0,0,0,.2);">
-                <div class="d-flex align-items-center gap-2">
-                  <span class="material-symbols-outlined" style="color:#22c55e;">visibility</span>
-                  <span class="small">En ligne</span>
-                </div>
-                <div class="form-check form-switch m-0">
-                  <input class="form-check-input" type="checkbox" checked>
-                </div>
-              </div>
-              <p class="mb-0 small mt-2 text-white-50">Si désactivé, le produit ne sera pas visible par les clients de la boutique.</p>
+            <div>
+              <label class="form-label small fw-bold">Images secondaires</label>
+              <input type="file" name="gallery[]" class="form-control" accept="image/*" multiple />
             </div>
           </section>
         </div>
       </div>
-
       <div class="d-md-none position-fixed bottom-0 start-0 end-0 p-3 brandbar" style="backdrop-filter:blur(8px);">
         <div class="d-flex gap-2">
-          <button class="btn btn-sm rounded-lg w-100" style="background:rgba(255,255,255,.12);color:#fff;">Annuler</button>
-          <button class="btn btn-sm rounded-lg w-100 fw-bold" style="background:var(--bb-primary);color:#2b1600;">Enregistrer</button>
+          <a href="{{ url()->previous() }}" class="btn btn-sm rounded-lg w-100" style="background:rgba(255,255,255,.12);color:#fff;">Annuler</a>
+          <button type="submit" class="btn btn-sm rounded-lg w-100 fw-bold" style="background:var(--bb-primary);color:#2b1600;">Enregistrer</button>
         </div>
       </div>
-    </main>
+  </form>
+</main>
