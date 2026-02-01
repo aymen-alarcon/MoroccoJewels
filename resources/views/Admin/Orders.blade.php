@@ -1,4 +1,4 @@
-<?php require_once "../resources/views/includes/Admin_header.php";?>    
+@include("includes.Admin_header")
     <main class="d-flex flex-column overflow-hidden w-100">
       <div class="overflow-auto p-4 p-lg-5">
         <div class="container-fluid" style="max-width:1080px;">

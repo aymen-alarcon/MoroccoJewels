@@ -1,4 +1,4 @@
-<?php require_once "../resources/views/includes/header.php"?>
+@include("includes.header")
             <section class="w-100 max-w-5xl mx-auto px-4 px-sm-5 px-lg-6 py-4 py-sm-5 py-lg-6 text-center">
                 <h2 class="fs-2 fs-sm-1 font-display text-accent mb-3">
                     Les Gardiens de l'Héritage
@@ -182,4 +182,4 @@
                 </div>
             </section>
         </main>
-<?php require_once "../resources/views/includes/footer.php";?>
+@include("includes.footer")

@@ -1,4 +1,4 @@
-<?php include "../resources/views/includes/header.php"?>
+@include("includes.header")
             <main class="container mx-auto px-4 px-sm-5 px-lg-6 py-4">
                 <div class="d-flex flex-column gap-4">
                     <div class="d-flex flex-wrap gap-2 font-body">
@@ -305,4 +305,4 @@
                 </div>
             </main>
         </main>
-<?php include "../resources/views/includes/footer.php";?>
+@include("includes.footer")

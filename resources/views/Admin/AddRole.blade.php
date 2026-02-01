@@ -1,4 +1,4 @@
-<?php require_once "../resources/views/includes/Admin_header.php";?>
+@include("includes.Admin_header")
     <main class="d-flex flex-column overflow-auto w-100">
       <div class="px-4 px-lg-5 py-4 mx-auto w-100">
         <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">

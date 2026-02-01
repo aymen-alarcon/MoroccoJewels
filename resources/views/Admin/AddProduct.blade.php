@@ -1,4 +1,4 @@
-<?php require_once "../resources/views/includes/Admin_header.php";?>
+@include("includes.Admin_header")
     <main class="container-fluid w-100" style="max-width:1200px;">
       <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 py-3">
         <div>

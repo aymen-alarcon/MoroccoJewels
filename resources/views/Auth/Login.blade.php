@@ -1,4 +1,4 @@
-<?php require_once "../resources/views/includes/header.php"?>
+@include("includes.header")
   <main class="d-flex align-items-center justify-content-center py-5 position-relative z-1">
     <div class="container" style="max-width:520px;">
       <div class="form-card rounded-xl shadow-2xl p-4 p-md-5">
@@ -45,4 +45,4 @@
       </div>
     </div>
   </main>
-<?php require_once "../resources/views/includes/footer.php"?>
+@include("includes.footer")

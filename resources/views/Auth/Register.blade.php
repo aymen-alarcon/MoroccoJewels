@@ -1,7 +1,7 @@
-<?php require_once "../resources/views/includes/header.php"?>
+@include("includes.header")
   <main class="position-relative d-flex align-items-center justify-content-center py-5">
     <div class="moroccan-pattern"></div>
-    <div class="container position-relative z-1" style="max-width:640px;">
+    <div class="container position-relative z-1  form-card" style="max-width:640px;">
       <div class="glass rounded-xl shadow-2xl p-4 p-lg-5">
         <div class="text-center mb-3">
           <span class="material-symbols-outlined text-warning fs-1 d-block mb-2">diamond</span>
@@ -55,4 +55,4 @@
       </div>
     </div>
   </main>
-<?php require_once "../resources/views/includes/footer.php"?>
+@include("includes.footer")

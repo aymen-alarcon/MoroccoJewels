@@ -1,4 +1,4 @@
-<?php require_once "../resources/views/includes/Admin_header.php";?>    
+@include("includes.Admin_header")
     <main class=" d-flex flex-column overflow-auto pattern w-100">
       <div class="px-3 px-md-4 pt-3">
         <ul class="nav nav-pills gap-2" role="tablist" id="profileTabs">

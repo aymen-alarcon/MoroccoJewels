@@ -1,4 +1,4 @@
-<?php require_once "../resources/views/includes/Admin_header.php";?>
+@include("includes.Admin_header")
     <main class="d-flex justify-content-center py-4 px-3 px-lg-4">
       <div class="w-100" style="max-width:1000px;">
         <div class="d-flex flex-wrap align-items-center gap-2 small mb-3">

@@ -1,4 +1,4 @@
-<?php include "../resources/views/includes/header.php"?>
+@include("includes.header")
             <section class="position-relative px-4 py-5 py-md-6 text-center">
                 <div class="decorative-bg"></div>
                 <div class="position-relative z-10 mx-auto max-w-4xl">
@@ -234,4 +234,4 @@
                     </div>
             </section>
         </main>
-<?php include "../resources/views/includes/footer.php"?>
+@include("includes.footer")
