@@ -41,7 +41,7 @@
                     <td class="px-4 py-3 small">{{ $role->created_at }}</td>
                     <td class="px-4 py-3 text-end">
                       <div class="d-inline-flex align-items-center gap-1">
-                        <a href="/Admin/Roles/AddRole/EditProduct/{{ $role->id }}" class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></a>
+                        <a href="/Admin/Roles/EditRole/{{ $role->id }}" class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></a>
                         <form action="/Admin/Roles/destroy/{{ $role->id }}" method="post">
                           @csrf
                           @method("DELETE")

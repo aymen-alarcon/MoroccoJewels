@@ -50,23 +50,21 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Role $Role)
+    public function edit(Role $role)
     {
-        $Role = Role::all();
-        return view("Admin.Roles.Edit", compact("Role"));
+        return view("Admin.Roles.Edit", compact("role"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Role $Role)
+    public function update(Request $request, Role $role)
     {
         $validate = $request->validate([
             "role_name" => "required",
-            "permission" => "required",
         ]);
 
-        $Role->update($validate);
+        $role->update($validate);
 
         return redirect()->route("Admin.Roles.Index");
     }

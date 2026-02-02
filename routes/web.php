@@ -87,8 +87,8 @@ Route::delete("/Admin/Users/destroy/{user}", [UserController::class, "destroy"])
 Route::get("/Admin/Roles", [RoleController::class, "index"])->name("Admin.Roles.Index");
 Route::get("/Admin/Roles/AddRole", [RoleController::class, "create"]);
 Route::post("/Admin/Roles/AddRole/store", [RoleController::class, "store"]);
-Route::get("/Admin/Roles/AddRole/EditProduct/{role}", [RoleController::class, "edit"]);
-Route::put("/Admin/Roles/AddRole/EditProduct/update/{role}", [RoleController::class, "update"]);
+Route::get("/Admin/Roles/EditRole/{role}", [RoleController::class, "edit"]);
+Route::put("/Admin/Roles/EditRole/update/{role}", [RoleController::class, "update"]);
 Route::delete("/Admin/Roles/destroy/{role}", [RoleController::class, "destroy"]);
 Route::get("/Admin/Categories", [CategoryController::class, "index"])->name("Admin.Categories.Index");
 Route::get("/Admin/Categories/AddCategory", [CategoryController::class, "create"]);
