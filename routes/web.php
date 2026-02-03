@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
@@ -14,23 +15,24 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("Home")
+->middleware("guest");
 
 Route::get('/Home/Collection', function () {
     return view('Home.Collection');
-});
+})->middleware("guest");
 
 Route::get('/Home/History', function () {
     return view('Home.History');
-});
+})->middleware("guest");
 
 Route::get('/Home/Gallery', function () {
     return view('Home.Gallery');
-});
+})->middleware("guest");
 
 Route::get('/Home/Contact', function () {
     return view('Home.Contact');
-});
+})->middleware("guest");
 
 Route::get("/Admin/Profile", function(){
     return view("Admin.Profile");
@@ -42,14 +44,16 @@ Route::get("/Admin/Logs", function(){
 
 Route::get("/Auth/Login", function(){
     return view("Auth.Login");
-});
+})->middleware("guest");
 
 Route::get("/Auth/Register", function(){
     return view("Auth.Register");
-});
+})->middleware("guest");
+
+Route::post('/Auth/Register/invoke', RegisterController::class);
 
 Route::get("/Auth/LogOut", function(){
-    return view("Auth.LogOut");
+    return view("Auth.Logout");
 });
 
 Route::get("/Client/Cart", function(){

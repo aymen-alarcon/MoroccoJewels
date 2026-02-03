@@ -11,11 +11,13 @@
           <p class="text-white-50 small mb-0">Accédez à votre espace membre Bijoux Berbères</p>
         </div>
 
-        <form class="d-flex flex-column gap-3">
+        <form class="d-flex flex-column gap-3" action="" method="POST">
+          @csrf
+          @method("POST")
           <div>
             <label class="form-label small fw-semibold">Adresse e‑mail</label>
             <div class="position-relative">
-              <input type="email" class="form-control" placeholder="exemple@bijoux.com"/>
+              <input type="email" name="email" class="form-control" placeholder="exemple@bijoux.com"/>
               <span class="material-symbols-outlined position-absolute" style="right:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.35)">mail</span>
             </div>
           </div>
@@ -26,7 +28,7 @@
               <a href="#" class="text-warning text-decoration-none small">Mot de passe oublié ?</a>
             </div>
             <div class="position-relative">
-              <input type="password" class="form-control" placeholder="••••••••"/>
+              <input type="password" name="password" class="form-control" placeholder="••••••••"/>
               <button class="btn btn-link position-absolute p-0" type="button"
                       style="right:8px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.5)">
                 <span class="material-symbols-outlined">visibility</span>

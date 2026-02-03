@@ -14,9 +14,17 @@
           <div class="col-12 col-md-6">
             <label class="small fw-semibold d-inline-flex align-items-center gap-1 mb-2 text-white">
               <span class="material-symbols-outlined" style="font-size:16px;color:var(--bb-primary);">person</span>
-              Nom complet
+              Prénom
             </label>
-            <input type="text" name="name" class="form-control" placeholder="Ex: Karim Amrani"/>
+            <input type="text" name="first_name" class="form-control" placeholder="Ex: Karim Amrani"/>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="small fw-semibold d-inline-flex align-items-center gap-1 mb-2 text-white">
+              <span class="material-symbols-outlined" style="font-size:16px;color:var(--bb-primary);">person</span>
+              Nom
+            </label>
+            <input type="text" name="last_name" class="form-control" placeholder="Ex: Karim Amrani"/>
           </div>
 
           <div class="col-12 col-md-6">

@@ -29,7 +29,12 @@
                             <a class="nav-link-custom px-2 text-decoration-none" href="/Home/History">Histoire</a>
                             <a class="nav-link-custom px-2 text-decoration-none" href="/Home/Gallery">Galerie</a>
                             <a class="nav-link-custom px-2 text-decoration-none" href="/Home/Contact">Contact</a>
-                            <a class="nav-link-custom px-2 text-decoration-none" href="/Auth/Login">Login</a>
+                            @auth                                
+                                <a class="nav-link-custom px-2 text-decoration-none" href="/Client/Profile">Profile</a>
+                                <a class="nav-link-custom px-2 text-decoration-none" href="/Auth/LogOut">Log Out</a>
+                            @else
+                                <a class="nav-link-custom px-2 text-decoration-none" href="/Auth/Login">Login</a>
+                            @endauth
                         </div>
                     </div>
                 </nav>
