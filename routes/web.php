@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LogOutController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
@@ -15,8 +16,7 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('welcome');
-})->name("Home")
-->middleware("guest");
+})->name("Home");
 
 Route::get('/Home/Collection', function () {
     return view('Home.Collection');
@@ -52,9 +52,7 @@ Route::get("/Auth/Register", function(){
 
 Route::post('/Auth/Register/invoke', RegisterController::class);
 
-Route::get("/Auth/LogOut", function(){
-    return view("Auth.Logout");
-});
+Route::get("/Auth/LogOut", LogOutController::class)->middleware("auth");
 
 Route::get("/Client/Cart", function(){
     return view("Client.Cart");

@@ -181,5 +181,5 @@
                     </div>
                 </div>
             </section>
-        </main>
+    </main>
 @include("includes.footer")

@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>  
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>  
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
   <body>
     <div class="d-flex flex-column min-vh-100">
@@ -31,7 +31,9 @@
                             <a class="nav-link-custom px-2 text-decoration-none" href="/Home/Contact">Contact</a>
                             @auth                                
                                 <a class="nav-link-custom px-2 text-decoration-none" href="/Client/Profile">Profile</a>
-                                <a class="nav-link-custom px-2 text-decoration-none" href="/Auth/LogOut">Log Out</a>
+                                <form action="/Auth/LogOut" method="post">
+                                    <button class="border border-0 bg-transparent nav-link-custom px-2 text-decoration-none" type="submit">Log Out</button>
+                                </form>
                             @else
                                 <a class="nav-link-custom px-2 text-decoration-none" href="/Auth/Login">Login</a>
                             @endauth

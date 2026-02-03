@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
@@ -23,7 +24,9 @@ class RegisterController extends Controller
 
         $validate["password"] = Hash::make($validate["password"]);
 
-        User::create($validate);
+        $user = User::create($validate);
+
+        Auth::login($user);
 
         return redirect()->route("Home");
     }
