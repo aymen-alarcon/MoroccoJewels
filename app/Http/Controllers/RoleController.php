@@ -31,12 +31,11 @@ class RoleController extends Controller
     {
         $validate = $request->validate([
             "role_name" => "required",
-            "permission" => "required",
         ]);
 
         $Role->create($validate);
 
-        return redirect()->route("Admin.Roles.Index");
+        return redirect()->route("Admin.Roles.Index")->with("success", "You have successfully created a new Role.");
     }
 
     /**
@@ -66,7 +65,7 @@ class RoleController extends Controller
 
         $role->update($validate);
 
-        return redirect()->route("Admin.Roles.Index");
+        return redirect()->route("Admin.Roles.Index")->with("success", "You have successfully updated a new Role.");
     }
 
     /**

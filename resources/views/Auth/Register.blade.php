@@ -45,6 +45,14 @@
             </div>
           </div>
 
+          <select name="" id="">
+            @if (count($roles) > 0)              
+              @foreach ($roles as $role)
+                <option value="{{ $order->id }}">{{ $order->name }}</option>
+              @endforeach
+            @endif
+          </select>
+
           <div class="pt-2">
             <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold rounded-lg">Créer un compte</button>
           </div>

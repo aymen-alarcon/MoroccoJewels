@@ -44,7 +44,8 @@ Route::get("/Admin/Logs", function(){
 })->middleware("auth");
 
 Route::get("/Auth/Login", function(){
-    return view("Auth.Login");
+    $roles = Role::all();
+    return view("Auth.Login", compact("roles"));
 })->middleware("guest");
 
 Route::post("/Auth/Login/invoke", LoginController::class);

@@ -41,7 +41,7 @@ class UserController extends Controller
 
         $User->create($validate);
 
-        return redirect()->route("Admin.Users.Index");
+        return redirect()->route("Admin.Users.Index")->with("success", "You have successfully created a new User.");
     }
 
     /**
@@ -75,7 +75,7 @@ class UserController extends Controller
 
         $User->update($validate);
 
-        return redirect()->route("Admin.Users.Index");
+        return redirect()->route("Admin.Users.Index")->with("success", "You have successfully update a new User.");
     }
 
     /**

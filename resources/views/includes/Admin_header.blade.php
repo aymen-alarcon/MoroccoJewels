@@ -78,6 +78,15 @@
   </style>
 </head>
 <body>
+  @if(session()->has('failed'))
+    <div class="alert alert-danger d-flex justify-content-center align-items-center">
+      {{ session()->get('failed') }}
+    </div>
+  @elseif(session()->has("success"))
+    <div class="alert alert-success d-flex justify-content-center align-items-center">
+      {{ session()->get('success') }}
+    </div>
+  @endif
   <div class="position-absolute top-0 start-0 end-0 bottom-0 zellij-pattern"></div>
   <div class="d-flex position-relative" style="z-index:1;">
     <aside class="sidebar d-flex flex-column vh-100 position-fixed">

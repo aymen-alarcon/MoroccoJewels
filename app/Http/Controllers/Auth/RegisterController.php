@@ -28,6 +28,6 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route("Home");
+        return redirect()->route("Home")->with("success", "Congratulation! you have successfully created an account.");
     }
 }

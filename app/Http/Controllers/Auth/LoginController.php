@@ -22,7 +22,7 @@ class LoginController extends Controller
             $request->session()
                     ->regenerate();
 
-            return redirect()->route("Home");
+            return redirect()->route("Home")->with("success", "you have successfully logged in");
         }
     }
 }

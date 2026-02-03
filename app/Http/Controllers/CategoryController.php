@@ -36,7 +36,7 @@ class CategoryController extends Controller
         ]);
         $category->create($validate);
 
-        return redirect()->route("Admin.Categories.Index");
+        return redirect()->route("Admin.Categories.Index")->with("success", "You have successfully created a new Category");
     }
 
     /**
@@ -67,7 +67,7 @@ class CategoryController extends Controller
 
         $category->update($validate);
 
-        return redirect()->route("Admin.Categories.Index");
+        return redirect()->route("Admin.Categories.Index")->with("success", "You have successfully updated a new Category");
     }
 
     /**

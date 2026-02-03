@@ -47,7 +47,7 @@ class ProductController extends Controller
 
         $Product->create($validate);
 
-        return redirect()->route("Admin.Products.Index");
+        return redirect()->route("Admin.Products.Index")->with("success", "You have successfully created a new Product.");
     }
 
     /**
@@ -82,7 +82,7 @@ class ProductController extends Controller
 
         $Product->update($validate);
 
-        return redirect()->route("Admin.Products.Index");
+        return redirect()->route("Admin.Products.Index")->with("success", "You have successfully edited a new Product.");
     }
 
     /**
