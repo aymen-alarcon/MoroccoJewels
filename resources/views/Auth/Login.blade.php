@@ -11,7 +11,7 @@
           <p class="text-white-50 small mb-0">Accédez à votre espace membre Bijoux Berbères</p>
         </div>
 
-        <form class="d-flex flex-column gap-3" action="" method="POST">
+        <form class="d-flex flex-column gap-3" action="/Auth/Login/invoke" method="POST">
           @csrf
           @method("POST")
           <div>

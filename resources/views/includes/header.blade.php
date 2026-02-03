@@ -31,7 +31,10 @@
                             <a class="nav-link-custom px-2 text-decoration-none" href="/Home/Contact">Contact</a>
                             @auth                                
                                 <a class="nav-link-custom px-2 text-decoration-none" href="/Client/Profile">Profile</a>
-                                <form action="/Auth/LogOut" method="post">
+                                <form action="/Auth/LogOut" method="POST">
+                                    @csrf
+                                    @method("POST")
+                                    
                                     <button class="border border-0 bg-transparent nav-link-custom px-2 text-decoration-none" type="submit">Log Out</button>
                                 </form>
                             @else
