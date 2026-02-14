@@ -14,6 +14,7 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,7 +52,8 @@ Route::get("/Auth/Login", function(){
 Route::post("/Auth/Login/invoke", LoginController::class);
 
 Route::get("/Auth/Register", function(){
-    return view("Auth.Register");
+    $roles = Role::all();
+    return view("Auth.Register", compact("roles"));
 })->middleware("guest");
 
 Route::post('/Auth/Register/invoke', RegisterController::class);
@@ -63,7 +65,8 @@ Route::get("/Client/Cart", function(){
 });
 
 Route::get("/Client/Profile", function(){
-    return view("Client.Profile");
+    $user = Auth::user();
+    return view("Client.Profile.index", compact("user"));
 })->middleware("auth");
 
 Route::get("/Admin/Dashboard", function(){

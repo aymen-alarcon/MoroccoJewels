@@ -11,20 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        schema::table('users', function(Blueprint $table){
-            $table->renameColumn("name", "first_name");
-            $table->string("last_name");
+        Schema::table('users', function (Blueprint $table) {
+            $table->string("city");
+            $table->string("street");
+            $table->string("zip");
+            $table->string("country");
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function users(): void
+    public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->renameColumn("first_name", "name");
-            $table->dropColumn('last_name');
+            $table->dropColumn("city");
+            $table->dropColumn("street");
+            $table->dropColumn("zip");
+            $table->dropColumn("country");
         });
     }
 };

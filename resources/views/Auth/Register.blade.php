@@ -45,10 +45,11 @@
             </div>
           </div>
 
-          <select name="" id="">
+          <label class="form-label small text-white-75 fw-semibold">Veuillez choisir un role</label>
+          <select class="form-control text-white">
             @if (count($roles) > 0)              
               @foreach ($roles as $role)
-                <option value="{{ $order->id }}">{{ $order->name }}</option>
+                <option value="{{ $role->id }}" class="text-dark">{{ $role->role_name }}</option>
               @endforeach
             @endif
           </select>

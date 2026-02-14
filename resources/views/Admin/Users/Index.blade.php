@@ -33,22 +33,22 @@
                 <tbody>
                   @foreach ($users as $user)                  
                   <tr>
-                    <td class="px-4 py-3">
+                    <td class="px-4 py-3 d-flex justify-content-center">
                       <div class="rounded-circle border" style="width:40px;height:40px;background:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-SrzYqcjULv4EbxL9o7Emw9qLszHqqaSvKAZ4uRHjhbtWdXuMY5TWTWind_RR-TRrAXXxG9poJgVral073Vd25VvaW37Os28rhmYnYZ2i7GHXZGxgcs3xsRek34Nc8xCi9EZFl7OlP74nQIa_M8hJxeP322dVAo-cOHHAgzNEH4REGDQMgkzcy7XFRF-gYo5Pc_7rAyRd27uzae7rsjyTmwOJApqij7UlL-DVNH25zkwnSHutRNrdug4wTqlUo2NADnm2IIL2TTI') center/cover no-repeat;border-color:rgba(255,255,255,.2);"></div>
                     </td>
                     <td class="px-4 py-3">
                       <div class="small fw-bold">{{ $user->id }}</div>
                     </td>
                     <td class="px-4 py-3">
-                      <div class="text-dark">{{ $user->name }}</div>
+                      <div class="text-dark">{{ $user->first_name }}</div>
                     </td>
                     <td class="px-4 py-3">
-                      <div class="text-dark">{{ $user->name }}</div>
+                      <div class="text-dark">{{ $user->last_name }}</div>
                     </td>
                     <td class="px-4 py-3">
                       <div class="small text-dark">{{ $user->email }}</div>
                     </td>
-                    <td class="px-4 py-3"><span class="badge-admin">{{ $user->role_id }}</span></td>
+                    <td class="px-4 py-3"><span class="badge-admin">{{ $user->role->role_name }}</span></td>
                     <td class="px-4 py-3"><span class="small text-white-75">{{ $user->created_at }}</span></td>
                     <td class="px-4 py-3 text-end">
                       <div class="d-inline-flex align-items-center gap-1">

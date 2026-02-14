@@ -18,7 +18,7 @@ class LoginController extends Controller
             "password" => "required"
         ]);
 
-        if (Auth::attempt($validate, $request->boolean("remember"))) {
+        if (Auth::attempt($validate)) {
             $request->session()
                     ->regenerate();
 
