@@ -22,19 +22,19 @@ Route::get('/', function () {
 
 Route::get('/Home/Collection', function () {
     return view('Home.Collection');
-})->middleware("guest");
+});
 
 Route::get('/Home/History', function () {
     return view('Home.History');
-})->middleware("guest");
+});
 
 Route::get('/Home/Gallery', function () {
     return view('Home.Gallery');
-})->middleware("guest");
+});
 
 Route::get('/Home/Contact', function () {
     return view('Home.Contact');
-})->middleware("guest");
+});
 
 Route::get("/Admin/Profile", function(){
     return view("Admin.Profile");

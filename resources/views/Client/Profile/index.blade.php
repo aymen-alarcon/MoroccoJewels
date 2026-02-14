@@ -23,17 +23,23 @@
               </h2>
               <div class="d-flex flex-column gap-1">
                 <p class="small text-white-50 mb-0 d-flex align-items-center gap-2">
-                  <i class="bi bi-calendar3"></i> Membre depuis Janvier 2024
+                  <i class="bi bi-calendar3"></i> Membre depuis 
+                  {{ $user->created_at->format("Y-M") }}
                 </p>
                 <p class="small text-white-50 mb-0 d-flex align-items-center gap-2">
-                  <span class="material-symbols-outlined" style="font-size:16px;">location_on</span> Casablanca, Maroc
+                  <i class="bi bi-geo-alt"></i> 
+                  @if (isset($user->city) && isset($user->country))
+                    {{ $user->city }} - {{ $user->country }}
+                  @else
+                    Not Declared
+                  @endif
                 </p>
               </div>
             </div>
           </div>
 
           <button class="btn btn-ghost fw-bold rounded-lg d-inline-flex align-items-center gap-1">
-            <span class="material-symbols-outlined" style="font-size:18px;">edit</span> Modifier le profil
+            <i class="bi bi-pencil"></i> Modifier le profil
           </button>
         </div>
       </div>
@@ -41,15 +47,15 @@
       <div class="border-bottom mb-4" style="border-color:var(--bb-border)!important;">
         <div class="d-flex tabs-line gap-4 overflow-auto">
           <a href="#" class="active d-flex flex-column align-items-center gap-1 text-decoration-none">
-            <span class="material-symbols-outlined">person</span>
+            <i class="bi bi-person"></i>
             <span class="text-uppercase fw-bold" style="font-size:11px;letter-spacing:.18em;">Informations</span>
           </a>
           <a href="#" class="d-flex flex-column align-items-center gap-1 text-decoration-none">
-            <span class="material-symbols-outlined">favorite</span>
+            <i class="bi bi-heart"></i>
             <span class="text-uppercase fw-bold" style="font-size:11px;letter-spacing:.18em;">Mes Favoris</span>
           </a>
           <a href="#" class="d-flex flex-column align-items-center gap-1 text-decoration-none">
-            <span class="material-symbols-outlined">chat_bubble</span>
+            <i class="bi bi-chat-left"></i>
             <span class="text-uppercase fw-bold" style="font-size:11px;letter-spacing:.18em;">Mes Demandes</span>
           </a>
         </div>
@@ -64,15 +70,19 @@
             <div class="d-flex flex-column gap-3">
               <div class="pb-3" style="border-bottom:1px solid rgba(255,255,255,.06);">
                 <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">Nom Complet</div>
-                <div class="small fw-semibold">Sarah Bensouda</div>
+                <div class="small fw-semibold">{{ $user->first_name }} {{ $user->last_name }}</div>
               </div>
               <div class="pb-3" style="border-bottom:1px solid rgba(255,255,255,.06);">
                 <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">Adresse E‑mail</div>
-                <div class="small fw-semibold">sarah.bensouda@email.com</div>
+                <div class="small fw-semibold">{{ $user->email }}</div>
               </div>
               <div>
                 <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">Téléphone</div>
-                <div class="small fw-semibold">+212 6 12 34 56 78</div>
+                @if (isset($user->phone) && !empty($user->phone))                  
+                  <div class="small fw-semibold">{{ $user->phone }}</div>
+                @else
+                  <div class="small fw-semibold">+212 666 666 666</div>
+                @endif
               </div>
             </div>
           </div>
@@ -86,7 +96,6 @@
               </h3>
               <a href="#" class="small fw-bold text-decoration-underline" style="color:var(--bb-primary);">Voir tout</a>
             </div>
-
             <div class="row g-3">
               <div class="col-12 col-sm-6">
                 <div class="favorite-card surface rounded-3 d-flex overflow-hidden">
@@ -98,7 +107,7 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between mt-3">
                       <button class="btn btn-link p-0 small fw-bold text-decoration-underline">Détails</button>
-                      <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined" style="font-size:18px;">delete</span></button>
+                      <button class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></button>
                     </div>
                   </div>
                 </div>
@@ -113,7 +122,7 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between mt-3">
                       <button class="btn btn-link p-0 small fw-bold text-decoration-underline">Détails</button>
-                      <button class="btn btn-sm text-white-50"><span class="material-symbols-outlined" style="font-size:18px;">delete</span></button>
+                      <button class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></button>
                     </div>
                   </div>
                 </div>
