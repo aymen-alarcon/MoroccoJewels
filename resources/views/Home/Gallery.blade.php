@@ -227,7 +227,7 @@
                             connaître la provenance, la signification symbolique ou la
                             disponibilité de nos trésors.
                         </p>
-                        <a href="contact.html" class="cta-button mt-3 d-inline-flex align-items-center gap-2 rounded-xl-custom px-5 py-3 fs-5">
+                        <a href="contact.html" class="custom-button">
                             <i class="bi bi-envelope"></i>
                             Nous Contacter
                         </a>

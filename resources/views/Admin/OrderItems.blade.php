@@ -29,10 +29,10 @@
       <div class="col-12 col-lg-8 d-flex flex-column gap-3">
         <div class="segmented p-1">
           <div class="btn-group d-flex" role="group">
-            <button type="button" class="btn">En attente</button>
-            <button type="button" class="btn active">Traitement</button>
-            <button type="button" class="btn">Expédiée</button>
-            <button type="button" class="btn">Livrée</button>
+            <button type="button" class="btn custom-button">En attente</button>
+            <button type="button" class="btn custom-button active">Traitement</button>
+            <button type="button" class="btn custom-button">Expédiée</button>
+            <button type="button" class="btn custom-button">Livrée</button>
           </div>
         </div>
 

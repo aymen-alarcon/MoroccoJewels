@@ -375,15 +375,18 @@ body {
   background-size: 60px;
 }
 
-.cta-button {
+.custom-button {
   background-color: var(--accent) !important;
   color: var(--background-dark) !important;
-  border: none;
-  font-weight: bold;
+  font-family: "Marcellus", serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
   transition: all 0.3s ease;
+  border: none;
 }
 
-.cta-button:hover {
+.custom-button:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px -5px rgba(230, 167, 86, 0.25);
 }
@@ -1309,23 +1312,6 @@ body {
   .h-48 {
     height: 9rem !important;
   }
-}
-
-.cta-button {
-  background-color: var(--accent) !important;
-  color: var(--primary) !important;
-  border: none;
-  font-family: "Marcellus", serif;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  min-width: 84px;
-  max-width: 480px;
-}
-
-.cta-button:hover {
-  background-color: rgba(230, 167, 86, 0.9) !important;
 }
 
 .fw-black {

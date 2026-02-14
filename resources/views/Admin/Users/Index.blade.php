@@ -20,7 +20,11 @@
               <table class="table table-roles align-middle mb-0" style="background-color: #5A1A19">
                 <thead>
                   <tr>
-                    <th class="px-4 py-3">Utilisateur</th>
+                    <th class="px-4 py-3">Profile Picture</th>
+                    <th class="px-4 py-3">Id</th>
+                    <th class="px-4 py-3">First Name</th>
+                    <th class="px-4 py-3">Last Name</th>
+                    <th class="px-4 py-3">Email</th>
                     <th class="px-4 py-3">Rôle</th>
                     <th class="px-4 py-3">Date d'inscription</th>
                     <th class="px-4 py-3 text-end">Actions</th>
@@ -30,13 +34,19 @@
                   @foreach ($users as $user)                  
                   <tr>
                     <td class="px-4 py-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <div class="rounded-circle border" style="width:40px;height:40px;background:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-SrzYqcjULv4EbxL9o7Emw9qLszHqqaSvKAZ4uRHjhbtWdXuMY5TWTWind_RR-TRrAXXxG9poJgVral073Vd25VvaW37Os28rhmYnYZ2i7GHXZGxgcs3xsRek34Nc8xCi9EZFl7OlP74nQIa_M8hJxeP322dVAo-cOHHAgzNEH4REGDQMgkzcy7XFRF-gYo5Pc_7rAyRd27uzae7rsjyTmwOJApqij7UlL-DVNH25zkwnSHutRNrdug4wTqlUo2NADnm2IIL2TTI') center/cover no-repeat;border-color:rgba(255,255,255,.2);"></div>
-                        <div>
-                          <div class="small fw-bold">{{ $user->name }}</div>
-                          <div class="small text-white-50">{{ $user->email }}</div>
-                        </div>
-                      </div>
+                      <div class="rounded-circle border" style="width:40px;height:40px;background:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-SrzYqcjULv4EbxL9o7Emw9qLszHqqaSvKAZ4uRHjhbtWdXuMY5TWTWind_RR-TRrAXXxG9poJgVral073Vd25VvaW37Os28rhmYnYZ2i7GHXZGxgcs3xsRek34Nc8xCi9EZFl7OlP74nQIa_M8hJxeP322dVAo-cOHHAgzNEH4REGDQMgkzcy7XFRF-gYo5Pc_7rAyRd27uzae7rsjyTmwOJApqij7UlL-DVNH25zkwnSHutRNrdug4wTqlUo2NADnm2IIL2TTI') center/cover no-repeat;border-color:rgba(255,255,255,.2);"></div>
+                    </td>
+                    <td class="px-4 py-3">
+                      <div class="small fw-bold">{{ $user->id }}</div>
+                    </td>
+                    <td class="px-4 py-3">
+                      <div class="text-dark">{{ $user->name }}</div>
+                    </td>
+                    <td class="px-4 py-3">
+                      <div class="text-dark">{{ $user->name }}</div>
+                    </td>
+                    <td class="px-4 py-3">
+                      <div class="small text-dark">{{ $user->email }}</div>
                     </td>
                     <td class="px-4 py-3"><span class="badge-admin">{{ $user->role_id }}</span></td>
                     <td class="px-4 py-3"><span class="small text-white-75">{{ $user->created_at }}</span></td>

@@ -75,7 +75,7 @@
                             la main pour vous.
                         </p>
                         <div class="mt-3">
-                            <a href="history.html" class="btn cta-button d-inline-flex align-items-center justify-content-center overflow-hidden rounded-lg px-4 py-2">
+                            <a href="history.html" class="btn custom-button">
                                 <span class="text-truncate">Découvrir l'histoire</span>
                             </a>
                         </div>

@@ -175,7 +175,7 @@
                         bruit des marteaux sur l'argent résonne comme un écho du passé,
                         assurant que cette histoire ne soit jamais oubliée.
                     </p>
-                    <a href="galery.html" class="cta-button d-inline-flex align-items-center justify-content-center overflow-hidden rounded-lg px-5 py-3">
+                    <a href="galery.html" class="custom-button">
                         Visiter la Galerie
                     </a>
                 </div>

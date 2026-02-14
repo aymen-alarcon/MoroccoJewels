@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->string("contenu");
-            $table->string("statu");
+            $table->string("content");
+            $table->string("status");
             $table->boolean("is_deleted")->default(0);
             $table->foreignId("user_id")->constrained();
             $table->timestamps();

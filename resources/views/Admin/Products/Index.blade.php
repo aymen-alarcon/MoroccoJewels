@@ -14,24 +14,20 @@
       </header>
       <section class="px-4 px-lg-5 pb-3 d-flex flex-column gap-3 position-relative">
         <div class="d-flex flex-wrap align-items-center gap-3 rounded-xl p-3 border" style="background: color-mix(in srgb, var(--bb-accent-dark) 30%, transparent); border-color: rgba(255,255,255,.05)!important;">
-          <div class="">
-            <div class="position-relative">
-              <span class="material-symbols-outlined position-absolute" style="left:14px;top:50%;transform:translateY(-50%);color: color-mix(in srgb, var(--bb-primary) 50%, white);">search</span>
-              <input class="form-control ps-5 py-2 rounded-lg" placeholder="Rechercher par nom, SKU ou artisan..." />
+          <div>
+            <div class="form-control">
+              <i class="bi bi-search" style="color: color-mix(in srgb, var(--bb-primary) 50%, white);"></i>
+              <input class="ps-5 py-2 rounded-lg bg-transparent border border-0" placeholder="Rechercher par nom" style="outline: none"/>
             </div>
           </div>
 
           <div class="d-flex align-items-center gap-2 custom-scrollbar pb-1">
-            <button class="chip active">Tous</button>
-            <button class="chip">Colliers</button>
-            <button class="chip">Bracelets</button>
-            <button class="chip">Boucles</button>
-            <button class="chip">Bagues</button>
+            <button class="btn custom-button active">Tous</button>
+            <button class="btn custom-button">Colliers</button>
+            <button class="btn custom-button">Bracelets</button>
+            <button class="btn custom-button">Boucles</button>
+            <button class="btn custom-button">Bagues</button>
           </div>
-
-          <button class="btn rounded-lg d-inline-flex align-items-center justify-content-center" style="width:48px;height:48px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.1);" type="button">
-            <span class="material-symbols-outlined">filter_list</span>
-          </button>
         </div>
       </section>
 

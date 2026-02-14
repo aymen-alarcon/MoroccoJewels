@@ -11,10 +11,10 @@
 
           <div class="surface rounded-xl p-3 d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
             <div class="d-flex align-items-center gap-2">
-              <button class="chip chip-active">Tous</button>
-              <button class="chip chip-ghost">En attente</button>
-              <button class="chip chip-ghost">En cours</button>
-              <button class="chip chip-ghost">Expédiées</button>
+              <button class="btn custom-button">Tous</button>
+              <button class="btn custom-button">En attente</button>
+              <button class="btn custom-button">En cours</button>
+              <button class="btn custom-button">Expédiées</button>
             </div>
             <div class="d-flex align-items-center gap-2">
               <button class="btn btn-sm rounded-lg d-inline-flex align-items-center gap-1 chip-ghost">
