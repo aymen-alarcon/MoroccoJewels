@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<title>Mes Demandes - Bijoux Berbères</title>
+
+<style>
+:root{
+--primary:#fac638;
+--bg-dark:#420F0E;
+--surface:#5A1A19;
+--border-sep:#702524;
+}
+
+body{
+font-family:'Plus Jakarta Sans',sans-serif;
+background:var(--bg-dark);
+color:#fff;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* Moroccan pattern */
+.moroccan-pattern{
+position:absolute;
+inset:0;
+background-image: radial-gradient(var(--primary) 0.5px, transparent 0.5px);
+background-size:24px 24px;
+opacity:.05;
+pointer-events:none;
+}
+
+/* Navbar */
+.nav-custom{
+background:rgba(66,15,14,.8);
+backdrop-filter:blur(10px);
+border-bottom:1px solid var(--border-sep);
+}
+
+/* Sidebar */
+.sidebar-link{
+padding:.85rem 1rem;
+border-radius:.75rem;
+color:rgba(255,255,255,.6);
+transition:.2s;
+display:flex;
+align-items:center;
+gap:.75rem;
+font-weight:500;
+}
+
+.sidebar-link:hover{
+background:var(--surface);
+color:#fff;
+}
+
+.sidebar-active{
+background:var(--primary);
+color:var(--bg-dark);
+}
+
+.sidebar-sep{
+height:1px;
+background:var(--border-sep);
+margin:1.5rem 0;
+}
+
+/* Table */
+.table-custom{
+background:rgba(90,26,25,.3);
+border:1px solid var(--border-sep);
+border-radius:1rem;
+overflow:hidden;
+backdrop-filter:blur(6px);
+}
+
+.table-custom thead{
+background:rgba(90,26,25,.5);
+}
+
+.table-custom th{
+font-size:.75rem;
+letter-spacing:.1em;
+text-transform:uppercase;
+font-weight:700;
+color:rgba(255,255,255,.8);
+padding:1.5rem;
+border-bottom:1px solid var(--border-sep);
+}
+
+.table-custom td{
+padding:1.5rem;
+vertical-align:middle;
+border-top:1px solid var(--border-sep);
+}
+
+.table-custom tbody tr:hover{
+background:rgba(255,255,255,.05);
+}
+
+/* Status badges */
+.badge-primary-custom{
+background:var(--primary);
+color:var(--bg-dark);
+font-weight:700;
+font-size:.75rem;
+padding:.4rem .8rem;
+border-radius:999px;
+}
+
+.badge-outline{
+border:1px solid rgba(255,255,255,.2);
+color:rgba(255,255,255,.8);
+font-size:.75rem;
+padding:.4rem .8rem;
+border-radius:999px;
+}
+
+/* Buttons */
+.btn-consult{
+background:rgba(255,255,255,.1);
+color:#fff;
+font-weight:700;
+border-radius:.6rem;
+padding:.5rem 1.2rem;
+transition:.2s;
+}
+
+.btn-consult:hover{
+background:#fff;
+color:var(--bg-dark);
+}
+
+/* Info box */
+.info-box{
+margin-top:2rem;
+padding:1.5rem;
+border-radius:1rem;
+border:1px solid rgba(250,198,56,.2);
+background:rgba(250,198,56,.05);
+display:flex;
+gap:1rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="nav-custom sticky-top">
+<div class="container py-3 d-flex justify-content-between align-items-center">
+
+<div class="d-flex align-items-center gap-5">
+<div class="d-flex align-items-center gap-2">
+<i class="bi bi-stars fs-3 text-warning"></i>
+<h1 class="h6 mb-0 text-uppercase fw-bold">Bijoux Berbères</h1>
+</div>
+
+<nav class="d-none d-md-flex gap-4 small text-white-50">
+<a href="#" class="text-decoration-none text-reset">Collections</a>
+<a href="#" class="text-decoration-none text-reset">Héritage</a>
+<a href="#" class="text-decoration-none text-reset">Artisanat</a>
+<a href="#" class="text-decoration-none text-reset">Contact</a>
+</nav>
+</div>
+
+<div class="d-flex align-items-center gap-4">
+<input class="form-control form-control-sm d-none d-sm-block" 
+style="width:260px;background:var(--surface);border:none;color:#fff;" 
+placeholder="Rechercher une pièce...">
+
+<div style="width:40px;height:40px;border:2px solid rgba(250,198,56,.3);padding:2px;border-radius:50%;">
+<div style="width:100%;height:100%;border-radius:50%;background:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1KVrwt-TWXpbb9vaOhMU3a2_rnoKYhQdB28vHAg-qKdKjrK_VNyD9vWQBX3owLkacbW1VTlJAJ95bkgbVdQ5zKG3EgYhg8hv0hWOm5_TsQP9Qz56D-wgZkE82qRNuhW3WMaYog3GxA39pM8JmYD5YpGukfLet7V2qpICVe9t5PyEBrko9VQpm2lCgmYUGWlN2eIf6Wab-LW8FfvVxcmqgwB7L7eUIkMDjqljJK-Tgs-uftxO1exmmXwgrFBUWU_opIRKgCKzP05E') center/cover;"></div>
+</div>
+</div>
+
+</div>
+</header>
+
+<!-- MAIN -->
+
+<footer class="text-center py-4 border-top" style="border-color:var(--border-sep)!important;">
+<small class="text-white-50">© 2024 BIJOUX BERBÈRES - L'ÉLÉGANCE DE L'HISTOIRE</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

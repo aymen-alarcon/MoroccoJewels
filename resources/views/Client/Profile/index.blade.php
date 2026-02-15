@@ -1,4 +1,59 @@
-  @include("includes.header")
+@include("includes.header")
+<style>
+.product-card{
+    background:rgba(45,10,10,.4);
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:.75rem;
+    transition:.3s;
+}
+.product-card:hover{
+    border-color:rgba(250,198,56,.3);
+}
+
+.product-img{
+    aspect-ratio:3/4;
+    object-fit:cover;
+    transition:transform .5s ease;
+}
+.product-card:hover .product-img{
+    transform:scale(1.05);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    opacity:0;
+    transition:.3s;
+}
+.product-card:hover .overlay{
+    opacity:1;
+}
+
+.icon-btn{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:none;
+}
+
+.icon-primary{
+    background:var(--primary);
+    color:var(--background-dark);
+}
+
+.icon-danger{
+    background:rgba(255,255,255,.1);
+    color:white;
+}
+
+.icon-danger:hover{
+    background:#dc3545;
+}
+</style>
   <main class="position-relative">
     <div class="moroccan-pattern"></div>
 
@@ -46,22 +101,22 @@
 
       <div class="border-bottom mb-4" style="border-color:var(--bb-border)!important;">
         <div class="d-flex tabs-line gap-4 overflow-auto">
-          <a href="#" class="active d-flex flex-column align-items-center gap-1 text-decoration-none">
+          <a href="#" id="personIcon" class="active d-flex flex-column align-items-center gap-1 text-decoration-none">
             <i class="bi bi-person"></i>
             <span class="text-uppercase fw-bold" style="font-size:11px;letter-spacing:.18em;">Informations</span>
           </a>
-          <a href="#" class="d-flex flex-column align-items-center gap-1 text-decoration-none">
+          <a href="#" id="heartIcon" class="d-flex flex-column align-items-center gap-1 text-decoration-none">
             <i class="bi bi-heart"></i>
             <span class="text-uppercase fw-bold" style="font-size:11px;letter-spacing:.18em;">Mes Favoris</span>
           </a>
-          <a href="#" class="d-flex flex-column align-items-center gap-1 text-decoration-none">
+          <a href="#" id="orderIcon" class="d-flex flex-column align-items-center gap-1 text-decoration-none">
             <i class="bi bi-chat-left"></i>
             <span class="text-uppercase fw-bold" style="font-size:11px;letter-spacing:.18em;">Mes Demandes</span>
           </a>
         </div>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4" id="informationSection">
         <div class="col-12 col-lg-4 d-flex flex-column gap-3">
           <div class="surface rounded-xl p-4">
             <h3 class="h6 fw-bold mb-3 d-flex align-items-center gap-2" style="color:var(--bb-primary);">
@@ -182,6 +237,83 @@
           </section>
         </div>
       </div>
+
+      <div class="container py-5 d-none" id="favoriteSection">
+        <div class="row g-4">
+          <div class="col-6">
+            <div class="product-card p-3">
+              <div class="position-relative overflow-hidden rounded-3">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyz-e7cE87sSb8ggHxbPQdTkaIvJzY9kY-qw7hIbRQEvLq5xizXKvp5wT6vs2ohcJ6lXRzjkmvInmzvR70hVELIPNEEwYawwZFH9xFoHWN5qsUQ-zurZeAufGtHkflzRXU6FTKvZ5fn5FWfpVmDLFOi2A2MwaSFrMg3oBPcS2cMdU6jY5fJQrphRYyGnhcUcc9jmRWUfIMN1-2OjAoyPUZ4wDMkcvX8EMiYjSNUCGW85K0c88FRC0Q04xmjcSg5Hj-793yxp0tpG8" class="w-100 product-img">
+                <div class="overlay d-flex align-items-center justify-content-center gap-3">
+                  <button class="icon-btn icon-primary">
+                    <i class="bi bi-eye-fill"></i>
+                  </button>
+                  <button class="icon-btn icon-danger">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="text-warning text-uppercase fw-bold small mb-1">Argent & Émail</div>
+                <h6 class="fw-bold mb-3">Collier Fibule Tiznit</h6>
+                <a href="#" class="small text-decoration-underline text-secondary">Voir les détails</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="container my-5 d-none" id="ordersSection">
+        <div class="row g-5">
+          <section class="col-md-12">
+            <h2 class="fw-bold display-6 mb-3">Mes Demandes de Renseignements</h2>
+            <p class="text-white-50 mb-4">Suivez vos échanges avec nos artisans pour vos pièces d'exception.</p>
+              <table class="table table-inquiries align-middle mb-0 text-white">
+                <thead>
+                  <tr>
+                    <th class="px-3 px-md-4 py-3">Article</th>
+                    <th class="px-3 px-md-4 py-3">Price</th>
+                    <th class="px-3 px-md-4 py-3">Quantity</th>
+                    <th class="px-3 px-md-4 py-3">Date</th>
+                    <th class="px-3 px-md-4 py-3">Statut</th>
+                    <th class="px-3 px-md-4 py-3 text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @if (count($user->order) > 0)
+                    @foreach ($user->order as $order)
+                        @foreach ($order->orderItems as $item)
+                          <tr>
+                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->product_name }}</td>
+                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->price }}</td>
+                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->quantity }}</td>
+                            <td class="px-3 px-md-4 py-3">{{ $item->created_at->format("M d, Y") }}</td>
+                            <td class="px-3 px-md-4 py-3">
+                              <span class="badge rounded-2 fw-bold" style="font-size:.65rem;background:rgba(34,197,94,.10);color:#34d399;border:1px solid rgba(34,197,94,.25);">{{ $order->status }}</span>
+                            </td>
+                            <td class="px-3 px-md-4 py-3 text-end">
+                              <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
+                            </td>
+                          </tr>
+                        @endforeach
+                    @endforeach
+                  @else
+                    <tr>
+                      <td class="px-3 px-md-4 py-3 fw-bold">You</td>
+                      <td class="px-3 px-md-4 py-3 fw-bold">Haven'table</td>
+                      <td class="px-3 px-md-4 py-3 fw-bold">Placed An</td>
+                      <td class="px-3 px-md-4 py-3">Order</td>
+                      <td class="px-3 px-md-4 py-3">Yet</td>
+                      <td class="px-3 px-md-4 py-3 text-end">
+                        <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
+                      </td>
+                    </tr>
+                  @endif
+                </tbody>
+              </table>
+          </section>
+        </div>
+      </main>
     </div>
   </main>
 @include("includes.footer")
