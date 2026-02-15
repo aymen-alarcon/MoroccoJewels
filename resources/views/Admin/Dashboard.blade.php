@@ -88,7 +88,7 @@
                       <span class="small fw-semibold">Y{{ $order->user_id }}</span>
                     </div>
                   </td>
-                  <td class="py-3 small text-white-50">{{ $order_created_at }}</td>
+                  {{-- <td class="py-3 small text-white-50">{{ $order_created_at }}</td> --}}
                   <td class="py-3 fw-bold small">{{ $order->total_price }} MAD</td>
                   <td class="py-3"><span class="pill pill-green">{{ $order->status }}</span></td>
                 </tr>

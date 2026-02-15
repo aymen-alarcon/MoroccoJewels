@@ -21,7 +21,9 @@ Route::get('/', function () {
 })->name("Home");
 
 Route::get('/Home/Collection', function () {
-    return view('Home.Collection');
+    $products = Product::all();
+    $categories = Category::all();
+    return view('Home.Collection', compact("categories", "products"));
 });
 
 Route::get('/Home/History', function () {

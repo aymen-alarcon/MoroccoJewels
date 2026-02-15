@@ -33,7 +33,7 @@ class NotificationController extends Controller
             "content" => "required",
             "status" => "required",
             "is_deleted" => "required",
-            "user_id" => "required|exists:users.id"
+            "user_id" => "required|exists:users,id"
         ]);
 
         $notification->create($validate);
@@ -67,7 +67,7 @@ class NotificationController extends Controller
             "content" => "required",
             "status" => "required",
             "is_deleted" => "required",
-            "user_id" => "required|exists:users.id"
+            "user_id" => "required|exists:users,id"
         ]);
 
         $notification->update($validate);

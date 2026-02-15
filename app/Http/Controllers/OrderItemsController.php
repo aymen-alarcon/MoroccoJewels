@@ -67,7 +67,7 @@ class OrderItemsController extends Controller
             "product_name" => "required",
             "price" => "required",
             "quantity" => "required",
-            "order_id" => "required|exists:orders.id"
+            "order_id" => "required|exists:orders,id"
         ]);
 
         $OrderItems->update($validate);

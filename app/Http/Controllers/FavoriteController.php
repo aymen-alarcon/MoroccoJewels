@@ -30,8 +30,8 @@ class FavoriteController extends Controller
     public function store(Request $request, Favorite $Favorite)
     {
         $validate = $request->validate([
-            "order_id" => "required|exists:orders.id",
-            "user_id" => "required|exists:users.id",
+            "order_id" => "required|exists:orders,id",
+            "user_id" => "required|exists:users,id",
         ]);
 
         $Favorite->create($validate);
@@ -62,8 +62,8 @@ class FavoriteController extends Controller
     public function update(Request $request, Favorite $Favorite)
     {
         $validate = $request->validate([
-            "order_id" => "required|exists:orders.id",
-            "user_id" => "required|exists:users.id",
+            "order_id" => "required|exists:orders,id",
+            "user_id" => "required|exists:users,id",
         ]);
 
         $Favorite->update($validate);

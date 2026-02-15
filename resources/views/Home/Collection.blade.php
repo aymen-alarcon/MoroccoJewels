@@ -37,24 +37,14 @@
                                 <div class="mb-4 pt-4 border-top border-accent-20">
                                     <h4 class="fw-semibold text-accent-90 mb-3">Type de Bijou</h4>
                                     <div class="d-flex flex-column gap-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input custom-checkbox" type="checkbox" id="colliers">
-                                            <label class="form-check-label text-background-light-80 cursor-pointer" for="colliers">
-                                                Colliers
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input custom-checkbox" type="checkbox" id="bracelets">
-                                            <label class="form-check-label text-background-light-80 cursor-pointer" for="bracelets">
-                                                Bracelets
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input custom-checkbox" type="checkbox" id="bagues">
-                                            <label class="form-check-label text-background-light-80 cursor-pointer" for="bagues">
-                                                Bagues
-                                            </label>
-                                        </div>
+                                        @foreach ($categories as $category)                                            
+                                            <div class="form-check">
+                                                <input class="form-check-input custom-checkbox" type="checkbox" id="colliers">
+                                                <label class="form-check-label text-background-light-80 cursor-pointer" for="colliers">
+                                                    {{ $category->name }}
+                                                </label>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 
@@ -106,7 +96,7 @@
                             <div class="d-flex flex-column gap-4">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <p class="fs-6 text-background-light-70 mb-0">
-                                        Affichage de 8 sur 32 bijoux
+                                        Affichage de 8 sur {{ count($products) }} bijoux
                                     </p>
                                     <div class="dropdown">
                                         <button class="btn sort-dropdown d-flex align-items-center justify-content-center gap-2" type="button" data-bs-toggle="dropdown">
@@ -124,157 +114,34 @@
                                 </div>
                                 
                                 <div class="row g-3 g-md-4">
-                                    <div class="col-6 col-md-4 col-xl-3">
-                                        <div class="product-card group h-100">
-                                            <div class="product-image-container">
-                                                <div class="product-image bg-image-1"></div>
-                                                <button class="product-detail-btn">
-                                                    Voir les détails
-                                                </button>
+                                    @if (count($products) > 0)                                        
+                                        @foreach ($products as $product)                                        
+                                            <div class="col-6 col-md-4 col-xl-3">
+                                                <div class="product-card group h-100">
+                                                    <div class="product-image-container">
+                                                        <div class="product-image bg-image-1"></div>
+                                                        <button class="product-detail-btn">
+                                                            Voir les détails
+                                                        </button>
+                                                    </div>
+                                                    <div class="product-info mt-3">
+                                                        <p class="text-background-light fs-6 fw-medium leading-normal mb-1">
+                                                            {{ $product->name }}
+                                                        </p>
+                                                        <p class="text-background-light-70 fs-6 fw-normal leading-normal mb-0">
+                                                            {{ $product->description }}
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="product-info mt-3">
-                                                <p class="text-background-light fs-6 fw-medium leading-normal mb-1">
-                                                    Fibule Tiznit
-                                                </p>
-                                                <p class="text-background-light-70 fs-6 fw-normal leading-normal mb-0">
-                                                    Collier en argent traditionnel
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-6 col-md-4 col-xl-3">
-                                        <div class="product-card group h-100">
-                                            <div class="product-image-container">
-                                                <div class="product-image bg-image-1"></div>
-                                                <button class="product-detail-btn">
-                                                    Voir les détails
-                                                </button>
-                                            </div>
-                                            <div class="product-info mt-3">
-                                                <p class="text-background-light fs-6 fw-medium leading-normal mb-1">
-                                                    Bague Touareg
-                                                </p>
-                                                <p class="text-background-light-70 fs-6 fw-normal leading-normal mb-0">
-                                                    Bague en argent et ébène
-                                                </p>
+                                        @endforeach
+                                    @else
+                                        <div class="col-12">
+                                            <div class="product-card p-3">
+                                            <span>There are no Products Yet in this Platform</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="col-6 col-md-4 col-xl-3">
-                                        <div class="product-card group h-100">
-                                            <div class="product-image-container">
-                                                <div class="product-image bg-image-1"></div>
-                                                <button class="product-detail-btn">
-                                                    Voir les détails
-                                                </button>
-                                            </div>
-                                            <div class="product-info mt-3">
-                                                <p class="text-background-light fs-6 fw-medium leading-normal mb-1">
-                                                    Collier d'Ambre
-                                                </p>
-                                                <p class="text-background-light-70 fs-6 fw-normal leading-normal mb-0">
-                                                    Ambre et perles d'argent
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-6 col-md-4 col-xl-3">
-                                        <div class="product-card group h-100">
-                                            <div class="product-image-container">
-                                                <div class="product-image bg-image-1"></div>
-                                                <button class="product-detail-btn">
-                                                    Voir les détails
-                                                </button>
-                                            </div>
-                                            <div class="product-info mt-3">
-                                                <p class="text-background-light fs-6 fw-medium leading-normal mb-1">
-                                                    Main de Fatma
-                                                </p>
-                                                <p class="text-background-light-70 fs-6 fw-normal leading-normal mb-0">
-                                                    Pendentif protecteur en argent
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-6 col-md-4 col-xl-3">
-                                        <div class="product-card group h-100">
-                                            <div class="product-image-container">
-                                                <div class="product-image bg-image-1"></div>
-                                                <button class="product-detail-btn">
-                                                    Voir les détails
-                                                </button>
-                                            </div>
-                                            <div class="product-info mt-3">
-                                                <p class="text-background-light fs-6 fw-medium leading-normal mb-1">
-                                                    Boucles d'Oreilles Atlas
-                                                </p>
-                                                <p class="text-background-light-70 fs-6 fw-normal leading-normal mb-0">
-                                                    Argent ciselé et corail
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-6 col-md-4 col-xl-3">
-                                        <div class="product-card group h-100">
-                                            <div class="product-image-container">
-                                                <div class="product-image bg-image-1"></div>
-                                                <button class="product-detail-btn">
-                                                    Voir les détails
-                                                </button>
-                                            </div>
-                                            <div class="product-info mt-3">
-                                                <p class="text-background-light fs-6 fw-medium leading-normal mb-1">
-                                                    Bracelet Manchette
-                                                </p>
-                                                <p class="text-background-light-70 fs-6 fw-normal leading-normal mb-0">
-                                                    Bracelet rigide en argent
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-6 col-md-4 col-xl-3">
-                                        <div class="product-card group h-100">
-                                            <div class="product-image-container">
-                                                <div class="product-image bg-image-1"></div>
-                                                <button class="product-detail-btn">
-                                                    Voir les détails
-                                                </button>
-                                            </div>
-                                            <div class="product-info mt-3">
-                                                <p class="text-background-light fs-6 fw-medium leading-normal mb-1">
-                                                    Pendentif du Sud
-                                                </p>
-                                                <p class="text-background-light-70 fs-6 fw-normal leading-normal mb-0">
-                                                    Inspiration saharienne
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-6 col-md-4 col-xl-3">
-                                        <div class="product-card group h-100">
-                                            <div class="product-image-container">
-                                                <div class="product-image bg-image-1"></div>
-                                                <button class="product-detail-btn">
-                                                    Voir les détails
-                                                </button>
-                                            </div>
-                                            <div class="product-info mt-3">
-                                                <p class="text-background-light fs-6 fw-medium leading-normal mb-1">
-                                                    Parure de Fête
-                                                </p>
-                                                <p class="text-background-light-70 fs-6 fw-normal leading-normal mb-0">
-                                                    Ensemble collier et boucles
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endif
                                 </div>
                                 
                                 <div class="pt-4 mt-2 border-top border-accent-20 d-flex align-items-center justify-content-center">

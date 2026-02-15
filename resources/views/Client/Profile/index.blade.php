@@ -134,7 +134,7 @@
               <div>
                 <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">Téléphone</div>
                 @if (isset($user->phone) && !empty($user->phone))                  
-                  <div class="small fw-semibold">{{ $user->phone }}</div>
+                  <div class="small fw-semibold">+212 {{ $user->phone }}</div>
                 @else
                   <div class="small fw-semibold">Not Declared</div>
                 @endif

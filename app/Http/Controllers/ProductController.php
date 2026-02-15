@@ -37,7 +37,7 @@ class ProductController extends Controller
             "price" => "required",
             "stock" => "required",
             "is_deleted" => "required",
-            "category_id" => "required|exists:categories.id"
+            "category_id" => "required|exists:categories,id"
         ]);
 
         if ($request->hasFile('main_image')) {
