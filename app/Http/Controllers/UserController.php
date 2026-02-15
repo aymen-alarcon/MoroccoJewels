@@ -37,6 +37,11 @@ class UserController extends Controller
             "email" => "required",
             "password" => "required",
             "role_id" => "required|exists:roles.id",
+            "street" => "required",
+            "city" => "required",
+            "country" => "required",
+            "zip" => "required",
+            "phone" => "required",
         ]);
 
         $User->create($validate);
@@ -71,11 +76,34 @@ class UserController extends Controller
             "last_name" => "required",
             "email" => "required",
             "role_id" => "required|exists:roles.id",
+            "street" => "required",
+            "city" => "required",
+            "country" => "required",
+            "zip" => "required",
+            "phone" => "required",
         ]);
 
         $User->update($validate);
 
         return redirect()->route("Admin.Users.Index")->with("success", "You have successfully update a new User.");
+    }
+
+    public function updateProfile(Request $request, User $User)
+    {
+        $validate = $request->validate([
+            "first_name" => "required",
+            "last_name" => "required",
+            "email" => "required",
+            "street" => "required",
+            "city" => "required",
+            "country" => "required",
+            "zip" => "required",
+            "phone" => "required",
+        ]);
+
+        $User->update($validate);
+
+        return redirect()->route("Profile.edit")->with("success", "You have successfully update a new User.");
     }
 
     /**

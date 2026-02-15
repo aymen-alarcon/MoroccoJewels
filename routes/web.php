@@ -69,6 +69,13 @@ Route::get("/Client/Profile", function(){
     return view("Client.Profile.index", compact("user"));
 })->middleware("auth");
 
+Route::get("/Client/Profile/Edit", function(){
+    $user = Auth::user();
+    return view("Client.Profile.edit", compact("user"));
+})->middleware("auth")->name("Profile.edit");
+
+Route::get("/Client/Profile/Update/{user}", [UserController::class, "updateProfile"])->middleware("auth");
+
 Route::get("/Admin/Dashboard", function(){
     $categoriesCount = count(Category::all());
     $productsCount = count(Product::all());

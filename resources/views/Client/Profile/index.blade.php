@@ -93,9 +93,9 @@
             </div>
           </div>
 
-          <button class="text-white btn fw-bold">
+          <a href="/Client/Profile/Edit" class="text-white btn fw-bold">
             <i class="bi bi-pencil"></i> Modifier le profil
-          </button>
+          </a>
         </div>
       </div>
 
@@ -147,41 +147,49 @@
           <section>
             <div class="d-flex align-items-center justify-content-between mb-3">
               <h3 class="h5 fw-bold mb-0 d-flex align-items-center gap-2">
-                Mes Favoris <span class="small fw-normal text-white-50">(3 articles)</span>
+                Mes Favoris <span class="small fw-normal text-white-50">({{ count($user->favorite) }} articles)</span>
               </h3>
               <a href="#" class="small fw-bold text-decoration-underline" style="color:var(--bb-primary);">Voir tout</a>
             </div>
             <div class="row g-3">
-              <div class="col-12 col-sm-6">
-                <div class="favorite-card surface rounded-3 d-flex overflow-hidden">
-                  <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjpGT-AidvowMnbF4UJdAXjxBKQPpSTXzLpO6ae3pk5PQA91B3grUaHPMtKr96jw9govAK9OT4xKYC9xm1ApNDLwv80d1Z7YBTcEM5jPSZhExK9r5I91OUTLI1K5R2t3dlFMQKNg1Qn6fvD4BNNuDNSKZZ16iPCWGN8KopHWSURlnouusPYs2HrNSIm04GFoKf8OaVXddIYEFzZJHgYgVCyBKxy3M0dH5gmg-X68BBKYsA_OHc1qe3nA6rc44-JzqjS4xkqSZsZV0');"></div>
-                  <div class="p-3 d-flex flex-column justify-content-between">
-                    <div>
-                      <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">Argent & Émail</p>
-                      <h4 class="small fw-bold mb-0">Collier Fibule Tiznit Classique</h4>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3">
-                      <button class="btn btn-link p-0 small fw-bold text-decoration-underline">Détails</button>
-                      <button class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="favorite-card surface rounded-3 d-flex overflow-hidden">
-                  <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMFXISyBn3JP6CY3833sW-KWhVSNp2NsOBClTRNrbSGBFdzSQDo3f6-OPIpE6Ue5SycdVN8VFFzX5RI76wlYNYHYVdgtX-T9wpJNWXOOjDhtAQiY_6_Y-NrnlNMyI9WaqRnGl7GyoofoheWxHs9OCmzDMtwxhO0yC48_TKwSdjIb-mahwCOb9K7CKCTMpO5Rl3w1CjsCgMKfgAJ7SoQNQnyxyOJj3ZWnIRd-iCFFnUOs-0-u9iN4zngyvBITiaLpqO3Hpi1K3yJUY');"></div>
-                  <div class="p-3 d-flex flex-column justify-content-between">
-                    <div>
-                      <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">Ambre Naturelle</p>
-                      <h4 class="small fw-bold mb-0">Bracelet ‘Ziri’ en Argent Ciselé</h4>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mt-3">
-                      <button class="btn btn-link p-0 small fw-bold text-decoration-underline">Détails</button>
-                      <button class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></button>
+              @if (count($user->favorite) > 0)
+                <div class="col-12 col-sm-6">
+                  <div class="favorite-card surface rounded-3 d-flex overflow-hidden">
+                    <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjpGT-AidvowMnbF4UJdAXjxBKQPpSTXzLpO6ae3pk5PQA91B3grUaHPMtKr96jw9govAK9OT4xKYC9xm1ApNDLwv80d1Z7YBTcEM5jPSZhExK9r5I91OUTLI1K5R2t3dlFMQKNg1Qn6fvD4BNNuDNSKZZ16iPCWGN8KopHWSURlnouusPYs2HrNSIm04GFoKf8OaVXddIYEFzZJHgYgVCyBKxy3M0dH5gmg-X68BBKYsA_OHc1qe3nA6rc44-JzqjS4xkqSZsZV0');"></div>
+                    <div class="p-3 d-flex flex-column justify-content-between">
+                      <div>
+                        <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">Argent & Émail</p>
+                        <h4 class="small fw-bold mb-0">Collier Fibule Tiznit Classique</h4>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mt-3">
+                        <button class="btn btn-link p-0 small fw-bold text-decoration-underline">Détails</button>
+                        <button class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+                <div class="col-12 col-sm-6">
+                  <div class="favorite-card surface rounded-3 d-flex overflow-hidden">
+                    <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMFXISyBn3JP6CY3833sW-KWhVSNp2NsOBClTRNrbSGBFdzSQDo3f6-OPIpE6Ue5SycdVN8VFFzX5RI76wlYNYHYVdgtX-T9wpJNWXOOjDhtAQiY_6_Y-NrnlNMyI9WaqRnGl7GyoofoheWxHs9OCmzDMtwxhO0yC48_TKwSdjIb-mahwCOb9K7CKCTMpO5Rl3w1CjsCgMKfgAJ7SoQNQnyxyOJj3ZWnIRd-iCFFnUOs-0-u9iN4zngyvBITiaLpqO3Hpi1K3yJUY');"></div>
+                    <div class="p-3 d-flex flex-column justify-content-between">
+                      <div>
+                        <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">Ambre Naturelle</p>
+                        <h4 class="small fw-bold mb-0">Bracelet ‘Ziri’ en Argent Ciselé</h4>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between mt-3">
+                        <button class="btn btn-link p-0 small fw-bold text-decoration-underline">Détails</button>
+                        <button class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @else
+                <div class="col-12">
+                  <div class="product-card p-3">
+                    <span>You have no Products in your favorites list</span>
+                  </div>
+                </div>
+              @endif
             </div>
           </section>
 
@@ -240,26 +248,34 @@
 
       <div class="container py-5 d-none" id="favoriteSection">
         <div class="row g-4">
-          <div class="col-6">
-            <div class="product-card p-3">
-              <div class="position-relative overflow-hidden rounded-3">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyz-e7cE87sSb8ggHxbPQdTkaIvJzY9kY-qw7hIbRQEvLq5xizXKvp5wT6vs2ohcJ6lXRzjkmvInmzvR70hVELIPNEEwYawwZFH9xFoHWN5qsUQ-zurZeAufGtHkflzRXU6FTKvZ5fn5FWfpVmDLFOi2A2MwaSFrMg3oBPcS2cMdU6jY5fJQrphRYyGnhcUcc9jmRWUfIMN1-2OjAoyPUZ4wDMkcvX8EMiYjSNUCGW85K0c88FRC0Q04xmjcSg5Hj-793yxp0tpG8" class="w-100 product-img">
-                <div class="overlay d-flex align-items-center justify-content-center gap-3">
-                  <button class="icon-btn icon-primary">
-                    <i class="bi bi-eye-fill"></i>
-                  </button>
-                  <button class="icon-btn icon-danger">
-                    <i class="bi bi-trash-fill"></i>
-                  </button>
+          @if (count($user->favorite) > 0)                
+            <div class="col-6">
+              <div class="product-card p-3">
+                <div class="position-relative overflow-hidden rounded-3">
+                  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyz-e7cE87sSb8ggHxbPQdTkaIvJzY9kY-qw7hIbRQEvLq5xizXKvp5wT6vs2ohcJ6lXRzjkmvInmzvR70hVELIPNEEwYawwZFH9xFoHWN5qsUQ-zurZeAufGtHkflzRXU6FTKvZ5fn5FWfpVmDLFOi2A2MwaSFrMg3oBPcS2cMdU6jY5fJQrphRYyGnhcUcc9jmRWUfIMN1-2OjAoyPUZ4wDMkcvX8EMiYjSNUCGW85K0c88FRC0Q04xmjcSg5Hj-793yxp0tpG8" class="w-100 product-img">
+                  <div class="overlay d-flex align-items-center justify-content-center gap-3">
+                    <button class="icon-btn icon-primary">
+                      <i class="bi bi-eye-fill"></i>
+                    </button>
+                    <button class="icon-btn icon-danger">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <div class="text-warning text-uppercase fw-bold small mb-1">Argent & Émail</div>
+                  <h6 class="fw-bold mb-3">Collier Fibule Tiznit</h6>
+                  <a href="#" class="small text-decoration-underline text-secondary">Voir les détails</a>
                 </div>
               </div>
-              <div class="mt-3">
-                <div class="text-warning text-uppercase fw-bold small mb-1">Argent & Émail</div>
-                <h6 class="fw-bold mb-3">Collier Fibule Tiznit</h6>
-                <a href="#" class="small text-decoration-underline text-secondary">Voir les détails</a>
-              </div>
             </div>
-          </div>
+            @else
+              <div class="col-12">
+                <div class="product-card p-3">
+                  <span>You have no Products in your favorites list</span>
+                </div>
+              </div>
+            @endif
         </div>
       </div>
 
