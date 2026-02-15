@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string("product_name");
             $table->Integer("price");
             $table->Integer("quantity");
-            $table->foreignId("order_id")->constrained();
+            $table->foreignId("order_id")
+                    ->constrained()
+                    ->cascadeOnUpdate()
+                    ->cascadeOnDelete();
             $table->timestamps();
         });
     }

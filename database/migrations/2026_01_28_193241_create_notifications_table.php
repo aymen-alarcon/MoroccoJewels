@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string("content");
             $table->string("status");
             $table->boolean("is_deleted")->default(0);
-            $table->foreignId("user_id")->constrained();
+            $table->foreignId("user_id")
+                    ->constrained()
+                    ->cascadeOnUpdate()
+                    ->cascadeOnDelete();
             $table->timestamps();
         });
     }
