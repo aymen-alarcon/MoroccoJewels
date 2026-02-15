@@ -13,7 +13,7 @@ class NotificationController extends Controller
     public function index()
     {
         $notifications = Notification::all();
-        return view("Admin.Notifications", compact("notifications"));
+        // return view("Admin.Notifications", compact("notifications"));
     }
 
     /**
@@ -21,7 +21,7 @@ class NotificationController extends Controller
      */
     public function create()
     {
-        return view("Admin.create");
+        // return view("Admin.create");
     }
 
     /**
@@ -32,12 +32,13 @@ class NotificationController extends Controller
         $validate = $request->validate([
             "content" => "required",
             "status" => "required",
-            "is_deleted" => "required"
+            "is_deleted" => "required",
+            "user_id" => "required|exists:users.id"
         ]);
 
         $notification->create($validate);
 
-        return redirect()->route("Admin.Notifications");
+        // return redirect()->route("Admin.Notifications");
     }
 
     /**
@@ -54,7 +55,7 @@ class NotificationController extends Controller
     public function edit(notification $notification)
     {
         $notification = Notification::all();
-        return view("Admin.edit", compact("notification"));
+        // return view("Admin.edit", compact("notification"));
     }
 
     /**
@@ -65,12 +66,13 @@ class NotificationController extends Controller
         $validate = $request->validate([
             "content" => "required",
             "status" => "required",
-            "is_deleted" => "required"
+            "is_deleted" => "required",
+            "user_id" => "required|exists:users.id"
         ]);
 
         $notification->update($validate);
 
-        return redirect()->route("Admin.Notifications");
+        // return redirect()->route("Admin.Notifications");
     }
 
     /**
@@ -80,6 +82,6 @@ class NotificationController extends Controller
     {
         $notification->delete();
 
-        return view("Admin.Notifications");
+        // return view("Admin.Notifications");
     }
 }

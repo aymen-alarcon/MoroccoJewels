@@ -17,4 +17,8 @@ class Order extends Model
     public function orderItems():HasMany{
         return $this->hasMany(OrderItems::class);
     }
+
+    public function favorite():BelongsTo{
+        return $this->belongsTo(Favorite::class);
+    }
 }

@@ -9,35 +9,9 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-<style>/* Active link styling */
-.nav-link-custom.active {
-    color: #FFD700; /* Classic golden color */
-    font-weight: 600; /* Slightly bolder for emphasis */
-    position: relative;
-}
-
-/* Optional: golden underline effect */
-.nav-link-custom.active::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #FFD700;
-    margin-top: 4px;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Hover effect for all nav links */
-.nav-link-custom:hover {
-    color: #FFD700;
-    transition: color 0.3s ease;
-}
-</style>
 <?php
     $current = $_SERVER['REQUEST_URI'];
 ?>
-
 @if(session()->has('failed'))
     <div class="alert alert-danger d-flex justify-content-center align-items-center">
         {{ session()->get('failed') }}

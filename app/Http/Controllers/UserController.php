@@ -36,7 +36,7 @@ class UserController extends Controller
             "last_name" => "required",
             "email" => "required",
             "password" => "required",
-            "role_id" => "required",
+            "role_id" => "required|exists:roles.id",
         ]);
 
         $User->create($validate);
@@ -70,7 +70,7 @@ class UserController extends Controller
             "first_name" => "required",
             "last_name" => "required",
             "email" => "required",
-            "role_id" => "required",
+            "role_id" => "required|exists:roles.id",
         ]);
 
         $User->update($validate);

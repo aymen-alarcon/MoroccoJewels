@@ -21,7 +21,7 @@ class OrderItemsController extends Controller
      */
     public function create()
     {
-        return view("Admin.create");
+        // return view("Admin.create");
     }
 
     /**
@@ -38,7 +38,7 @@ class OrderItemsController extends Controller
 
         $OrderItems->create($validate);
 
-        return redirect()->route("Admin.OrderItems");
+        // return redirect()->route("Admin.OrderItems");
     }
 
     /**
@@ -55,7 +55,7 @@ class OrderItemsController extends Controller
     public function edit(OrderItems $OrderItems)
     {
         $OrderItems = OrderItems::all();
-        return view("Admin.edit", compact("OrderItems"));
+        // return view("Admin.edit", compact("OrderItems"));
     }
 
     /**
@@ -67,12 +67,12 @@ class OrderItemsController extends Controller
             "product_name" => "required",
             "price" => "required",
             "quantity" => "required",
-            "order_id" => "required"
+            "order_id" => "required|exists:orders.id"
         ]);
 
         $OrderItems->update($validate);
 
-        return redirect()->route("Admin.OrderItems");
+        // return redirect()->route("Admin.OrderItems");
     }
 
     /**

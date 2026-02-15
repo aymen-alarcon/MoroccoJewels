@@ -11,7 +11,7 @@
                    style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGzy1EiC6j0Wu3hcjrCC2MHMHbFgETsiW-oKeQKD0zAXxrBAuPoGqcc4Usf2cZHnyIdyD9sn_CXsTAoLd96CcoyowfCYHQE7mYF9-QshTWY9SxEWW0zwe4ty_4jIFL14M_2WhNtRMiq_OYZEqKcN7pN2FIpi_SPD2LwvTI7yIVmKIiKci-7U5domyK4I5Fc5_RCNt_c7L1lAIVOvTR0sUd5skkwJRhiE3zYcxWHYQ7xIlwKx301-zjYQQFqBEyA2UZA026YXNiKNs');"></div>
               <div class="position-absolute bottom-0 end-0 translate-middle-y rounded-circle border"
                    style="background:var(--bb-primary); color:#2b1600; width:22px; height:22px; display:grid; place-items:center; border-color:var(--bb-bg-dark);">
-                <span class="material-symbols-outlined" style="font-size:12px;">verified</span>
+                <i class="bi bi-check2"></i>
               </div>
             </div>
             <div>
@@ -38,7 +38,7 @@
             </div>
           </div>
 
-          <button class="btn btn-ghost fw-bold rounded-lg d-inline-flex align-items-center gap-1">
+          <button class="text-white btn fw-bold">
             <i class="bi bi-pencil"></i> Modifier le profil
           </button>
         </div>
@@ -81,7 +81,7 @@
                 @if (isset($user->phone) && !empty($user->phone))                  
                   <div class="small fw-semibold">{{ $user->phone }}</div>
                 @else
-                  <div class="small fw-semibold">+212 666 666 666</div>
+                  <div class="small fw-semibold">Not Declared</div>
                 @endif
               </div>
             </div>
@@ -138,32 +138,43 @@
                   <thead>
                     <tr>
                       <th class="px-3 px-md-4 py-3">Article</th>
+                      <th class="px-3 px-md-4 py-3">Price</th>
+                      <th class="px-3 px-md-4 py-3">Quantity</th>
                       <th class="px-3 px-md-4 py-3">Date</th>
                       <th class="px-3 px-md-4 py-3">Statut</th>
                       <th class="px-3 px-md-4 py-3 text-end">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td class="px-3 px-md-4 py-3 fw-bold">Paire de Boucles ‘Khmisa’</td>
-                      <td class="px-3 px-md-4 py-3 text-white-50">12 Mars 2024</td>
-                      <td class="px-3 px-md-4 py-3">
-                        <span class="badge rounded-2 fw-bold" style="font-size:.65rem;background:rgba(34,197,94,.10);color:#34d399;border:1px solid rgba(34,197,94,.25);">RÉPONDU</span>
-                      </td>
-                      <td class="px-3 px-md-4 py-3 text-end">
-                        <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="px-3 px-md-4 py-3 fw-bold">Parure Royale Souss</td>
-                      <td class="px-3 px-md-4 py-3 text-white-50">05 Janvier 2024</td>
-                      <td class="px-3 px-md-4 py-3">
-                        <span class="badge rounded-2 fw-bold" style="font-size:.65rem;background:rgba(250,198,56,.10);color:var(--bb-primary);border:1px solid rgba(250,198,56,.25);">EN ATTENTE</span>
-                      </td>
-                      <td class="px-3 px-md-4 py-3 text-end">
-                        <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
-                      </td>
-                    </tr>
+                    @if (count($user->order) > 0)
+                      @foreach ($user->order as $order)
+                          @foreach ($order->orderItems as $item)
+                            <tr>
+                              <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->product_name }}</td>
+                              <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->price }}</td>
+                              <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->quantity }}</td>
+                              <td class="px-3 px-md-4 py-3">{{ $item->created_at->format("M d, Y") }}</td>
+                              <td class="px-3 px-md-4 py-3">
+                                <span class="badge rounded-2 fw-bold" style="font-size:.65rem;background:rgba(34,197,94,.10);color:#34d399;border:1px solid rgba(34,197,94,.25);">{{ $order->status }}</span>
+                              </td>
+                              <td class="px-3 px-md-4 py-3 text-end">
+                                <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
+                              </td>
+                            </tr>
+                          @endforeach
+                      @endforeach
+                    @else
+                      <tr>
+                        <td class="px-3 px-md-4 py-3 fw-bold">You</td>
+                        <td class="px-3 px-md-4 py-3 fw-bold">Haven'table</td>
+                        <td class="px-3 px-md-4 py-3 fw-bold">Placed An</td>
+                        <td class="px-3 px-md-4 py-3">Order</td>
+                        <td class="px-3 px-md-4 py-3">Yet</td>
+                        <td class="px-3 px-md-4 py-3 text-end">
+                          <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
+                        </td>
+                      </tr>
+                    @endif
                   </tbody>
                 </table>
               </div>

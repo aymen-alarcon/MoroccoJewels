@@ -3,9 +3,8 @@
     <div class="container" style="max-width:520px;">
       <div class="form-card rounded-xl shadow-2xl p-4 p-md-5">
         <div class="text-center mb-4">
-          <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
-               style="width:64px;height:64px;background:rgba(239,193,57,.15);color:var(--bb-primary);">
-            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">shield_person</span>
+          <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:64px;height:64px;background:rgba(239,193,57,.15);color:var(--bb-primary);">
+            <i class="bi bi-person-circle fs-2"></i>
           </div>
           <h1 class="h3 fw-bold mb-1">Connexion</h1>
           <p class="text-white-50 small mb-0">Accédez à votre espace membre Bijoux Berbères</p>
@@ -18,7 +17,10 @@
             <label class="form-label small fw-semibold">Adresse e‑mail</label>
             <div class="position-relative">
               <input type="email" name="email" class="form-control" placeholder="exemple@bijoux.com"/>
-              <span class="material-symbols-outlined position-absolute" style="right:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.35)">mail</span>
+              <button class="btn btn-link position-absolute p-0" type="button"
+                      style="right:8px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.5)">
+              <i class="bi bi-envelope" style="right:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.35)"></i>
+              </button>
             </div>
           </div>
 
@@ -31,7 +33,7 @@
               <input type="password" name="password" class="form-control" placeholder="••••••••"/>
               <button class="btn btn-link position-absolute p-0" type="button"
                       style="right:8px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.5)">
-                <span class="material-symbols-outlined">visibility</span>
+                <i class="bi bi-eye"></i>
               </button>
             </div>
           </div>

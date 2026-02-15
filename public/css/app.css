@@ -161,6 +161,11 @@ body {
     border-color: var(--border-dark) !important;
 }
 
+.nav-link-custom.active {
+    color: #e6a756 !important;
+    font-weight: 600;
+}
+
 .nav-link-custom {
     color: rgba(224, 224, 224, 0.8) !important;
     text-transform: uppercase;

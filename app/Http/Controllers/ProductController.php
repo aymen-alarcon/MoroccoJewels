@@ -32,12 +32,12 @@ class ProductController extends Controller
     public function store(Request $request, Product $Product)
     {
         $validate = $request->validate([
-            'name'        => 'required|string|max:255',
-            'category_id' => 'required',
-            'price'       => 'required|integer|min:0',
-            'description' => 'required|string',
-            'stock'       => 'required|integer|min:0',
-            'main_image'  => 'required|image|max:2048',
+            "name" => "required",
+            "description" => "required",
+            "price" => "required",
+            "stock" => "required",
+            "is_deleted" => "required",
+            "category_id" => "required|exists:categories.id"
         ]);
 
         if ($request->hasFile('main_image')) {
@@ -77,7 +77,8 @@ class ProductController extends Controller
             "description" => "required",
             "price" => "required",
             "stock" => "required",
-            "is_deleted" => "required"
+            "is_deleted" => "required",
+            "category_id" => "required|exists:categories.id"
         ]);
 
         $Product->update($validate);

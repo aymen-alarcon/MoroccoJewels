@@ -24,6 +24,7 @@ class User extends Authenticatable
         'last_name',
         'email',
         'password',
+        'role_id',
     ];
 
     public function role(): BelongsTo{
@@ -37,6 +38,10 @@ class User extends Authenticatable
     public function notifications(): HasMany
     {
         return $this->hasMany(Notification::class);
+    }
+
+    public function favorite():HasMany{
+        return $this->hasMany(Favorite::class);
     }
 
     /**
