@@ -106,6 +106,11 @@ class UserController extends Controller
             "phone" => "required",
         ]);
 
+        if($request->hasFile("profile_picture")){
+            $path = $request->file("profile_picture")->store("users", "public");
+            $validate["profile_picture"] = $path;
+        }
+
         $User->update($validate);
 
         return redirect()->route("Profile.edit")->with("success", "You have successfully update a new User.");

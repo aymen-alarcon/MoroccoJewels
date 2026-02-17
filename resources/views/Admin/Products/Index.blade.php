@@ -17,7 +17,7 @@
           <div>
             <div class="form-control">
               <i class="bi bi-search" style="color: color-mix(in srgb, var(--bb-primary) 50%, white);"></i>
-              <input class="ps-5 py-2 rounded-lg bg-transparent border border-0" placeholder="Rechercher par nom" style="outline: none"/>
+              <input class="ps-5 py-2 rounded-lg bg-transparent" placeholder="Rechercher par nom" style="border:none; outline: none"/>
             </div>
           </div>
 

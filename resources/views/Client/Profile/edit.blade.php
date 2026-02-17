@@ -94,19 +94,16 @@
                 <p class="text-accent">Personnalisez vos informations pour une expérience sur mesure.</p>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="glass-panel p-4 text-center mb-4">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqf6UutYAhQnJ3X3QfCBxdfr8lPcEjuEcoKRTNkSSPBemuOK9-slA50YXrLPiDJw9Px1tHLsK059tes4mtQgMnWgQb8OakkplanEZSC4HBDIzm3OS1pFth_9kiYKYuMfJwBsWiGDO837tzbN5VlZJnNG-2niVTW7J3dtwgS-sZBNnTg0T8Uzg5cWHnWHtbzkWRkXKwjNy6VuwM3AOL8-GY_n6hml3J57jtHXaehjfiu7a7resN_b7ksdBVwV4OGn1hFWe__1q2NBc"
-                            class="rounded-circle border border-2 mb-3"
-                            style="width:100px;height:100px;object-fit:cover;">
-                        <h5 class="fw-bold">{{ $user->first_name }} {{ $user->last_name }}</h5>
-                        <div class="small-uppercase text-accent">Membre Privilège</div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <form class="glass-panel p-4" action="/Client/Profile/Update/{{ $user->id }}">
+                <div class="col-lg-12">
+                    <form class="glass-panel p-4" action="/Client/Profile/Update/{{ $user->id }}" enctype="multipart/form-data" method="POST">
+                        @csrf
+                        @method("PUT")
                         <h5 class="fw-bold mb-4">Informations personnelles</h5>
                         <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label class="small-uppercase text-accent">Image principale</label>
+                                <input type="file" name="profile_picture" class="form-control align-content-center" accept="image/*" required/>
+                            </div>
                             <div class="col-md-6">
                                 <label class="small-uppercase text-accent">Nom</label>
                                 <input type="text" class="form-control" name="first_name" value="{{ $user->first_name }}">
@@ -115,7 +112,7 @@
                                 <label class="small-uppercase text-accent">Prénom</label>
                                 <input type="text" class="form-control" name="last_name" value="{{ $user->last_name }}">
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <label class="small-uppercase text-accent">Adresse e-mail</label>
                                 <input type="email" class="form-control" name="email" value="{{ $user->email }}">
                             </div>

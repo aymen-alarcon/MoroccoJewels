@@ -119,10 +119,15 @@
                                             <div class="col-6 col-md-4 col-xl-3">
                                                 <div class="product-card group h-100">
                                                     <div class="product-image-container">
-                                                        <div class="product-image bg-image-1"></div>
-                                                        <button class="product-detail-btn">
-                                                            Voir les détails
-                                                        </button>
+                                                        @if (isset($product->main_image))
+                                                            <div class="product-image" style="background-image: url({{ asset("storage/" . $product->main_image) }})"></div>
+                                                        @else
+                                                            <div class="product-image bg-image-1"></div>
+                                                        @endif
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <button class="product-detail-btn">Ajoutez au panier</button>
+                                                            <button class="product-detail-btn">Voir les détails</button>
+                                                        </div>
                                                     </div>
                                                     <div class="product-info mt-3">
                                                         <p class="text-background-light fs-6 fw-medium leading-normal mb-1">

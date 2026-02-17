@@ -63,7 +63,7 @@
           <div class="d-flex align-items-center gap-3 gap-md-4">
             <div class="position-relative">
               <div class="avatar-96"
-                   style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGzy1EiC6j0Wu3hcjrCC2MHMHbFgETsiW-oKeQKD0zAXxrBAuPoGqcc4Usf2cZHnyIdyD9sn_CXsTAoLd96CcoyowfCYHQE7mYF9-QshTWY9SxEWW0zwe4ty_4jIFL14M_2WhNtRMiq_OYZEqKcN7pN2FIpi_SPD2LwvTI7yIVmKIiKci-7U5domyK4I5Fc5_RCNt_c7L1lAIVOvTR0sUd5skkwJRhiE3zYcxWHYQ7xIlwKx301-zjYQQFqBEyA2UZA026YXNiKNs');"></div>
+                   style="background-image:url('{{ asset("storage/" . $user->profile_picture) }}');"></div>
               <div class="position-absolute bottom-0 end-0 translate-middle-y rounded-circle border"
                    style="background:var(--bb-primary); color:#2b1600; width:22px; height:22px; display:grid; place-items:center; border-color:var(--bb-bg-dark);">
                 <i class="bi bi-check2"></i>

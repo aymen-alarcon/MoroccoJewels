@@ -76,7 +76,7 @@ Route::get("/Client/Profile/Edit", function(){
     return view("Client.Profile.edit", compact("user"));
 })->middleware("auth")->name("Profile.edit");
 
-Route::get("/Client/Profile/Update/{user}", [UserController::class, "updateProfile"])->middleware("auth");
+Route::put("/Client/Profile/Update/{user}", [UserController::class, "updateProfile"])->middleware("auth");
 
 Route::get("/Admin/Dashboard", function(){
     $categoriesCount = count(Category::all());
