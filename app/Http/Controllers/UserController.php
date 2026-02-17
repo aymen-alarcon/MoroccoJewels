@@ -32,17 +32,22 @@ class UserController extends Controller
     public function store(Request $request, User $User)
     {
         $validate = $request->validate([
-            "first_name" => "required",
-            "last_name" => "required",
-            "email" => "required",
-            "password" => "required",
+            "first_name" => "string|required",
+            "last_name" => "string|required",
+            "email" => "string|required",
+            "password" => "string|required",
             "role_id" => "required|exists:roles,id",
-            "street" => "required",
-            "city" => "required",
-            "country" => "required",
-            "zip" => "required",
+            "street" => "string|required",
+            "city" => "string|required",
+            "country" => "string|required",
+            "zip" => "integer|required",
             "phone" => "required",
         ]);
+
+        if ($request->hasFile("profile_picture")) {
+            $path = $request->file("profile_picture")->store("users", "public");
+            $validate['profile_picture'] = $path;
+        }
 
         $User->create($validate);
 

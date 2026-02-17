@@ -36,9 +36,10 @@ class ProductController extends Controller
             "description" => "required",
             "price" => "required",
             "stock" => "required",
-            "is_deleted" => "required",
             "category_id" => "required|exists:categories,id"
         ]);
+
+        $validate["is_deleted"] = 0 ;
 
         if ($request->hasFile('main_image')) {
             $path = $request->file('main_image')->store('products', 'public');
@@ -48,14 +49,6 @@ class ProductController extends Controller
         $Product->create($validate);
 
         return redirect()->route("Admin.Products.Index")->with("success", "You have successfully created a new Product.");
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $Product)
-    {
-        //
     }
 
     /**
@@ -77,7 +70,6 @@ class ProductController extends Controller
             "description" => "required",
             "price" => "required",
             "stock" => "required",
-            "is_deleted" => "required",
             "category_id" => "required|exists:categories.id"
         ]);
 

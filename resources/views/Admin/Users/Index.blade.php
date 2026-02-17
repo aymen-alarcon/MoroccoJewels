@@ -20,8 +20,8 @@
               <table class="table table-roles align-middle mb-0" style="background-color: #5A1A19">
                 <thead>
                   <tr>
-                    <th class="px-4 py-3">Profile Picture</th>
                     <th class="px-4 py-3">Id</th>
+                    <th class="px-4 py-3">Profile Picture</th>
                     <th class="px-4 py-3">First Name</th>
                     <th class="px-4 py-3">Last Name</th>
                     <th class="px-4 py-3">Email</th>
@@ -33,11 +33,11 @@
                 <tbody>
                   @foreach ($users as $user)                  
                   <tr>
-                    <td class="px-4 py-3 d-flex justify-content-center">
-                      <div class="rounded-circle border" style="width:40px;height:40px;background:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-SrzYqcjULv4EbxL9o7Emw9qLszHqqaSvKAZ4uRHjhbtWdXuMY5TWTWind_RR-TRrAXXxG9poJgVral073Vd25VvaW37Os28rhmYnYZ2i7GHXZGxgcs3xsRek34Nc8xCi9EZFl7OlP74nQIa_M8hJxeP322dVAo-cOHHAgzNEH4REGDQMgkzcy7XFRF-gYo5Pc_7rAyRd27uzae7rsjyTmwOJApqij7UlL-DVNH25zkwnSHutRNrdug4wTqlUo2NADnm2IIL2TTI') center/cover no-repeat;border-color:rgba(255,255,255,.2);"></div>
-                    </td>
                     <td class="px-4 py-3">
                       <div class="small fw-bold">{{ $user->id }}</div>
+                    </td>
+                    <td class="px-4 py-3 d-flex align-items-center justify-content-center">
+                      <img src="{{ asset("storage/" . $user->profile_picture) }}" class="rounded-circle" style="height: 5em; width: 5em;" alt="">
                     </td>
                     <td class="px-4 py-3">
                       <div class="text-dark">{{ $user->first_name }}</div>
@@ -48,8 +48,12 @@
                     <td class="px-4 py-3">
                       <div class="small text-dark">{{ $user->email }}</div>
                     </td>
-                    <td class="px-4 py-3"><span class="badge-admin">{{ $user->role->role_name }}</span></td>
-                    <td class="px-4 py-3"><span class="small text-white-75">{{ $user->created_at }}</span></td>
+                    <td class="px-4 py-3">
+                      <span class="badge-admin">{{ $user->role->role_name }}</span>
+                    </td>
+                    <td class="px-4 py-3">
+                      <span class="small text-white-75">{{ $user->created_at }}</span>
+                    </td>
                     <td class="px-4 py-3 text-end">
                       <div class="d-inline-flex align-items-center gap-1">
                         <a href="/Admin/Users/EditUser/{{ $user->id }}" class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></a>

@@ -72,9 +72,9 @@
               <tr>
                 <th class="pb-3 ps-2">Commande</th>
                 <th class="pb-3">Client</th>
-                <th class="pb-3">Date</th>
                 <th class="pb-3">Montant</th>
                 <th class="pb-3">Status</th>
+                <th class="pb-3">Date</th>
               </tr>
             </thead>
             <tbody>
@@ -88,9 +88,9 @@
                       <span class="small fw-semibold">Y{{ $order->user_id }}</span>
                     </div>
                   </td>
-                  {{-- <td class="py-3 small text-white-50">{{ $order_created_at }}</td> --}}
                   <td class="py-3 fw-bold small">{{ $order->total_price }} MAD</td>
                   <td class="py-3"><span class="pill pill-green">{{ $order->status }}</span></td>
+                  <td class="py-3 small">{{ $order->created_at->format("Y-m-d") }}</td>
                 </tr>
                 @endforeach
               @else

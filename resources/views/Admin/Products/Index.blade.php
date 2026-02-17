@@ -51,7 +51,7 @@
               <tbody class="table-group-divider">
                 @foreach ($products as $product)
                   <tr>
-                    <td class="px-4 py-3"><img src="{{ $product->main_image }}" alt=""></td>
+                    <td class="px-4 py-3"><img src="{{ asset('storage/' . $product->main_image) }}" class="rounded-circle" style="height: 5em; width: 5em;"></td>
                     <td class="px-4 py-3">
                       <div class="d-flex align-items-center gap-3">
                         <div class="rounded shadow-soft border"></div>
