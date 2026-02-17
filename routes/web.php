@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogOutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
@@ -64,7 +65,9 @@ Route::post("/Auth/LogOut", LogOutController::class)->middleware("auth");
 
 Route::get("/Client/Cart", function(){
     return view("Client.Cart");
-});
+})->name("Client.Cart");
+
+Route::get("/Client/Cart/addToCart/{product}", [CartController::class, "addToCart"])->middleware("auth");
 
 Route::get("/Client/Profile", function(){
     $user = Auth::user();

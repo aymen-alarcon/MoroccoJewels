@@ -1,15 +1,6 @@
 @include("includes.header")
             <main class="container mx-auto px-4 px-sm-5 px-lg-6 py-4">
                 <div class="d-flex flex-column gap-4">
-                    <div class="d-flex flex-wrap gap-2 font-body">
-                        <a class="text-background-light-70 hover-text-accent fs-6 fw-medium breadcrumb-link" href="#">
-                            Accueil
-                        </a>
-                        <span class="text-background-light-70 fs-6 fw-medium">/</span>
-                        <span class="text-background-light fs-6 fw-medium">
-                            Collections
-                        </span>
-                    </div>
                     <div class="d-flex flex-wrap justify-content-between gap-3">
                         <div class="d-flex flex-column gap-1">
                             <h1 class="font-display text-accent fs-2 fs-md-1 fw-bold tracking-tight">
@@ -125,8 +116,8 @@
                                                             <div class="product-image bg-image-1"></div>
                                                         @endif
                                                         <div class="d-flex justify-content-center align-items-center">
-                                                            <button class="product-detail-btn">Ajoutez au panier</button>
-                                                            <button class="product-detail-btn">Voir les détails</button>
+                                                            <a href="/Client/Cart/addToCart/{{ $product->id }}" class="text-decoration-none product-detail-btn">Ajoutez au panier</a>
+                                                            <a class="text-decoration-none product-detail-btn">Voir les détails</a>
                                                         </div>
                                                     </div>
                                                     <div class="product-info mt-3">

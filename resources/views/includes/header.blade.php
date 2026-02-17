@@ -37,7 +37,7 @@
                             <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Client/Profile') ? 'active' : ''; ?>" href="/Client/Profile">Profile</a>
                             <form action="/Auth/LogOut" method="POST">
                                 @csrf
-                                <button class="border border-0 bg-transparent nav-link-custom px-2 text-decoration-none" type="submit">Log Out</button>
+                                <button class="bg-transparent nav-link-custom px-2 text-decoration-none" type="submit" style="border: none">Log Out</button>
                             </form>
                         @else
                             <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Auth/Login') ? 'active' : ''; ?>" href="/Auth/Login">Login</a>
