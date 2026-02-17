@@ -49,37 +49,43 @@
                 </tr>
               </thead>
               <tbody class="table-group-divider">
-                @foreach ($products as $product)
-                  <tr>
-                    <td class="px-4 py-3"><img src="{{ asset('storage/' . $product->main_image) }}" class="rounded-circle" style="height: 5em; width: 5em;"></td>
-                    <td class="px-4 py-3">
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="rounded shadow-soft border"></div>
-                        <div>
-                          <p class="fw-bold mb-0">{{ $product->name }}</p>
+                @if (count($products) > 0)                  
+                  @foreach ($products as $product)
+                    <tr>
+                      <td class="px-4 py-3"><img src="{{ asset('storage/' . $product->main_image) }}" class="rounded-circle" style="height: 5em; width: 5em;"></td>
+                      <td class="px-4 py-3">
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="rounded shadow-soft border"></div>
+                          <div>
+                            <p class="fw-bold mb-0">{{ $product->name }}</p>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3"><span class="badge-soft">{{ $product->description }}</span></td>
-                    <td class="px-4 py-3 text-end"><span class="fw-bold">{{ $product->price }} DH</span></td>
-                    <td class="px-4 py-3">
-                      <div class="d-flex align-items-center gap-2">
-                        <span class="stock-dot"></span>
-                        <span class="text-success small fw-semibold">{{ $product->stock }} en stock</span>
-                      </div>
-                    </td>
-                    <td class="px-4 py-3">
-                      <div class="d-inline-flex align-items-center gap-1">
-                        <a href="/Admin/Products/EditProduct/{{ $product->id }}" class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></a>
-                        <form action="/Admin/Products/destroy/{{ $product->id }}" method="post">
-                          @csrf
-                          @method("DELETE")
-                          <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
-                        </form>
-                      </div>
-                    </td>
+                      </td>
+                      <td class="px-4 py-3"><span class="badge-soft">{{ $product->description }}</span></td>
+                      <td class="px-4 py-3 text-end"><span class="fw-bold">{{ $product->price }} DH</span></td>
+                      <td class="px-4 py-3">
+                        <div class="d-flex align-items-center gap-2">
+                          <span class="stock-dot"></span>
+                          <span class="text-success small fw-semibold">{{ $product->stock }} en stock</span>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="d-inline-flex align-items-center gap-1">
+                          <a href="/Admin/Products/EditProduct/{{ $product->id }}" class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></a>
+                          <form action="/Admin/Products/destroy/{{ $product->id }}" method="post">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                  @endforeach
+                @else
+                  <tr>
+                    <td colspan="6" class="text-center py-4">Il n'y a pas encore de produits.</td>
                   </tr>
-                @endforeach
+                @endif
               </tbody>
             </table>
           </div>

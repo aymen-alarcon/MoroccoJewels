@@ -48,7 +48,7 @@
                   @endforeach
                 @else
                   <tr>
-                    <td colspan="3" class="text-center py-4">Votre panier est vide.</td>
+                    <td colspan="4" class="text-center py-4">Votre panier est vide.</td>
                   </tr>
                 @endif
               </tbody>

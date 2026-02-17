@@ -40,31 +40,37 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($orders as $order)
+                  @if (count($orders) > 0)
+                    @foreach ($orders as $order)
+                      <tr>
+                        <td class="px-4 py-3 small fw-semibold">#CMD-{{ $order->id }}</td>
+                        <td class="px-4 py-3 small text-white-75">{{ $order->created_at }}</td>
+                        <td class="px-4 py-3">
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:32px;height:32px;background:rgba(19,127,236,.2);color:var(--bb-primary);font-size:12px;">YM</div>
+                            <span class="small fw-semibold">{{ $order->user->first_name }} {{ $order->user->last_name }}</span>
+                          </div>
+                        </td>
+                        <td class="px-4 py-3 small fw-bold">{{ $order->total_price }} MAD</td>
+                        <td class="px-4 py-3"><span class="pill pill-wait">{{ $order->status }}</span></td>
+                        <td class="px-4 py-3 text-end">
+                          <a href="/Admin/OrderItems" class="btn btn-sm rounded-lg"><i class="bi bi-eye fs-4"></i></a>
+                          <div class="d-inline-flex align-items-center gap-1">
+                            <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
+                            <form action="/Admin/Roles/AddRole/destroy/{{ $order->id }}" method="post">
+                              @csrf
+                              @method("DELETE")
+                              <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
+                            </form>
+                          </div>
+                        </td>
+                      </tr>
+                    @endforeach
+                  @else
                     <tr>
-                      <td class="px-4 py-3 small fw-semibold">#CMD-{{ $order->id }}</td>
-                      <td class="px-4 py-3 small text-white-75">{{ $order->created_at }}</td>
-                      <td class="px-4 py-3">
-                        <div class="d-flex align-items-center gap-2">
-                          <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width:32px;height:32px;background:rgba(19,127,236,.2);color:var(--bb-primary);font-size:12px;">YM</div>
-                          <span class="small fw-semibold">{{ $order->user->first_name }} {{ $order->user->last_name }}</span>
-                        </div>
-                      </td>
-                      <td class="px-4 py-3 small fw-bold">{{ $order->total_price }} MAD</td>
-                      <td class="px-4 py-3"><span class="pill pill-wait">{{ $order->status }}</span></td>
-                      <td class="px-4 py-3 text-end">
-                        <a href="/Admin/OrderItems" class="btn btn-sm rounded-lg"><i class="bi bi-eye fs-4"></i></a>
-                        <div class="d-inline-flex align-items-center gap-1">
-                          <button class="btn btn-sm text-white-50"><i class="bi bi-pencil text-success fw-bold fs-5"></i></button>
-                          <form action="/Admin/Roles/AddRole/destroy/{{ $order->id }}" method="post">
-                            @csrf
-                            @method("DELETE")
-                            <button type="submit" class="btn btn-sm text-danger"><i class="bi bi-trash3 fw-bold fs-5"></i></button>
-                          </form>
-                        </div>
-                      </td>
+                      <td colspan="6" class="text-center py-4">Votre panier est vide.</td>
                     </tr>
-                  @endforeach
+                  @endif
                 </tbody>
               </table>
             </div>
