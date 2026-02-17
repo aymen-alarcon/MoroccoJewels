@@ -31,12 +31,13 @@ Route::get('/Home/History', function () {
     return view('Home.History');
 });
 
-Route::get('/Home/Gallery', function () {
-    return view('Home.Gallery');
-});
-
 Route::get('/Home/Contact', function () {
     return view('Home.Contact');
+});
+
+Route::get('/Client/Collection/Details/{product}', function ($product) {
+    $product = Product::findOrFail($product);
+    return view('Home.CollectionInfo', compact("product"));
 });
 
 Route::get("/Admin/Profile", function(){

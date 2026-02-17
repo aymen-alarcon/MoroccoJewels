@@ -7,18 +7,18 @@
                         </h3>
                         <ul class="list-unstyled mb-0">
                             <li class="mb-2">
-                                <a class="footer-link d-block" href="#">
-                                    À Propos
+                                <a class="footer-link d-block" href="/Home/Contact">
+                                    Contact
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a class="footer-link d-block" href="#">
-                                    Notre Histoire
+                                <a class="footer-link d-block" href="/Home/History">
+                                    Histoire
                                 </a>
                             </li>
                             <li>
-                                <a class="footer-link d-block" href="#">
-                                    La Symbolique
+                                <a class="footer-link d-block" href="/Home/Gallery">
+                                    Gallery
                                 </a>
                             </li>
                         </ul>

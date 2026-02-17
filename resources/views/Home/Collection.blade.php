@@ -117,7 +117,7 @@
                                                         @endif
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             <a href="/Client/Cart/addToCart/{{ $product->id }}" class="text-decoration-none product-detail-btn">Ajoutez au panier</a>
-                                                            <a class="text-decoration-none product-detail-btn">Voir les détails</a>
+                                                            <a href="/Client/Collection/Details/{{ $product->id }}" class="text-decoration-none product-detail-btn">Voir les détails</a>
                                                         </div>
                                                     </div>
                                                     <div class="product-info mt-3">
