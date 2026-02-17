@@ -38,14 +38,11 @@
                         </div>
                       </td>
                       <td class="px-3 px-md-4 py-4 text-end">
-                        <form action="/Client/Cart/Destroy/{{ $item['id'] }}" method="POST" class="d-inline">
-                          @csrf
-                          @method('DELETE')
-                            <button type="submit" class="btn btn-sm d-inline-flex align-items-center gap-1">
+                          <a href="{{ url('/Client/Cart/Destroy/' . $item['id']) }}" 
+                            class="btn btn-sm d-inline-flex align-items-center gap-1">
                               <i class="bi bi-cart-dash"></i>
                               <span class="small d-none d-md-inline fw-bold text-uppercase" style="letter-spacing:.08em;">Retirer</span>
-                            </button>
-                        </form>
+                          </a>
                       </td>
                     </tr>
                   @endforeach

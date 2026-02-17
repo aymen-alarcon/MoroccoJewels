@@ -68,6 +68,7 @@ Route::get("/Client/Cart", function(){
 })->name("Client.Cart");
 
 Route::get("/Client/Cart/addToCart/{product}", [CartController::class, "addToCart"])->middleware("auth");
+Route::get("/Client/Cart/Destroy/{product}", [CartController::class, "removeFromCart"])->middleware("auth");
 
 Route::get("/Client/Profile", function(){
     $user = Auth::user();
