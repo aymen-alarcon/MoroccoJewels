@@ -1028,15 +1028,15 @@ body {
     transform: translateX(-50%) translateY(0);
 }
 
-.product-detail-btn:first-child {
+.add-to-favorites {
     bottom: 6.5rem;
 }
 
-.product-detail-btn:nth-child(2){
+.add-to-cart{
     bottom: 3.5rem;
 }
 
-.product-detail-btn:last-child {
+.details {
     bottom: 0.5rem;
 }
 

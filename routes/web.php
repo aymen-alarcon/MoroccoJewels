@@ -42,7 +42,8 @@ Route::prefix("Home")->group(function(){
 
         $products = $query->paginate(8)->withQueryString();
         $categories = Category::all();
-        return view('Home.Collection', compact("categories", "products"));
+        $user = Auth::user();
+        return view('Home.Collection', compact("categories", "products", "user"));
     })->name("Home.Collection");
 
     Route::get('/History', function () {
