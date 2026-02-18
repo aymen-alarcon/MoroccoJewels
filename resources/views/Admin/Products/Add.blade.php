@@ -47,8 +47,12 @@
                 </div>
               </div>
               <div>
-                <label class="form-label small fw-bold">Description détaillée</label>
-                <textarea name="description" class="form-control" rows="6" placeholder="Décrivez l'histoire, la provenance et les détails techniques de ce bijou berbère..." required></textarea>
+                <label class="form-label small fw-bold">Description</label>
+                <textarea name="description" class="form-control" rows="6" placeholder="Décrivez la provenance et les détails techniques de ce bijou berbère..." required></textarea>
+              </div>
+              <div>
+                <label class="form-label small fw-bold">Histoire</label>
+                <textarea name="history" class="form-control" rows="6" placeholder="Décrivez l'histoire de ce bijou berbère..." required></textarea>
               </div>
             </div>
             <div class="row g-3 mt-2">

@@ -30,7 +30,6 @@
                         <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/') ? 'active' : ''; ?>" href="/">Home</a>
                         <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Home/Collection') ? 'active' : ''; ?>" href="/Home/Collection">Nos Collections</a>
                         <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Home/History') ? 'active' : ''; ?>" href="/Home/History">Histoire</a>
-                        <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Home/Gallery') ? 'active' : ''; ?>" href="/Home/Gallery">Galerie</a>
                         <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Home/Contact') ? 'active' : ''; ?>" href="/Home/Contact">Contact</a>
                         @auth
                             <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Client/Cart') ? 'active' : ''; ?>" href="/Client/Cart">Cart</a>

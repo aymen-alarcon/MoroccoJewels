@@ -116,7 +116,9 @@
                                                             <div class="product-image bg-image-1"></div>
                                                         @endif
                                                         <div class="d-flex justify-content-center align-items-center">
-                                                            <a href="/Client/Cart/addToCart/{{ $product->id }}" class="text-decoration-none product-detail-btn">Ajoutez au panier</a>
+                                                            @auth                                                                
+                                                                <a href="/Client/Cart/addToCart/{{ $product->id }}" class="text-decoration-none product-detail-btn">Ajoutez au panier</a>
+                                                            @endauth
                                                             <a href="/Client/Collection/Details/{{ $product->id }}" class="text-decoration-none product-detail-btn">Voir les détails</a>
                                                         </div>
                                                     </div>
