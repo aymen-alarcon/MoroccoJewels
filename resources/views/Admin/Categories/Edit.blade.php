@@ -3,7 +3,7 @@
       <div class="p-4 h-100 d-flex flex-column">
         <div class="d-flex align-items-center justify-content-between mb-3">
           <h3 class="h5 fw-bold mb-0">Détails de la catégorie</h3>
-          <button class="btn btn-sm rounded-circle"><span class="material-symbols-outlined">close</span></button>
+          <button class="btn btn-sm rounded-circle"><i class="bi bi-x-lg"></i></button>
         </div>
 
         <form class="d-flex flex-column gap-3 overflow-auto pe-2" action="/Admin/Categories/EditCategory/update/{{ $category->id }}" method="POST">

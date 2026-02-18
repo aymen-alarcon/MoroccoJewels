@@ -6,7 +6,7 @@
             <h3 class="h6 fw-bold mb-0">Liste des catégories</h3>
             <div class="d-flex gap-2">
               <a href="/Admin/Categories/AddCategory" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
-                <span class="material-symbols-outlined">add</span> Ajouter un Category
+                <i class="bi bi-plus"></i> Ajouter un Category
               </a>
             </div>
           </div>

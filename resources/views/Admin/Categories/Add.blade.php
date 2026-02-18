@@ -8,7 +8,7 @@
           </div>
           <button class="btn btn-sm fw-bold rounded-lg d-inline-flex align-items-center gap-1"
                   style="background:rgba(255,255,255,.1);color:#fff;">
-            <span class="material-symbols-outlined">arrow_back</span> Retour à la liste
+            <i class="bi bi-arrow-left"></i> Retour à la liste
           </button>
         </div>
 
@@ -18,7 +18,7 @@
           <div class="col-12 d-flex flex-column gap-3">
             <section class="form-card rounded-xl p-4">
               <div class="d-flex align-items-center gap-2 pb-3 mb-3 border-bottom border-opacity-25">
-                <span class="material-symbols-outlined text-primary">info</span>
+                <i class="bi bi-info-circle"></i>
                 <h2 class="h6 fw-bold mb-0">Informations Générales</h2>
               </div>
               <div class="d-flex flex-column gap-3">

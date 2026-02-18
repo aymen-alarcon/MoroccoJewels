@@ -21,7 +21,7 @@
                 <span class="material-symbols-outlined" style="font-size:18px;">filter_list</span> Plus de Filtres
               </button>
               <button class="btn btn-sm rounded-lg d-inline-flex align-items-center gap-1 chip-ghost">
-                <span class="material-symbols-outlined" style="font-size:18px;">calendar_today</span> Derniers 30 jours
+                <i class="bi bi-calendar-date"></i> Derniers 30 jours
               </button>
             </div>
           </div>
@@ -80,7 +80,7 @@
               <div class="d-flex align-items-center gap-2">
                 <button class="btn btn-sm rounded-lg px-2" disabled
                         style="width:40px;height:40px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);">
-                  <span class="material-symbols-outlined">chevron_left</span>
+                  <i class="bi bi-arrow-left"></i>
                 </button>
                 <button class="btn btn-sm rounded-lg fw-bold px-0" style="width:40px;height:40px;background:var(--bb-primary);color:#fff;">1</button>
                 <button class="btn btn-sm rounded-lg px-0" style="width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);">2</button>
@@ -89,7 +89,7 @@
                 <button class="btn btn-sm rounded-lg px-0" style="width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);">25</button>
                 <button class="btn btn-sm rounded-lg px-2"
                         style="width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);">
-                  <span class="material-symbols-outlined">chevron_right</span>
+                  <i class="bi bi-arrow-right"></i>
                 </button>
               </div>
             </div>

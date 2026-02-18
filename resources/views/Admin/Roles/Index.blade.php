@@ -7,7 +7,7 @@
             <p class="mb-0 text-white-50">Administrez les accès et les rôles de votre boutique de bijoux berbères.</p>
           </div>
             <a href="/Admin/Roles/AddRole" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
-              <span class="material-symbols-outlined">add</span> Ajouter un role
+              <i class="bi bi-plus"></i> Ajouter un role
             </a>
         </div>
       </div>
@@ -33,7 +33,7 @@
                       <td class="px-4 py-3">
                         <div class="d-flex align-items-center gap-2">
                           <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:32px;height:32px;background:color-mix(in srgb, var(--bb-primary) 10%, transparent);color:var(--bb-primary);">
-                            <span class="material-symbols-outlined">verified_user</span>
+                            <i class="bi bi-shield-check"></i>
                           </div>
                           <span class="fw-semibold">{{ $role->role_name }}</span>
                         </div>

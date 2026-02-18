@@ -55,14 +55,6 @@ Route::get('/Client/Collection/Details/{product}', function ($product) {
     return view('Home.CollectionInfo', compact("product"));
 });
 
-Route::get("/Admin/Profile", function(){
-    return view("Admin.Profile");
-})->middleware("auth");
-
-Route::get("/Admin/Logs", function(){
-    return view("Admin.AdminLogs");
-})->middleware("auth");
-
 Route::get("/Auth/Login", function(){
     $roles = Role::all();
     return view("Auth.Login", compact("roles"));
@@ -87,50 +79,62 @@ Route::get("/Client/Cart/addToCart/{product}", [CartController::class, "addToCar
 Route::get("/Client/Cart/Destroy/{product}", [CartController::class, "removeFromCart"])->middleware("auth");
 
 Route::get("/Client/Profile", function(){
-    $user = Auth::user();
-    return view("Client.Profile.index", compact("user"));
+    return view("Client.Profile.index");
 })->middleware("auth")->name("Profile.index");
 
 Route::get("/Client/Profile/Edit", function(){
-    $user = Auth::user();
-    return view("Client.Profile.edit", compact("user"));
+    return view("Client.Profile.edit");
 })->middleware("auth")->name("Profile.edit");
 
 Route::put("/Client/Profile/Update/{user}", [UserController::class, "updateProfile"])->middleware("auth");
 
-Route::get("/Admin/Dashboard", function(){
-    $categoriesCount = count(Category::all());
-    $productsCount = count(Product::all());
-    $rolesCount = count(Role::all());
-    $usersCount = count(User::all());
-    $orders = Order::all();
-    $ordersCount = count(Order::all());
-    return view("Admin.Dashboard", compact("categoriesCount", "productsCount", "rolesCount", "usersCount", "orders", "ordersCount"));
-})->middleware("auth");
 
+Route::prefix('Admin')->middleware('auth')->group(function () {
+    Route::get('/Dashboard', function () {
+        $categoriesCount = Category::count();
+        $productsCount = Product::count();
+        $rolesCount = Role::count();
+        $usersCount = User::count();
+        $orders = Order::all();
+        $ordersCount = $orders->count();
+        return view('Admin.Dashboard', compact('categoriesCount', 'productsCount', 'rolesCount', 'usersCount', 'orders', 'ordersCount'));
+    });
 
-Route::get("/Admin/Orders", [OrderController::class, "index"])->middleware("auth")->name("Admin.Orders.Index");
-Route::get("/Admin/Products", [ProductController::class, "index"])->middleware("auth")->name("Admin.Products.Index");
-Route::get("/Admin/Products/AddProduct", [ProductController::class, "create"])->middleware("auth");
-Route::post("/Admin/Products/AddProduct/store", [ProductController::class, "store"])->middleware("auth");
-Route::get("/Admin/Products/EditProduct/{product}", [ProductController::class, "edit"])->middleware("auth");
-Route::put("/Admin/Products/EditProduct/update/{product}", [ProductController::class, "update"])->middleware("auth");
-Route::delete("/Admin/Products/destroy/{product}", [ProductController::class, "destroy"])->middleware("auth");
-Route::get("/Admin/Users", [UserController::class, "index"])->middleware("auth")->name("Admin.Users.Index");
-Route::get("/Admin/Users/AddUser", [UserController::class, "create"])->middleware("auth");
-Route::post("Admin/Users/AddUser/store", [UserController::class, "store"])->middleware("auth");
-Route::get("/Admin/Users/EditUser/{user}", [UserController::class, "edit"])->middleware("auth");
-Route::put("/Admin/Users/EditUser/update/{user}", [UserController::class, "update"])->middleware("auth");
-Route::delete("/Admin/Users/destroy/{user}", [UserController::class, "destroy"])->middleware("auth");
-Route::get("/Admin/Roles", [RoleController::class, "index"])->middleware("auth")->name("Admin.Roles.Index");
-Route::get("/Admin/Roles/AddRole", [RoleController::class, "create"])->middleware("auth");
-Route::post("/Admin/Roles/AddRole/store", [RoleController::class, "store"])->middleware("auth");
-Route::get("/Admin/Roles/EditRole/{role}", [RoleController::class, "edit"])->middleware("auth");
-Route::put("/Admin/Roles/EditRole/update/{role}", [RoleController::class, "update"])->middleware("auth");
-Route::delete("/Admin/Roles/destroy/{role}", [RoleController::class, "destroy"])->middleware("auth");
-Route::get("/Admin/Categories", [CategoryController::class, "index"])->middleware("auth")->name("Admin.Categories.Index");
-Route::get("/Admin/Categories/AddCategory", [CategoryController::class, "create"])->middleware("auth");
-Route::post("/Admin/Categories/AddCategory/store", [CategoryController::class, "store"])->middleware("auth");
-Route::get("/Admin/Categories/EditCategory/{category}", [CategoryController::class, "edit"])->middleware("auth");
-Route::put("/Admin/Categories/EditCategory/update/{category}", [CategoryController::class, "update"])->middleware("auth");
-Route::delete("/Admin/Categories/destroy/{category}", [CategoryController::class, "destroy"])->middleware("auth");
+    Route::get('/Profile', function () {
+        return view('Admin.Profile');
+    });
+
+    Route::get('/Logs', function () {
+        return view('Admin.AdminLogs');
+    });
+
+    Route::get('/Orders', [OrderController::class, 'index'])->name('Admin.Orders.Index');
+
+    Route::get('/Products', [ProductController::class, 'index'])->name('Admin.Products.Index');
+    Route::get('/Products/AddProduct', [ProductController::class, 'create']);
+    Route::post('/Products/AddProduct/store', [ProductController::class, 'store']);
+    Route::get('/Products/EditProduct/{product}', [ProductController::class, 'edit']);
+    Route::put('/Products/EditProduct/update/{product}', [ProductController::class, 'update']);
+    Route::delete('/Products/destroy/{product}', [ProductController::class, 'destroy']);
+
+    Route::get('/Users', [UserController::class, 'index'])->name('Admin.Users.Index');
+    Route::get('/Users/AddUser', [UserController::class, 'create']);
+    Route::post('/Users/AddUser/store', [UserController::class, 'store']);
+    Route::get('/Users/EditUser/{user}', [UserController::class, 'edit']);
+    Route::put('/Users/EditUser/update/{user}', [UserController::class, 'update']);
+    Route::delete('/Users/destroy/{user}', [UserController::class, 'destroy']);
+
+    Route::get('/Roles', [RoleController::class, 'index'])->name('Admin.Roles.Index');
+    Route::get('/Roles/AddRole', [RoleController::class, 'create']);
+    Route::post('/Roles/AddRole/store', [RoleController::class, 'store']);
+    Route::get('/Roles/EditRole/{role}', [RoleController::class, 'edit']);
+    Route::put('/Roles/EditRole/update/{role}', [RoleController::class, 'update']);
+    Route::delete('/Roles/destroy/{role}', [RoleController::class, 'destroy']);
+
+    Route::get('/Categories', [CategoryController::class, 'index'])->name('Admin.Categories.Index');
+    Route::get('/Categories/AddCategory', [CategoryController::class, 'create']);
+    Route::post('/Categories/AddCategory/store', [CategoryController::class, 'store']);
+    Route::get('/Categories/EditCategory/{category}', [CategoryController::class, 'edit']);
+    Route::put('/Categories/EditCategory/update/{category}', [CategoryController::class, 'update']);
+    Route::delete('/Categories/destroy/{category}', [CategoryController::class, 'destroy']);
+});

@@ -18,7 +18,7 @@
         <div class="col-12 col-lg-8 d-flex flex-column gap-3">
           <section class="surface rounded-xl p-4">
             <h2 class="h5 fw-bold mb-3 d-flex align-items-center gap-2">
-              <span class="material-symbols-outlined" style="color:var(--bb-primary);">info</span>
+              <i class="bi bi-info-circle"></i>
               Informations Générales
             </h2>
             <div class="d-flex flex-column gap-3">

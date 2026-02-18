@@ -10,7 +10,7 @@
         <div class="row g-4">
           <div class="col-12 col-md-6">
             <label class="small fw-semibold d-inline-flex align-items-center gap-1 mb-2 text-white">
-              <span class="material-symbols-outlined" style="font-size:16px;color:var(--bb-primary);">person</span>
+              <i class="bi bi-person"></i>
               Prénom
             </label>
             <input type="text" name="first_name" class="form-control" placeholder="Ex: Fatima Zahra" value="{{ $user->name }}"/>
@@ -18,7 +18,7 @@
 
           <div class="col-12 col-md-6">
             <label class="small fw-semibold d-inline-flex align-items-center gap-1 mb-2 text-white">
-              <span class="material-symbols-outlined" style="font-size:16px;color:var(--bb-primary);">person</span>
+              <i class="bi bi-person"></i>
               Nom
             </label>
             <input type="text" name="last_name" class="form-control" placeholder="Ex: Fatima Zahra" value="{{ $user->name }}"/>
@@ -26,7 +26,7 @@
 
           <div class="col-12 col-md-6">
             <label class="small fw-semibold d-inline-flex align-items-center gap-1 mb-2 text-white">
-              <span class="material-symbols-outlined" style="font-size:16px;color:var(--bb-primary);">mail</span>
+              <i class="bi bi-envelope"></i>
               Adresse e‑mail
             </label>
             <input type="email" name="email" class="form-control" placeholder="nom@exemple.com" value="{{ $user->email }}"/>
@@ -35,7 +35,7 @@
 
         <div>
           <label class="small fw-semibold d-inline-flex align-items-center gap-1 mb-2 text-white">
-            <span class="material-symbols-outlined" style="font-size:16px;color:var(--bb-primary);">shield_person</span>
+            <i class="bi bi-shield-check"></i>
             Rôle de l'utilisateur
           </label>
 

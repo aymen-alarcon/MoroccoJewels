@@ -28,7 +28,7 @@
               <span class="material-symbols-outlined">calendar_today</span> Derniers 30 jours
             </button>
             <button class="btn btn-sm chip rounded-lg d-inline-flex align-items-center gap-1">
-              <span class="material-symbols-outlined">person</span> Filtrer par Utilisateur
+              <i class="bi bi-person"></i> Filtrer par Utilisateur
             </button>
             <button class="btn btn-sm chip rounded-lg d-inline-flex align-items-center gap-1">
               <span class="material-symbols-outlined">filter_alt</span> Type d'action
@@ -62,7 +62,7 @@
                   </td>
                   <td class="px-3 py-3"><span class="pill pill-blue">Modifier Produit</span></td>
                   <td class="px-3 py-3 small fst-italic text-white-75">Mise à jour du prix du Collier Fibule Argent (+15%)</td>
-                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">info</span></button></td>
+                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                 </tr>
 
                 <tr>
@@ -77,7 +77,7 @@
                   </td>
                   <td class="px-3 py-3"><span class="pill pill-red">Supprimer Catégorie</span></td>
                   <td class="px-3 py-3 small fst-italic text-white-75">Suppression de la catégorie "Anciennes Collections" et archivage des 12 produits associés.</td>
-                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">info</span></button></td>
+                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                 </tr>
 
                 <tr>
@@ -92,7 +92,7 @@
                   </td>
                   <td class="px-3 py-3"><span class="pill pill-purple">Mise à jour Rôle</span></td>
                   <td class="px-3 py-3 small fst-italic text-white-75">Changement des permissions "Éditeur" pour l'utilisateur "Lina K."</td>
-                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">info</span></button></td>
+                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                 </tr>
 
                 <tr>
@@ -107,7 +107,7 @@
                   </td>
                   <td class="px-3 py-3"><span class="pill pill-green">Ajouter Stock</span></td>
                   <td class="px-3 py-3 small fst-italic text-white-75">Réception de stock : +20 Bracelets émaillés Tiznit (Série Argent 925)</td>
-                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">info</span></button></td>
+                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                 </tr>
 
                 <tr>
@@ -122,7 +122,7 @@
                   </td>
                   <td class="px-3 py-3"><span class="pill pill-blue">Modifier Produit</span></td>
                   <td class="px-3 py-3 small fst-italic text-white-75">Refonte de la description produit : "Boucles d'oreilles berbères en ambre"</td>
-                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">info</span></button></td>
+                  <td class="px-3 py-3 text-center"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                 </tr>
               </tbody>
             </table>

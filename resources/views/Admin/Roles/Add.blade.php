@@ -7,13 +7,13 @@
             <p class="mb-0 text-white-50">Définissez le nom du rôle et ses accès spécifiques au système de gestion de la bijouterie.</p>
           </div>
           <button class="btn btn-outline-light rounded-lg d-inline-flex align-items-center gap-1" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);">
-            <span class="material-symbols-outlined">arrow_back</span> Retour à la liste
+            <i class="bi bi-arrow-left"></i> Retour à la liste
           </button>
         </div>
 
         <section class="card-dark rounded-xl p-4 p-lg-5 mb-4">
           <h3 class="h5 fw-bold mb-4 d-flex align-items-center gap-2">
-            <span class="material-symbols-outlined text-primary">info</span> Informations Générales
+            <i class="bi bi-info-circle"></i> Informations Générales
           </h3>
           <div class="row g-3">
             <div class="col-12">

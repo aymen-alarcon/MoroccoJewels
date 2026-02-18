@@ -4,7 +4,7 @@
         <ul class="nav nav-pills gap-2" role="tablist" id="profileTabs">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="tab-profil" data-target="#section-profil" role="tab" aria-controls="section-profil" aria-selected="true">
-              <span class="material-symbols-outlined me-1">person</span> Profil
+              <i class="bi bi-person"></i> Profil
             </button>
           </li>
           <li class="nav-item" role="presentation">
@@ -250,19 +250,19 @@
                     <td>31 Jan 2026 · 14:30</td>
                     <td><span class="badge-pill">Produit</span></td>
                     <td class="small">Mise à jour du prix du Collier Fibule Argent (+15%)</td>
-                    <td class="text-end"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">info</span></button></td>
+                    <td class="text-end"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                   </tr>
                   <tr>
                     <td>31 Jan 2026 · 11:15</td>
                     <td><span class="badge-pill">Catégorie</span></td>
                     <td class="small">Suppression de la catégorie “Anciennes Collections” (12 produits archivés)</td>
-                    <td class="text-end"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">info</span></button></td>
+                    <td class="text-end"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                   </tr>
                   <tr>
                     <td>30 Jan 2026 · 16:45</td>
                     <td><span class="badge-pill">Rôle</span></td>
                     <td class="small">Changement des permissions “Éditeur” pour l’utilisateur Lina K.</td>
-                    <td class="text-end"><button class="btn btn-sm text-white-50"><span class="material-symbols-outlined">info</span></button></td>
+                    <td class="text-end"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                   </tr>
                 </tbody>
               </table>

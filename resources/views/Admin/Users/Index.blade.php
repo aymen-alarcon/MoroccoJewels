@@ -7,7 +7,7 @@
             <p class="mb-0 text-white-50">Administrez les accès et les rôles de votre boutique de bijoux berbères.</p>
           </div>
             <a href="/Admin/Users/AddUser" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
-              <span class="material-symbols-outlined">add</span> Ajouter un utilisateur
+              Ajouter un utilisateur
             </a>
         </div>
       </div>

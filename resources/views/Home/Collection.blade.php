@@ -3,16 +3,13 @@
                 <div class="d-flex flex-column gap-4">
                     <div class="d-flex flex-wrap justify-content-between gap-3">
                         <div class="d-flex flex-column gap-1">
-                            <h1 class="font-display text-accent fs-2 fs-md-1 fw-bold tracking-tight">
-                                Nos Collections
-                            </h1>
+                            <h1 class="font-display text-accent fs-2 fs-md-1 fw-bold tracking-tight">Nos Collections</h1>
                             <p class="text-background-light-80 fs-6 fw-normal">
                                 Explorez l'authenticité et la beauté de nos bijoux berbères
                                 faits à la main.
                             </p>
                         </div>
                     </div>
-                    
                     <div class="row d-flex flex-column flex-lg-row gap-5">
                         <aside class="col-md-3 col-lg-3 col-xl-2-5 shrink-0">
                             <div class="sticky-sidebar">
@@ -24,9 +21,7 @@
                                         Réinitialiser
                                     </button>
                                 </div>
-                                
                                 <form method="GET" action="{{ url()->current() }}" id="filterForm">
-
                                     <div class="mb-4 pt-4 border-top border-accent-20">
                                         <h4 class="fw-semibold text-accent-90 mb-3">Type de Bijou</h4>
                                         @foreach ($categories as $category)
@@ -38,9 +33,7 @@
                                             </div>
                                         @endforeach
                                     </div>
-
                                 </form>
-                                
                                 <div class="mb-4 pt-4 border-top border-accent-20">
                                     <h4 class="fw-semibold text-accent-90 mb-3">Matériau</h4>
                                     <div class="d-flex flex-column gap-2">
@@ -84,7 +77,6 @@
                                 </div>
                             </div>
                         </aside>
-                        
                         <div class="flex-1">
                             <div class="d-flex flex-column gap-4">
                                 <div class="d-flex align-items-center justify-content-between">
@@ -94,13 +86,12 @@
                                     <div class="dropdown">
                                         <select name="sort" form="filterForm" class="form-select filter-input">
                                             <option value="" selected>Trier par</option>
-                                            <option value="latest" {{ request('sort') === 'latest'}}>Les plus récents</option>
-                                            <option value="price_asc" {{ request('sort') === 'price_asc'}}>Prix croissant</option>
-                                            <option value="price_desc" {{ request('sort') === 'price_desc'}}>Prix décroissant</option>
+                                            <option value="latest">Les plus récents</option>
+                                            <option value="price_asc">Prix croissant</option>
+                                            <option value="price_desc">Prix décroissant</option>
                                         </select>
                                     </div>
                                 </div>
-                                
                                 <div class="row g-3 g-md-4">
                                     @if (count($products) > 0)                                        
                                         @foreach ($products as $product)                                        
@@ -138,7 +129,6 @@
                                         </div>
                                     @endif
                                 </div>
-                                
                                 <div class="pt-4 mt-2 border-top border-accent-20 d-flex align-items-center justify-content-center">
                                     <nav class="d-flex align-items-center gap-2">
                                         <button class="pagination-btn">

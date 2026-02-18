@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="{{ asset("css/app.css") }}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-
   <style>
     .pattern{ background-image: radial-gradient(#5a1412 1px, transparent 1px); background-size:24px 24px; }
 
@@ -60,7 +57,6 @@
       --bb-border-dark:#752A28;
     }
     body{ font-family:'Inter',sans-serif; background:var(--bb-bg-dark); color:#fff; }
-    .material-symbols-outlined{ font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
     .rounded-xl{ border-radius:.75rem!important; }
     .zellij-pattern { background-image: radial-gradient(#eebd2b 0.5px, transparent 0.5px); background-size:24px 24px; opacity:.05; }
 
@@ -96,7 +92,6 @@
           <p class="mb-0" style="font-size:12px;color:color-mix(in srgb, var(--bb-primary) 70%, white);">Administration</p>
         </div>
       </div>
-
       <nav class="px-3 mt-2 d-flex flex-column gap-2">
         <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Dashboard"){ echo "nav-link-active";} ?>" href="/Admin/Dashboard"><i class="bi bi-clipboard-data"></i><span class="small fw-semibold">Tableau de bord</span></a>
         <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Orders"){ echo "nav-link-active";} ?>" href="/Admin/Orders"><i class="bi bi-bag-check"></i><span class="small fw-semibold">Orders</span></a>
@@ -105,13 +100,12 @@
         <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Users"){ echo "nav-link-active";} ?>" href="/Admin/Users"><i class="bi bi-people"></i><span class="small fw-semibold">Clients</span></a>
         <a class="nav-link-custom <?php if(basename($_SERVER["PHP_SELF"]) === "Roles"){ echo "nav-link-active";} ?>" href="/Admin/Roles"><i class="bi bi-shield-lock"></i><span class="small fw-semibold">Roles</span></a>
       </nav>
-
       <div class="mt-auto p-3 border-top" style="border-color:var(--bb-border-dark)!important;">
         <a href="/Admin/Profile" class="d-flex align-items-center gap-2 p-2">
           <div class="rounded-circle border" style="width:40px;height:40px;background:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZU12qZVfz81g4uS2dvt03aGFMCv49I7DAauEkTFx6Zk_o0ifuGJABYZeXxV_1ZxMOFBnAmW_DkuILFGJzX0AS873vK3Uoh5qhsWsoalrQ1PO-ZmTUOJp3wZpwIypUKrWKbez8kP8KzGIskYnaSwXjrMWhIoSqoH4E4uWk8-_WUpC1axvn7oVJMDZh0QfF0BEQBg1oc4ohZJ8bCVxDTa-5ctZPNXqv8m4X6YAqoGvunS2bty2PIlo-mjaNoq76oXnQqiStSnQxkDc') center/cover no-repeat;border-color:var(--bb-primary);"></div>
             <div class="text-truncate">
-              <p class="mb-0 small fw-bold text-truncate">Yassine Amrani</p>
-              <p class="mb-0 small" style="color:#94a3b8;">Gérant</p>
+              <p class="mb-0 small fw-bold text-truncate">{{ $user->first_name }} {{ $user->last_name }}</p>
+              <p class="mb-0 small" style="color:#94a3b8;">{{ $user->role->role_name }}</p>
             </div>
           </div>
         </a>

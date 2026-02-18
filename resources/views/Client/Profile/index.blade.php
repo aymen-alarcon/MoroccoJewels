@@ -119,9 +119,7 @@
       <div class="row g-4" id="informationSection">
         <div class="col-12 col-lg-4 d-flex flex-column gap-3">
           <div class="surface rounded-xl p-4">
-            <h3 class="h6 fw-bold mb-3 d-flex align-items-center gap-2" style="color:var(--bb-primary);">
-              <span class="material-symbols-outlined">badge</span> Détails personnels
-            </h3>
+            <h3 class="h6 fw-bold mb-3 d-flex align-items-center gap-2" style="color:var(--bb-primary);">Détails personnels</h3>
             <div class="d-flex flex-column gap-3">
               <div class="pb-3" style="border-bottom:1px solid rgba(255,255,255,.06);">
                 <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">Nom Complet</div>

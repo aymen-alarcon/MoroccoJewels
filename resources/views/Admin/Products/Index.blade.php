@@ -8,7 +8,7 @@
         </div>
         <div class="d-flex align-items-center gap-2">
             <a href="/Admin/Products/AddProduct" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
-              <span class="material-symbols-outlined">add</span> Nouvelle Produits
+              <i class="bi bi-plus"></i> Nouvelle Produits
             </a>
         </div>
       </header>
@@ -94,7 +94,7 @@
             <p class="mb-0 small text-white-50">Affichage de 1 à 4 sur 128 produits</p>
             <div class="d-flex align-items-center gap-2">
               <button class="btn btn-sm rounded-lg px-2" disabled>
-                <span class="material-symbols-outlined">chevron_left</span>
+                <i class="bi bi-arrow-left"></i>
               </button>
               <button class="btn btn-sm rounded-lg fw-bold px-0">1</button>
               <button class="btn btn-sm rounded-lg px-0">2</button>
@@ -102,7 +102,7 @@
               <span class="text-white-50">...</span>
               <button class="btn btn-sm rounded-lg px-0">12</button>
               <button class="btn btn-sm rounded-lg px-2">
-                <span class="material-symbols-outlined">chevron_right</span>
+                <i class="bi bi-arrow-right"></i>
               </button>
             </div>
           </div>
