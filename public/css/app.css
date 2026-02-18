@@ -1029,7 +1029,11 @@ body {
 }
 
 .product-detail-btn:first-child {
-    bottom: 3rem;
+    bottom: 6.5rem;
+}
+
+.product-detail-btn:nth-child(2){
+    bottom: 3.5rem;
 }
 
 .product-detail-btn:last-child {

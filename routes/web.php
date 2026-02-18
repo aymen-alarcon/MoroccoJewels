@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
@@ -23,72 +24,78 @@ Route::get('/', function () {
     return view('welcome', compact("workers"));
 })->name("Home");
 
-Route::get('/Home/Collection', function (Request $request) {
-    $query = Product::query();
-    
-    if ($request->has("categories")) {
-        $query->whereIn('category_id', $request->categories);
-    }
+Route::prefix("Home")->group(function(){
+    Route::get('/Collection', function (Request $request) {
+        $query = Product::query();
+        
+        if ($request->has("categories")) {
+            $query->whereIn('category_id', $request->categories);
+        }
 
-    if ($request->sort === 'latest') {
-        $query->orderBy('created_at', 'desc');
-    } elseif ($request->sort === 'price_asc') {
-        $query->orderBy('price', 'asc');
-    } elseif ($request->sort === 'price_desc') {
-        $query->orderBy('price', 'desc');
-    }    
+        if ($request->sort === 'latest') {
+            $query->orderBy('created_at', 'desc');
+        } elseif ($request->sort === 'price_asc') {
+            $query->orderBy('price', 'asc');
+        } elseif ($request->sort === 'price_desc') {
+            $query->orderBy('price', 'desc');
+        }    
 
-    $products = $query->paginate(8)->withQueryString();
-    $categories = Category::all();
-    return view('Home.Collection', compact("categories", "products"));
+        $products = $query->paginate(8)->withQueryString();
+        $categories = Category::all();
+        return view('Home.Collection', compact("categories", "products"));
+    });
+
+    Route::get('/History', function () {
+        return view('Home.History');
+    });
+
+    Route::get('/Contact', function () {
+        return view('Home.Contact');
+    });
+
+    Route::get('/Collection/Details/{product}', function ($product) {
+        $product = Product::findOrFail($product);
+        return view('Home.CollectionInfo', compact("product"));
+    })->name("Home.Collection");
 });
 
-Route::get('/Home/History', function () {
-    return view('Home.History');
+Route::prefix("Auth")->group( function(){
+    Route::get("/Login", function(){
+        $roles = Role::all();
+        return view("Auth.Login", compact("roles"));
+    })->middleware("guest");
+
+    Route::post("/Login/invoke", LoginController::class);
+
+    Route::get("/Register", function(){
+        $roles = Role::all();
+        return view("Auth.Register", compact("roles"));
+    })->middleware("guest");
+
+    Route::post('/Register/invoke', RegisterController::class);
+
+    Route::post("/LogOut", LogOutController::class)->middleware("auth");
 });
 
-Route::get('/Home/Contact', function () {
-    return view('Home.Contact');
-});
+Route::prefix("Client")->group(function(){
+    Route::get("/Cart", function(){
+        return view("Client.Cart");
+    })->name("Client.Cart");
 
-Route::get('/Client/Collection/Details/{product}', function ($product) {
-    $product = Product::findOrFail($product);
-    return view('Home.CollectionInfo', compact("product"));
-});
+    Route::get("/Cart/addToCart/{product}", [CartController::class, "addToCart"]);
+    Route::get("/Cart/Destroy/{product}", [CartController::class, "removeFromCart"]);
 
-Route::get("/Auth/Login", function(){
-    $roles = Role::all();
-    return view("Auth.Login", compact("roles"));
-})->middleware("guest");
+    Route::get("/Profile", function(){
+        return view("Client.Profile.index");
+    })->name("Profile.index");
 
-Route::post("/Auth/Login/invoke", LoginController::class);
+    Route::get("/Profile/Edit", function(){
+        return view("Client.Profile.edit");
+    })->name("Profile.edit");
 
-Route::get("/Auth/Register", function(){
-    $roles = Role::all();
-    return view("Auth.Register", compact("roles"));
-})->middleware("guest");
-
-Route::post('/Auth/Register/invoke', RegisterController::class);
-
-Route::post("/Auth/LogOut", LogOutController::class)->middleware("auth");
-
-Route::get("/Client/Cart", function(){
-    return view("Client.Cart");
-})->name("Client.Cart");
-
-Route::get("/Client/Cart/addToCart/{product}", [CartController::class, "addToCart"])->middleware("auth");
-Route::get("/Client/Cart/Destroy/{product}", [CartController::class, "removeFromCart"])->middleware("auth");
-
-Route::get("/Client/Profile", function(){
-    return view("Client.Profile.index");
-})->middleware("auth")->name("Profile.index");
-
-Route::get("/Client/Profile/Edit", function(){
-    return view("Client.Profile.edit");
-})->middleware("auth")->name("Profile.edit");
-
-Route::put("/Client/Profile/Update/{user}", [UserController::class, "updateProfile"])->middleware("auth");
-
+    Route::put("/Profile/Update/{user}", [UserController::class, "updateProfile"]);
+    Route::get("/Cart/addToFavorites/{product}", [FavoriteController::class, "store"]);
+})->middleware("auth");
 
 Route::prefix('Admin')->middleware('auth')->group(function () {
     Route::get('/Dashboard', function () {

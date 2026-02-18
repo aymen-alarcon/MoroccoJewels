@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Favorite;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
 {
@@ -17,26 +19,19 @@ class FavoriteController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        // return view("Admin.create");
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, Favorite $Favorite)
+    public function store(Request $request, Favorite $Favorite, Product $product)
     {
-        $validate = $request->validate([
-            "order_id" => "required|exists:orders,id",
-            "user_id" => "required|exists:users,id",
-        ]);
+        $validate = $request->validate([]);
+
+        $validate["product_id"] = $product->id;
+
+        $validate["user_id"] = Auth::user()->id;
 
         $Favorite->create($validate);
 
-        return redirect()->route("Admin.Favorites");
+        return redirect()->route("Home.Collection");
     }
 
     /**
@@ -62,7 +57,7 @@ class FavoriteController extends Controller
     public function update(Request $request, Favorite $Favorite)
     {
         $validate = $request->validate([
-            "order_id" => "required|exists:orders,id",
+            "product_id" => "required|exists:orders,id",
             "user_id" => "required|exists:users,id",
         ]);
 
