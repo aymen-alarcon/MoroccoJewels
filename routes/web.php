@@ -16,13 +16,28 @@ use App\Models\Product;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
 })->name("Home");
 
-Route::get('/Home/Collection', function () {
-    $products = Product::all();
+Route::get('/Home/Collection', function (Request $request) {
+    $query = Product::query();
+    
+    if ($request->has("categories")) {
+        $query->whereIn('category_id', $request->categories);
+    }
+
+    if ($request->sort === 'latest') {
+        $query->orderBy('created_at', 'desc');
+    } elseif ($request->sort === 'price_asc') {
+        $query->orderBy('price', 'asc');
+    } elseif ($request->sort === 'price_desc') {
+        $query->orderBy('price', 'desc');
+    }    
+
+    $products = $query->paginate(8)->withQueryString();
     $categories = Category::all();
     return view('Home.Collection', compact("categories", "products"));
 });

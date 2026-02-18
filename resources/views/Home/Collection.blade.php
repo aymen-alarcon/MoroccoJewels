@@ -25,19 +25,21 @@
                                     </button>
                                 </div>
                                 
-                                <div class="mb-4 pt-4 border-top border-accent-20">
-                                    <h4 class="fw-semibold text-accent-90 mb-3">Type de Bijou</h4>
-                                    <div class="d-flex flex-column gap-2">
-                                        @foreach ($categories as $category)                                            
+                                <form method="GET" action="{{ url()->current() }}" id="filterForm">
+
+                                    <div class="mb-4 pt-4 border-top border-accent-20">
+                                        <h4 class="fw-semibold text-accent-90 mb-3">Type de Bijou</h4>
+                                        @foreach ($categories as $category)
                                             <div class="form-check">
-                                                <input class="form-check-input custom-checkbox" type="checkbox" id="colliers">
-                                                <label class="form-check-label text-background-light-80 cursor-pointer" for="colliers">
-                                                    {{ $category->name }}
-                                                </label>
+                                                <input class="form-check-input filter-input custom-checkbox" type="checkbox" name="categories[]"
+                                                    value="{{ $category->id }}" id="cat{{ $category->id }}"
+                                                    {{ in_array($category->id, request('categories', [])) ? 'checked' : ''}}>
+                                                <label class="form-check-label" for="cat{{ $category->id }}">{{ $category->name }}</label>
                                             </div>
                                         @endforeach
                                     </div>
-                                </div>
+
+                                </form>
                                 
                                 <div class="mb-4 pt-4 border-top border-accent-20">
                                     <h4 class="fw-semibold text-accent-90 mb-3">Matériau</h4>
@@ -90,17 +92,12 @@
                                         Affichage de 8 sur {{ count($products) }} bijoux
                                     </p>
                                     <div class="dropdown">
-                                        <button class="btn sort-dropdown d-flex align-items-center justify-content-center gap-2" type="button" data-bs-toggle="dropdown">
-                                            <span class="text-white fs-6 fw-medium">
-                                                Trier par : Les plus populaires
-                                            </span>
-                                            <i class="bi bi-chevron-down text-background-light"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Les plus récents</a></li>
-                                            <li><a class="dropdown-item" href="#">Prix croissant</a></li>
-                                            <li><a class="dropdown-item" href="#">Prix décroissant</a></li>
-                                        </ul>
+                                        <select name="sort" form="filterForm" class="form-select filter-input">
+                                            <option value="" selected>Trier par</option>
+                                            <option value="latest" {{ request('sort') === 'latest'}}>Les plus récents</option>
+                                            <option value="price_asc" {{ request('sort') === 'price_asc'}}>Prix croissant</option>
+                                            <option value="price_desc" {{ request('sort') === 'price_desc'}}>Prix décroissant</option>
+                                        </select>
                                     </div>
                                 </div>
                                 
@@ -169,5 +166,4 @@
                     </div>
                 </div>
             </main>
-        </main>
 @include("includes.footer")

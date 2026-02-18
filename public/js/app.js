@@ -1,5 +1,13 @@
 console.log("hi");
 
+if (window.location.href.includes("/Home/Collection")) {
+    document.querySelectorAll('.filter-input').forEach(input => {
+        input.addEventListener('change', function () {
+            document.getElementById('filterForm').submit();
+        });
+    });
+}
+
 if (window.location.href.includes("/Client/Profile")) {
     let informationSection = document.getElementById("informationSection");
     let favoriteSection = document.getElementById("favoriteSection");
