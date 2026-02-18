@@ -1,5 +1,5 @@
 @include("includes.header")
-            <section class="position-relative d-flex flex-column align-items-center justify-content-center min-vh-85 overflow-hidden">
+            <section class="position-relative d-flex flex-column align-items-center justify-content-center min-vh-85">
                 <div class="position-absolute top-0 start-0 w-100 h-100 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
                      style="background-image: linear-gradient(rgba(66, 15, 14, 0.5), rgba(66, 15, 14, 0.9)),
                             url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlLWrJgoBb2LdkMGtgKfHCRPyVO7ZSxMcVphPhK9vhw0YjR8Cl1jYgNvtNOFmpcxALC556dfjcMYjkZK3so7-30hk3tDTdNo5-2pjYYlSHdVaFG7W18KxCJyBMhiWAlJjpYfqfuYvW4z6VMOu0Dxs8D3oPLsrmyfUPqstQhtSAefwELwRbdBlikfxTQi_eHUecFMLAuRYcD5XTzFU3zRjQEzs5LbIdf-rVUuAlM4fmF5jzPDk-A7bcbsWYDleg-EQjG2h6mqfYgTg');">
@@ -33,7 +33,7 @@
             <section class="py-5 px-4 px-md-5 bg-moroccan-red">
                 <div class="d-flex flex-column flex-md-row align-items-center gap-5 gap-md-6">
                     <div>
-                        <div class="position-relative rounded-lg overflow-hidden shadow-2xl-custom border-dark-red">
+                        <div class="position-relative rounded-lg shadow-2xl-custom border-dark-red">
                             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGTYYiisHrE1I--GgLSXcURTEROHIhffn0hPvpyxb14W04dmiIqfjV6nZhYJRuYI_rjpyEGf79nrla1HhQ_aakN6IHRcDbbW4JtV0DPMWg_vGtm6edGAKnMid6G8b4Kfcie-B8ComiFPNA8ALHpKAWl6e5YUZDw4yVfQGcW19iQlG-rJ2JRXnfFI9BYvG_gifNmXxGLbizouNxqa2ArvabUratFIN89md8em3FFkkLcbiaXschMIOlY7yoD6M5Ag9BxbJInKvCxGc"
                                  alt="Antique silver fibula pin on fabric"
                                  class="object-cover hover-zoom">
@@ -69,7 +69,7 @@
             <section class="py-5 px-4 px-md-5 bg-dark-red">
                 <div class="mx-auto max-w-1200 d-flex flex-column flex-md-row-reverse align-items-center gap-5 gap-md-6">
                     <div>
-                        <div class="position-relative rounded-lg overflow-hidden shadow-2xl-custom border-dark-red">
+                        <div class="position-relative rounded-lg shadow-2xl-custom border-dark-red">
                             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-2o94ktVBpCMW-SImjVLeFGIeVTNAR8XlmsRIN0x2wRJV9o66D7Kszi96gpCF9Dc9GsvNEMXUAw9vW-abKkWHkwa2x8njgs9wpNecfuXSZOrf3K5CiOgyIz9riNRR4-7JpQLaciKfWLKN3iZL_xxKi_XCN-uvU8DNqD94Pssuy5O7RH_kD7q_yeNZMmKFVn8CLkZsAYbDTVkeeAI-ylQo7fo7EXPIY2YdDSsiHHdp33t73CocfD9nEagIbGhp9ptoNDkfKbT77aw"
                                  alt="Woman wearing traditional Berber jewelry including amber necklace"
                                  class="object-cover hover-zoom">

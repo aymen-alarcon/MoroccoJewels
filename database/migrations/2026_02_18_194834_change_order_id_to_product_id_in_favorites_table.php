@@ -35,8 +35,8 @@ return new class extends Migration
             $table->dropColumn("product_id");
 
             $table->foreignId("order_id")
-                    ->constrained("orders")
                     ->after("id")
+                    ->constrained("orders")
                     ->cascadeOnDelete()
                     ->cascadeOnUpdate();
         });

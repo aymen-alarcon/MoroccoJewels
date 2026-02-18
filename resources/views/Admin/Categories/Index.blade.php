@@ -1,7 +1,7 @@
 @include("includes.Admin_header")
     <main class="d-flex flex-column w-100" style="margin-left: 15em;">
       <div class="overflow-auto p-4 p-lg-5">
-        <div class="rounded-xl overflow-hidden card-surface mb-3">
+        <div class="rounded-xl card-surface mb-3">
           <div class="d-flex align-items-center justify-content-between px-4 py-3" style="border-bottom:1px solid #5a1a19;">
             <h3 class="h6 fw-bold mb-0">Liste des catégories</h3>
             <div class="d-flex gap-2">

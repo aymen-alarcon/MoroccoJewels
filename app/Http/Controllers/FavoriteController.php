@@ -35,44 +35,12 @@ class FavoriteController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Favorite $Favorite)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Favorite $Favorite)
-    {
-        $Favorite = Favorite::all();
-        // return view("Admin.edit", compact("Favorite"));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Favorite $Favorite)
-    {
-        $validate = $request->validate([
-            "product_id" => "required|exists:orders,id",
-            "user_id" => "required|exists:users,id",
-        ]);
-
-        $Favorite->update($validate);
-
-        // return redirect()->route("Admin.Favorites");
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
     public function destroy(Favorite $Favorite)
     {
         $Favorite->delete();
 
-        // return view("Admin.Favorites");
+        return view("Client.Profile.index");
     }
 }

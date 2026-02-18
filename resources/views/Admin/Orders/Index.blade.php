@@ -1,5 +1,5 @@
 @include("includes.Admin_header")
-    <main class="d-flex flex-column overflow-hidden w-100" style="margin-left: 15em;">
+    <main class="d-flex flex-column w-100" style="margin-left: 15em;">
       <div class="overflow-auto p-4 p-lg-5">
         <div class="container-fluid" style="max-width:1080px;">
           <div class="d-flex align-items-end justify-content-between mb-3">
@@ -26,7 +26,7 @@
             </div>
           </div>
 
-          <div class="rounded-xl overflow-hidden">
+          <div class="rounded-xl">
             <div class="table-responsive">
               <table class="table table-orders table-divider align-middle mb-0" style="background-color: #5A1A19">
                 <thead>

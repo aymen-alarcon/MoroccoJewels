@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="card-soft rounded-xl overflow-hidden">
+        <div class="card-soft rounded-xl">
           <div class="d-flex align-items-center justify-content-between px-4 py-3" style="border-bottom:1px solid rgba(255,255,255,.06);">
             <h2 class="h6 fw-bold mb-0">Articles de la commande</h2>
             <button class="btn btn-link text-decoration-none fw-bold p-0 d-inline-flex align-items-center gap-1" style="color:#c39998;">
@@ -115,7 +115,7 @@
         </div>
       </div>
       <div class="col-12 col-lg-4 d-flex flex-column gap-3">
-        <div class="card-soft rounded-xl overflow-hidden">
+        <div class="card-soft rounded-xl">
           <div class="px-4 py-3" style="background:rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06);">
             <h2 class="h6 fw-bold mb-0">Client</h2>
           </div>

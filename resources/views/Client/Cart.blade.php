@@ -3,7 +3,7 @@
     <div class="row g-4" style="max-width:1200px;margin-inline:auto;">
       <div class="col-12 col-lg-8 d-flex flex-column gap-3">
         <h1 class="display-6 fw-black mb-1" style="color:var(--bb-primary);">Votre Sélection</h1>
-        <div class="rounded-xl overflow-hidden surface">
+        <div class="rounded-xl surface">
           <div class="px-3 px-md-4 py-3" style="background:rgba(255,255,255,.06);border-bottom:1px solid var(--bb-border);">
             <h3 class="small fw-bold text-uppercase mb-0" style="letter-spacing:.18em;color:color-mix(in srgb, var(--bb-primary) 80%, white);">Articles sélectionnés</h3>
           </div>

@@ -151,36 +151,22 @@
             </div>
             <div class="row g-3">
               @if (count($user->favorite) > 0)
-                <div class="col-12 col-sm-6">
-                  <div class="favorite-card surface rounded-3 d-flex overflow-hidden">
-                    <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjpGT-AidvowMnbF4UJdAXjxBKQPpSTXzLpO6ae3pk5PQA91B3grUaHPMtKr96jw9govAK9OT4xKYC9xm1ApNDLwv80d1Z7YBTcEM5jPSZhExK9r5I91OUTLI1K5R2t3dlFMQKNg1Qn6fvD4BNNuDNSKZZ16iPCWGN8KopHWSURlnouusPYs2HrNSIm04GFoKf8OaVXddIYEFzZJHgYgVCyBKxy3M0dH5gmg-X68BBKYsA_OHc1qe3nA6rc44-JzqjS4xkqSZsZV0');"></div>
-                    <div class="p-3 d-flex flex-column justify-content-between">
-                      <div>
-                        <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">Argent & Émail</p>
-                        <h4 class="small fw-bold mb-0">Collier Fibule Tiznit Classique</h4>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between mt-3">
-                        <button class="btn btn-link p-0 small fw-bold text-decoration-underline">Détails</button>
-                        <button class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6">
-                  <div class="favorite-card surface rounded-3 d-flex overflow-hidden">
-                    <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMFXISyBn3JP6CY3833sW-KWhVSNp2NsOBClTRNrbSGBFdzSQDo3f6-OPIpE6Ue5SycdVN8VFFzX5RI76wlYNYHYVdgtX-T9wpJNWXOOjDhtAQiY_6_Y-NrnlNMyI9WaqRnGl7GyoofoheWxHs9OCmzDMtwxhO0yC48_TKwSdjIb-mahwCOb9K7CKCTMpO5Rl3w1CjsCgMKfgAJ7SoQNQnyxyOJj3ZWnIRd-iCFFnUOs-0-u9iN4zngyvBITiaLpqO3Hpi1K3yJUY');"></div>
-                    <div class="p-3 d-flex flex-column justify-content-between">
-                      <div>
-                        <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">Ambre Naturelle</p>
-                        <h4 class="small fw-bold mb-0">Bracelet ‘Ziri’ en Argent Ciselé</h4>
-                      </div>
-                      <div class="d-flex align-items-center justify-content-between mt-3">
-                        <button class="btn btn-link p-0 small fw-bold text-decoration-underline">Détails</button>
-                        <button class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></button>
+                @foreach ($user->favorite as $product)                
+                  <div class="col-12 col-sm-6">
+                    <div class="favorite-card surface rounded-3 d-flex">
+                      <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjpGT-AidvowMnbF4UJdAXjxBKQPpSTXzLpO6ae3pk5PQA91B3grUaHPMtKr96jw9govAK9OT4xKYC9xm1ApNDLwv80d1Z7YBTcEM5jPSZhExK9r5I91OUTLI1K5R2t3dlFMQKNg1Qn6fvD4BNNuDNSKZZ16iPCWGN8KopHWSURlnouusPYs2HrNSIm04GFoKf8OaVXddIYEFzZJHgYgVCyBKxy3M0dH5gmg-X68BBKYsA_OHc1qe3nA6rc44-JzqjS4xkqSZsZV0');"></div>
+                      <div class="p-3 d-flex flex-column justify-content-between">
+                        <div>
+                          <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">{{ $product->name }}</p>
+                          <h4 class="small fw-bold mb-0">{{ $product->description }}</h4>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-end mt-3">
+                          {{-- <a href="/Client/RemoveFromFavorites/{{ $product->id }}" class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></a> --}}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                @endforeach
               @else
                 <div class="col-12">
                   <div class="product-card p-3">
@@ -193,7 +179,7 @@
 
           <section>
             <h3 class="h5 fw-bold mb-3">Mes Demandes d'Information</h3>
-            <div class="surface rounded-xl overflow-hidden">
+            <div class="surface rounded-xl">
               <div class="table-responsive">
                 <table class="table table-inquiries align-middle mb-0 text-white">
                   <thead>
@@ -242,7 +228,7 @@
           @if (count($user->favorite) > 0)                
             <div class="col-6">
               <div class="product-card p-3">
-                <div class="position-relative overflow-hidden rounded-3">
+                <div class="position-relative rounded-3">
                   <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyz-e7cE87sSb8ggHxbPQdTkaIvJzY9kY-qw7hIbRQEvLq5xizXKvp5wT6vs2ohcJ6lXRzjkmvInmzvR70hVELIPNEEwYawwZFH9xFoHWN5qsUQ-zurZeAufGtHkflzRXU6FTKvZ5fn5FWfpVmDLFOi2A2MwaSFrMg3oBPcS2cMdU6jY5fJQrphRYyGnhcUcc9jmRWUfIMN1-2OjAoyPUZ4wDMkcvX8EMiYjSNUCGW85K0c88FRC0Q04xmjcSg5Hj-793yxp0tpG8" class="w-100 product-img">
                   <div class="overlay d-flex align-items-center justify-content-center gap-3">
                     <button class="icon-btn icon-primary">

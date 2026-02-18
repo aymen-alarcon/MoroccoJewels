@@ -43,7 +43,7 @@ Route::prefix("Home")->group(function(){
         $products = $query->paginate(8)->withQueryString();
         $categories = Category::all();
         return view('Home.Collection', compact("categories", "products"));
-    });
+    })->name("Home.Collection");
 
     Route::get('/History', function () {
         return view('Home.History');
@@ -56,7 +56,7 @@ Route::prefix("Home")->group(function(){
     Route::get('/Collection/Details/{product}', function ($product) {
         $product = Product::findOrFail($product);
         return view('Home.CollectionInfo', compact("product"));
-    })->name("Home.Collection");
+    });
 });
 
 Route::prefix("Auth")->group( function(){
@@ -94,7 +94,8 @@ Route::prefix("Client")->group(function(){
     })->name("Profile.edit");
 
     Route::put("/Profile/Update/{user}", [UserController::class, "updateProfile"]);
-    Route::get("/Cart/addToFavorites/{product}", [FavoriteController::class, "store"]);
+    Route::get("/AddToFavorites/{product}", [FavoriteController::class, "store"]);
+    Route::get("/RemoveFromFavorites/{favorite}", [FavoriteController::class, "store"]);
 })->middleware("auth");
 
 Route::prefix('Admin')->middleware('auth')->group(function () {

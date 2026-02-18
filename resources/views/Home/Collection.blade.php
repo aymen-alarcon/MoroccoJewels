@@ -106,7 +106,7 @@
                                                         <div class="d-flex justify-content-center align-items-center">
                                                             @auth                                                                
                                                                 <a href="/Client/Cart/addToCart/{{ $product->id }}" class="text-decoration-none product-detail-btn">Ajoutez au panier</a>
-                                                                <a href="/Client/Cart/addToFavorites/{{ $product->id }}" class="text-decoration-none product-detail-btn">Ajoutez au Favoris</a>
+                                                                <a href="/Client/AddToFavorites/{{ $product->id }}" class="text-decoration-none product-detail-btn">Ajoutez au Favoris</a>
                                                             @endauth
                                                             <a href="/Home/Collection/Details/{{ $product->id }}" class="text-decoration-none product-detail-btn">Voir les détails</a>
                                                         </div>

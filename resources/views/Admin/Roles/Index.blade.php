@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="p-4 p-lg-5 container-fluid">
-        <div class="card-dark rounded-xl mt-4 overflow-hidden">
+        <div class="card-dark rounded-xl mt-4">
           <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">
             <h4 class="fw-bold mb-0">Liste des Rôles Système</h4>
           </div>
