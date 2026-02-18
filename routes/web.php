@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    return view('welcome');
+    $workers = User::whereIn("role_id", [3, 4])->get();
+    return view('welcome', compact("workers"));
 })->name("Home");
 
 Route::get('/Home/Collection', function (Request $request) {
@@ -120,8 +121,8 @@ Route::prefix('Admin')->middleware('auth')->group(function () {
     Route::get('/Users', [UserController::class, 'index'])->name('Admin.Users.Index');
     Route::get('/Users/AddUser', [UserController::class, 'create']);
     Route::post('/Users/AddUser/store', [UserController::class, 'store']);
-    Route::get('/Users/EditUser/{user}', [UserController::class, 'edit']);
-    Route::put('/Users/EditUser/update/{user}', [UserController::class, 'update']);
+    Route::get('/Users/EditUser/{userInfo}', [UserController::class, 'edit']);
+    Route::put('/Users/EditUser/update/{userInfo}', [UserController::class, 'update']);
     Route::delete('/Users/destroy/{user}', [UserController::class, 'destroy']);
 
     Route::get('/Roles', [RoleController::class, 'index'])->name('Admin.Roles.Index');

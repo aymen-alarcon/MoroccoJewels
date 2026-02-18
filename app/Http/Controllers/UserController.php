@@ -55,26 +55,18 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(User $User)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user, Role $role)
+    public function edit(User $userInfo, Role $role)
     {
         $roles = Role::all();
-        return view("Admin.Users.Edit", compact("user", "roles"));
+        return view("Admin.Users.Edit", compact("userInfo", "roles"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $User)
+    public function update(Request $request, User $userInfo)
     {
         $validate = $request->validate([
             "first_name" => "required",
@@ -88,7 +80,7 @@ class UserController extends Controller
             "phone" => "required",
         ]);
 
-        $User->update($validate);
+        $userInfo->update($validate);
 
         return redirect()->route("Admin.Users.Index")->with("success", "You have successfully update a new User.");
     }

@@ -91,7 +91,7 @@
               <select class="form-select" name="role_id" >
                 <option selected disabled>Choisir un rôle</option>
                 @foreach ($roles as $role)                    
-                    <option value="{{ $role->id }}">{{ $role->role_name }}</option>
+                    <option value="{{ $role->id }}" class="text-dark">{{ $role->role_name }}</option>
                 @endforeach
               </select>
             </div>

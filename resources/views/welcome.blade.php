@@ -9,51 +9,16 @@
                     d'un amour pour la culture amazighe.
                 </p>
                 <div class="row g-5 align-items-end">
-                    <div class="col-md-4 d-flex flex-column align-items-center gap-3">
-                        <div class="team-avatar w-36 h-36 bg-image-2"></div>
-                        <div>
-                            <p class="fs-5 fw-bold font-display text-text-dark">
-                                Fatima Idrissi
-                            </p>
-                            <p class="text-accent fs-6 fw-medium font-display">
-                                Maîtresse Artisane
-                            </p>
-                            <p class="fs-6 mt-2 text-text-dark-70">
-                                Gardienne des techniques ancestrales de ciselage et de
-                                filigrane.
-                            </p>
+                    @foreach ($workers as $worker)
+                        <div class="col-md-4 d-flex flex-column align-items-center gap-3 @if ($worker->role_id === 4) md-scale-200 @endif">
+                            <div class="team-avatar w-36 h-36" style="background-image: url({{ asset("storage/" . $worker->profile_picture) }})"></div>
+                            <div>
+                                <p class="fs-5 fw-bold font-display text-text-dark">{{ $worker->first_name }} {{ $worker->last_name }}</p>
+                                <p class="text-accent fs-6 fw-medium font-display">{{ $worker->role->role_name }}</p>
+                                <p class="fs-6 mt-2 text-text-dark-70">{{ $worker->email }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 d-flex flex-column align-items-center gap-3 md-scale-110">
-                        <div class="team-avatar w-48 h-48 border-4 border-accent shadow-lg bg-image-3"></div>
-                        <div>
-                            <p class="fs-4 fw-bold font-display text-text-dark">
-                                Hassan Amzil
-                            </p>
-                            <p class="text-accent fs-5 fw-medium font-display">
-                                Fondateur
-                            </p>
-                            <p class="fs-6 mt-2 text-text-dark-70">
-                                Le cœur et l'âme de notre atelier, il perpétue la vision
-                                familiale.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 d-flex flex-column align-items-center gap-3">
-                        <div class="team-avatar w-36 h-36 bg-image-4"></div>
-                        <div>
-                            <p class="fs-5 fw-bold font-display text-text-dark">
-                                Karim Ouarzazi
-                            </p>
-                            <p class="text-accent fs-6 fw-medium font-display">
-                                Expert en Gemmologie
-                            </p>
-                            <p class="fs-6 mt-2 text-text-dark-70">
-                                Sélectionne avec soin les pierres et l'ambre qui ornent nos
-                                bijoux.
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </section>
             <section class="bg-black-20 py-4 py-sm-5 py-lg-6">
