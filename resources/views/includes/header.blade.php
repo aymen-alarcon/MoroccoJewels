@@ -13,7 +13,7 @@
         $current = $_SERVER['REQUEST_URI'];
     ?>
     @if(session()->has('failed'))
-        <div class="alert alert-danger d-flex justify-content-center align-items-center">
+        <div class="alert alert-danger  d-flex justify-content-center align-items-center">
             {{ session()->get('failed') }}
         </div>
     @elseif(session()->has("success"))

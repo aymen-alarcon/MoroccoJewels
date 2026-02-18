@@ -74,7 +74,7 @@ Route::get("/Client/Cart/Destroy/{product}", [CartController::class, "removeFrom
 Route::get("/Client/Profile", function(){
     $user = Auth::user();
     return view("Client.Profile.index", compact("user"));
-})->middleware("auth");
+})->middleware("auth")->name("Profile.index");
 
 Route::get("/Client/Profile/Edit", function(){
     $user = Auth::user();

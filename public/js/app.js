@@ -38,3 +38,12 @@ if (window.location.href.includes("/Client/Profile")) {
         heartIcon.classList.remove("active");
     })
 }
+
+if (window.location.href.includes("/Client/Cart")) {
+    let totalPrice = 0;
+    document.querySelectorAll(".price").forEach(price => {
+        totalPrice += Number(price.innerHTML) 
+    });
+
+    document.getElementById("placeHolder").innerHTML = totalPrice.toFixed(2);
+}

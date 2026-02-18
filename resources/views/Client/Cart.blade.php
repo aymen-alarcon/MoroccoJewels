@@ -29,7 +29,7 @@
                       </td>
                       <td class="px-3 px-md-4 py-4">
                         <div class="d-flex align-items-center gap-3">
-                          <p class="mb-0 fw-bold">{{ number_format($item['price'], 2) }}</p>
+                          <p class="mb-0 fw-bold price">{{ number_format($item['price'], 2) }}</p>
                         </div>
                       </td>
                       <td class="px-3 px-md-4 py-4">
@@ -51,6 +51,9 @@
                     <td colspan="4" class="text-center py-4">Votre panier est vide.</td>
                   </tr>
                 @endif
+                <tr>
+                  <td colspan="4" class="totalPrice text-end pe-4">The total price is <span id="placeHolder" class="fw-bold fs-6">0</span> DH</td>
+                </tr>
               </tbody>
             </table>
           </div>

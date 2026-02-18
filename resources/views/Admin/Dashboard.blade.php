@@ -62,7 +62,7 @@
         <div class="d-flex justify-content-between align-items-center mb-2">
           <h3 class="fs-4 fw-bold mb-0">Activités Récentes</h3>
           <button class="btn btn-link p-0 text-primary fw-bold d-inline-flex align-items-center gap-1">
-            Tout voir <span class="material-symbols-outlined" style="font-size:18px;">chevron_right</span>
+            Tout voir
           </button>
         </div>
 

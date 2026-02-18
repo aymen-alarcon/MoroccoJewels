@@ -228,14 +228,7 @@
                       @endforeach
                     @else
                       <tr>
-                        <td class="px-3 px-md-4 py-3 fw-bold">You</td>
-                        <td class="px-3 px-md-4 py-3 fw-bold">Haven'table</td>
-                        <td class="px-3 px-md-4 py-3 fw-bold">Placed An</td>
-                        <td class="px-3 px-md-4 py-3">Order</td>
-                        <td class="px-3 px-md-4 py-3">Yet</td>
-                        <td class="px-3 px-md-4 py-3 text-end">
-                          <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
-                        </td>
+                        <td colspan="6" class="px-3 px-md-4 py-3 fw-bold">You Haven'table Placed An Order Yet</td>
                       </tr>
                     @endif
                   </tbody>
@@ -315,14 +308,9 @@
                     @endforeach
                   @else
                     <tr>
-                      <td class="px-3 px-md-4 py-3 fw-bold">You</td>
-                      <td class="px-3 px-md-4 py-3 fw-bold">Haven'table</td>
-                      <td class="px-3 px-md-4 py-3 fw-bold">Placed An</td>
-                      <td class="px-3 px-md-4 py-3">Order</td>
-                      <td class="px-3 px-md-4 py-3">Yet</td>
-                      <td class="px-3 px-md-4 py-3 text-end">
-                        <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
-                      </td>
+                      <tr>
+                        <td colspan="6" class="px-3 px-md-4 py-3 fw-bold">You Haven'table Placed An Order Yet</td>
+                      </tr>
                     </tr>
                   @endif
                 </tbody>

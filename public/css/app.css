@@ -1007,27 +1007,6 @@ body {
     flex-direction: column;
 }
 
-.product-image-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 0.5rem;
-}
-
-.product-image {
-    width: 100%;
-    aspect-ratio: 3/4;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover .product-image {
-    transform: scale(1.05);
-}
-
 .product-detail-btn {
     position: absolute;
     left: 50%;

@@ -33,7 +33,7 @@
             <label class="form-label small text-white-75 fw-semibold">Mot de passe</label>
             <div class="input-group">
               <input type="password" name="password" class="form-control" placeholder="Votre mot de passe"/>
-              <button class="btn btn-outline-light" type="button" style="border-color:rgba(255,255,255,.2);"> <span class="material-symbols-outlined">visibility</span></button>
+              <button class="btn btn-outline-light" type="button" style="border-color:rgba(255,255,255,.2);"><i class="bi bi-eye"></i></button>
             </div>
           </div>
 
@@ -41,7 +41,7 @@
             <label class="form-label small text-white-75 fw-semibold">Confirmer le mot de passe</label>
             <div class="input-group">
               <input type="password" class="form-control" placeholder="Répétez votre mot de passe"/>
-              <button class="btn btn-outline-light" type="button" style="border-color:rgba(255,255,255,.2);"> <span class="material-symbols-outlined">visibility</span></button>
+              <button class="btn btn-outline-light" type="button" style="border-color:rgba(255,255,255,.2);"><i class="bi bi-eye"></i></button>
             </div>
           </div>
 

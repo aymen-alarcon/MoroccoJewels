@@ -113,7 +113,7 @@ class UserController extends Controller
 
         $User->update($validate);
 
-        return redirect()->route("Profile.edit")->with("success", "You have successfully update a new User.");
+        return redirect()->route("Profile.index")->with("success", "You have successfully update a new User.");
     }
 
     /**
