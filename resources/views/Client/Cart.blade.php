@@ -7,7 +7,6 @@
           <div class="px-3 px-md-4 py-3" style="background:rgba(255,255,255,.06);border-bottom:1px solid var(--bb-border);">
             <h3 class="small fw-bold text-uppercase mb-0" style="letter-spacing:.18em;color:color-mix(in srgb, var(--bb-primary) 80%, white);">Articles sélectionnés</h3>
           </div>
-
           <div class="table-responsive">
             <table class="table table-cart align-middle mb-0">
               <thead>
@@ -68,7 +67,12 @@
         <div class="position-sticky">
           <div class="info-card rounded-xl p-4 mb-3">
             <div class="d-flex flex-column gap-2">
-              <button class="btn btn-primary fw-bold rounded-lg d-inline-flex align-items-center justify-content-center gap-2">Prendre rendez‑vous</button>
+              <form action="/Order/Store" method="post">
+                @csrf
+                @method("POST")
+                
+                <button type="submit" class="btn btn-primary fw-bold rounded-lg d-inline-flex align-items-center justify-content-center gap-2">Prendre rendez‑vous</button>
+              </form>
               <button class="btn btn-outline-light fw-bold rounded-lg d-inline-flex align-items-center justify-content-center gap-2"style="border-color:rgba(255,255,255,.2);">
                 <i class="bi bi-envelope"></i> Demander des infos
               </button>

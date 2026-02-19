@@ -15,11 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string("status");
             $table->float("total_price");
-            $table->boolean("is_deleted")->default(0);
-            $table->foreignId("category_id")
-                    ->constrained()
-                    ->cascadeOnUpdate()
-                    ->cascadeOnDelete();
             $table->timestamps();
         });
     }

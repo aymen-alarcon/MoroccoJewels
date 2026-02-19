@@ -67,14 +67,7 @@
       <div class="surface rounded-xl p-4 p-md-5 mb-4">
         <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-4">
           <div class="d-flex align-items-center gap-3 gap-md-4">
-            <div class="position-relative">
-              <div class="avatar-96"
-                   style="background-image:url('{{ asset("storage/" . $user->profile_picture) }}');"></div>
-              <div class="position-absolute bottom-0 end-0 translate-middle-y rounded-circle border"
-                   style="background:var(--bb-primary); color:#2b1600; width:22px; height:22px; display:grid; place-items:center; border-color:var(--bb-bg-dark);">
-                <i class="bi bi-check2"></i>
-              </div>
-            </div>
+            <div class="avatar-96" style="background-image:url('{{ asset("storage/" . $user->profile_picture) }}');"></div>
             <div>
               <h2 class="h4 fw-bold mb-1">
                 Bienvenue, 
@@ -98,10 +91,7 @@
               </div>
             </div>
           </div>
-
-          <a href="/Client/Profile/Edit" class="text-white btn fw-bold">
-            <i class="bi bi-pencil"></i> Modifier le profil
-          </a>
+          <a href="/Client/Profile/Edit" class="text-white btn fw-bold"><i class="bi bi-pencil"></i> Modifier le profil</a>
         </div>
       </div>
 
@@ -160,7 +150,7 @@
                 @foreach ($user->favorite as $product)                
                   <div class="col-12 col-sm-6">
                     <div class="favorite-card surface rounded-3 d-flex">
-                      <div class="thumb" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjpGT-AidvowMnbF4UJdAXjxBKQPpSTXzLpO6ae3pk5PQA91B3grUaHPMtKr96jw9govAK9OT4xKYC9xm1ApNDLwv80d1Z7YBTcEM5jPSZhExK9r5I91OUTLI1K5R2t3dlFMQKNg1Qn6fvD4BNNuDNSKZZ16iPCWGN8KopHWSURlnouusPYs2HrNSIm04GFoKf8OaVXddIYEFzZJHgYgVCyBKxy3M0dH5gmg-X68BBKYsA_OHc1qe3nA6rc44-JzqjS4xkqSZsZV0');"></div>
+                      <div class="thumb" style="background-image:url('{{ asset("storage/" . $product->main_image) }}');"></div>
                       <div class="p-3 d-flex flex-column justify-content-between">
                         <div>
                           <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">{{ $product->name }}</p>

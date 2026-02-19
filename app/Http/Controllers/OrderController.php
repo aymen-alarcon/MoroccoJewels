@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -14,6 +15,29 @@ class OrderController extends Controller
     {
         $orders = Order::all();
         return view("Admin.Orders.Index", compact("orders"));
+    }
+
+    public function store(Request $request, Order $order)
+    {
+        $cart = session("cart");
+
+        $totalPrice = 0;
+
+        foreach ($cart as $cartItem) {
+            $totalPrice += $cartItem["price"];
+        }
+
+        $validate = $request->validate([]);
+
+        $validate["total_price"] = $totalPrice;
+        $validate["status"] = "pending";
+        $validate["user_id"] = Auth::user()->id;
+
+        $newOrder = $order->create($validate);  
+        
+        $orderId = $newOrder->id;
+        
+        return redirect()->route("OrderItem.store", ["order_id" => $orderId]);
     }
 
     /**

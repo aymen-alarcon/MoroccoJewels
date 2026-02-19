@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderItemsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -148,3 +149,6 @@ Route::prefix('Admin')->middleware('auth')->group(function () {
     Route::put('/Categories/EditCategory/update/{category}', [CategoryController::class, 'update']);
     Route::delete('/Categories/destroy/{category}', [CategoryController::class, 'destroy']);
 });
+
+Route::post('/Order/Store', [OrderController::class, "store"]);
+Route::get('/OrderItems/Store/{order_id}', [OrderItemsController::class, "store"])->name("OrderItem.store");
