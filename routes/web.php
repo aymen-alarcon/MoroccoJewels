@@ -97,7 +97,7 @@ Route::prefix("Client")->group(function(){
 
     Route::put("/Profile/Update/{user}", [UserController::class, "updateProfile"]);
     Route::get("/AddToFavorites/{product}", [FavoriteController::class, "store"]);
-    Route::get("/RemoveFromFavorites/{favorite}", [FavoriteController::class, "store"]);
+    Route::get("/RemoveFromFavorites/{product}/{user}", [FavoriteController::class, "destroy"]);
 })->middleware("auth");
 
 Route::prefix('Admin')->middleware('auth')->group(function () {
@@ -151,4 +151,5 @@ Route::prefix('Admin')->middleware('auth')->group(function () {
 });
 
 Route::post('/Order/Store', [OrderController::class, "store"]);
-Route::get('/OrderItems/Store/{order_id}', [OrderItemsController::class, "store"])->name("OrderItem.store");
+Route::get('/Order/OrderItems/Store/{order_id}', [OrderItemsController::class, "store"])->name("OrderItem.store");
+Route::get('/Order/OrderItems/{order}', [OrderItemsController::class, "index"]);

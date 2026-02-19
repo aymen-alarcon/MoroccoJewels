@@ -37,10 +37,19 @@ class FavoriteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Favorite $Favorite)
+    public function destroy(Favorite $Favorite, $productId, $userId)
     {
-        $Favorite->delete();
+        $fav = Favorite::query()
+            ->whereIn("user_id", [$userId])
+            ->whereIn("product_id", [$productId])
+            ->get();
 
-        return view("Client.Profile.index");
+        foreach($fav as $item){
+            $favoriteObject = $Favorite->findOrFail($item->id);
+        }
+
+        $favoriteObject->delete();
+
+        return redirect()->route("Profile.index");
     }
 }

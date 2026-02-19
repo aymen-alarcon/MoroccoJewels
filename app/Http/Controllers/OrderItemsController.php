@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\OrderItems;
 use Illuminate\Http\Request;
 
@@ -10,10 +11,11 @@ class OrderItemsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($orderId)
     {
-        $OrderItems = OrderItems::all();
-        return view("Admin.OrderItems", compact("OrderItems"));
+        $order = Order::findOrFail($orderId);
+        $OrderItems = OrderItems::where("order_id", $orderId)->get();
+        return view("Home.OrderItems", compact("OrderItems", "order"));
     }
 
 

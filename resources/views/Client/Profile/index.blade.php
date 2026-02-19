@@ -157,7 +157,7 @@
                           <h4 class="small fw-bold mb-0">{{ $product->description }}</h4>
                         </div>
                         <div class="d-flex align-items-center justify-content-end mt-3">
-                          {{-- <a href="/Client/RemoveFromFavorites/{{ $product->id }}" class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></a> --}}
+                          <a href="/Client/RemoveFromFavorites/{{ $product->pivot->product_id }}/{{ $product->pivot->user_id }}" class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></a>
                         </div>
                       </div>
                     </div>
@@ -182,7 +182,7 @@
                     <tr>
                       <th class="px-3 px-md-4 py-3">Article</th>
                       <th class="px-3 px-md-4 py-3">Price</th>
-                      <th class="px-3 px-md-4 py-3">Quantity</th>
+                      <th class="px-3 px-md-4 py-3">Status</th>
                       <th class="px-3 px-md-4 py-3">Date</th>
                       <th class="px-3 px-md-4 py-3">Statut</th>
                       <th class="px-3 px-md-4 py-3 text-end">Action</th>
@@ -191,20 +191,18 @@
                   <tbody>
                     @if (count($user->order) > 0)
                       @foreach ($user->order as $order)
-                          @foreach ($order->orderItems as $item)
-                            <tr>
-                              <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->product_name }}</td>
-                              <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->price }}</td>
-                              <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->quantity }}</td>
-                              <td class="px-3 px-md-4 py-3">{{ $item->created_at->format("M d, Y") }}</td>
-                              <td class="px-3 px-md-4 py-3">
-                                <span class="badge rounded-2 fw-bold" style="font-size:.65rem;background:rgba(34,197,94,.10);color:#34d399;border:1px solid rgba(34,197,94,.25);">{{ $order->status }}</span>
-                              </td>
-                              <td class="px-3 px-md-4 py-3 text-end">
-                                <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
-                              </td>
-                            </tr>
-                          @endforeach
+                        <tr>
+                          <td class="px-3 px-md-4 py-3 fw-bold">#ORD-{{ $order->id }}</td>
+                          <td class="px-3 px-md-4 py-3 fw-bold">{{ $order->total_price }}</td>
+                          <td class="px-3 px-md-4 py-3 fw-bold">{{ $order->status }}</td>
+                          <td class="px-3 px-md-4 py-3">{{ $order->created_at->format("M d, Y") }}</td>
+                          <td class="px-3 px-md-4 py-3">
+                            <span class="badge rounded-2 fw-bold" style="font-size:.65rem;background:rgba(34,197,94,.10);color:#34d399;border:1px solid rgba(34,197,94,.25);">{{ $order->status }}</span>
+                          </td>
+                          <td class="px-3 px-md-4 py-3 text-end">
+                            <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
+                          </td>
+                        </tr>
                       @endforeach
                     @else
                       <tr>
@@ -221,7 +219,7 @@
 
       <div class="container py-5 d-none" id="favoriteSection">
         <div class="row g-4">
-          @if (count($user->favorite) > 0)     
+          @if (count($user->favorite) > 0)  
             @foreach ($user->favorite as $product)
               <div class="col-6">
                 <div class="product-card p-3">
@@ -259,7 +257,7 @@
                   <tr>
                     <th class="px-3 px-md-4 py-3">Article</th>
                     <th class="px-3 px-md-4 py-3">Price</th>
-                    <th class="px-3 px-md-4 py-3">Quantity</th>
+                    <th class="px-3 px-md-4 py-3">Status</th>
                     <th class="px-3 px-md-4 py-3">Date</th>
                     <th class="px-3 px-md-4 py-3">Statut</th>
                     <th class="px-3 px-md-4 py-3 text-end">Action</th>
@@ -268,20 +266,18 @@
                 <tbody>
                   @if (count($user->order) > 0)
                     @foreach ($user->order as $order)
-                        @foreach ($order->orderItems as $item)
                           <tr>
-                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->product_name }}</td>
-                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->price }}</td>
-                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $item->quantity }}</td>
-                            <td class="px-3 px-md-4 py-3">{{ $item->created_at->format("M d, Y") }}</td>
+                            <td class="px-3 px-md-4 py-3 fw-bold">#ORD-{{ $order->id }}</td>
+                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $order->total_price }}</td>
+                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $order->status }}</td>
+                            <td class="px-3 px-md-4 py-3">{{ $order->created_at->format("M d, Y") }}</td>
                             <td class="px-3 px-md-4 py-3">
                               <span class="badge rounded-2 fw-bold" style="font-size:.65rem;background:rgba(34,197,94,.10);color:#34d399;border:1px solid rgba(34,197,94,.25);">{{ $order->status }}</span>
                             </td>
                             <td class="px-3 px-md-4 py-3 text-end">
-                              <button class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</button>
+                              <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
                             </td>
                           </tr>
-                        @endforeach
                     @endforeach
                   @else
                     <tr>
