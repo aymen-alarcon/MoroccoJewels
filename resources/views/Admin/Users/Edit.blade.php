@@ -1,6 +1,6 @@
 @include("includes.Admin_header")
 <main class="d-flex justify-content-center p-5 position-relative z-1 w-100" style="margin-left: 15em">
-    <div class="surface rounded-xl p-4 p-md-5 shadow-lg">
+    <div class="surface rounded-xl p-4 p-md-5 shadow">
     <h1>Modifier l'utilisateur</h1>
 
     <form class="d-flex flex-column gap-4" action="/Admin/Users/EditUser/update/{{ $userInfo->id }}" method="POST">

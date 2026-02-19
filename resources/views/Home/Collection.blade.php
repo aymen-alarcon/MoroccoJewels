@@ -3,7 +3,7 @@
                 <div class="d-flex flex-column gap-4">
                     <div class="d-flex flex-wrap justify-content-between gap-3">
                         <div class="d-flex flex-column gap-1">
-                            <h1 class="font-display text-accent fs-2 fs-md-1 fw-bold tracking-tight">Nos Collections</h1>
+                            <h1 class="font-display text-accent fs-2 fw-bold tracking-tight">Nos Collections</h1>
                             <p class="text-background-light-80 fs-6 fw-normal">
                                 Explorez l'authenticité et la beauté de nos bijoux berbères
                                 faits à la main.
@@ -11,18 +11,15 @@
                         </div>
                     </div>
                     <div class="row d-flex flex-column flex-lg-row gap-5">
-                        <aside class="col-md-3 col-lg-3 col-xl-2-5 shrink-0">
+                        <aside class="col-md-3 col-lg-3">
                             <div class="sticky-sidebar">
                                 <div class="d-flex justify-content-between align-items-center mb-4">
                                     <h3 class="fs-5 fw-bold font-display text-accent">
                                         Filtres
                                     </h3>
-                                    <button class="btn btn-link p-0 text-decoration-none fs-6 fw-medium text-accent-80 hover-underline reset-filter">
-                                        Réinitialiser
-                                    </button>
                                 </div>
                                 <form method="GET" action="{{ url()->current() }}" id="filterForm">
-                                    <div class="mb-4 pt-4 border-top border-accent-20">
+                                    <div class="mb-4 pt-4 border-top">
                                         <h4 class="fw-semibold text-accent-90 mb-3">Type de Bijou</h4>
                                         @foreach ($categories as $category)
                                             <div class="form-check">
@@ -34,7 +31,7 @@
                                         @endforeach
                                     </div>
                                 </form>
-                                <div class="mb-4 pt-4 border-top border-accent-20">
+                                <div class="mb-4 pt-4 border-top">
                                     <h4 class="fw-semibold text-accent-90 mb-3">Matériau</h4>
                                     <div class="d-flex flex-column gap-2">
                                         <div class="form-check">
@@ -77,7 +74,7 @@
                                 </div>
                             </div>
                         </aside>
-                        <div class="flex-1">
+                        <div style="flex: 1">
                             <div class="d-flex flex-column gap-4">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <p class="fs-6 text-background-light-70 mb-0">
@@ -132,7 +129,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="pt-4 mt-2 border-top border-accent-20 d-flex align-items-center justify-content-center">
+                                <div class="pt-4 mt-2 border-top d-flex align-items-center justify-content-center">
                                     <nav class="d-flex align-items-center gap-2">
                                         <button class="pagination-btn">
                                             <i class="bi bi-chevron-left"></i>

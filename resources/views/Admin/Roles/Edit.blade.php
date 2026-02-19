@@ -63,7 +63,7 @@
                 <div class="category-card p-4 d-flex flex-column gap-3">
                     <div class="d-flex align-items-center gap-2 pb-2"
                         style="border-bottom:1px solid rgba(255,255,255,.06);">
-                    <span class="material-symbols-outlined" style="color:var(--bb-primary);">shopping_cart</span>
+                    <i class="bi bi-cart"></i>
                     <h3 class="h6 fw-bold mb-0">Commandes</h3>
                     </div>
     
@@ -88,7 +88,7 @@
                 <div class="category-card p-4 d-flex flex-column gap-3">
                     <div class="d-flex align-items-center gap-2 pb-2"
                         style="border-bottom:1px solid rgba(255,255,255,.06);">
-                    <span class="material-symbols-outlined" style="color:var(--bb-primary);">group</span>
+                    <i class="bi bi-people"></i>
                     <h3 class="h6 fw-bold mb-0">Utilisateurs &amp; Clients</h3>
                     </div>
     

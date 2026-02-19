@@ -1,9 +1,9 @@
 @include("includes.header")
-            <section class="w-100 max-w-5xl mx-auto px-4 px-sm-5 px-lg-6 py-4 py-sm-5 py-lg-6 text-center">
-                <h2 class="fs-2 fs-sm-1 font-display text-accent mb-3">
+            <section class="w-100 container-lg mx-auto px-4 px-sm-5 px-lg-6 py-4 py-sm-5 py-lg-6 text-center">
+                <h2 class="fs-2 font-display text-accent mb-3">
                     Les Gardiens de l'Héritage
                 </h2>
-                <p class="max-w-3xl mx-auto fs-5 text-text-dark-80 mb-5">
+                <p class="mx-auto fs-5 text-text-dark-80 mb-5">
                     Rencontrez la famille passionnée qui préserve et transmet l'art de
                     la joaillerie berbère. Chaque pièce est le fruit d'un héritage et
                     d'un amour pour la culture amazighe.
@@ -11,7 +11,7 @@
                 <div class="row g-5 align-items-end">
                     @foreach ($workers as $worker)
                         <div class="col-md-4 d-flex flex-column align-items-center gap-3 @if ($worker->role_id === 4) md-scale-200 @endif">
-                            <div class="team-avatar w-36 h-36" style="background-image: url({{ asset("storage/" . $worker->profile_picture) }})"></div>
+                            <div class="team-avatar" style="background-image: url({{ asset("storage/" . $worker->profile_picture) }})"></div>
                             <div>
                                 <p class="fs-5 fw-bold font-display text-text-dark">{{ $worker->first_name }} {{ $worker->last_name }}</p>
                                 <p class="text-accent fs-6 fw-medium font-display">{{ $worker->role->role_name }}</p>
@@ -22,9 +22,9 @@
                 </div>
             </section>
             <section class="bg-black-20 py-4 py-sm-5 py-lg-6">
-                <div class="w-100 max-w-6xl mx-auto px-4 px-sm-5 px-lg-6 row g-5 align-items-center">
+                <div class="w-100 container-xl mx-auto px-4 px-sm-5 px-lg-6 row g-5 align-items-center">
                     <div class="col-md-6 d-flex flex-column gap-4">
-                        <h2 class="fs-2 fs-sm-1 font-display text-accent">
+                        <h2 class="fs-2 font-display text-accent">
                             Un Art Ancestral
                         </h2>
                         <p class="fs-5 text-text-dark-80">
@@ -46,19 +46,19 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="mission-image w-100 h-80 h-md-96 bg-image-5 rounded-xl"></div>
+                        <div class="mission-image w-100 h-75 rounded-xl"></div>
                     </div>
                 </div>
             </section>
             <section class="py-4 py-sm-5 py-lg-6">
-                <div class="w-100 max-w-6xl mx-auto px-4 px-sm-5 px-lg-6">
+                <div class="w-100 container-xl mx-auto px-4 px-sm-5 px-lg-6">
                     <div class="row g-5 align-items-center">
-                        <div class="col-md-6 order-md-1 order-2">
-                            <div class="history-image w-100 h-96 bg-image-6 rounded-xl shadow-lg"></div>
+                        <div class="col-md-6 order-md-1">
+                            <div class="history-image w-100 h-100 rounded-xl shadow"></div>
                         </div>
-                        <div class="col-md-6 order-md-2 order-1">
+                        <div class="col-md-6 order-md-2">
                             <div class="prose-content max-w-none text-text-dark-80">
-                                <h2 class="fs-2 fs-sm-1 font-display text-accent mb-4">
+                                <h2 class="fs-2 font-display text-accent mb-4">
                                     L'Histoire gravée dans le métal
                                 </h2>
                                 <p class="fs-5 mb-3">
@@ -89,12 +89,12 @@
                 </div>
             </section>
             <section class="py-4 py-sm-5 py-lg-6 bg-black-20">
-                <div class="w-100 max-w-6xl mx-auto px-4 px-sm-5 px-lg-6">
+                <div class="w-100 container-xl mx-auto px-4 px-sm-5 px-lg-6">
                     <div class="text-center mb-5">
-                        <h2 class="fs-2 fs-sm-1 font-display text-accent">
+                        <h2 class="fs-2 font-display text-accent">
                             Notre Histoire
                         </h2>
-                        <p class="max-w-3xl mx-auto fs-5 text-text-dark-80 mt-3">
+                        <p class="mx-auto fs-5 text-text-dark-80 mt-3">
                             Un héritage transmis à travers les âges, au cœur des montagnes
                             de l'Atlas.
                         </p>

@@ -4,7 +4,7 @@
         <div class="col-12 col-md-6 col-lg-3">
           <div class="d-flex flex-column gap-3 rounded-xl p-4 bg-card-dark border border-border-gold shadow">
             <div class="d-flex justify-content-between align-items-start">
-              <div class="p-2 bg-primary-10 rounded">
+              <div class="p-2 rounded">
                 <i class="bi bi-bag-fill text-primary"></i>
               </div>
             </div>
@@ -18,7 +18,7 @@
         <div class="col-12 col-md-6 col-lg-3">
           <div class="d-flex flex-column gap-3 rounded-xl p-4 bg-card-dark border border-border-gold shadow">
             <div class="d-flex justify-content-between align-items-start">
-              <div class="p-2 bg-primary-10 rounded">
+              <div class="p-2 rounded">
                 <i class="bi bi-box-seam text-primary"></i>
               </div>
             </div>
@@ -32,7 +32,7 @@
         <div class="col-12 col-md-6 col-lg-3">
           <div class="d-flex flex-column gap-3 rounded-xl p-4 bg-card-dark border border-border-gold shadow">
             <div class="d-flex justify-content-between align-items-start">
-              <div class="p-2 bg-primary-10 rounded">
+              <div class="p-2 rounded">
                 <i class="bi bi-person-plus-fill text-primary"></i>
               </div>
             </div>
@@ -46,7 +46,7 @@
         <div class="col-12 col-md-6 col-lg-3">
           <div class="d-flex flex-column gap-3 rounded-xl p-4 bg-card-dark border border-border-gold shadow">
             <div class="d-flex justify-content-between align-items-start">
-              <div class="p-2 bg-primary-10 rounded">
+              <div class="p-2 rounded">
                 <i class="bi bi-tags-fill text-primary"></i>
               </div>
             </div>

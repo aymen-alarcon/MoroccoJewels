@@ -1,8 +1,8 @@
 @include("includes.header")
             <section class="bg-black-20 py-4 py-sm-5 py-lg-6">
-                <div class="w-100 max-w-6xl mx-auto px-4 px-sm-5 px-lg-6 row g-5 align-items-center">
+                <div class="w-100 container-xl mx-auto px-4 px-sm-5 px-lg-6 row g-5 align-items-center">
                     <div class="col-md-6 d-flex flex-column gap-4">
-                        <h2 class="fs-2 fs-sm-1 font-display text-accent">
+                        <h2 class="fs-2 font-display text-accent">
                             {{ $product->name }}
                         </h2>
                         <p class="fs-5 text-text-dark-80">à un prix de {{ $product->price }} DH on a {{ $product->stock }} Produit dans le stock ce produit apartient au categorie {{ $product->category->name }} on a aussi complié une petite description {{ $product->description }} </p>
@@ -15,17 +15,17 @@
                         @endauth
                     </div>
                     <div class="col-md-6">
-                        <div class="mission-image w-100 h-80 h-md-96 bg-image-5 rounded-xl"></div>
+                        <img src="{{ asset("storage/" . $product->main_image) }}" class="rounded" alt="">
                     </div>
                 </div>
             </section>
             @if (isset($product->history))                
                 <section class="py-4 py-sm-5 py-lg-6">
-                    <div class="w-100 max-w-6xl mx-auto px-4 px-sm-5 px-lg-6">
+                    <div class="w-100 container-xl mx-auto px-4 px-sm-5 px-lg-6">
                         <div class="row g-5 align-items-center">
-                            <div class="col-md-12 order-md-2 order-1">
+                            <div class="col-md-12 order-md-2">
                                 <div class="prose-content max-w-none text-text-dark-80">
-                                    <h2 class="fs-2 fs-sm-1 font-display text-accent mb-4">
+                                    <h2 class="fs-2 font-display text-accent mb-4">
                                         Signification Historique
                                     </h2>
                                     <p class="fs-5 mb-3">{{ $product->history }}</p>
@@ -36,12 +36,12 @@
                 </section>
             @endif
             <section class="py-4 py-sm-5 py-lg-6 bg-black-20">
-                <div class="w-100 max-w-6xl mx-auto px-4 px-sm-5 px-lg-6">
+                <div class="w-100 container-xl mx-auto px-4 px-sm-5 px-lg-6">
                     <div class="text-center mb-5">
-                        <h2 class="fs-2 fs-sm-1 font-display text-accent">
+                        <h2 class="fs-2 font-display text-accent">
                             Matériel
                         </h2>
-                        <p class="max-w-3xl mx-auto fs-5 text-text-dark-80 mt-3">
+                        <p class="mx-auto fs-5 text-text-dark-80 mt-3">
                             Un héritage transmis à travers les âges, au cœur des montagnes
                             de l'Atlas.
                         </p>

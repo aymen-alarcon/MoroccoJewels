@@ -41,17 +41,23 @@
 }
 
 .icon-primary{
-    background:var(--primary);
+    background: rgba(255, 255, 255, .1);;
     color:var(--background-dark);
+    transition: ease-in-out 0.3s;
 }
 
 .icon-danger{
     background:rgba(255,255,255,.1);
     color:white;
+    transition: ease-in-out 0.3s;
 }
 
 .icon-danger:hover{
     background:#dc3545;
+}
+
+.icon-primary:hover{
+    background:#3ebbe5;
 }
 </style>
   <main class="position-relative">
@@ -225,27 +231,24 @@
 
       <div class="container py-5 d-none" id="favoriteSection">
         <div class="row g-4">
-          @if (count($user->favorite) > 0)                
-            <div class="col-6">
-              <div class="product-card p-3">
-                <div class="position-relative rounded-3">
-                  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyz-e7cE87sSb8ggHxbPQdTkaIvJzY9kY-qw7hIbRQEvLq5xizXKvp5wT6vs2ohcJ6lXRzjkmvInmzvR70hVELIPNEEwYawwZFH9xFoHWN5qsUQ-zurZeAufGtHkflzRXU6FTKvZ5fn5FWfpVmDLFOi2A2MwaSFrMg3oBPcS2cMdU6jY5fJQrphRYyGnhcUcc9jmRWUfIMN1-2OjAoyPUZ4wDMkcvX8EMiYjSNUCGW85K0c88FRC0Q04xmjcSg5Hj-793yxp0tpG8" class="w-100 product-img">
-                  <div class="overlay d-flex align-items-center justify-content-center gap-3">
-                    <button class="icon-btn icon-primary">
-                      <i class="bi bi-eye-fill"></i>
-                    </button>
-                    <button class="icon-btn icon-danger">
-                      <i class="bi bi-trash-fill"></i>
-                    </button>
+          @if (count($user->favorite) > 0)     
+            @foreach ($user->favorite as $product)
+              <div class="col-6">
+                <div class="product-card p-3">
+                  <div class="position-relative rounded-3">
+                    <img src="{{ asset("storage/" . $product->main_image) }}" class="w-100 product-img" style="height: 20em">
+                    <div class="overlay d-flex align-items-center justify-content-center gap-3">
+                      <a href="/Home/Collection/Details/{{ $product->id }}" class="icon-btn icon-primary"><i class="bi bi-eye-fill"></i></a>
+                      <button class="icon-btn icon-danger"><i class="bi bi-trash-fill"></i></button>
+                    </div>
+                  </div>
+                  <div class="mt-3">
+                    <div class="text-warning text-uppercase fw-bold small mb-1">{{ $product->name }}</div>
+                    <h6 class="fw-bold mb-3">{{ $product->description }}</h6>
                   </div>
                 </div>
-                <div class="mt-3">
-                  <div class="text-warning text-uppercase fw-bold small mb-1">Argent & Émail</div>
-                  <h6 class="fw-bold mb-3">Collier Fibule Tiznit</h6>
-                  <a href="#" class="small text-decoration-underline text-secondary">Voir les détails</a>
-                </div>
               </div>
-            </div>
+            @endforeach           
             @else
               <div class="col-12">
                 <div class="product-card p-3">

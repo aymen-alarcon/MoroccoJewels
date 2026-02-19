@@ -1,5 +1,5 @@
-        <footer class="bg-black-30 border-top border-border-dark mt-auto">
-            <div class="container max-w-6xl px-4 px-sm-5 px-lg-6 py-5">
+        <footer class="bg-custom border-top border-border-dark mt-auto">
+            <div class="container container-xl px-4 px-sm-5 px-lg-6 py-5">
                 <div class="row g-4 mb-4">
                     <div class="col-md-6 col-lg-3">
                         <h3 class="fw-bold fs-5 mb-3 font-display text-accent">
@@ -71,10 +71,10 @@
                         </h3>
                         <ul class="list-unstyled mb-0">
                             <li class="mb-2">
-                                <p class="text-text-dark text-opacity-80 mb-0">+212 620 102 416</p>
+                                <p class="text-text-dark mb-0">+212 620 102 416</p>
                             </li>
                             <li class="mb-2">
-                                <p class="text-text-dark text-opacity-80 mb-0">Riad El Arous N°324 Medina Marrakech, Maroc</p>
+                                <p class="text-text-dark mb-0">Riad El Arous N°324 Medina Marrakech, Maroc</p>
                             </li>
                             <li>
                                 <a class="footer-link d-block" href="mailto:contact@tresorsberberes.ma">

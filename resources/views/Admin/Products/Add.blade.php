@@ -66,7 +66,7 @@
         <div class="col-12 col-lg-4 d-flex flex-column gap-3">
           <section class="surface rounded-xl p-4 h-100">
             <h2 class="h5 fw-bold mb-3 d-flex align-items-center gap-2">
-              <span class="material-symbols-outlined" style="color:var(--bb-primary);">image</span>
+              <i class="bi bi-image"></i>
               Galerie Médias
             </h2>
             <div class="mb-3">
