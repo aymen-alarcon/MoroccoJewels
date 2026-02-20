@@ -22,11 +22,12 @@
           </div>
 
           <div class="d-flex align-items-center gap-2 custom-scrollbar pb-1">
-            <button class="btn custom-button active">Tous</button>
-            <button class="btn custom-button">Colliers</button>
-            <button class="btn custom-button">Bracelets</button>
-            <button class="btn custom-button">Boucles</button>
-            <button class="btn custom-button">Bagues</button>
+            <form action="{{ url()->current() }}" method="get">
+                <button type="submit" name="category" value="all" class="btn custom-button active">Tous</button>
+              @foreach ($categories as $category)                
+                <button type="submit" name="category" value="{{ $category->id }}" class="btn custom-button active">{{ $category->name }}</button>
+              @endforeach
+            </form>
           </div>
         </div>
       </section>

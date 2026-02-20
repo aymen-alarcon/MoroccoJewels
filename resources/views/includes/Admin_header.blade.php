@@ -106,8 +106,8 @@
       </div>
       <nav class="px-3 mt-2 d-flex flex-column gap-2">
         <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Dashboard"){ echo "nav-link-active";} ?>" href="/Admin/Dashboard"><i class="bi bi-clipboard-data"></i><span class="small fw-semibold">Tableau de bord</span></a>
-        <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Orders"){ echo "nav-link-active";} ?>" href="/Admin/Orders"><i class="bi bi-bag-check"></i><span class="small fw-semibold">Orders</span></a>
-        <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Products"){ echo "nav-link-active";} ?>" href="/Admin/Products"><i class="bi bi-box2"></i><span class="small fw-semibold">Products</span></a>
+        <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Orders"){ echo "nav-link-active";} ?>" href="/Admin/Orders?status=all"><i class="bi bi-bag-check"></i><span class="small fw-semibold">Orders</span></a>
+        <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Products"){ echo "nav-link-active";} ?>" href="/Admin/Products?category=all"><i class="bi bi-box2"></i><span class="small fw-semibold">Products</span></a>
         <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Categories"){ echo "nav-link-active";} ?>" href="/Admin/Categories"><i class="bi bi-tag"></i><span class="small fw-semibold">Categories</span></a>
         <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Users"){ echo "nav-link-active";} ?>" href="/Admin/Users"><i class="bi bi-people"></i><span class="small fw-semibold">Clients</span></a>
         <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Roles"){ echo "nav-link-active";} ?>" href="/Admin/Roles"><i class="bi bi-shield-lock"></i><span class="small fw-semibold">Roles</span></a>

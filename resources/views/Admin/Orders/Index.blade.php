@@ -10,12 +10,14 @@
           </div>
 
           <div class="surface rounded p-3 d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
-            <div class="d-flex align-items-center gap-2">
-              <button class="btn custom-button">Tous</button>
-              <button class="btn custom-button">En attente</button>
-              <button class="btn custom-button">En cours</button>
-              <button class="btn custom-button">Expédiées</button>
-            </div>
+            <form action="{{ url()->current() }}" method="get">
+              <div class="d-flex align-items-center gap-2">
+                <button type="submit" name="status" value="all" class="btn custom-button">Tous</button>
+                <button type="submit" name="status" value="pending" class="btn custom-button">pending</button>
+                <button type="submit" name="status" value="delivered" class="btn custom-button">Delivered</button>
+                <button type="submit" name="status" value="canceled" class="btn custom-button">Canceled</button>
+              </div>
+            </form>
             <div class="d-flex align-items-center gap-2">
               <i class="bi bi-funnel-fill"></i> Plus de Filtres
               <i class="bi bi-calendar-date"></i> Derniers 30 jours
@@ -24,7 +26,7 @@
 
           <div class="rounded">
             <div class="table-responsive">
-              <table class="table table-orders table-divider align-middle mb-0" style="background-color: #5A1A19">
+              <table class="table table-roles table-divider align-middle mb-0" style="background-color: #5A1A19">
                 <thead>
                   <tr>
                     <th class="px-4 py-3">ID Commande</th>
@@ -49,7 +51,7 @@
                         <td class="px-4 py-3"><span class="pill pill-wait">{{ $order->status }}</span></td>
                         <td class="px-4 py-3 small text-white-75">{{ $order->created_at->format("Y-m-d") }}</td>
                         <td class="px-4 py-3 text-end">
-                          <a href="/Admin/OrderItems" class="btn btn-sm rounded-lg"><i class="bi bi-eye fs-4"></i></a>
+                          <a href="/Admin/Orders/OrderItems/{{ $order->id }}" class="btn btn-sm rounded-lg"><i class="bi bi-eye fs-4"></i></a>
                         </td>
                       </tr>
                     @endforeach
@@ -63,22 +65,7 @@
             </div>
 
             <div class="d-flex align-items-center justify-content-between p-3">
-              <p class="mb-0 small text-white-50">Affichage de 1 à 5 sur 124 commandes</p>
-              <div class="d-flex align-items-center gap-2">
-                <button class="btn btn-sm rounded-lg px-2" disabled
-                        style="width:40px;height:40px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);">
-                  <i class="bi bi-arrow-left"></i>
-                </button>
-                <button class="btn btn-sm rounded-lg fw-bold px-0" style="width:40px;height:40px;background:var(--bb-primary);color:#fff;">1</button>
-                <button class="btn btn-sm rounded-lg px-0" style="width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);">2</button>
-                <button class="btn btn-sm rounded-lg px-0" style="width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);">3</button>
-                <span class="text-white-50">...</span>
-                <button class="btn btn-sm rounded-lg px-0" style="width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);">25</button>
-                <button class="btn btn-sm rounded-lg px-2"
-                        style="width:40px;height:40px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);">
-                  <i class="bi bi-arrow-right"></i>
-                </button>
-              </div>
+              <p class="mb-0 small text-white-50">Affichage de 1 à 5 sur {{ count($orders) }} commandes</p>
             </div>
           </div>
 

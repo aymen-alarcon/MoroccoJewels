@@ -11,9 +11,22 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $orders = Order::all();
+        $query = Order::query();
+
+        $status = $request->query("status");
+
+        if ($status === "all") {
+            $orders = $query->get();
+        } else if($status === "pending"){
+            $orders = $query->where("status", "pending")->get();
+        }else if($status === "delivered"){
+            $orders = $query->where("status", "delivered")->get();
+        }else if($status === "canceled"){
+            $orders = $query->where("status", "canceled")->get();
+        }
+            
         return view("Admin.Orders.Index", compact("orders"));
     }
 

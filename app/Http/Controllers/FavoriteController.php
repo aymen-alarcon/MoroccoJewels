@@ -40,8 +40,8 @@ class FavoriteController extends Controller
     public function destroy(Favorite $Favorite, $productId, $userId)
     {
         $fav = Favorite::query()
-            ->whereIn("user_id", [$userId])
-            ->whereIn("product_id", [$productId])
+            ->where("user_id", $userId)
+            ->where("product_id", $productId)
             ->get();
 
         foreach($fav as $item){

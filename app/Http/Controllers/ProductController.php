@@ -11,10 +11,20 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
-        return view("Admin.Products.Index", compact("products"));
+        $categories = Category::all();
+        $products = Product::query();
+
+        $category = $request->query('category');
+
+        if ($category !== 'all') {
+            $products = $products->where('category_id', $category);
+        }
+
+        $products = $products->get();
+
+        return view('Admin.Products.Index', compact('products', 'categories'));
     }
 
     /**
