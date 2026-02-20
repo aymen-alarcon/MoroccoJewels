@@ -51,6 +51,10 @@ class User extends Authenticatable
         return $this->BelongsToMany(Product::class, "favorites");
     }
 
+    public function log():HasMany{
+        return $this->hasMany(Log::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -7,6 +7,7 @@ use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemsController;
 use App\Http\Controllers\ProductController;
@@ -115,9 +116,7 @@ Route::prefix('Admin')->middleware('auth')->middleware('role:Admin')->group(func
         return view('Admin.Profile');
     });
 
-    Route::get('/Logs', function () {
-        return view('Admin.AdminLogs');
-    });
+    Route::get('/Logs', [LogController::class, "index"]);
 
     Route::get('/Orders', [OrderController::class, 'index'])->name('Admin.Orders.Index');
 
