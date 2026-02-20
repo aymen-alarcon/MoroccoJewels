@@ -11,7 +11,7 @@
           </button>
         </div>
 
-        <section class="card-dark rounded-xl p-4 p-lg-5 mb-4">
+        <section class="card-dark rounded p-4 p-lg-5 mb-4">
           <h3 class="h5 fw-bold mb-4 d-flex align-items-center gap-2">
             <i class="bi bi-info-circle"></i> Informations Générales
           </h3>

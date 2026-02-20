@@ -64,7 +64,7 @@
     <div class="moroccan-pattern"></div>
 
     <div class="container-xxl px-3 px-lg-5 py-5" style="max-width:1200px; position:relative; z-index:1;">
-      <div class="surface rounded-xl p-4 p-md-5 mb-4">
+      <div class="surface rounded p-4 p-md-5 mb-4">
         <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-4">
           <div class="d-flex align-items-center gap-3 gap-md-4">
             <div class="avatar-96" style="background-image:url('{{ asset("storage/" . $user->profile_picture) }}');"></div>
@@ -114,7 +114,7 @@
 
       <div class="row g-4" id="informationSection">
         <div class="col-12 col-lg-4 d-flex flex-column gap-3">
-          <div class="surface rounded-xl p-4">
+          <div class="surface rounded p-4">
             <h3 class="h6 fw-bold mb-3 d-flex align-items-center gap-2" style="color:var(--bb-primary);">Détails personnels</h3>
             <div class="d-flex flex-column gap-3">
               <div class="pb-3" style="border-bottom:1px solid rgba(255,255,255,.06);">
@@ -175,7 +175,7 @@
 
           <section>
             <h3 class="h5 fw-bold mb-3">Mes Demandes d'Information</h3>
-            <div class="surface rounded-xl">
+            <div class="surface rounded">
               <div class="table-responsive">
                 <table class="table table-inquiries align-middle mb-0 text-white">
                   <thead>

@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="px-4 px-lg-5">
-        <div class="card-surface rounded-xl">
+        <div class="card-surface rounded">
             <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">
               <h4 class="fw-bold mb-0">Liste des Rôles Système</h4>
             </div>

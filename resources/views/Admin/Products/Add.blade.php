@@ -16,7 +16,7 @@
 
       <div class="row g-4 mt-2 form-card">
         <div class="col-12 col-lg-8 d-flex flex-column gap-3">
-          <section class="surface rounded-xl p-4">
+          <section class="surface rounded p-4">
             <h2 class="h5 fw-bold mb-3 d-flex align-items-center gap-2">
               <i class="bi bi-info-circle"></i>
               Informations Générales
@@ -64,7 +64,7 @@
           </section>
         </div>
         <div class="col-12 col-lg-4 d-flex flex-column gap-3">
-          <section class="surface rounded-xl p-4 h-100">
+          <section class="surface rounded p-4 h-100">
             <h2 class="h5 fw-bold mb-3 d-flex align-items-center gap-2">
               <i class="bi bi-image"></i>
               Galerie Médias

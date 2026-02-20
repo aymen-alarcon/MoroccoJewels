@@ -14,9 +14,9 @@
         </div>
     
         <div class="d-flex flex-column gap-4 px-4 px-md-5 pb-5">
-            <div class="surface rounded-xl p-4 m-4 w-100">
+            <div class="surface rounded p-4 m-4 w-100">
                 <label class="text-white fw-semibold small mb-2 d-block">Nom du rôle</label>
-                <input type="text" name="role_name" class="form-control rounded-xl" value="{{ $role->role_name }}">
+                <input type="text" name="role_name" class="form-control rounded" value="{{ $role->role_name }}">
             </div>
     
             {{-- <div>
@@ -128,7 +128,7 @@
             </div>  --}}
         </div>
         <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary m-2 w-25 rounded-xl px-4 py-2 fw-bold">Sauvegarder les changements</button>
+            <button type="submit" class="btn btn-primary m-2 w-25 rounded px-4 py-2 fw-bold">Sauvegarder les changements</button>
         </div>
     </form>
 </main>

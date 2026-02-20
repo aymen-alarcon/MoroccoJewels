@@ -100,7 +100,7 @@ Route::prefix("Client")->group(function(){
     Route::get("/RemoveFromFavorites/{product}/{user}", [FavoriteController::class, "destroy"]);
 })->middleware("auth");
 
-Route::prefix('Admin')->middleware('auth')->group(function () {
+Route::prefix('Admin')->middleware('auth')->middleware('role:Admin')->group(function () {
     Route::get('/Dashboard', function () {
         $categoriesCount = Category::count();
         $productsCount = Product::count();
@@ -109,7 +109,7 @@ Route::prefix('Admin')->middleware('auth')->group(function () {
         $orders = Order::all();
         $ordersCount = $orders->count();
         return view('Admin.Dashboard', compact('categoriesCount', 'productsCount', 'rolesCount', 'usersCount', 'orders', 'ordersCount'));
-    });
+    })->name("admin.dashboard");
 
     Route::get('/Profile', function () {
         return view('Admin.Profile');

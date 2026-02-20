@@ -13,7 +13,7 @@
         </div>
       </header>
       <section class="px-4 px-lg-5 pb-3 d-flex flex-column gap-3 position-relative">
-        <div class="d-flex flex-wrap align-items-center gap-3 rounded-xl p-3 border" style="background: color-mix(in srgb, var(--bb-accent-dark) 30%, transparent); border-color: rgba(255,255,255,.05)!important;">
+        <div class="d-flex flex-wrap align-items-center gap-3 rounded p-3 border" style="background: color-mix(in srgb, var(--bb-accent-dark) 30%, transparent); border-color: rgba(255,255,255,.05)!important;">
           <div>
             <div class="form-control">
               <i class="bi bi-search" style="color: color-mix(in srgb, var(--bb-primary) 50%, white);"></i>
@@ -32,8 +32,8 @@
       </section>
 
       <section class="px-4 px-lg-5 pb-4 position-relative">
-        <div class="card-dark rounded-xl mt-4">
-          <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">
+        <div class="card-dark rounded mt-4">
+          <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color: #752A28!important;">
             <h4 class="fw-bold mb-0">Liste des Produits</h4>
           </div>
           <div class="table-responsive">

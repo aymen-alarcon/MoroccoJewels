@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="p-4 p-lg-5 container-fluid">
-        <div class="card-dark rounded-xl mt-4">
+        <div class="card-dark rounded mt-4">
           <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">
             <h4 class="fw-bold mb-0">Liste des Rôles Système</h4>
           </div>
@@ -59,13 +59,6 @@
                 @endif
               </tbody>
             </table>
-          </div>
-          <div class="d-flex align-items-center justify-content-between px-4 py-3 border-top" style="background: rgba(0,0,0,.10); border-color:var(--bb-border-dark)!important;">
-            <span class="small text-white-50">Affichage de 1-4 sur 8 rôles</span>
-            <div class="d-flex align-items-center gap-2">
-              <button class="btn btn-sm rounded px-3 py-1 text-white-50 border-dark-1" disabled>Précédent</button>
-              <button class="btn btn-sm rounded px-3 py-1 text-white-75 border-dark-1">Suivant</button>
-            </div>
           </div>
         </div>
     </main>

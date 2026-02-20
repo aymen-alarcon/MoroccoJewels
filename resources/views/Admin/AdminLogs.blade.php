@@ -37,7 +37,7 @@
           <div class="text-white-50 text-uppercase small fw-bold">256 entrées trouvées</div>
         </div>
 
-        <div class="mx-3 mx-lg-4 my-3 rounded-xl border border-opacity-25" style="background:rgba(255,255,255,.06);">
+        <div class="mx-3 mx-lg-4 my-3 rounded border border-opacity-25" style="background:rgba(255,255,255,.06);">
           <div class="table-responsive">
             <table class="table table-logs align-middle mb-0" style="background-color: #5A1A19">
               <thead>

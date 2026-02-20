@@ -2,7 +2,7 @@
     <div class="container-fluid p-4 p-lg-5 d-flex flex-column gap-4 gap-lg-5" style="margin-left: 15em;">
       <div class="row g-3 g-lg-4">
         <div class="col-12 col-md-6 col-lg-3">
-          <div class="d-flex flex-column gap-3 rounded-xl p-4 bg-card-dark border border-border-gold shadow">
+          <div class="d-flex flex-column gap-3 rounded p-4 border border-border-gold shadow">
             <div class="d-flex justify-content-between align-items-start">
               <div class="p-2 rounded">
                 <i class="bi bi-bag-fill text-primary"></i>
@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3">
-          <div class="d-flex flex-column gap-3 rounded-xl p-4 bg-card-dark border border-border-gold shadow">
+          <div class="d-flex flex-column gap-3 rounded p-4 border border-border-gold shadow">
             <div class="d-flex justify-content-between align-items-start">
               <div class="p-2 rounded">
                 <i class="bi bi-box-seam text-primary"></i>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3">
-          <div class="d-flex flex-column gap-3 rounded-xl p-4 bg-card-dark border border-border-gold shadow">
+          <div class="d-flex flex-column gap-3 rounded p-4 border border-border-gold shadow">
             <div class="d-flex justify-content-between align-items-start">
               <div class="p-2 rounded">
                 <i class="bi bi-person-plus-fill text-primary"></i>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-3">
-          <div class="d-flex flex-column gap-3 rounded-xl p-4 bg-card-dark border border-border-gold shadow">
+          <div class="d-flex flex-column gap-3 rounded p-4 border border-border-gold shadow">
             <div class="d-flex justify-content-between align-items-start">
               <div class="p-2 rounded">
                 <i class="bi bi-tags-fill text-primary"></i>
@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <div class="d-flex flex-column gap-3 rounded-xl border border-border-gold bg-card-dark p-4 p-lg-5 shadow">
+      <div class="d-flex flex-column gap-3 rounded border border-border-gold p-4 p-lg-5 shadow">
         <div class="d-flex justify-content-between align-items-center mb-2">
           <h3 class="fs-4 fw-bold mb-0">Activités Récentes</h3>
           <button class="btn btn-link p-0 text-primary fw-bold d-inline-flex align-items-center gap-1">

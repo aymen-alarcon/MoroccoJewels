@@ -2,7 +2,7 @@
   <main class="position-relative d-flex align-items-center justify-content-center py-5">
     <div class="moroccan-pattern"></div>
     <div class="container position-relative z-1  form-card" style="max-width:640px;">
-      <div class="glass rounded-xl shadow-2xl p-4 p-lg-5">
+      <div class="glass rounded shadow-2xl p-4 p-lg-5">
         <div class="text-center mb-3">
           <h1 class="h3 fw-bold mb-1">Créer un Compte</h1>
           <p class="text-white-50 mb-0">Rejoignez l'héritage des bijoux artisanaux</p>

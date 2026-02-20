@@ -1,5 +1,5 @@
 @include("includes.Admin_header")
-    <main class=" d-flex flex-column overflow-auto pattern w-100">
+    <main class=" d-flex flex-column overflow-auto w-100">
       <div class="px-3 px-md-4 pt-3">
         <ul class="nav nav-pills gap-2" role="tablist" id="profileTabs">
           <li class="nav-item" role="presentation">
@@ -27,7 +27,7 @@
 
       <div class="container-xxl py-4 d-flex flex-column gap-4" style="max-width:1200px;">
         <section id="section-profil" class="section-panel" role="tabpanel" aria-labelledby="tab-profil">
-          <div class="card-surface rounded-xl p-4 p-md-5 shadow-2xl">
+          <div class="card-surface rounded p-4 p-md-5 shadow-2xl">
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
               <div class="d-flex flex-column flex-sm-row align-items-center gap-3 text-center text-sm-start">
                 <div class="position-relative">
@@ -39,7 +39,7 @@
                 </div>
                 <div>
                   <h3 class="mb-1 fw-extrabold" style="font-size:28px;">Zineb Alami</h3>
-                  <div class="mb-2"><span class="badge-pill">Administrateur Principal</span></div>
+                  <div class="mb-2"><span class="">Administrateur Principal</span></div>
                   <p class="small text-white-50 mb-0 d-flex align-items-center justify-content-center justify-content-sm-start gap-2">
                     <span class="material-symbols-outlined" style="font-size:18px;">mail</span> zineb.alami@bijouxberberes.ma
                   </p>
@@ -63,7 +63,7 @@
 
           <div class="row g-3">
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="card-surface rounded-xl p-4 h-100" style="cursor:pointer;">
+              <div class="card-surface rounded p-4 h-100" style="cursor:pointer;">
                 <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:48px;height:48px;background:rgba(250,198,56,.15);color:var(--bb-primary);">
                   <span class="material-symbols-outlined fs-3">add_circle</span>
                 </div>
@@ -72,7 +72,7 @@
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="card-surface rounded-xl p-4 h-100" style="cursor:pointer;">
+              <div class="card-surface rounded p-4 h-100" style="cursor:pointer;">
                 <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:48px;height:48px;background:rgba(250,198,56,.15);color:var(--bb-primary);">
                   <span class="material-symbols-outlined fs-3">inventory_2</span>
                 </div>
@@ -81,7 +81,7 @@
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="card-surface rounded-xl p-4 h-100" style="cursor:pointer;">
+              <div class="card-surface rounded p-4 h-100" style="cursor:pointer;">
                 <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:48px;height:48px;background:rgba(250,198,56,.15);color:var(--bb-primary);">
                   <span class="material-symbols-outlined fs-3">local_shipping</span>
                 </div>
@@ -90,7 +90,7 @@
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3">
-              <div class="card-surface rounded-xl p-4 h-100" style="cursor:pointer;">
+              <div class="card-surface rounded p-4 h-100" style="cursor:pointer;">
                 <div class="d-inline-flex align-items-center justify-content-center rounded" style="width:48px;height:48px;background:rgba(250,198,56,.15);color:var(--bb-primary);">
                   <span class="material-symbols-outlined fs-3">analytics</span>
                 </div>
@@ -101,7 +101,7 @@
           </div>
           <div class="row g-4 mt-1">
             <div class="col-12 col-lg-8">
-              <div class="card-surface rounded-xl p-4">
+              <div class="card-surface rounded p-4">
                 <h3 class="h6 fw-bold d-flex align-items-center gap-2 mb-3">
                   <span class="material-symbols-outlined" style="color:var(--bb-primary);">verified_user</span> Détails du Compte
                 </h3>
@@ -128,7 +128,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-4">
-              <div class="card-surface rounded-xl p-4">
+              <div class="card-surface rounded p-4">
                 <h3 class="h6 fw-bold mb-3">Activité Récente</h3>
                 <div class="d-flex flex-column gap-3">
                   <div class="d-flex gap-2">
@@ -159,10 +159,10 @@
             </div>
           </div>
         </section>
-        <section id="section-securite" class="section-panel is-hidden" role="tabpanel" aria-labelledby="tab-securite">
+        <section id="section-securite" class="section-panel d-none" role="tabpanel" aria-labelledby="tab-securite">
           <div class="row g-4">
             <div class="col-12 col-lg-6">
-              <div class="card-surface rounded-xl p-4 h-100">
+              <div class="card-surface rounded p-4 h-100">
                 <h3 class="h6 fw-bold d-flex align-items-center gap-2 mb-3">
                   <span class="material-symbols-outlined" style="color:var(--bb-primary);">lock</span> Changer le mot de passe
                 </h3>
@@ -181,7 +181,7 @@
             </div>
 
             <div class="col-12 col-lg-6">
-              <div class="card-surface rounded-xl p-4 h-100">
+              <div class="card-surface rounded p-4 h-100">
                 <h3 class="h6 fw-bold d-flex align-items-center gap-2 mb-3">
                   <span class="material-symbols-outlined" style="color:var(--bb-primary);">verified_user</span> Authentification à deux facteurs
                 </h3>
@@ -222,8 +222,8 @@
             </div>
           </div>
         </section>
-        <section id="section-activite" class="section-panel is-hidden" role="tabpanel" aria-labelledby="tab-activite">
-          <div class="card-surface rounded-xl p-4">
+        <section id="section-activite" class="section-panel d-none" role="tabpanel" aria-labelledby="tab-activite">
+          <div class="card-surface rounded p-4">
             <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
               <h3 class="h6 fw-bold d-flex align-items-center gap-2 mb-2 mb-md-0">
                 <span class="material-symbols-outlined" style="color:var(--bb-primary);">timeline</span> Journal d’activité
@@ -248,19 +248,19 @@
                 <tbody>
                   <tr>
                     <td>31 Jan 2026 · 14:30</td>
-                    <td><span class="badge-pill">Produit</span></td>
+                    <td><span class="">Produit</span></td>
                     <td class="small">Mise à jour du prix du Collier Fibule Argent (+15%)</td>
                     <td class="text-end"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                   </tr>
                   <tr>
                     <td>31 Jan 2026 · 11:15</td>
-                    <td><span class="badge-pill">Catégorie</span></td>
+                    <td><span class="">Catégorie</span></td>
                     <td class="small">Suppression de la catégorie “Anciennes Collections” (12 produits archivés)</td>
                     <td class="text-end"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                   </tr>
                   <tr>
                     <td>30 Jan 2026 · 16:45</td>
-                    <td><span class="badge-pill">Rôle</span></td>
+                    <td><span class="">Rôle</span></td>
                     <td class="small">Changement des permissions “Éditeur” pour l’utilisateur Lina K.</td>
                     <td class="text-end"><button class="btn btn-sm text-white-50"><i class="bi bi-info-circle"></i></button></td>
                   </tr>
@@ -270,10 +270,10 @@
 
           </div>
         </section>
-        <section id="section-preferences" class="section-panel is-hidden" role="tabpanel" aria-labelledby="tab-preferences">
+        <section id="section-preferences" class="section-panel d-none" role="tabpanel" aria-labelledby="tab-preferences">
           <div class="row g-4">
             <div class="col-12 col-lg-6">
-              <div class="card-surface rounded-xl p-4 h-100">
+              <div class="card-surface rounded p-4 h-100">
                 <h3 class="h6 fw-bold d-flex align-items-center gap-2 mb-3">
                   <span class="material-symbols-outlined" style="color:var(--bb-primary);">tune</span> Apparence & Langue
                 </h3>
@@ -302,7 +302,7 @@
             </div>
 
             <div class="col-12 col-lg-6">
-              <div class="card-surface rounded-xl p-4 h-100">
+              <div class="card-surface rounded p-4 h-100">
                 <h3 class="h6 fw-bold d-flex align-items-center gap-2 mb-3">
                   <span class="material-symbols-outlined" style="color:var(--bb-primary);">notifications</span> Notifications
                 </h3>
@@ -335,7 +335,7 @@
       const tabs = document.querySelectorAll('#profileTabs .nav-link');
       const panels = document.querySelectorAll('.section-panel');
 
-      const hideAll = () => panels.forEach(p => p.classList.add('is-hidden'));
+      const hideAll = () => panels.forEach(p => p.classList.add('d-none'));
       const deactivateAll = () => tabs.forEach(t => {
         t.classList.remove('active');
         t.setAttribute('aria-selected','false');
@@ -344,7 +344,7 @@
         const target = document.querySelector(id);
         if(!target) return;
         hideAll();
-        target.classList.remove('is-hidden');
+        target.classList.remove('d-none');
       };
       const activateTab = (btn) => {
         deactivateAll();

@@ -1,7 +1,7 @@
 @include("includes.header")
   <main class="d-flex align-items-center justify-content-center py-5 position-relative z-1">
     <div class="container" style="max-width:520px;">
-      <div class="form-card rounded-xl shadow-2xl p-4 p-md-5">
+      <div class="form-card rounded shadow-2xl p-4 p-md-5">
         <div class="text-center mb-4">
           <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:64px;height:64px;background:rgba(239,193,57,.15);color:var(--bb-primary);">
             <i class="bi bi-person-circle fs-2"></i>

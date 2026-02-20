@@ -9,7 +9,7 @@
             </div>
           </div>
 
-          <div class="surface rounded-xl p-3 d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+          <div class="surface rounded p-3 d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
             <div class="d-flex align-items-center gap-2">
               <button class="btn custom-button">Tous</button>
               <button class="btn custom-button">En attente</button>
@@ -22,7 +22,7 @@
             </div>
           </div>
 
-          <div class="rounded-xl">
+          <div class="rounded">
             <div class="table-responsive">
               <table class="table table-orders table-divider align-middle mb-0" style="background-color: #5A1A19">
                 <thead>

@@ -6,7 +6,7 @@
       <p class="lead text-faint mb-0">Créez un compte pour un membre de votre équipe avec des accès spécifiques.</p>
     </div>
 
-    <div class="rounded-xl p-4 p-lg-5 shadow mt-4 form-card">
+    <div class="rounded p-4 p-lg-5 shadow mt-4 form-card">
       <form method="POST" action="/Admin/Users/AddUser/store" enctype="multipart/form-data">
         @csrf
         @method("POST")

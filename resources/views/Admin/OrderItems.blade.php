@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="card-soft rounded-xl">
+        <div class="card-soft rounded">
           <div class="d-flex align-items-center justify-content-between px-4 py-3" style="border-bottom:1px solid rgba(255,255,255,.06);">
             <h2 class="h6 fw-bold mb-0">Articles de la commande</h2>
             <button class="btn btn-link text-decoration-none fw-bold p-0 d-inline-flex align-items-center gap-1" style="color:#c39998;">
@@ -106,7 +106,7 @@
           </div>
         </div>
 
-        <div class="card-soft rounded-xl p-4">
+        <div class="card-soft rounded p-4">
           <h2 class="h6 fw-bold mb-3">Notes du client</h2>
           <div class="note-box rounded p-3">
             “C'est un cadeau d'anniversaire, merci d'inclure un emballage cadeau raffiné si possible.
@@ -115,7 +115,7 @@
         </div>
       </div>
       <div class="col-12 col-lg-4 d-flex flex-column gap-3">
-        <div class="card-soft rounded-xl">
+        <div class="card-soft rounded">
           <div class="px-4 py-3" style="background:rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06);">
             <h2 class="h6 fw-bold mb-0">Client</h2>
           </div>
@@ -149,7 +149,7 @@
           </div>
         </div>
 
-        <div class="finance p-4 rounded-xl shadow">
+        <div class="finance p-4 rounded shadow">
           <h2 class="h6 fw-bold mb-3 position-relative">Résumé financier</h2>
           <div class="d-flex flex-column gap-2 position-relative">
             <div class="d-flex justify-content-between text-white-75 small">
@@ -168,7 +168,7 @@
           </div>
         </div>
 
-        <div class="card-soft rounded-xl p-4">
+        <div class="card-soft rounded p-4">
           <h2 class="h6 fw-bold mb-3">Expédition</h2>
           <div class="mb-3">
             <label class="form-label small fw-bold" style="color:#c39998;">Transporteur</label>

@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="mission-image w-100 h-75 rounded-xl"></div>
+                        <div class="mission-image w-100 h-75 rounded"></div>
                     </div>
                 </div>
             </section>
@@ -54,7 +54,7 @@
                 <div class="w-100 container-xl mx-auto px-4 px-sm-5 px-lg-6">
                     <div class="row g-5 align-items-center">
                         <div class="col-md-6 order-md-1">
-                            <div class="history-image w-100 h-100 rounded-xl shadow"></div>
+                            <div class="history-image w-100 h-100 rounded shadow"></div>
                         </div>
                         <div class="col-md-6 order-md-2">
                             <div class="prose-content max-w-none text-text-dark-80">
