@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemsController;
 use App\Http\Controllers\ProductController;
@@ -157,3 +158,4 @@ Route::prefix("/Order")->middleware("role:Client")->group(function(){
 
 Route::post('/send-contact', [ContactController::class, "send"]);
 Route::put('/Admin/Orders/update/{order}', [OrderController::class, 'update']);
+Route::get("/Notification/store/{order}/{message}", [NotificationController::class, "store"])->name("notification");

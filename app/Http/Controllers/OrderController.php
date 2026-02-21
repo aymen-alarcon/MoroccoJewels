@@ -62,6 +62,12 @@ class OrderController extends Controller
 
         $order->update($validate);
 
+        if(Auth::user()->role_id !== 1){
+            $message = "the Admin have just update your order's product's status to " . $validate["status"];
+            return redirect()->route("notification", [$order->user->id, $message]);
+        }
+
+
         return back()->with("success", "You have successfully updated this order's status");
     }
 }

@@ -269,17 +269,17 @@
                 <tbody>
                   @if (count($user->notifications) > 0)
                     @foreach ($user->notifications as $notification)
-                          <tr>
-                            <td class="px-3 px-md-4 py-3 fw-bold">#NTF-{{ $notification->id }}</td>
-                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $notification->content }}</td>
-                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $notification->user->first_name }} {{ $notification->user->last_name }}</td>
-                            <td class="px-3 px-md-4 py-3">{{ $notification->created_at->format("M d, Y") }}</td>
-                          </tr>
+                      <tr>
+                        <td class="px-3 px-md-4 py-3 fw-bold">#NTF-{{ $notification->id }}</td>
+                        <td class="px-3 px-md-4 py-3 fw-bold">{{ $notification->content }}</td>
+                        <td class="px-3 px-md-4 py-3 fw-bold">{{ $notification->user->first_name }} {{ $notification->user->last_name }}</td>
+                        <td class="px-3 px-md-4 py-3">{{ $notification->created_at->format("M d, Y") }}</td>
+                      </tr>
                     @endforeach
                   @else
                     <tr>
                       <tr>
-                        <td colspan="6" class="px-3 px-md-4 py-3 fw-bold">You Haven'table Placed An Order Yet</td>
+                        <td colspan="6" class="px-3 px-md-4 py-3 fw-bold">You Have No Notifications Yet</td>
                       </tr>
                     </tr>
                   @endif
