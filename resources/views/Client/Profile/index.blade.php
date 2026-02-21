@@ -1,36 +1,36 @@
 @include("includes.header")
 <style>
-.product-card{
+  .product-card{
     background:rgba(45,10,10,.4);
     border:1px solid rgba(255,255,255,.05);
     border-radius:.75rem;
     transition:.3s;
-}
-.product-card:hover{
+  }
+  .product-card:hover{
     border-color:rgba(250,198,56,.3);
-}
+  }
 
-.product-img{
+  .product-img{
     aspect-ratio:3/4;
     object-fit:cover;
     transition:transform .5s ease;
-}
-.product-card:hover .product-img{
+  }
+  .product-card:hover .product-img{
     transform:scale(1.05);
-}
+  }
 
-.overlay{
+  .overlay{
     position:absolute;
     inset:0;
     background:rgba(0,0,0,.4);
     opacity:0;
     transition:.3s;
-}
-.product-card:hover .overlay{
+  }
+  .product-card:hover .overlay{
     opacity:1;
-}
+  }
 
-.icon-btn{
+  .icon-btn{
     width:44px;
     height:44px;
     border-radius:50%;
@@ -38,43 +38,35 @@
     align-items:center;
     justify-content:center;
     border:none;
-}
+  }
 
-.icon-primary{
+  .icon-primary{
     background: rgba(255, 255, 255, .1);;
     color:var(--background-dark);
     transition: ease-in-out 0.3s;
-}
+  }
 
-.icon-danger{
+  .icon-danger{
     background:rgba(255,255,255,.1);
     color:white;
     transition: ease-in-out 0.3s;
-}
+  }
 
-.icon-danger:hover{
+  .icon-danger:hover{
     background:#dc3545;
-}
+  }
 
-.icon-primary:hover{
+  .icon-primary:hover{
     background:#3ebbe5;
-}
+  }
 </style>
-  <main class="position-relative">
-    <div class="moroccan-pattern"></div>
-
-    <div class="container-xxl px-3 px-lg-5 py-5" style="max-width:1200px; position:relative; z-index:1;">
+    <div class="container-xxl px-3 px-lg-5 py-5">
       <div class="surface rounded p-4 p-md-5 mb-4">
         <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-4">
           <div class="d-flex align-items-center gap-3 gap-md-4">
             <div class="avatar-96" style="background-image:url('{{ asset("storage/" . $user->profile_picture) }}');"></div>
             <div>
-              <h2 class="h4 fw-bold mb-1">
-                Bienvenue, 
-                @auth
-                  {{ $user->first_name }} {{ $user->last_name }}
-                @endauth
-              </h2>
+              <h2 class="h4 fw-bold mb-1">Bienvenue, {{ $user->first_name }} {{ $user->last_name }}</h2>
               <div class="d-flex flex-column gap-1">
                 <p class="small text-white-50 mb-0 d-flex align-items-center gap-2">
                   <i class="bi bi-calendar3"></i> Membre depuis 
@@ -157,16 +149,20 @@
       </div>
 
       <div class="container py-5 d-none" id="favoriteSection">
-        <div class="row g-4">
+        <div class="row g-4 w-100">
           @if (count($user->favorite) > 0)  
             @foreach ($user->favorite as $product)
-              <div class="col-6">
+              <div class="col-3">
                 <div class="product-card p-3">
                   <div class="position-relative rounded-3">
                     <img src="{{ asset("storage/" . $product->main_image) }}" class="w-100 product-img" style="height: 20em">
                     <div class="overlay d-flex align-items-center justify-content-center gap-3">
                       <a href="/Home/Collection/Details/{{ $product->id }}" class="icon-btn icon-primary"><i class="bi bi-eye-fill"></i></a>
-                      <button class="icon-btn icon-danger"><i class="bi bi-trash-fill"></i></button>
+                      <form action="/Client/RemoveFromFavorites/{{ $product->id }}/{{ $user->id }}" method="post">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" class="icon-btn icon-danger"><i class="bi bi-trash-fill"></i></button>
+                      </form>
                     </div>
                   </div>
                   <div class="mt-3">
@@ -289,5 +285,4 @@
         </div>
       </main>
     </div>
-  </main>
 @include("includes.footer")

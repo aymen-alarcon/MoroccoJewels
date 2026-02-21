@@ -102,7 +102,7 @@ Route::prefix("Client")->middleware("role:Client")->group(function(){
 
     Route::put("/Profile/Update/{user}", [UserController::class, "updateProfile"]);
     Route::get("/AddToFavorites/{product}", [FavoriteController::class, "store"]);
-    Route::get("/RemoveFromFavorites/{product}/{user}", [FavoriteController::class, "destroy"]);
+    Route::delete("/RemoveFromFavorites/{product}/{user}", [FavoriteController::class, "destroy"]);
 });
 
 Route::prefix('Admin')->middleware('role:Admin')->group(function () {
