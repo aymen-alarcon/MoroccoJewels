@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\OrderController;
@@ -20,6 +21,8 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
 
 Route::get('/', function () {
     $workers = User::whereIn("role_id", [3, 4])->get();
@@ -42,7 +45,7 @@ Route::prefix("Home")->group(function(){
             $query->orderBy('price', 'desc');
         }    
 
-        $products = $query->paginate(8)->withQueryString();
+        $products = $query->paginate(12)->withQueryString();
         $categories = Category::all();
         $user = Auth::user();
         return view('Home.Collection', compact("categories", "products", "user"));
@@ -54,7 +57,7 @@ Route::prefix("Home")->group(function(){
 
     Route::get('/Contact', function () {
         return view('Home.Contact');
-    });
+    })->name('contact');
 
     Route::get('/Collection/Details/{product}', function ($product) {
         $product = Product::findOrFail($product);
@@ -151,3 +154,5 @@ Route::prefix("/Order")->middleware("auth")->middleware("role:client")->group(fu
     Route::get('/OrderItems/Store/{order_id}', [OrderItemsController::class, "store"])->name("OrderItem.store");
     Route::get('/OrderItems/{order}', [OrderItemsController::class, "index"]);
 });
+
+Route::post('/send-contact', [ContactController::class, "send"]);

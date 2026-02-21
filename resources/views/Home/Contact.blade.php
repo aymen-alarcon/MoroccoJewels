@@ -64,36 +64,26 @@
                                     <h3 class="fs-3 font-display mb-4 text-white">
                                         Envoyez-nous un message
                                     </h3>
-                                    <form action="#" method="POST">
+                                    <form action="/send-contact" method="POST">
+                                        @csrf
+                                        @method("POST")
                                         <div class="mb-3">
-                                            <label class="form-label text-background-light mb-1" for="name">
-                                                Nom
-                                            </label>
+                                            <label class="form-label text-background-light mb-1" for="name">Nom</label>
                                             <input type="text" class="form-control form-control" id="name" name="name" placeholder="Votre Nom">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label text-background-light mb-1" for="email">
-                                                Email
-                                            </label>
+                                            <label class="form-label text-background-light mb-1" for="email">Email</label>
                                             <input type="email" class="form-control form-control" id="email" name="email" placeholder="votre.email@example.com">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label text-background-light mb-1" for="subject">
-                                                Sujet
-                                            </label>
+                                            <label class="form-label text-background-light mb-1" for="subject">Sujet</label>
                                             <input type="text" class="form-control form-control" id="subject" name="subject" placeholder="Comment pouvons-nous vous aider ?">
                                         </div>
                                         <div class="mb-4">
-                                            <label class="form-label text-background-light mb-1" for="message">
-                                                Message
-                                            </label>
+                                            <label class="form-label text-background-light mb-1" for="message">Message</label>
                                             <textarea class="form-control form-control" id="message" name="message" rows="4" placeholder="Votre message..."></textarea>
                                         </div>
-                                        <div>
-                                            <button type="submit" class="btn btn-accent w-100 py-2">
-                                                Envoyer le message
-                                            </button>
-                                        </div>
+                                        <button type="submit" class="btn btn-accent w-100 py-2">Envoyer le message</button>
                                     </form>
                                 </div>
                             </div>

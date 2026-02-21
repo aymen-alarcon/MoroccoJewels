@@ -78,7 +78,7 @@
                             <div class="d-flex flex-column gap-4">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <p class="fs-6 text-background-light-70 mb-0">
-                                        Affichage de 8 sur {{ count($products) }} bijoux
+                                        Affichage de {{ $products->firstItem() }} - {{ $products->lastItem() }} sur {{ $products->total() }} bijoux
                                     </p>
                                     <div class="dropdown">
                                         <select name="sort" form="filterForm" class="form-select filter-input">
@@ -129,28 +129,7 @@
                                         </div>
                                     @endif
                                 </div>
-                                <div class="pt-4 mt-2 border-top d-flex align-items-center justify-content-center">
-                                    <nav class="d-flex align-items-center gap-2">
-                                        <button class="pagination-btn">
-                                            <i class="bi bi-chevron-left"></i>
-                                        </button>
-                                        <button class="pagination-btn active">
-                                            1
-                                        </button>
-                                        <button class="pagination-btn">
-                                            2
-                                        </button>
-                                        <button class="pagination-btn">
-                                            3
-                                        </button>
-                                        <button class="pagination-btn">
-                                            4
-                                        </button>
-                                        <button class="pagination-btn">
-                                            <i class="bi bi-chevron-right"></i>
-                                        </button>
-                                    </nav>
-                                </div>
+                                <div class="pt-4 mt-2 border-top d-flex align-items-center justify-content-center">{{ $products->links() }}</div>
                             </div>
                         </div>
                     </div>
