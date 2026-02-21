@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\permission;
+use App\Models\Role;
+use App\Models\Permission;
 use Illuminate\Http\Request;
 
 class PermissionController extends Controller
@@ -12,7 +13,8 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        $permissions = Permission::latest()->paginate(4);
+        return view("Admin.Permissions.index", compact("permissions"));
     }
 
     /**
@@ -20,46 +22,55 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+        return view("Admin.Permissions.add");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Permission $Permission)
     {
-        //
-    }
+        $validate = $request->validate([
+            "name" => "string|required",
+            "description" => "string|required",
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(permission $permission)
-    {
-        //
+        $Permission->create($validate);
+
+        return redirect()->route("Admin.Permissions.Index");
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(permission $permission)
+    public function edit(Permission $permission, Role $role)
     {
-        //
+        $roles = Role::all();
+        return view("Admin.Permissions.edit", compact("permission", "roles"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, permission $permission)
+    public function update(Request $request, Permission $permission)
     {
-        //
+        $validate = $request->validate([
+            "name" => "string|required",
+            "description" => "string|required",
+        ]);
+
+        $permission->update($validate);
+
+        return redirect()->route("Admin.Permissions.Index");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(permission $permission)
+    public function destroy(Permission $Permission)
     {
-        //
+        $Permission->delete();
+
+        return redirect()->route("Admin.Permissions.Index");
     }
 }
