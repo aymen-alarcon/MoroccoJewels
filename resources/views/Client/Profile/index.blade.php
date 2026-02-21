@@ -109,14 +109,18 @@
             <i class="bi bi-chat-left"></i>
             <span class="text-uppercase fw-bold" style="font-size:11px;letter-spacing:.18em;">Mes Demandes</span>
           </a>
+          <a href="#" id="notificationIcon" class="d-flex flex-column align-items-center gap-1 text-decoration-none">
+            <i class="bi bi-bell"></i>
+            <span class="text-uppercase fw-bold" style="font-size:11px;letter-spacing:.18em;">Mes Notifications</span>
+          </a>
         </div>
       </div>
 
       <div class="row g-4" id="informationSection">
-        <div class="col-12 col-lg-4 d-flex flex-column gap-3">
-          <div class="surface rounded p-4">
+        <div class="col-12 d-flex flex-column gap-3">
+          <div class="surface rounded p-4 row">
             <h3 class="h6 fw-bold mb-3 d-flex align-items-center gap-2" style="color:var(--bb-primary);">Détails personnels</h3>
-            <div class="d-flex flex-column gap-3">
+            <div class="d-flex flex-column gap-3 col-6">
               <div class="pb-3" style="border-bottom:1px solid rgba(255,255,255,.06);">
                 <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">Nom Complet</div>
                 <div class="small fw-semibold">{{ $user->first_name }} {{ $user->last_name }}</div>
@@ -134,107 +138,21 @@
                 @endif
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-lg-8 d-flex flex-column gap-4">
-          <section>
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <h3 class="h5 fw-bold mb-0 d-flex align-items-center gap-2">
-                Mes Favoris <span class="small fw-normal text-white-50">({{ count($user->favorite) }} articles)</span>
-              </h3>
-              <a href="#" class="small fw-bold text-decoration-underline" style="color:var(--bb-primary);">Voir tout</a>
-            </div>
-            <div class="row g-3">
-              @if (count($user->favorite) > 0)
-                @foreach ($user->favorite as $product)                
-                  <div class="col-12 col-sm-6">
-                    <div class="favorite-card surface rounded-3 d-flex">
-                      <div class="thumb" style="background-image:url('{{ asset("storage/" . $product->main_image) }}');"></div>
-                      <div class="p-3 d-flex flex-column justify-content-between">
-                        <div>
-                          <p class="text-uppercase small fw-bold mb-1" style="color:var(--bb-primary);letter-spacing:.12em;">{{ $product->name }}</p>
-                          <h4 class="small fw-bold mb-0">{{ $product->description }}</h4>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-end mt-3">
-                          <a href="/Client/RemoveFromFavorites/{{ $product->pivot->product_id }}/{{ $product->pivot->user_id }}" class="btn btn-sm text-white-50"><i class="bi bi-trash3"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                @endforeach
-              @else
-                <div class="col-12">
-                  <div class="product-card p-3">
-                    <span>You have no Products in your favorites list</span>
-                  </div>
-                </div>
-              @endif
-            </div>
-          </section>
-
-          <section>
-            <h3 class="h5 fw-bold mb-3">Mes Demandes d'Information</h3>
-            <div class="surface rounded">
-              <div class="table-responsive">
-                <table class="table table-inquiries align-middle mb-0 text-white">
-                  <thead>
-                    <tr>
-                      <th class="px-3 px-md-4 py-3">Article</th>
-                      <th class="px-3 px-md-4 py-3">Price</th>
-                      <th class="px-3 px-md-4 py-3">Status</th>
-                      <th class="px-3 px-md-4 py-3">Date</th>
-                      <th class="px-3 px-md-4 py-3">Statut</th>
-                      <th class="px-3 px-md-4 py-3 text-end">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @if (count($user->order) > 0)
-                      @foreach ($user->order as $order)
-                        <tr>
-                          <td class="px-3 px-md-4 py-3 fw-bold">#ORD-{{ $order->id }}</td>
-                          <td class="px-3 px-md-4 py-3 fw-bold">{{ $order->total_price }}</td>
-                          <td class="px-3 px-md-4 py-3 fw-bold">{{ $order->status }}</td>
-                          <td class="px-3 px-md-4 py-3">{{ $order->created_at->format("M d, Y") }}</td>
-                          <td class="px-3 px-md-4 py-3">
-                              <span class="badge rounded-2 fw-bold" style="font-size:.65rem;
-                                @if($order->status === "Delivered")
-                                  background: #ddfff3; color:#34d399; border:1px solid rgba(34,197,94,.25);
-                                @elseif($order->status === "Canceled")
-                                  background: #fec5cb; color:#dc3545; border:1px solid #dc3545;
-                                @elseif($order->status === "Pending")
-                                  background: #f1f1f1; color:#808080; border:1px solid #808080; 
-                                @elseif($order->status === "Approved")
-                                  background: #fff6da; color:#ffc107; border:1px solid #ffc107; 
-                                @endif
-                                ">
-                              {{ $order->status }}</span>
-                          </td>
-                          <td class="px-3 px-md-4 py-3 text-end">
-                            @if ($order->status === "pending")
-                              <form action="/Admin/Orders/update/{{ $order->id }}" method="post">
-                                @csrf
-                                @method("PUT")
-
-                                <button type="submit" name="status" value="Canceled" href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Cancel</button>
-                              </form>                  
-                              <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
-                            @else
-                              <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
-                            @endif
-                          </td>
-                        </tr>
-                      @endforeach
-                    @else
-                      <tr>
-                        <td colspan="6" class="px-3 px-md-4 py-3 fw-bold">You Haven'table Placed An Order Yet</td>
-                      </tr>
-                    @endif
-                  </tbody>
-                </table>
+            <div class="col-6">
+              <div class="pb-3" style="border-bottom:1px solid rgba(255,255,255,.06);">
+                <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">Role</div>
+                <div class="small fw-semibold">{{ $user->role->role_name }}</div>
+              </div>
+              <div class="py-3" style="border-bottom:1px solid rgba(255,255,255,.06);">
+                <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">Adresse</div>
+                <div class="small fw-semibold">{{ $user->street }} - {{ $user->city }} - {{ $user->country }}</div>
+              </div>
+              <div class="py-3">
+                <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">ZIP</div>
+                <div class="small fw-semibold">+212 {{ $user->zip }}</div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
 
@@ -319,6 +237,43 @@
                                 <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
                               @endif
                             </td>
+                          </tr>
+                    @endforeach
+                  @else
+                    <tr>
+                      <tr>
+                        <td colspan="6" class="px-3 px-md-4 py-3 fw-bold">You Haven'table Placed An Order Yet</td>
+                      </tr>
+                    </tr>
+                  @endif
+                </tbody>
+              </table>
+          </section>
+        </div>
+      </main>
+
+      <main class="container my-5 d-none" id="notificationsSection">
+        <div class="row g-5">
+          <section class="col-md-12">
+            <h2 class="fw-bold display-6 mb-3">Mes notifications</h2>
+            <p class="text-white-50 mb-4">Suivez vos notifications</p>
+              <table class="table table-inquiries align-middle mb-0 text-white">
+                <thead>
+                  <tr>
+                    <th class="px-3 px-md-4 py-3">Id</th>
+                    <th class="px-3 px-md-4 py-3">Content</th>
+                    <th class="px-3 px-md-4 py-3">User</th>
+                    <th class="px-3 px-md-4 py-3">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @if (count($user->notifications) > 0)
+                    @foreach ($user->notifications as $notification)
+                          <tr>
+                            <td class="px-3 px-md-4 py-3 fw-bold">#NTF-{{ $notification->id }}</td>
+                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $notification->content }}</td>
+                            <td class="px-3 px-md-4 py-3 fw-bold">{{ $notification->user->first_name }} {{ $notification->user->last_name }}</td>
+                            <td class="px-3 px-md-4 py-3">{{ $notification->created_at->format("M d, Y") }}</td>
                           </tr>
                     @endforeach
                   @else
