@@ -197,10 +197,31 @@
                           <td class="px-3 px-md-4 py-3 fw-bold">{{ $order->status }}</td>
                           <td class="px-3 px-md-4 py-3">{{ $order->created_at->format("M d, Y") }}</td>
                           <td class="px-3 px-md-4 py-3">
-                            <span class="badge rounded-2 fw-bold" style="font-size:.65rem;background:rgba(34,197,94,.10);color:#34d399;border:1px solid rgba(34,197,94,.25);">{{ $order->status }}</span>
+                              <span class="badge rounded-2 fw-bold" style="font-size:.65rem;
+                                @if($order->status === "Delivered")
+                                  background: #ddfff3; color:#34d399; border:1px solid rgba(34,197,94,.25);
+                                @elseif($order->status === "Canceled")
+                                  background: #fec5cb; color:#dc3545; border:1px solid #dc3545;
+                                @elseif($order->status === "Pending")
+                                  background: #f1f1f1; color:#808080; border:1px solid #808080; 
+                                @elseif($order->status === "Approved")
+                                  background: #fff6da; color:#ffc107; border:1px solid #ffc107; 
+                                @endif
+                                ">
+                              {{ $order->status }}</span>
                           </td>
                           <td class="px-3 px-md-4 py-3 text-end">
-                            <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
+                            @if ($order->status === "pending")
+                              <form action="/Admin/Orders/update/{{ $order->id }}" method="post">
+                                @csrf
+                                @method("PUT")
+
+                                <button type="submit" name="status" value="Canceled" href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Cancel</button>
+                              </form>                  
+                              <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
+                            @else
+                              <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
+                            @endif
                           </td>
                         </tr>
                       @endforeach
@@ -272,10 +293,31 @@
                             <td class="px-3 px-md-4 py-3 fw-bold">{{ $order->status }}</td>
                             <td class="px-3 px-md-4 py-3">{{ $order->created_at->format("M d, Y") }}</td>
                             <td class="px-3 px-md-4 py-3">
-                              <span class="badge rounded-2 fw-bold" style="font-size:.65rem;background:rgba(34,197,94,.10);color:#34d399;border:1px solid rgba(34,197,94,.25);">{{ $order->status }}</span>
+                              <span class="badge rounded-2 fw-bold" style="font-size:.65rem;
+                                @if($order->status === "Delivered")
+                                  background: #ddfff3; color:#34d399; border:1px solid rgba(34,197,94,.25);
+                                @elseif($order->status === "Canceled")
+                                  background: #fec5cb; color:#dc3545; border:1px solid #dc3545;
+                                @elseif($order->status === "Pending")
+                                  background: #f1f1f1; color:#808080; border:1px solid #808080; 
+                                @elseif($order->status === "Approved")
+                                  background: #fff6da; color:#ffc107; border:1px solid #ffc107; 
+                                @endif
+                                ">
+                              {{ $order->status }}</span>
                             </td>
                             <td class="px-3 px-md-4 py-3 text-end">
-                              <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
+                              @if ($order->status === "Pending")
+                                <form action="/Admin/Orders/update/{{ $order->id }}" method="post">
+                                  @csrf
+                                  @method("PUT")
+
+                                  <button type="submit" name="status" value="Canceled" href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Cancel</button>
+                                </form>                  
+                                <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
+                              @else
+                                <a href="/Order/OrderItems/{{ $order->id }}" class="btn btn-link p-0 fw-bold" style="color:var(--bb-primary);">Lire</a>
+                              @endif
                             </td>
                           </tr>
                     @endforeach

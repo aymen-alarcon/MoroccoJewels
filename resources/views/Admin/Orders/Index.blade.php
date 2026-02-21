@@ -47,7 +47,22 @@
                         <td class="px-4 py-3"><span class="pill pill-wait">{{ $order->status }}</span></td>
                         <td class="px-4 py-3 small text-white-75">{{ $order->created_at->format("Y-m-d") }}</td>
                         <td class="px-4 py-3 text-end">
-                          <a href="/Admin/Orders/OrderItems/{{ $order->id }}" class="btn btn-sm rounded-lg"><i class="bi bi-eye fs-4"></i></a>
+                          <form action="/Admin/Orders/update/{{ $order->id }}" method="POST">
+                            @csrf
+                            @method("put")
+
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Changer le statut">
+                              <button type="submit" name="status" value="Canceled" class="btn btn-outline-danger action-btn">
+                                <i class="bi bi-x-circle me-1"></i> Canceled
+                              </button>
+                              <button type="submit" name="status" value="Approved" class="btn btn-outline-warning action-btn">
+                                <i class="bi bi-check2-circle me-1"></i> Approve
+                              </button>
+                              <button type="submit" name="status" value="Delivered" class="btn btn-outline-success action-btn">
+                                <i class="bi bi-truck me-1"></i> Delivered
+                              </button>
+                            </div>
+                          </form>
                         </td>
                       </tr>
                     @endforeach

@@ -83,7 +83,7 @@ Route::prefix("Auth")->group( function(){
     Route::post("/LogOut", LogOutController::class)->middleware("auth");
 });
 
-Route::prefix("Client")->group(function(){
+Route::prefix("Client")->middleware("role:Client")->group(function(){
     Route::get("/Cart", function(){
         return view("Client.Cart");
     })->name("Client.Cart");
@@ -102,9 +102,9 @@ Route::prefix("Client")->group(function(){
     Route::put("/Profile/Update/{user}", [UserController::class, "updateProfile"]);
     Route::get("/AddToFavorites/{product}", [FavoriteController::class, "store"]);
     Route::get("/RemoveFromFavorites/{product}/{user}", [FavoriteController::class, "destroy"]);
-})->middleware("auth");
+});
 
-Route::prefix('Admin')->middleware('auth')->middleware('role:Admin')->group(function () {
+Route::prefix('Admin')->middleware('role:Admin')->group(function () {
     Route::get('/Dashboard', function () {
         $categoriesCount = Category::count();
         $productsCount = Product::count();
@@ -149,10 +149,11 @@ Route::prefix('Admin')->middleware('auth')->middleware('role:Admin')->group(func
     Route::delete('/Categories/destroy/{category}', [CategoryController::class, 'destroy']);
 });
 
-Route::prefix("/Order")->middleware("auth")->middleware("role:client")->group(function(){
+Route::prefix("/Order")->middleware("role:Client")->group(function(){
     Route::post('/Store', [OrderController::class, "store"]);
     Route::get('/OrderItems/Store/{order_id}', [OrderItemsController::class, "store"])->name("OrderItem.store");
     Route::get('/OrderItems/{order}', [OrderItemsController::class, "index"]);
 });
 
 Route::post('/send-contact', [ContactController::class, "send"]);
+Route::put('/Admin/Orders/update/{order}', [OrderController::class, 'update']);

@@ -45,7 +45,7 @@ class OrderController extends Controller
         $validate = $request->validate([]);
 
         $validate["total_price"] = $totalPrice;
-        $validate["status"] = "pending";
+        $validate["status"] = "Pending";
         $validate["user_id"] = Auth::user()->id;
 
         $newOrder = $order->create($validate);  
@@ -55,13 +55,13 @@ class OrderController extends Controller
         return redirect()->route("OrderItem.store", ["order_id" => $orderId]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function destroy(Order $Order)
-    {
-        $Order->delete();
+    public function update(Request $request, Order $order){
+        $validate = $request->validate([
+            "status" => "required",
+        ]);
 
-        return redirect()->route("Admin.Orders.Index");
+        $order->update($validate);
+
+        return back()->with("success", "You have successfully updated this order's status");
     }
 }

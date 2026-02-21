@@ -112,6 +112,7 @@
         <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Users"){ echo "nav-link-active";} ?>" href="/Admin/Users"><i class="bi bi-people"></i><span class="small fw-semibold">Clients</span></a>
         <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Roles"){ echo "nav-link-active";} ?>" href="/Admin/Roles"><i class="bi bi-shield-lock"></i><span class="small fw-semibold">Roles</span></a>
         <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Logs"){ echo "nav-link-active";} ?>" href="/Admin/Logs"><i class="bi bi-database-exclamation"></i><span class="small fw-semibold">Logs</span></a>
+        <a class="nav-link-custom p-2 rounded" href="/"><i class="bi bi-house"></i><span class="small fw-semibold">Home</span></a>
       </nav>
       <div class="mt-auto p-3 border-top">
         <span class="d-flex align-items-center gap-2 p-2 text-decoration-none">
