@@ -18,10 +18,6 @@
                 <button type="submit" name="status" value="canceled" class="btn custom-button">Canceled</button>
               </div>
             </form>
-            <div class="d-flex align-items-center gap-2">
-              <i class="bi bi-funnel-fill"></i> Plus de Filtres
-              <i class="bi bi-calendar-date"></i> Derniers 30 jours
-            </div>
           </div>
 
           <div class="rounded">

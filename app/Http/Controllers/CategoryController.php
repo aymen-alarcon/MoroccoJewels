@@ -12,7 +12,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::latest()->paginate(8);
         return view("Admin.Categories.Index", compact("categories"));
     }
 
@@ -36,15 +36,9 @@ class CategoryController extends Controller
         ]);
         $category->create($validate);
 
-        return redirect()->route("Admin.Categories.Index")->with("success", "You have successfully created a new Category");
-    }
+        $message = "created a new category";
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(category $category)
-    {
-        //
+        return redirect()->route("Logs.store", $message);
     }
 
     /**
@@ -67,7 +61,9 @@ class CategoryController extends Controller
 
         $category->update($validate);
 
-        return redirect()->route("Admin.Categories.Index")->with("success", "You have successfully updated a new Category");
+        $message = "updated the category";
+
+        return redirect()->route("Logs.store", $message);
     }
 
     /**
@@ -77,6 +73,8 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route("Admin.Categories.Index");
+        $message = "deleted the category";
+
+        return redirect()->route("Logs.store", $message);
     }
 }

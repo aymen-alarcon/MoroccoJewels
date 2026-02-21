@@ -59,15 +59,10 @@
       </div>
 
       <div class="d-flex flex-column gap-3 rounded border border-border-gold p-4 p-lg-5 shadow">
-        <div class="d-flex justify-content-between align-items-center mb-2">
-          <h3 class="fs-4 fw-bold mb-0">Activités Récentes</h3>
-          <button class="btn btn-link p-0 text-primary fw-bold d-inline-flex align-items-center gap-1">
-            Tout voir
-          </button>
-        </div>
+        <h3 class="fs-4 fw-bold mb-0">Activités Récentes</h3>
 
         <div class="table-responsive">
-          <table class="table table-custom align-middle" style="background-color: #5A1A19">
+          <table class="table table-roles align-middle" style="background-color: #5A1A19">
             <thead>
               <tr>
                 <th class="pb-3 ps-2">Commande</th>

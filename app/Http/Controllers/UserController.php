@@ -13,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::latest()->paginate(8);
         return view("Admin.Users.Index", compact("users"));
     }
 
@@ -51,7 +51,9 @@ class UserController extends Controller
 
         $User->create($validate);
 
-        return redirect()->route("Admin.Users.Index")->with("success", "You have successfully created a new User.");
+        $message = "created a new User.";
+
+        return redirect()->route("Logs.store", $message);
     }
 
     /**
@@ -82,7 +84,9 @@ class UserController extends Controller
 
         $userInfo->update($validate);
 
-        return redirect()->route("Admin.Users.Index")->with("success", "You have successfully update a new User.");
+        $message = "updated the Product.";
+
+        return redirect()->route("Logs.store", $message);
     }
 
     public function updateProfile(Request $request, User $User)
@@ -115,6 +119,8 @@ class UserController extends Controller
     {
         $User->delete();
 
-        return redirect()->route("Admin.Users.Index");
+        $message = "deleted the Product.";
+
+        return redirect()->route("Logs.store", $message);
     }
 }

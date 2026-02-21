@@ -112,11 +112,8 @@ Route::prefix('Admin')->middleware('auth')->middleware('role:Admin')->group(func
         return view('Admin.Dashboard', compact('categoriesCount', 'productsCount', 'rolesCount', 'usersCount', 'orders', 'ordersCount'));
     })->name("admin.dashboard");
 
-    Route::get('/Profile', function () {
-        return view('Admin.Profile');
-    });
-
     Route::get('/Logs', [LogController::class, "index"]);
+    Route::get("/Logs/store/{message}", [LogController::class, "store"])->name("Logs.store");
 
     Route::get('/Orders', [OrderController::class, 'index'])->name('Admin.Orders.Index');
 
@@ -149,6 +146,8 @@ Route::prefix('Admin')->middleware('auth')->middleware('role:Admin')->group(func
     Route::delete('/Categories/destroy/{category}', [CategoryController::class, 'destroy']);
 });
 
-Route::post('/Order/Store', [OrderController::class, "store"]);
-Route::get('/Order/OrderItems/Store/{order_id}', [OrderItemsController::class, "store"])->name("OrderItem.store");
-Route::get('/Order/OrderItems/{order}', [OrderItemsController::class, "index"]);
+Route::prefix("/Order")->middleware("auth")->middleware("role:client")->group(function(){
+    Route::post('/Store', [OrderController::class, "store"]);
+    Route::get('/OrderItems/Store/{order_id}', [OrderItemsController::class, "store"])->name("OrderItem.store");
+    Route::get('/OrderItems/{order}', [OrderItemsController::class, "index"]);
+});

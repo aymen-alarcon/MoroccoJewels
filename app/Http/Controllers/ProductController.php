@@ -13,16 +13,16 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $categories = Category::all();
-        $products = Product::query();
+        $categories = Category::latest()->paginate(8);
+        $query = Product::query();
 
         $category = $request->query('category');
 
         if ($category !== 'all') {
-            $products = $products->where('category_id', $category);
+            $products = $query->where('category_id', $category)->latest()->paginate(10);
         }
 
-        $products = $products->get();
+        $products = $query->get();
 
         return view('Admin.Products.Index', compact('products', 'categories'));
     }
@@ -58,8 +58,9 @@ class ProductController extends Controller
         }
 
         $Product->create($validate);
+        $message = "created a new Product.";
 
-        return redirect()->route("Admin.Products.Index")->with("success", "You have successfully created a new Product.");
+        return redirect()->route("Logs.store", $message);
     }
 
     /**
@@ -87,7 +88,9 @@ class ProductController extends Controller
 
         $Product->update($validate);
 
-        return redirect()->route("Admin.Products.Index")->with("success", "You have successfully edited a new Product.");
+        $message = "Updated the Product.";
+
+        return redirect()->route("Logs.store", $message);
     }
 
     /**
@@ -97,6 +100,8 @@ class ProductController extends Controller
     {
         $Product->delete();
 
-        return redirect()->route("Admin.Products.Index");
+        $message = "deleted the Product.";
+
+        return redirect()->route("Logs.store", $message);
     }
 }

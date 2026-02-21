@@ -13,19 +13,21 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Order::query();
+        $query = Order::query()->latest();
 
         $status = $request->query("status");
 
         if ($status === "all") {
-            $orders = $query->get();
+            $query->get();
         } else if($status === "pending"){
-            $orders = $query->where("status", "pending")->get();
+            $query->where("status", "pending")->latest()->paginate(8);
         }else if($status === "delivered"){
-            $orders = $query->where("status", "delivered")->get();
+            $query->where("status", "delivered")->latest()->paginate(8);
         }else if($status === "canceled"){
-            $orders = $query->where("status", "canceled")->get();
+            $query->where("status", "canceled")->latest()->paginate(8);
         }
+
+        $orders = $query->get();
             
         return view("Admin.Orders.Index", compact("orders"));
     }

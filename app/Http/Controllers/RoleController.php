@@ -12,7 +12,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::all();
+        $roles = Role::latest()->paginate(8);
         return view("Admin.Roles.Index", compact("roles"));
     }
 
@@ -35,7 +35,9 @@ class RoleController extends Controller
 
         $Role->create($validate);
 
-        return redirect()->route("Admin.Roles.Index")->with("success", "You have successfully created a new Role.");
+        $message = "created a new Role.";
+
+        return redirect()->route("Logs.store", $message);
     }
 
     /**
@@ -65,7 +67,9 @@ class RoleController extends Controller
 
         $role->update($validate);
 
-        return redirect()->route("Admin.Roles.Index")->with("success", "You have successfully updated a new Role.");
+        $message = "updated the Product.";
+
+        return redirect()->route("Logs.store", $message);
     }
 
     /**
@@ -75,6 +79,8 @@ class RoleController extends Controller
     {
         $Role->delete();
         
-        return redirect()->route("Admin.Roles.Index");
+        $message = "deleted the Product.";
+
+        return redirect()->route("Logs.store", $message);
     }
 }

@@ -6,10 +6,10 @@
             <h1 class="h3 fw-black mb-1">Ajouter une Catégorie</h1>
             <p class="mb-0 text-faint">Gérez les collections et l'organisation de votre boutique de bijoux.</p>
           </div>
-          <button class="btn btn-sm fw-bold rounded-lg d-inline-flex align-items-center gap-1"
+          <a href="{{ url()->previous() }}" class="btn btn-sm fw-bold rounded-lg d-inline-flex align-items-center gap-1"
                   style="background:rgba(255,255,255,.1);color:#fff;">
             <i class="bi bi-arrow-left"></i> Retour à la liste
-          </button>
+          </a>
         </div>
 
         <form class="row g-3 g-lg-4" method="POST" action="/Admin/Categories/AddCategory/store">

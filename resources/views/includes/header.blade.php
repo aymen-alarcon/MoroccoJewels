@@ -32,8 +32,14 @@
                         <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Home/History') ? 'active' : ''; ?>" href="/Home/History">Histoire</a>
                         <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Home/Contact') ? 'active' : ''; ?>" href="/Home/Contact">Contact</a>
                         @auth
-                            <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Client/Cart') ? 'active' : ''; ?>" href="/Client/Cart">Cart</a>
-                            <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Client/Profile') ? 'active' : ''; ?>" href="/Client/Profile">Profile</a>
+                            @if(Auth::user()->role_id === 1)
+                                <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Client/Cart') ? 'active' : ''; ?>" href="/Client/Cart">Cart</a>
+                                <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Client/Profile') ? 'active' : ''; ?>" href="/Client/Profile">Profile</a>
+                            @elseif (Auth::user()->role_id === 2)
+                                <a class="nav-link-custom px-2 text-decoration-none" href="/Admin/Dashboard">Dashboard</a>
+                            @else
+                                <a class="nav-link-custom px-2 text-decoration-none <?php echo ($current === '/Client/Profile') ? 'active' : ''; ?>" href="/Client/Profile">Profile</a>
+                            @endif
                             <form action="/Auth/LogOut" method="POST">
                                 @csrf
                                 <button class="bg-transparent nav-link-custom px-2 text-decoration-none" type="submit" style="border: none">Log Out</button>

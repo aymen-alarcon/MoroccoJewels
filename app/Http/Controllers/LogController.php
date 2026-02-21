@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LogController extends Controller
 {
@@ -12,15 +13,20 @@ class LogController extends Controller
      */
     public function index()
     {
-        $logs = Log::all();
+        $logs = Log::with('User')->latest()->paginate(8);
         return view("Admin.Logs", compact("logs"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store($message)
     {
-        //
+        $validate["user_id"] = Auth::user()->id;
+        $validate["description"] = "Admin " . Auth::user()->first_name . " " . Auth::user()->last_name . " has just " . $message;
+
+        Log::create($validate);
+
+        return redirect()->route("admin.dashboard")->with("success", "You have successfully " . $message);
     }
 }

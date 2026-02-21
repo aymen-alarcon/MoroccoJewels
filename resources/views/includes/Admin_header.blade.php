@@ -114,12 +114,12 @@
         <a class="nav-link-custom p-2 rounded <?php if(basename($_SERVER["PHP_SELF"]) === "Logs"){ echo "nav-link-active";} ?>" href="/Admin/Logs"><i class="bi bi-database-exclamation"></i><span class="small fw-semibold">Logs</span></a>
       </nav>
       <div class="mt-auto p-3 border-top">
-        <a href="/Admin/Profile" class="d-flex align-items-center gap-2 p-2 text-decoration-none">
+        <span class="d-flex align-items-center gap-2 p-2 text-decoration-none">
           <div class="rounded-circle border" style="width:40px;height:40px;background:url('{{ asset("storage/" . $user->profile_picture) }}') center/cover no-repeat;"></div>
             <div>
               <p class="mb-0 small fw-bold text-truncate">{{ $user->first_name }} {{ $user->last_name }}</p>
               <p class="mb-0 small" style="color:#94a3b8;">{{ $user->role->role_name }}</p>
             </div>
           </div>
-        </a>
+        </span>
     </aside>

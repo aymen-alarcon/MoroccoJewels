@@ -10,15 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class FavoriteController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $Favorites = Favorite::all();
-        // return view("Admin.Favorites", compact("Favorites"));
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request, Favorite $Favorite, Product $product)

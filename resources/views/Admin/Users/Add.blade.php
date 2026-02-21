@@ -84,6 +84,14 @@
             <input type="text" name="zip" class="form-control" placeholder="nom@boutique.ma"/>
           </div>
 
+          <div class="col-12 col-md-6">
+            <label class="small fw-semibold d-inline-flex align-items-center gap-1 mb-2 text-white">
+              <i class="bi bi-geo-alt" style="font-size:16px;color:var(--bb-primary);"></i>
+              phone
+            </label>
+            <input type="text" name="phone" class="form-control" placeholder="nom@boutique.ma"/>
+          </div>
+
           <div class="col-12 col-md-12">
             <label class="small fw-semibold d-inline-flex align-items-center gap-1 mb-2 text-white"><i class="bi bi-shield-lock" style="color:var(--bb-primary);"></i>Rôle assigné</label>
 

@@ -19,7 +19,7 @@
                 </tr>
               </thead>
               <tbody>
-                @if (count($logs) > 0)                  
+                @if ($logs->count() > 0)                  
                   @foreach ($logs as $log)                  
                     <tr>
                       <td class="px-3 py-3 small text-white-75">
@@ -41,6 +41,9 @@
           </div>
 
           <div class="d-flex align-items-center justify-content-between px-3 px-lg-4 py-3 text-white-75 small">
-            <div>Affichage de 1 à 5 sur {{ count($logs) }} entrées</div>
+            <div>
+              Affichage de {{ $logs->firstItem() }} à {{ $logs->lastItem() }} sur {{ $logs->total() }} entrées
+            </div>
+            <div class="px-3 px-lg-4 py-3">{{ $logs->links() }}</div>
           </div>
         </div>

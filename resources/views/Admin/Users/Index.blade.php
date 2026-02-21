@@ -31,7 +31,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @if (count($users) > 0)                    
+                  @if ($users->total() > 0)                    
                     @foreach ($users as $user)                  
                     <tr>
                       <td class="px-4 py-3">
@@ -76,11 +76,8 @@
               </table>
             </div>
             <div class="p-3 d-flex align-items-center justify-content-between border-top border-opacity-25">
-              <p class="mb-0 small text-white-50">Affichage de 1 à 3 sur 124 utilisateurs</p>
-              <div class="d-flex gap-2">
-                <button class="btn btn-sm rounded px-3 py-1 text-white-50 border border-opacity-25" disabled>Précédent</button>
-                <button class="btn btn-sm rounded px-3 py-1 text-white-75 border border-opacity-25">Suivant</button>
-              </div>
+              <p class="mb-0 small text-white-50">Affichage de 1 à 5 sur {{ $users->total() }} utilisateurs</p>
+              <div class="d-flex gap-2">{{ $users->links() }}</div>
             </div>
         </div>
       </div>
