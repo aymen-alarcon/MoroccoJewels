@@ -13,7 +13,7 @@ class LogController extends Controller
      */
     public function index()
     {
-        $logs = Log::with('User')->latest()->paginate(8);
+        $logs = Log::with('User')->latest()->paginate(10);
         return view("Admin.Logs", compact("logs"));
     }
 

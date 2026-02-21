@@ -76,7 +76,7 @@
               </table>
             </div>
             <div class="p-3 d-flex align-items-center justify-content-between border-top border-opacity-25">
-              <p class="mb-0 small text-white-50">Affichage de 1 à 5 sur {{ $users->total() }} utilisateurs</p>
+              <p class="mb-0 small text-white-50">Affichage de {{ $users->firstItem() }} à {{ $users->lastItem() }} sur {{ $users->total() }} utilisateurs</p>
               <div class="d-flex gap-2">{{ $users->links() }}</div>
             </div>
         </div>

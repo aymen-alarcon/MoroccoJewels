@@ -13,16 +13,16 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $categories = Category::latest()->paginate(8);
+        $categories = Category::all();
         $query = Product::query();
 
         $category = $request->query('category');
 
         if ($category !== 'all') {
-            $products = $query->where('category_id', $category)->latest()->paginate(10);
+            $products = $query->where('category_id', $category)->latest()->paginate(8)->withQueryString();
         }
 
-        $products = $query->get();
+        $products = $query->paginate(4)->withQueryString();
 
         return view('Admin.Products.Index', compact('products', 'categories'));
     }

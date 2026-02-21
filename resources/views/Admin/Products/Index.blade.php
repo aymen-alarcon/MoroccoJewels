@@ -1,6 +1,5 @@
 @include("includes.Admin_header")
     <main class="d-flex flex-column position-relative w-100" style="margin-left: 15em;">
-      <div class="position-absolute top-0 start-0 end-0 bottom-0"></div>
       <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative">
         <div>
           <h2 class="display-6 fw-black mb-1">Gestion des Produits</h2>
@@ -92,20 +91,8 @@
           </div>
 
           <div class="d-flex align-items-center justify-content-between p-3">
-            <p class="mb-0 small text-white-50">Affichage de 1 à 4 sur 128 produits</p>
-            <div class="d-flex align-items-center gap-2">
-              <button class="btn btn-sm rounded-lg px-2" disabled>
-                <i class="bi bi-arrow-left"></i>
-              </button>
-              <button class="btn btn-sm rounded-lg fw-bold px-0">1</button>
-              <button class="btn btn-sm rounded-lg px-0">2</button>
-              <button class="btn btn-sm rounded-lg px-0">3</button>
-              <span class="text-white-50">...</span>
-              <button class="btn btn-sm rounded-lg px-0">12</button>
-              <button class="btn btn-sm rounded-lg px-2">
-                <i class="bi bi-arrow-right"></i>
-              </button>
-            </div>
+            <p class="mb-0 small text-white-50">Affichage de {{ $products->firstItem() }} à {{ $products->lastItem() }} sur {{ $products->total() }}</p>
+            <div class="d-flex align-items-center gap-2">{{ $products->links() }}</div>
           </div>
         </div>
       </section>

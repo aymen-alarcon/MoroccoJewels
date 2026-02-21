@@ -61,7 +61,7 @@
             </table>
           </div>
           <div class="p-3 d-flex align-items-center justify-content-between border-top border-opacity-25">
-            <p class="mb-0 small text-white-50">Affichage de 1 à 5 sur {{ $roles->total() }} utilisateurs</p>
+            <p class="mb-0 small text-white-50">Affichage de {{ $roles->firstItem() }} à {{ $roles->lastItem() }} sur {{ $roles->total() }} utilisateurs</p>
             <div class="d-flex gap-2">{{ $roles->links() }}</div>
           </div>
         </div>

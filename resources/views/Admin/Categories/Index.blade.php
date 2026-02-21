@@ -1,14 +1,20 @@
 @include("includes.Admin_header")
     <main class="d-flex flex-column w-100" style="margin-left: 15em;">
+      <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative">
+        <div>
+          <h2 class="display-6 fw-black mb-1">Gestion des Produits</h2>
+          <p class="text-primary opacity-75 mb-0">Gérez votre inventaire de bijoux berbères artisanaux.</p>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="/Admin/Categories/AddCategory" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
+            <i class="bi bi-plus"></i> Ajouter un Category
+          </a>
+        </div>
+      </header>
       <div class="overflow-auto p-4 p-lg-5">
         <div class="rounded card-surface mb-3">
           <div class="d-flex align-items-center justify-content-between px-4 py-3" style="border-bottom:1px solid #5a1a19;">
             <h3 class="h6 fw-bold mb-0">Liste des catégories</h3>
-            <div class="d-flex gap-2">
-              <a href="/Admin/Categories/AddCategory" class="btn fw-bold rounded-lg d-inline-flex align-items-center gap-1" style="background:var(--bb-primary);color:#fff;">
-                <i class="bi bi-plus"></i> Ajouter un Category
-              </a>
-            </div>
           </div>
           <div class="table-responsive">
             <table class="table table-roles align-middle mb-0" style="background-color: #5A1A19">
@@ -21,7 +27,7 @@
                 </tr>
               </thead>
               <tbody>
-                @if (count($categories) > 0)                  
+                @if ($categories->total() > 0)                  
                   @foreach ($categories as $category)                  
                   <tr>
                     <td class="px-4 py-3">
@@ -52,14 +58,8 @@
             </table>
           </div>
           <div class="d-flex align-items-center justify-content-between px-4 py-3" style="border-top:1px solid #5a1a19;">
-            <p class="mb-0 small text-white-50">Affichage de 1-4 sur 12 catégories</p>
-            <div class="d-flex gap-2">
-              <button class="btn btn-sm rounded px-3 py-1 text-white-50 border" style="border-color:#5a1a19;" disabled>Précédent</button>
-              <button class="btn btn-sm rounded px-3 py-1" style="background:var(--bb-primary);color:#2b1600;">1</button>
-              <button class="btn btn-sm rounded px-3 py-1 text-white-75 border" style="border-color:#5a1a19;">2</button>
-              <button class="btn btn-sm rounded px-3 py-1 text-white-75 border" style="border-color:#5a1a19;">3</button>
-              <button class="btn btn-sm rounded px-3 py-1 text-white-75 border" style="border-color:#5a1a19;">Suivant</button>
-            </div>
+            <p class="mb-0 small text-white-50">Affichage de {{ $categories->firstItem() }}-{{ $categories->lastItem() }} sur {{ $categories->total() }} catégories</p>
+            <div class="d-flex gap-2">{{ $categories->links() }}</div>
           </div>
         </div>
       </div>
