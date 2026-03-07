@@ -141,13 +141,6 @@ Route::prefix('Admin')->middleware('role:Admin')->group(function () {
     Route::put('/Roles/EditRole/update/{role}', [RoleController::class, 'update']);
     Route::delete('/Roles/destroy/{role}', [RoleController::class, 'destroy']);
 
-    Route::get('/Permissions', [PermissionController::class, 'index'])->name('Admin.Permissions.Index');
-    Route::get('/Permissions/AddPermission', [PermissionController::class, 'create']);
-    Route::post('/Permissions/AddPermission/store', [PermissionController::class, 'store']);
-    Route::get('/Permissions/EditPermission/{permission}', [PermissionController::class, 'edit']);
-    Route::put('/Permissions/EditPermission/update/{permission}', [PermissionController::class, 'update']);
-    Route::delete('/Permissions/destroy/{Permission}', [PermissionController::class, 'destroy']);
-
     Route::get('/Categories', [CategoryController::class, 'index'])->name('Admin.Categories.Index');
     Route::get('/Categories/AddCategory', [CategoryController::class, 'create']);
     Route::post('/Categories/AddCategory/store', [CategoryController::class, 'store']);
