@@ -443,3 +443,7 @@ body {
 .hidden{
     display: none;
 }
+
+.form-check-input{
+    cursor: pointer;
+}

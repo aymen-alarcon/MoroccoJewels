@@ -75,3 +75,13 @@ if (window.location.href.includes("/Client/Cart")) {
 
     document.getElementById("placeHolder").innerHTML = totalPrice.toFixed(2);
 }
+
+if (window.location.href.includes("/Admin/Roles/EditRole")) {
+    document.getElementById('check-all').onclick = () => {
+        document.querySelectorAll('input[name="permissions[]"]').forEach(cb => cb.checked = true);
+    };
+
+    document.getElementById('uncheck-all').onclick = () => {
+        document.querySelectorAll('input[name="permissions[]"]').forEach(cb => cb.checked = false);
+    };
+}

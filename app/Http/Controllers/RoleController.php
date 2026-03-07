@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
@@ -35,17 +36,11 @@ class RoleController extends Controller
 
         $Role->create($validate);
 
+        $Role->permissions()->sync($request->input('permissions', []));
+
         $message = "created a new Role.";
 
         return redirect()->route("Logs.store", $message);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Role $Role)
-    {
-        //
     }
 
     /**
@@ -53,7 +48,8 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        return view("Admin.Roles.Edit", compact("role"));
+        $permissions = Permission::all();
+        return view("Admin.Roles.Edit", compact("role", "permissions"));
     }
 
     /**
@@ -67,7 +63,9 @@ class RoleController extends Controller
 
         $role->update($validate);
 
-        $message = "updated the Product.";
+        $role->permissions()->sync($request->input('permissions', []));
+
+        $message = "updated the Role.";
 
         return redirect()->route("Logs.store", $message);
     }
