@@ -37,9 +37,7 @@
               </button>
             </div>
           </div>
-
           <button class="btn btn-primary btn-lg rounded-lg fw-bold mt-2" type="submit">Se connecter</button>
-
           <div class="text-center pt-2">
             <p class="small text-white-50 mb-0">Pas encore de compte ?
               <a href="/Auth/Register" class="text-warning fw-bold text-decoration-none ms-1">Créer un compte</a>

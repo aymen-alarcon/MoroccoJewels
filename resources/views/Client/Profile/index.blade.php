@@ -64,7 +64,11 @@
       <div class="surface rounded p-4 p-md-5 mb-4">
         <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-4">
           <div class="d-flex align-items-center gap-3 gap-md-4">
-            <div class="avatar-96" style="background-image:url('{{ asset("storage/" . $user->profile_picture) }}');"></div>
+            @if (isset($user->profile_picture))
+              <div class="avatar-96" style="background-image:url('{{ asset("storage/" . $user->profile_picture) }}');"></div>
+            @else
+              <div class="avatar-96 d-flex justify-content-center align-items-center bg-white text-dark fs-2">{{ strtoupper(substr($user->first_name,0,1)) }} {{ strtoupper(substr($user->last_name, 0, 1)) }}</div>
+            @endif
             <div>
               <h2 class="h4 fw-bold mb-1">Bienvenue, {{ $user->first_name }} {{ $user->last_name }}</h2>
               <div class="d-flex flex-column gap-1">

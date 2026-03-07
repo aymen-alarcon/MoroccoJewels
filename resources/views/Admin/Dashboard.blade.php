@@ -79,8 +79,8 @@
                   <td class="py-3 ps-2 fw-bold small">#ORD-{{ $order->id }}</td>
                   <td class="py-3">
                     <div class="d-flex align-items-center gap-2">
-                      <div class="d-flex align-items-center justify-content-center rounded-circle text-primary fw-bold" style="width:32px;height:32px;background:rgba(238,189,43,.2);font-size:12px;">YM</div>
-                      <span class="small fw-semibold">Y{{ $order->user_id }}</span>
+                      <div class="d-flex align-items-center justify-content-center rounded-circle text-primary fw-bold" style="width:32px;height:32px;background:rgba(238,189,43,.2);font-size:12px;">{{ strtoupper(substr($order->user->first_name, 0, 1)) }}{{ strtoupper(substr($order->user->last_name, 0, 1)) }}</div>
+                      <span class="small fw-semibold">#ID-{{ $order->user_id }}</span>
                     </div>
                   </td>
                   <td class="py-3 fw-bold small">{{ $order->total_price }} MAD</td>

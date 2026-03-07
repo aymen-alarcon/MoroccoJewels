@@ -47,7 +47,8 @@ class ProductController extends Controller
             "history" => "required",
             "price" => "required",
             "stock" => "required",
-            "category_id" => "required|exists:categories,id"
+            "category_id" => "required|exists:categories,id",
+            'main_image'  => 'image|max:2048'
         ]);
 
         $validate["is_deleted"] = 0 ;
@@ -66,16 +67,16 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $Product)
+    public function edit(Product $product)
     {
-        $Product = Product::all();
-        return view("Admin.Products.Edit", compact("Product"));
+        $categories = Category::all();
+        return view("Admin.Products.Edit", compact("product", "categories"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $Product)
+    public function update(Request $request, Product $product)
     {
         $validate = $request->validate([
             "name" => "required",
@@ -83,10 +84,17 @@ class ProductController extends Controller
             "history" => "required",
             "price" => "required",
             "stock" => "required",
-            "category_id" => "required|exists:categories.id"
+            "category_id" => "required|exists:categories,id",
+            'main_image'  => 'image|max:2048'
         ]);
 
-        $Product->update($validate);
+
+        if ($request->hasFile('main_image')) {
+            $path = $request->file('main_image')->store('products', 'public');
+            $validate['main_image'] = $path;
+        }
+
+        $product->update($validate);
 
         $message = "Updated the Product.";
 
