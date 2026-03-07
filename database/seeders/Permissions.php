@@ -11,7 +11,7 @@ class Permissions extends Seeder
     {
         $permissions = [
             ['name' => 'dashboard.view', 'description' => 'View dashboard'],
-            ['name' => 'reports.view', 'description' => 'View reports'],
+            ['name' => 'logs.view', 'description' => 'View logs'],
             ['name' => 'category.view', 'description' => 'View categories'],
             ['name' => 'category.create', 'description' => 'Create categories'],
             ['name' => 'category.update', 'description' => 'Update categories'],

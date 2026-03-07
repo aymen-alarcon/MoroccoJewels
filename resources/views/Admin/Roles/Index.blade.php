@@ -14,14 +14,13 @@
       <div class="p-4 p-lg-5 container-fluid">
         <div class="card-dark rounded mt-4">
           <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color:var(--bb-border-dark)!important;">
-            <h4 class="fw-bold mb-0">Liste des Rôles Système</h4>
+            <h4 class="fw-bold mb-0">Liste des Rôles</h4>
           </div>
           <div class="table-responsive">
             <table class="table table-roles align-middle mb-0" style="background-color: #5A1A19">
               <thead>
                 <tr>
                   <th class="px-4 py-3">Nom du Rôle</th>
-                  <th class="px-4 py-3">Permission</th>
                   <th class="px-4 py-3">Date de Création</th>
                   <th class="px-4 py-3 text-end">Actions</th>
                 </tr>
@@ -38,7 +37,6 @@
                           <span class="fw-semibold">{{ $role->role_name }}</span>
                         </div>
                       </td>
-                      <td class="px-4 py-3 small">{{ $role->permission }}</td>
                       <td class="px-4 py-3 small">{{ $role->created_at }}</td>
                       <td class="px-4 py-3 text-end">
                         <div class="d-inline-flex align-items-center gap-1">
