@@ -15,7 +15,7 @@
                         @endauth
                     </div>
                     <div class="col-md-6">
-                        <img src="{{ asset("storage/" . $product->main_image) }}" class="rounded" alt="">
+                        <img src="{{ asset("storage/" . $product->main_image) }}" class="rounded h-50 w-75" alt="">
                     </div>
                 </div>
             </section>

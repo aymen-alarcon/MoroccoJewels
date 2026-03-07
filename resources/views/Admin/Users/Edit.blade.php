@@ -1,5 +1,5 @@
 @include("includes.Admin_header")
-<main class="d-flex justify-content-center p-5 position-relative z-1 w-100" style="margin-left: 15em">
+<main class="d-flex justify-content-center p-5 z-1 w-100" style="margin-left: 15em">
     <div class="surface rounded p-4 p-md-5 shadow">
     <h1>Modifier l'utilisateur</h1>
 
@@ -79,7 +79,7 @@
             Rôle de l'utilisateur
           </label>
 
-          <div class="position-relative">
+          <div>
             <select class="form-select" name="role_id">
                 @foreach ($roles as $role)                    
                     <option value="{{ $role->id }}" class="text-dark"

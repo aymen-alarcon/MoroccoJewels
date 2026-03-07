@@ -150,8 +150,8 @@
         </div>
 
         <div class="finance p-4 rounded shadow">
-          <h2 class="h6 fw-bold mb-3 position-relative">Résumé financier</h2>
-          <div class="d-flex flex-column gap-2 position-relative">
+          <h2 class="h6 fw-bold mb-3">Résumé financier</h2>
+          <div class="d-flex flex-column gap-2">
             <div class="d-flex justify-content-between text-white-75 small">
               <span>Sous-total</span><span>2,950.00 DH</span>
             </div>

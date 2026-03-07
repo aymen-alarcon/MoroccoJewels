@@ -154,7 +154,7 @@
             @foreach ($user->favorite as $product)
               <div class="col-3">
                 <div class="product-card p-3">
-                  <div class="position-relative rounded-3">
+                  <div class="rounded-3">
                     <img src="{{ asset("storage/" . $product->main_image) }}" class="w-100 product-img" style="height: 20em">
                     <div class="overlay d-flex align-items-center justify-content-center gap-3">
                       <a href="/Home/Collection/Details/{{ $product->id }}" class="icon-btn icon-primary"><i class="bi bi-eye-fill"></i></a>

@@ -23,8 +23,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PermissionController;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMail;
 
 Route::get('/', function () {
     $workers = User::whereIn("role_id", [3, 4])->get();

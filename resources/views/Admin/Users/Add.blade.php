@@ -95,7 +95,7 @@
           <div class="col-12 col-md-12">
             <label class="small fw-semibold d-inline-flex align-items-center gap-1 mb-2 text-white"><i class="bi bi-shield-lock" style="color:var(--bb-primary);"></i>Rôle assigné</label>
 
-            <div class="position-relative">
+            <div>
               <select class="form-select" name="role_id" >
                 <option selected disabled>Choisir un rôle</option>
                 @foreach ($roles as $role)                    

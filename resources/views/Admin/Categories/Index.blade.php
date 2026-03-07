@@ -1,6 +1,6 @@
 @include("includes.Admin_header")
     <main class="d-flex flex-column w-100" style="margin-left: 15em;">
-      <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative">
+      <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3">
         <div>
           <h2 class="display-6 fw-black mb-1">Gestion des Produits</h2>
           <p class="text-primary opacity-75 mb-0">Gérez votre inventaire de bijoux berbères artisanaux.</p>

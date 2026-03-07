@@ -1,6 +1,6 @@
 @include("includes.Admin_header")
-    <main class="d-flex flex-column position-relative w-100" style="margin-left: 15em;">
-      <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3 position-relative">
+    <main class="d-flex flex-column w-100" style="margin-left: 15em;">
+      <header class="p-4 p-lg-5 d-flex flex-wrap align-items-center justify-content-between gap-3">
         <div>
           <h2 class="display-6 fw-black mb-1">Gestion des Produits</h2>
           <p class="text-primary opacity-75 mb-0">Gérez votre inventaire de bijoux berbères artisanaux.</p>
@@ -11,7 +11,7 @@
             </a>
         </div>
       </header>
-      <section class="px-4 px-lg-5 pb-3 d-flex flex-column gap-3 position-relative">
+      <section class="px-4 px-lg-5 pb-3 d-flex flex-column gap-3">
         <div class="d-flex flex-wrap align-items-center gap-3 rounded p-3 border" style="background: color-mix(in srgb, var(--bb-accent-dark) 30%, transparent); border-color: rgba(255,255,255,.05)!important;">
           <div>
             <div class="form-control">
@@ -31,7 +31,7 @@
         </div>
       </section>
 
-      <section class="px-4 px-lg-5 pb-4 position-relative">
+      <section class="px-4 px-lg-5 pb-4">
         <div class="card-dark rounded mt-4">
           <div class="d-flex align-items-center justify-content-between px-4 py-3 border-bottom" style="border-color: #752A28!important;">
             <h4 class="fw-bold mb-0">Liste des Produits</h4>

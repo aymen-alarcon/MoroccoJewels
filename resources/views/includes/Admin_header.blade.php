@@ -96,8 +96,8 @@
       {{ session()->get('success') }}
     </div>
   @endif
-  <div class="d-flex position-relative" style="z-index:1;">
-    <aside class="sidebar d-flex flex-column vh-100 position-fixed ">
+  <div class="d-flex" style="z-index: 1;">
+    <aside class="sidebar d-flex flex-column vh-100 position-fixed">
       <div class="p-4 d-flex align-items-center gap-2">
         <div>
           <h1 class="fs-6 fw-bold mb-0">Bijoux Berbères</h1>

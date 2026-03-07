@@ -1,5 +1,5 @@
 @include("includes.header")
-  <main class="d-flex align-items-center justify-content-center py-5 position-relative z-1">
+  <main class="d-flex align-items-center justify-content-center py-5 z-1">
     <div class="container" style="max-width:520px;">
       <div class="form-card rounded shadow-2xl p-4 p-md-5">
         <div class="text-center mb-4">
@@ -13,13 +13,13 @@
         <form class="d-flex flex-column gap-3" action="/Auth/Login/invoke" method="POST">
           @csrf
           @method("POST")
+          
           <div>
             <label class="form-label small fw-semibold">Adresse e‑mail</label>
             <div class="position-relative">
               <input type="email" name="email" class="form-control" placeholder="exemple@bijoux.com"/>
-              <button class="btn btn-link position-absolute p-0" type="button"
-                      style="right:8px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.5)">
-              <i class="bi bi-envelope" style="right:12px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.35)"></i>
+              <button class="btn btn-link position-absolute p-0" type="button" style="right:8px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.5)">
+              <i class="bi bi-envelope" style="transform:translateY(-50%);color:rgba(255,255,255,.35)"></i>
               </button>
             </div>
           </div>
