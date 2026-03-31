@@ -34,6 +34,7 @@ class CategoryController extends Controller
             "name" => "required",
             "description" => "required"
         ]);
+        
         $category->create($validate);
 
         $message = "created a new category";

@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\MaterielController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemsController;
@@ -22,7 +23,6 @@ use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Http\Controllers\PermissionController;
 
 Route::get('/', function () {
     $workers = User::whereIn("role_id", [3, 4])->get();
@@ -147,6 +147,13 @@ Route::prefix('Admin')->middleware('role:Admin')->group(function () {
     Route::get('/Categories/EditCategory/{category}', [CategoryController::class, 'edit']);
     Route::put('/Categories/EditCategory/update/{category}', [CategoryController::class, 'update']);
     Route::delete('/Categories/destroy/{category}', [CategoryController::class, 'destroy']);
+
+    Route::get("/Materiels", [MaterielController::class, "index"])->name('Admin.Materiels.Index');
+    Route::get("/Materiels/AddMateriel", [MaterielController::class, "create"]);
+    Route::post("/Materiels/AddMateriel/store", [MaterielController::class, "store"]);
+    Route::get("/Materiels/EditMateriel/{materiel}", [MaterielController::class, "edit"]);
+    Route::put("/Materiels/EditMateriel/Update/{materiel}", [MaterielController::class, "update"]);
+    Route::delete("/Materiels/destroy/{materiel}", [MaterielController::class, "destroy"]);
 });
 
 Route::prefix("/Order")->middleware("role:Client")->group(function(){

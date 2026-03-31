@@ -17,4 +17,8 @@ class Product extends Model
     public function favorite():BelongsToMany{
         return $this->belongsToMany(User::class, "favorites");
     }
+
+    public function materiels():BelongsToMany{
+        return $this->belongsToMany(Materiel::class, "materiel_id");
+    }
 }
