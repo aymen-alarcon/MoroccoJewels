@@ -67,12 +67,21 @@
           <section class="surface rounded p-4 h-100">
             <h2 class="h5 fw-bold mb-3 d-flex align-items-center gap-2">
               <i class="bi bi-image"></i>
-              Galerie Médias
+              Galerie Médias & Materiel
             </h2>
             <div class="mb-3">
               <label class="form-label small fw-bold">Image principale</label>
               <input type="file" name="main_image" class="form-control" accept="image/*" required />
             </div>
+            <h2>Materiel</h2>
+            @foreach ($materiels as $materiel)
+              <div class="col-md-3 d-flex align-items-center justify-content-between">
+                  <span class="text-white-75">{{ $materiel->description }}</span>
+                  <div class="form-check form-switch m-0">
+                    <input class="form-check-input" value="{{ $materiel->id }}" name="materiels[]" type="checkbox">
+                  </div>
+              </div>
+            @endforeach
           </section>
         </div>
       </div>
