@@ -60,6 +60,26 @@
                         </div>
                     </section>
                 </div>
+
+                <div class="col-md-12 form-card p-2">
+                    <div class="row p-4 g-4">
+                        <h2>Materiels</h2>
+                        @foreach ($materiels as $materiel)
+                            <div class="col-md-3 d-flex align-items-center justify-content-between">
+                                <span class="text-white-75">{{ $materiel->name }}</span>
+                                @if ($product->materiels->contains($materiel->id))
+                                    <div class="form-check form-switch m-0">
+                                        <input class="form-check-input" value="{{ $materiel->id }}" name="materiels[]" type="checkbox" checked>
+                                    </div>
+                                @else
+                                    <div class="form-check form-switch m-0">
+                                        <input class="form-check-input" value="{{ $materiel->id }}" name="materiels[]" type="checkbox">
+                                    </div>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
             <button type="submit" class="btn btn-primary mt-2 float-end">Save Changes</button>
         </form>

@@ -60,7 +60,10 @@ class ProductController extends Controller
             $validate['main_image'] = $path;
         }
 
-        $Product->create($validate);
+        $newProduct = $Product->create($validate);
+        
+        $newProduct->materiels()->sync($request->input("materiels", []));
+
         $message = "created a new Product.";
 
         return redirect()->route("Logs.store", $message);
@@ -71,8 +74,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $materiels = Materiel::all();
         $categories = Category::all();
-        return view("Admin.Products.Edit", compact("product", "categories"));
+        return view("Admin.Products.Edit", compact("product", "categories", "materiels"));
     }
 
     /**
@@ -97,6 +101,8 @@ class ProductController extends Controller
         }
 
         $product->update($validate);
+
+        $product->materiels()->sync($request->input("materiels", []));
 
         $message = "Updated the Product.";
 

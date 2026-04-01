@@ -73,15 +73,17 @@
               <label class="form-label small fw-bold">Image principale</label>
               <input type="file" name="main_image" class="form-control" accept="image/*" required />
             </div>
-            <h2>Materiel</h2>
-            @foreach ($materiels as $materiel)
-              <div class="col-md-3 d-flex align-items-center justify-content-between">
-                  <span class="text-white-75">{{ $materiel->description }}</span>
-                  <div class="form-check form-switch m-0">
-                    <input class="form-check-input" value="{{ $materiel->id }}" name="materiels[]" type="checkbox">
-                  </div>
-              </div>
-            @endforeach
+            <div class="row">
+              <h2>Materiel</h2>
+              @foreach ($materiels as $materiel)
+                <div class="col-md-4 d-flex align-items-center justify-content-between g-3">
+                    <span class="text-white-75">{{ $materiel->name }}</span>
+                    <div class="form-check form-switch m-0">
+                      <input class="form-check-input" value="{{ $materiel->id }}" name="materiels[]" type="checkbox">
+                    </div>
+                </div>
+              @endforeach
+            </div>
           </section>
         </div>
       </div>

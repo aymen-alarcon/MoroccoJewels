@@ -19,6 +19,6 @@ class Product extends Model
     }
 
     public function materiels():BelongsToMany{
-        return $this->belongsToMany(Materiel::class, "materiel_id");
+        return $this->belongsToMany(Materiel::class, "products_materiels", "product_id", "materiel_id");
     }
 }

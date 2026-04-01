@@ -10,6 +10,6 @@ class Materiel extends Model
     protected $fillable = ["name", "description"];
 
     public function product():BelongsToMany{
-        return $this->belongsToMany(Product::class, "materiel_id");
+        return $this->belongsToMany(Product::class,  "products_materiels", "materiel_id", "product_id");
     } 
 }
