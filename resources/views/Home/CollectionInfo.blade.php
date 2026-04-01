@@ -47,49 +47,14 @@
                         </p>
                     </div>
                     <div class="row g-4 text-text-dark-80">
-                        <div class="col-md-4">
-                            <div class="feature-card-2 h-100 d-flex flex-column align-items-center text-center p-4">
-                                <h3 class="font-display fs-3 text-accent mb-3">
-                                    Origines Millénaires
-                                </h3>
-                                <p class="mb-0">
-                                    Les bijoux berbères puisent leurs racines dans des traditions
-                                    pré-islamiques, mêlant influences africaines, méditerranéennes
-                                    et sahariennes. Chaque motif est un vestige du passé, un
-                                    symbole qui a traversé les siècles pour nous parvenir, chargé
-                                    de la sagesse des anciens.
-                                </p>
+                        @foreach ($product->materiels as $materiel)                            
+                            <div class="col-md-4">
+                                <div class="feature-card-2 h-100 d-flex flex-column align-items-center text-center p-4">
+                                    <h3 class="font-display fs-3 text-accent mb-3">{{ $materiel->name }}</h3>
+                                    <p class="mb-0">{{ $materiel->description }}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="feature-card-2 h-100 d-flex flex-column align-items-center text-center p-4">
-                                <h3 class="font-display fs-3 text-accent mb-3">
-                                    Symboles & Amulettes
-                                </h3>
-                                <p class="mb-0">
-                                    Au-delà de leur beauté, ces bijoux sont de puissantes
-                                    amulettes. Le triangle (représentant la fertilité), le serpent
-                                    (la vitalité) ou la fibule (l'union) sont des talismans
-                                    destinés à protéger du mauvais œil, à assurer la prospérité et
-                                    à célébrer les grands moments de la vie, de la naissance au
-                                    mariage.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="feature-card-2 h-100 d-flex flex-column align-items-center text-center p-4">
-                                <h3 class="font-display fs-3 text-accent mb-3">
-                                    Savoir-faire Ancestral
-                                </h3>
-                                <p class="mb-0">
-                                    Le travail de l'argent, du niellage, du filigrane et de
-                                    l'émail cloisonné est un art transmis de père en fils, de mère
-                                    en fille. Nos artisans utilisent encore aujourd'hui des outils
-                                    et des techniques séculaires pour façonner chaque pièce à la
-                                    main, garantissant son authenticité et son caractère unique.
-                                </p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </section>

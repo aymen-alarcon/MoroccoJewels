@@ -31,47 +31,20 @@
                                         @endforeach
                                     </div>
                                 </form>
-                                <div class="mb-4 pt-4 border-top">
-                                    <h4 class="fw-semibold text-accent-90 mb-3">Matériau</h4>
-                                    <div class="d-flex flex-column gap-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input custom-checkbox" type="checkbox" id="argent">
-                                            <label class="form-check-label text-background-light-80 cursor-pointer" for="argent">
-                                                stancia
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input custom-checkbox" type="checkbox" id="corail">
-                                            <label class="form-check-label text-background-light-80 cursor-pointer" for="corail">
-                                                caper
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input custom-checkbox" type="checkbox" id="ambre">
-                                            <label class="form-check-label text-background-light-80 cursor-pointer" for="ambre">
-                                                argent plaqué
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input custom-checkbox" type="checkbox" id="ambre">
-                                            <label class="form-check-label text-background-light-80 cursor-pointer" for="ambre">
-                                                 argent vintage
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input custom-checkbox" type="checkbox" id="ambre">
-                                            <label class="form-check-label text-background-light-80 cursor-pointer" for="ambre">
-                                                 pierres
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input custom-checkbox" type="checkbox" id="ambre">
-                                            <label class="form-check-label text-background-light-80 cursor-pointer" for="ambre">
-                                                 filigrane
-                                            </label>
+                                <form action="{{ url()->current() }}" method="GET" id="filterByMaterielForm">
+                                    <div class="mb-4 pt-4 border-top">
+                                        <h4 class="fw-semibold text-accent-90 mb-3">Matériau</h4>
+                                        <div class="d-flex flex-column gap-2">
+                                            @foreach ($materiels as $materiel)
+                                                <div class="form-check">
+                                                    <input class="form-check-input custom-checkbox filterByMateriel-input" type="checkbox" name="materiels[]" value="{{ $materiel->id }}"
+                                                    {{ in_array($materiel->id, request("materiels", [])) ? "checked" : '' }}>
+                                                    <label class="form-check-label text-background-light-80 cursor-pointer" for="argent">{{ $materiel->name }}</label>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </aside>
                         <div style="flex: 1">

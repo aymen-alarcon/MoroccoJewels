@@ -94,7 +94,6 @@ class ProductController extends Controller
             'main_image'  => 'image|max:2048'
         ]);
 
-
         if ($request->hasFile('main_image')) {
             $path = $request->file('main_image')->store('products', 'public');
             $validate['main_image'] = $path;
@@ -104,7 +103,7 @@ class ProductController extends Controller
 
         $product->materiels()->sync($request->input("materiels", []));
 
-        $message = "Updated the Product.";
+        $message = "Updated the Product " . $product->id . ".";
 
         return redirect()->route("Logs.store", $message);
     }
@@ -116,7 +115,7 @@ class ProductController extends Controller
     {
         $Product->delete();
 
-        $message = "deleted the Product.";
+        $message = "deleted the Product " . $Product->id . ".";
 
         return redirect()->route("Logs.store", $message);
     }

@@ -40,7 +40,7 @@
                             la main pour vous.
                         </p>
                         <div class="mt-3">
-                            <a href="history.html" class="btn custom-button">
+                            <a href="/Home/History" class="btn custom-button">
                                 <span class="text-truncate">Découvrir l'histoire</span>
                             </a>
                         </div>

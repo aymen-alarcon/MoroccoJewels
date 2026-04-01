@@ -6,6 +6,12 @@ if (window.location.href.includes("/Home/Collection")) {
             document.getElementById('filterForm').submit();
         });
     });
+
+    document.querySelectorAll('.filterByMateriel-input').forEach(input => {
+        input.addEventListener('change', function () {
+            document.getElementById('filterByMaterielForm').submit();
+        });
+    });
 }
 
 if (window.location.href.includes("/Client/Profile")) {

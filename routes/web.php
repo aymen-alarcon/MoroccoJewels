@@ -17,6 +17,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
+use App\Models\Materiel;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Role;
@@ -32,6 +33,16 @@ Route::get('/', function () {
 Route::prefix("Home")->group(function(){
     Route::get('/Collection', function (Request $request) {
         $query = Product::query();
+
+        $allProducts = Product::all();
+
+        if ($request->has("materiels")) {
+            $query->when($request->has("materiels"), function($query) use ($request){
+                $query->whereHas("materiels", function ($p0) use($request) {
+                    $p0->whereIn("products_materiels.materiel_id", $request->materiels);
+                });
+            })->get();
+        }
         
         if ($request->has("categories")) {
             $query->whereIn('category_id', $request->categories);
@@ -46,9 +57,10 @@ Route::prefix("Home")->group(function(){
         }    
 
         $products = $query->paginate(12)->withQueryString();
+        $materiels = Materiel::all();
         $categories = Category::all();
         $user = Auth::user();
-        return view('Home.Collection', compact("categories", "products", "user"));
+        return view('Home.Collection', compact("categories", "products", "user", "materiels"));
     })->name("Home.Collection");
 
     Route::get('/History', function () {
