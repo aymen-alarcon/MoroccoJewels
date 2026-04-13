@@ -15,6 +15,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SendSMSController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
 use App\Models\Materiel;
@@ -177,3 +178,5 @@ Route::prefix("/Order")->middleware("role:Client")->group(function(){
 Route::post('/send-contact', [ContactController::class, "send"]);
 Route::put('/Admin/Orders/update/{order}', [OrderController::class, 'update']);
 Route::get("/Notification/store/{order}/{message}", [NotificationController::class, "store"])->name("notification");
+
+Route::get("/SendSMS", [SendSMSController::class, "sendSMS"])->name("sendSMS.store");

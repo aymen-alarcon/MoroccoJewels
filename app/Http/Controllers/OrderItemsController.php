@@ -36,8 +36,6 @@ class OrderItemsController extends Controller
             $OrderItems->create($validate);
         }
 
-        session()->forget('cart');
-
-        return redirect()->route("Profile.index")->with("success", "Your Order have just been Submitted successfully");
+        return redirect()->route("sendSMS.store");
     }
 }
