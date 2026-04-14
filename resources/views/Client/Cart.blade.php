@@ -28,12 +28,12 @@
                       </td>
                       <td class="px-3 px-md-4 py-4">
                         <div class="d-flex align-items-center gap-3">
-                          <p class="mb-0 fw-bold price">{{ number_format($item['price'], 2) }}</p>
+                          <p class="mb-0 fw-bold price" data-price="{{ $item['price'] }}">{{ number_format($item['price'], 2) }}</p>
                         </div>
                       </td>
                       <td class="px-3 px-md-4 py-4">
                         <div class="small text-white-75">
-                          <div><span class="text-white-50">Quantité:</span> {{ $item['quantity'] }}</div>
+                          <div><span class="text-white-50 quantity" data-quantity="{{ $item['quantity'] }}">Quantité:</span> {{ $item['quantity'] }}</div>
                         </div>
                       </td>
                       <td class="px-3 px-md-4 py-4 text-end">
@@ -63,7 +63,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4">
+      <div class="col-12 col-lg-4 d-flex justify-content-center align-items-center">
         <div class="position-sticky">
           <div class="info-card rounded p-4 mb-3">
             <div class="d-flex flex-column gap-2">
@@ -71,11 +71,8 @@
                 @csrf
                 @method("POST")
                 
-                <button type="submit" class="btn btn-primary fw-bold rounded-lg d-inline-flex align-items-center justify-content-center gap-2">Prendre rendez‑vous</button>
+                <button type="submit" class="w-100 btn btn-primary fw-bold rounded-lg d-inline-flex align-items-center justify-content-center gap-2">Prendre rendez‑vous</button>
               </form>
-              <button class="btn btn-outline-light fw-bold rounded-lg d-inline-flex align-items-center justify-content-center gap-2"style="border-color:rgba(255,255,255,.2);">
-                <i class="bi bi-envelope"></i> Demander des infos
-              </button>
             </div>
             <p class="mt-2 mb-0 text-center" style="font-size:10px;letter-spacing:.22em;color:rgba(255,255,255,.6);text-transform:uppercase;">
               Réponse sous 24h par nos experts
