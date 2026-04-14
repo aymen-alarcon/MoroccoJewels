@@ -36,6 +36,6 @@ class OrderItemsController extends Controller
             $OrderItems->create($validate);
         }
 
-        return redirect()->route("sendSMS.store");
+        return redirect()->route("stripe.index");
     }
 }

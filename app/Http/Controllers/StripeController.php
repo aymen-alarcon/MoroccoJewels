@@ -16,28 +16,31 @@ class StripeController extends Controller
 
     public function checkout()
     {        
+        $lineItems = [];
+
+        foreach (session("cart") as $item) {
+            $lineItems [] = [
+                'price_data' => [
+                    'currency' => 'mad',
+                    'product_data' => [
+                        'name' => $item["name"],
+                    ],
+                    'unit_amount' => $item["price"] * 100,
+                ],
+                'quantity' => $item["quantity"],
+            ];
+        }
+
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
         $session = Session::create([
             'payment_method_types' => ['card'],
-            'line_items' => [
-                [
-                    'price_data' => [
-                        'currency' => 'mad',
-                        'product_data' => [
-                            
-                            'name' => "hi",
-                        ],
-                        'unit_amount' => 100,
-                    ],
-                    'quantity' => 1,
-                ],
-            ],
+            'line_items' => $lineItems,
             'metadata' => [
                 'type' => 'send_money',
             ],
             'mode' => 'payment',
-            'success_url' => route('stripe.success', session("cart")) . '?session_id={CHECKOUT_SESSION_ID}',
+            'success_url' => route('stripe.success') . '?session_id={CHECKOUT_SESSION_ID}',
             'cancel_url' => route('stripe.index'),
         ]);
 
@@ -50,6 +53,6 @@ class StripeController extends Controller
 
         $session = Session::retrieve($request->session_id);
 
-        return view('stripe.success', compact('session', 'reservation'));
+        return view('stripe.success', compact('session'));
     }
 }

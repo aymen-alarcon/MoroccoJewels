@@ -13,6 +13,7 @@ use App\Http\Controllers\MaterielController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemsController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SendSMSController;
@@ -182,8 +183,10 @@ Route::get("/Notification/store/{order}/{message}", [NotificationController::cla
 
 Route::get("/SendSMS", [SendSMSController::class, "sendSMS"])->name("sendSMS.store");
 
-Route::prefix("/Payment")->group(function(){
-    Route::get('', [StripeController::class, 'index'])->name( 'stripe.index');
-    Route::post('/checkout/{reservation}', [StripeController::class, 'checkout'])->name("stripe.checkout");
-    Route::get('/success/{reservation}', [StripeController::class, 'success'])->name('stripe.success');
+Route::prefix("/Payments")->group(function(){
+    Route::get('/stripe', [StripeController::class, 'index'])->name( 'stripe.index');
+    Route::post('/checkout', [StripeController::class, 'checkout'])->name("stripe.checkout");
+    Route::get('/success', [StripeController::class, 'success'])->name('stripe.success');
+    Route::get("/Create", [PaymentController::class, "create"])->name("payment.create");
+    Route::post("/Store", [PaymentController::class, "store"]);
 });
