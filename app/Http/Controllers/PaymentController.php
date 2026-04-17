@@ -36,6 +36,6 @@ class PaymentController extends Controller
 
         session()->forget('cart');
 
-        return redirect()->route("Client.Cart")->with("success", "Message sent successfully");
+        return redirect()->route("Client.Cart")->with("success", "Payment have went through successfully");
     }
 }

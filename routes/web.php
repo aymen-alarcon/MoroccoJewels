@@ -30,7 +30,7 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     $workers = User::whereIn("role_id", [3, 4])->get();
-    return view('welcome', compact("workers"));
+    return view('Home.Index', compact("workers"));
 })->name("Home");
 
 Route::prefix("Home")->group(function(){

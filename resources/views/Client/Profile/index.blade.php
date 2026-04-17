@@ -145,7 +145,7 @@
               </div>
               <div class="py-3">
                 <div class="text-uppercase small fw-bold mb-1" style="letter-spacing:.18em;color:rgba(255,255,255,.4);">ZIP</div>
-                <div class="small fw-semibold">+212 {{ $user->zip }}</div>
+                <div class="small fw-semibold">{{ $user->zip }}</div>
               </div>
             </div>
           </div>
