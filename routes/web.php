@@ -99,10 +99,9 @@ Route::prefix("Auth")->group( function(){
 });
 
 Route::prefix("Client")->middleware("role:Client")->group(function(){
-    Route::get("/Cart", function(){
-        return view("Client.Cart");
-    })->name("Client.Cart");
-
+        Route::get("/Cart", function(){
+            return view("Client.Cart");
+        })->name("Client.Cart");
     Route::get("/Cart/addToCart/{product}", [CartController::class, "addToCart"]);
     Route::get("/Cart/Destroy/{product}", [CartController::class, "removeFromCart"]);
 

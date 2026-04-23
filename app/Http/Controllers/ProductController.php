@@ -5,25 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Materiel;
+use App\Service\ProductService;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected ProductService $productService;
+
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
+    }
+
     public function index(Request $request)
     {
-        $categories = Category::all();
-        $query = Product::query();
-
-        $category = $request->query('category');
-
-        if ($category !== 'all') {
-            $products = $query->where('category_id', $category)->latest()->paginate(8)->withQueryString();
-        }
-
-        $products = $query->paginate(4)->withQueryString();
+        $productsCategories = $this->productService->loadProducts($request);
+        
+        $products = $productsCategories["products"];
+        $categories = $productsCategories["categories"];
 
         return view('Admin.Products.Index', compact('products', 'categories'));
     }

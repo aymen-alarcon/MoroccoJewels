@@ -84,7 +84,7 @@ class UserController extends Controller
 
         $userInfo->update($validate);
 
-        $message = "updated the Product.";
+        $message = "updated the User.";
 
         return redirect()->route("Logs.store", $message);
     }
@@ -119,7 +119,7 @@ class UserController extends Controller
     {
         $User->delete();
 
-        $message = "deleted the Product.";
+        $message = "deleted the User.";
 
         return redirect()->route("Logs.store", $message);
     }
