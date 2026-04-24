@@ -6,7 +6,6 @@
     --background-dark: #201312;
 }
 
-/* Background Pattern */
 .berber-pattern {
     background-image: radial-gradient(#430f0e 0.5px, transparent 0.5px);
     background-size: 24px 24px;
@@ -16,7 +15,6 @@
     pointer-events: none;
 }
 
-/* Glass Panel */
 .glass-panel {
     background: rgba(48, 29, 28, 0.6);
     backdrop-filter: blur(10px);
@@ -24,14 +22,12 @@
     border-radius: 12px;
 }
 
-/* Header */
 .navbar-custom {
     background: rgba(32, 19, 18, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(67, 15, 14, 0.3);
 }
 
-/* Buttons */
 .btn-accent {
     background-color: var(--accent);
     color: var(--primary);
@@ -56,7 +52,6 @@
     background-color: rgba(195,153,152,0.1);
 }
 
-/* Inputs */
 .form-control {
     background: rgba(32, 19, 18, 0.6);
     border: 1px solid rgba(255,255,255,0.1);
@@ -70,7 +65,6 @@
     color: white;
 }
 
-/* Footer */
 .footer {
     background-color: rgba(67,15,14,0.2);
     border-top: 1px solid rgba(67,15,14,0.3);
@@ -102,7 +96,7 @@
                         <div class="row g-3">
                             <div class="col-12 col-md-6">
                                 <label class="small-uppercase text-accent">Image principale</label>
-                                <input type="file" name="profile_picture" class="form-control align-content-center" accept="image/*" required/>
+                                <input type="file" name="profile_picture" class="form-control align-content-center" accept="image/*"/>
                             </div>
                             <div class="col-md-6">
                                 <label class="small-uppercase text-accent">Nom</label>
@@ -152,16 +146,16 @@
                         <h5 class="fw-bold mb-4">Modifier le mot de passe</h5>
                         <div class="mb-3">
                             <label class="small-uppercase text-accent">Ancien mot de passe</label>
-                            <input type="password" class="form-control">
+                            <input type="password" name="password" class="form-control">
                         </div>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="small-uppercase text-accent">Nouveau mot de passe</label>
-                                <input type="password" class="form-control">
+                                <input type="password" name="newPassword" class="form-control">
                             </div>
                             <div class="col-md-6">
                                 <label class="small-uppercase text-accent">Confirmer le mot de passe</label>
-                                <input type="password" class="form-control">
+                                <input type="password" name="newPassword_confirmation" class="form-control">
                             </div>
                         </div>
                         <div class="d-flex justify-content-end gap-3 mt-4">

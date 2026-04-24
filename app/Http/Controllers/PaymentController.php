@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Models\Product;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
@@ -33,6 +34,13 @@ class PaymentController extends Controller
         $validate['amount'] = str_replace(',', '', $request->input('total_price'));
 
         $payment->create($validate);
+        
+        $cart = session("cart");
+
+        foreach($cart as $productInCart){
+            $product = Product::findOrFail($productInCart["id"]);
+            $product->decrement("stock", $productInCart["quantity"]);
+        }
 
         session()->forget('cart');
 
