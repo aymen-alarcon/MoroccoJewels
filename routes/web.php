@@ -38,14 +38,6 @@ Route::prefix("Home")->group(function(){
         $query = Product::query();
 
         $allProducts = Product::all();
-
-        if ($request->has("materiels")) {
-            $query->when($request->has("materiels"), function($query) use ($request){
-                $query->whereHas("materiels", function ($p0) use($request) {
-                    $p0->whereIn("products_materiels.materiel_id", $request->materiels);
-                });
-            })->get();
-        }
         
         if ($request->has("categories")) {
             $query->whereIn('category_id', $request->categories);
@@ -59,7 +51,7 @@ Route::prefix("Home")->group(function(){
             $query->orderBy('price', 'desc');
         }    
 
-        $products = $query->paginate(12)->withQueryString();
+        $products = $query->paginate(12);
         $materiels = Materiel::all();
         $categories = Category::all();
         $user = Auth::user();
