@@ -1,3 +1,5 @@
+console.log("hi");
+
 if (window.location.href.includes("/Home/Collection")) {
     document.querySelectorAll('.filter-input').forEach(input => {
         input.addEventListener('change', function () {
@@ -73,9 +75,9 @@ if (window.location.href.includes("/Client/Profile")) {
 
 if (window.location.href.includes("/Client/Cart")) {
     let totalPrice = 0;
-    document.querySelectorAll(".transition").forEach(item => {
-        totalPrice += Number(item.querySelector(".price").dataset.price) * Number(item.querySelector(".quantity").dataset.quantity)
-    })
+    document.querySelectorAll(".price").forEach(price => {
+        totalPrice += Number(price.innerHTML) 
+    });
 
     document.getElementById("placeHolder").innerHTML = totalPrice.toFixed(2);
 }

@@ -13,11 +13,9 @@ use App\Http\Controllers\MaterielController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemsController;
-use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SendSMSController;
-use App\Http\Controllers\StripeController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
 use App\Models\Materiel;
@@ -30,7 +28,7 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     $workers = User::whereIn("role_id", [3, 4])->get();
-    return view('Home.Index', compact("workers"));
+    return view('welcome', compact("workers"));
 })->name("Home");
 
 Route::prefix("Home")->group(function(){
@@ -38,6 +36,14 @@ Route::prefix("Home")->group(function(){
         $query = Product::query();
 
         $allProducts = Product::all();
+
+        if ($request->has("materiels")) {
+            $query->when($request->has("materiels"), function($query) use ($request){
+                $query->whereHas("materiels", function ($p0) use($request) {
+                    $p0->whereIn("products_materiels.materiel_id", $request->materiels);
+                });
+            })->get();
+        }
         
         if ($request->has("categories")) {
             $query->whereIn('category_id', $request->categories);
@@ -51,7 +57,7 @@ Route::prefix("Home")->group(function(){
             $query->orderBy('price', 'desc');
         }    
 
-        $products = $query->paginate(12);
+        $products = $query->paginate(12)->withQueryString();
         $materiels = Materiel::all();
         $categories = Category::all();
         $user = Auth::user();
@@ -91,9 +97,10 @@ Route::prefix("Auth")->group( function(){
 });
 
 Route::prefix("Client")->middleware("role:Client")->group(function(){
-        Route::get("/Cart", function(){
-            return view("Client.Cart");
-        })->name("Client.Cart");
+    Route::get("/Cart", function(){
+        return view("Client.Cart");
+    })->name("Client.Cart");
+
     Route::get("/Cart/addToCart/{product}", [CartController::class, "addToCart"]);
     Route::get("/Cart/Destroy/{product}", [CartController::class, "removeFromCart"]);
 
@@ -173,11 +180,3 @@ Route::put('/Admin/Orders/update/{order}', [OrderController::class, 'update']);
 Route::get("/Notification/store/{order}/{message}", [NotificationController::class, "store"])->name("notification");
 
 Route::get("/SendSMS", [SendSMSController::class, "sendSMS"])->name("sendSMS.store");
-
-Route::prefix("/Payments")->group(function(){
-    Route::get('/stripe', [StripeController::class, 'index'])->name( 'stripe.index');
-    Route::post('/checkout', [StripeController::class, 'checkout'])->name("stripe.checkout");
-    Route::get('/success', [StripeController::class, 'success'])->name('stripe.success');
-    Route::get("/Create", [PaymentController::class, "create"])->name("payment.create");
-    Route::post("/Store", [PaymentController::class, "store"]);
-});

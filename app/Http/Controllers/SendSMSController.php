@@ -42,7 +42,7 @@ class SendSMSController extends Controller
                 content: new SmsTextContent(
                     text: 'User ' . Auth::user()->id . ' ordered product: ' . $key
                 ),
-                sender: 'Tresor Berber'
+                sender: 'TresorBerber'
             );
         }
 

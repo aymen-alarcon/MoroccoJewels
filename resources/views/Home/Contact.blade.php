@@ -93,7 +93,7 @@
                                 <h3 class="fs-3 font-display text-white">
                                     Notre Emplacement
                                 </h3>
-                                <img src="{{ asset("img/Designer.png") }}" alt="Une carte stylisée montrant les rues et les emplacements à Marrakech.">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWUdbgFB-_jvxwdeB810aojqin8QVaiDRnhzgrDFJcGv9TeE0DGX0UKtybnDrvlC8c4HSuzoJ1IZ2ew65fbuvoksP52ZgVCN-LG1bQsQHaqw6Z_BTU8xJMy9ddcrOmH2wnS9Kec5SZlh_pmT6O1KcvZxXb2kVBjj2wxne6ali8K-q9hOHwc4J0OgRSL5sDO35ffFTzPZlhtspKNZ-6QjsVfMVaYBS3pzfkmuGx-rb9cMVTm6DMSROg7n4CJG_uKSQto94vkj906UM" alt="Une carte stylisée montrant les rues et les emplacements à Marrakech.">
                             </div>
                         </div>
                     </div>

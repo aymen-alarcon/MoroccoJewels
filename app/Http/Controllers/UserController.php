@@ -4,18 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use App\Models\User;
-use App\Service\UserService;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    protected UserService $userService;
-
-    public function __construct(UserService $userService)
-    {
-        $this->userService = $userService;
-    }
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         $users = User::latest()->paginate(4);
@@ -89,15 +84,29 @@ class UserController extends Controller
 
         $userInfo->update($validate);
 
-        $message = "updated the User.";
+        $message = "updated the Product.";
 
         return redirect()->route("Logs.store", $message);
     }
 
     public function updateProfile(Request $request, User $User)
     {
-        $validate = $this->userService->checkProfileCredentials($request);
-        
+        $validate = $request->validate([
+            "first_name" => "required",
+            "last_name" => "required",
+            "email" => "required",
+            "street" => "required",
+            "city" => "required",
+            "country" => "required",
+            "zip" => "required",
+            "phone" => "required",
+        ]);
+
+        if($request->hasFile("profile_picture")){
+            $path = $request->file("profile_picture")->store("users", "public");
+            $validate["profile_picture"] = $path;
+        }
+
         $User->update($validate);
 
         return redirect()->route("Profile.index")->with("success", "You have successfully update a new User.");
@@ -110,7 +119,7 @@ class UserController extends Controller
     {
         $User->delete();
 
-        $message = "deleted the User.";
+        $message = "deleted the Product.";
 
         return redirect()->route("Logs.store", $message);
     }

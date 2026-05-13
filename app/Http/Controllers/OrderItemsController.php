@@ -4,17 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\OrderItems;
-use App\Service\OrderItemsService;
 use Illuminate\Http\Request;
 
 class OrderItemsController extends Controller
 {
-    protected OrderItemsService $orderItemsService;
-
-    public function __construct(OrderItemsService $orderItemsService)
-    {
-        $this->orderItemsService = $orderItemsService;
-    }
+    /**
+     * Display a listing of the resource.
+     */
     public function index($orderId)
     {
         $order = Order::findOrFail($orderId);
@@ -28,8 +24,18 @@ class OrderItemsController extends Controller
      */
     public function store(Request $request, OrderItems $OrderItems, $orderId)
     {
-        $this->orderItemsService->storeOrderItem($request, $OrderItems, $orderId);
+        $cart = session("cart");
+        foreach ($cart as $cartItem) {
+            $validate = $request->validate([]);
 
-        return redirect()->route("stripe.index");
+            $validate["product_name"] = $cartItem["name"];
+            $validate["price"] = $cartItem["price"];
+            $validate["quantity"] = $cartItem["quantity"];
+            $validate["order_id"] =  $orderId;
+
+            $OrderItems->create($validate);
+        }
+
+        return redirect()->route("sendSMS.store");
     }
 }
