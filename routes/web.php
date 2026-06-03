@@ -16,6 +16,7 @@ use App\Http\Controllers\OrderItemsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SendSMSController;
+use App\Http\Controllers\SendWhatsAppController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
 use App\Models\Materiel;
@@ -179,4 +180,34 @@ Route::post('/send-contact', [ContactController::class, "send"]);
 Route::put('/Admin/Orders/update/{order}', [OrderController::class, 'update']);
 Route::get("/Notification/store/{order}/{message}", [NotificationController::class, "store"])->name("notification");
 
-Route::get("/SendSMS", [SendSMSController::class, "sendSMS"])->name("sendSMS.store");
+Route::get("/SendSMS", [SendWhatsAppController::class, "sendWhatsApp"])->name("sendSMS.store");
+Route::get('/final-test', function() {
+    $apiKey = env('INFOBIP_API_KEY');
+    $baseUrl = 'https://l22evd.api.infobip.com';
+    $sender = '447860088970';
+    $recipient = '212629474030';
+    
+    $payload = [
+        'from' => $sender,
+        'to' => $recipient,
+        'messageId' => uniqid(),
+        'content' => [
+            'text' => 'Test order: Product X (2x) = 200 MAD'
+        ],
+    ];
+    
+    $response = Http::withOptions(['verify' => false])
+        ->withHeaders([
+            'Authorization' => 'App ' . $apiKey,
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
+        ])
+        ->post($baseUrl . '/whatsapp/1/message/text', $payload);
+    
+    return [
+        'status' => $response->status(),
+        'sent_payload' => $payload,
+        'response' => $response->json(),
+        'raw_body' => $response->body(),
+    ];
+});

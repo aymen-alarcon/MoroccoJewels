@@ -102,7 +102,7 @@
                         <div class="row g-3">
                             <div class="col-12 col-md-6">
                                 <label class="small-uppercase text-accent">Image principale</label>
-                                <input type="file" name="profile_picture" class="form-control align-content-center" accept="image/*" required/>
+                                <input type="file" name="profile_picture" class="form-control align-content-center" accept="image/*"/>
                             </div>
                             <div class="col-md-6">
                                 <label class="small-uppercase text-accent">Nom</label>

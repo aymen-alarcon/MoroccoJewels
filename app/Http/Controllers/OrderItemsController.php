@@ -24,14 +24,20 @@ class OrderItemsController extends Controller
      */
     public function store(Request $request, OrderItems $OrderItems, $orderId)
     {
-        $cart = session("cart");
+        $cart = session("cart", []);
+
+        if (empty($cart)) {
+            return back()->with('failed', 'Cart is empty');
+        }
+
         foreach ($cart as $cartItem) {
+
             $validate = $request->validate([]);
 
-            $validate["product_name"] = $cartItem["name"];
-            $validate["price"] = $cartItem["price"];
-            $validate["quantity"] = $cartItem["quantity"];
-            $validate["order_id"] =  $orderId;
+            $validate["product_name"] = $cartItem["name"] ?? 'Unknown';
+            $validate["price"] = $cartItem["price"] ?? 0;
+            $validate["quantity"] = $cartItem["quantity"] ?? 1;
+            $validate["order_id"] = $orderId;
 
             $OrderItems->create($validate);
         }

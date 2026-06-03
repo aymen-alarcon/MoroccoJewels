@@ -34,7 +34,7 @@ class OrderController extends Controller
 
     public function store(Request $request, Order $order)
     {
-        $cart = session("cart");
+        $cart = session("cart", []);
 
         $totalPrice = 0;
 

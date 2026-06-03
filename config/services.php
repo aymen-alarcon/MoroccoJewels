@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'infobip' => [
+        'api_key' => env('INFOBIP_API_KEY'),
+        'base_url' => env('INFOBIP_BASE_URL', 'https://l22evd.api.infobip.com'),
+        'whatsapp_number' => env('INFOBIP_WHATSAPP_NUMBER', '447860088970'),
+    ],
 ];
